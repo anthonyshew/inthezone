@@ -15,11 +15,11 @@ module.exports = {
   },
   developMiddleware: app => {
     app.use(
-      "/functions/",
+      "/.netlify/functions/",
       createProxyMiddleware({
         target: "http://localhost:9000",
         pathRewrite: {
-          "/functions/": "",
+          "/.netlify/functions/": "",
         },
       })
     )
