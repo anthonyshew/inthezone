@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -10,9 +10,21 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
+  const [foo, setFoo] = useState('fooey')
+
+  useEffect(() => {
+    fetch('/.netlify/functions/server/api/hello')
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        setFoo(res.express)
+      })
+  }, [])
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+      <p>{foo}</p>
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
