@@ -1,5 +1,3 @@
-const proxy = require('http-proxy-middleware')
-
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
@@ -12,18 +10,6 @@ module.exports = {
     social: {
       twitter: `kylemathews`,
     },
-  },
-  developMiddleware: app => {
-    app.use(
-      "/.netlify/functions/server",
-      proxy({
-        target: "http://localhost:9000",
-        secure: false,
-        pathRewrite: {
-          "/.netlify/functions/server": "",
-        },
-      })
-    )
   },
   plugins: [
     'gatsby-plugin-netlify-cms',
