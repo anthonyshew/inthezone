@@ -13,7 +13,12 @@ router.get('/hola', (req, res) => {
     res.send({ msg: 'Hello from a backend server' })
 })
 
-app.use('/.netlify/functions/api', router)
+if (process.env.ENVIRONMENT !== 'PRODUCTION') {
+    app.use('/api', router)
+} else {
+    app.use('/.netlify/functions/api', router)
+}
+
 
 module.exports = app
 module.exports.handler = serverless(app)
