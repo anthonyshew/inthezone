@@ -13,17 +13,17 @@ module.exports = {
       twitter: `kylemathews`,
     },
   },
-  developMiddleware: app => {
-    app.use(
-      "/.netlify/functions/",
-      createProxyMiddleware({
-        target: "http://localhost:9000",
-        pathRewrite: {
-          "/.netlify/functions/": "",
-        },
-      })
-    )
-  },
+  // developMiddleware: app => {
+  //   app.use(
+  //     "/.netlify/functions",
+  //     createProxyMiddleware({
+  //       target: "http://localhost:9000",
+  //       pathRewrite: {
+  //         "/.netlify/functions/": "/",
+  //       },
+  //     })
+  //   )
+  // },
   plugins: [
     'gatsby-plugin-netlify-cms',
     {
