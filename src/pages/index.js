@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
   const [foo, setFoo] = useState('fooey')
 
   useEffect(() => {
-    fetch("/.netlify/functions/api")
+    fetch("/.netlify/functions/api/hola")
       .then(response => response.json())
       .then(res => setFoo(res.msg))
   }, [])

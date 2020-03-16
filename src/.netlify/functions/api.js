@@ -1,9 +1,19 @@
-export function handler(event, context, callback) {
-    callback(null, {
-        // return null to show no errors
-        statusCode: 200, // http status code
-        body: JSON.stringify({
-            msg: "Hello, World! with a new message " + Math.round(Math.random() * 10),
-        }),
-    })
-}
+const express = require('express')
+const serverless = require('serverless-http')
+const bodyParser = require('body-parser')
+
+const app = express()
+const router = express.Router()
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// API calls
+router.get('/hola', (req, res) => {
+    res.send({ msg: 'Hello from a backend server' })
+})
+
+app.use('/api', router)
+
+module.exports = app
+module.exports.handler = serverless(app)
