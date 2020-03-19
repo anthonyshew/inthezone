@@ -10,7 +10,7 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  const [foo, setFoo] = useState('fooey')
+  const [foo, setFoo] = useState('Loading...')
 
   useEffect(() => {
     fetch("/.netlify/functions/api/hola")
