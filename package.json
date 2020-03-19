@@ -61,7 +61,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "run-p start:**",
-    "start:app": "npm run develop",
+    "start:app": "gatsby develop -p 3000",
     "start:lambda": "netlify-lambda serve src/.netlify/functions",
     "build": "gatsby build && netlify-lambda build src/.netlify/functions",
     "build:app": "gatsby build",
