@@ -28,6 +28,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-netlify-cms',
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
@@ -42,6 +43,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/number`,
+        name: `number`,
       },
     },
     {
