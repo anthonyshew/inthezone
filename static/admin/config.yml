@@ -23,6 +23,6 @@ collections:
     files:
       - label: "Some Number"
         name: "number"
-        file: "content/number"
+        file: "content/number/thenumber.json"
         fields:
         - {label: "The Number", name: thenumber, widget: "number"}
