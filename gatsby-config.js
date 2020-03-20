@@ -2,15 +2,15 @@ let { createProxyMiddleware } = require("http-proxy-middleware")
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `The Most Basic Blog in the World`,
     author: {
       name: `Anthony Shew`,
       summary: `who develops things.`,
     },
     description: `A starter blog kit`,
-    siteUrl: `https://gshewperman.dev/`,
+    siteUrl: `https://www.shewperman.dev/`,
     social: {
-      twitter: ``,
+      twitter: `/theunrealashew`,
     },
   },
   //Does this even do anything?

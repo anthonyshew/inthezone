@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -9,27 +9,9 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
-  const [foo, setFoo] = useState('Loading...')
-
-  useEffect(() => {
-    fetch("/.netlify/functions/api/hola")
-      .then(response => response.json())
-      .then(res => setFoo(res.msg))
-  }, [])
-
-  const handleClick = (e) => {
-    fetch('/.netlify/functions/api/mail', {
-      method: "POST",
-    })
-      .then(res => res.json())
-      .then(res => console.log(res))
-  }
-
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <p>{foo}</p>
-      <button onClick={handleClick}>Send out the email</button>
+      <SEO title="Home" />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
