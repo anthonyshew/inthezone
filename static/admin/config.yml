@@ -26,3 +26,4 @@ collections:
         file: "content/number/thenumber.json"
         fields:
         - {label: "The Number", name: thenumber, widget: "number"}
+        - {label: "The String", name: thestring, widget: "string"}
