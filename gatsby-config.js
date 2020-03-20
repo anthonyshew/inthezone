@@ -4,13 +4,13 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Anthony Shew`,
+      summary: `who develops things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `A starter blog kit`,
+    siteUrl: `https://gshewperman.dev/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
   },
   //Does this even do anything?
