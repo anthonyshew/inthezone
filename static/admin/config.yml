@@ -18,15 +18,11 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "anotherthing"
-    label: "Some Other Thing"
-    folder: "content/anotherthing"
-    create: true
-    slug: "{{slug}}"
-    editor:
-     preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "arbitraries"
+    label: "Arbitrary Info"
+    files:
+      - label: "Some Number"
+        name: "number"
+        file: "content/number"
+        fields:
+        - {label: "The Number", name: thenumber, widget: "number"}
