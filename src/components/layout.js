@@ -7,7 +7,7 @@ import '../styles/home-hero.scss'
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
   query LayoutQuery {
     companyLogo: file(absolutePath: { regex: "/aaml-logo.png/" }) {
@@ -126,7 +126,10 @@ const Layout = ({ location, title, children }) => {
           </span>
         </nav>
         <p className="total-sponsorships">{totalSponsorships}</p>
-        <p className="subline">Players&nbsp;Sponsored through Adopt&nbsp;a&nbsp;Minor&nbsp;Leaguer</p>
+        <div className="subline">
+          <p>Players&nbsp;Sponsored through</p>
+          <h1>Adopt&nbsp;a&nbsp;Minor&nbsp;Leaguer</h1>
+        </div>
       </div>
     )
   } else {

@@ -63,6 +63,7 @@
         color: $white;
         font-size: 132px;
         font-family: $passion;
+        cursor: default;
     }
 
     .subline {
@@ -70,10 +71,15 @@
         bottom: 1rem;
         margin-left: 1rem;
         width: 50%;
-        color: $white;
         font-size: 48px;
         font-family: $raleway;
         font-weight: 900;
         line-height: 150%;
+        cursor: default;
+
+        h1,
+        p {
+            color: $white;
+        }
     }
 }

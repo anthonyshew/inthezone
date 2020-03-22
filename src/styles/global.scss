@@ -6,8 +6,33 @@ $raleway: 'Raleway',
 sans-serif;
 
 $white: #ffffff;
+$blue: #00235B;
+$yellow: #F39116;
 
 a,
-p {
+p,
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6 {
+    color: $blue;
     font-family: $raleway;
+}
+
+.container-link-button {
+    text-align: center;
+}
+
+.link-button {
+    margin: 1rem auto 0;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: $yellow;
+    font-family: $passion;
+    font-size: 24px;
+    text-align: center;
 }

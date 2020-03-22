@@ -5,10 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
-
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title="404: Not Found" />
       <h1>Not Found</h1>
       <p>You just hit a route that doesn't exist...yet. </p>

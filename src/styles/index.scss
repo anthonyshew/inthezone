@@ -1,0 +1,40 @@
+@import './global';
+
+.container-flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .container-message {
+        padding: 2rem 5%;
+        flex-basis: 50%;
+
+        h2 {
+            margin-bottom: 2rem;
+            font-family: $raleway;
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        p {
+            text-indent: 48px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+    }
+}
+
+@media (max-width: 667px) {
+    .container-flex-row {
+        .container-message {
+            flex-basis: 100%;
+            padding: 5%;
+        }
+
+        .container-sponsor-message {
+            padding-top: 0;
+        }
+    }
+}
