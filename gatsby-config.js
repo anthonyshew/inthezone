@@ -10,7 +10,8 @@ module.exports = {
     description: `A starter blog kit`,
     siteUrl: `https://www.shewperman.dev/`,
     social: {
-      twitter: `/theunrealashew`,
+      twitter: `/adoptmilbplayer`,
+      facebook: `/groups/218122932877473/`
     },
   },
   //Does this even do anything?
@@ -26,7 +27,8 @@ module.exports = {
     )
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
