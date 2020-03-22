@@ -31,12 +31,20 @@ const Layout = ({ location, title, children }) => {
         }
       }
     }
+    instagramLogo: file(absolutePath: { regex: "/instagram-logo.png/" }) {
+      childImageSharp {
+        fixed(width: 75, height: 75) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title
         social {
           twitter
           facebook
+          instagram
         }
       }
     }
@@ -79,18 +87,40 @@ const Layout = ({ location, title, children }) => {
               </Link>
           </span>
           <span className="social-icons">
-            <a target="_blank" rel="noopener noreferrer" href={`http://facebook.com${data.site.siteMetadata.social.facebook}`}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="facebook"
+              href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
+            >
               <Image
-                className="facebook"
+                className="facebook-img"
                 fixed={data.facebookLogo.childImageSharp.fixed}
                 alt={`${data.site.siteMetadata.title}'s Facebook Group`}
               />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href={`http://twitter.com${data.site.siteMetadata.social.twitter}`}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="twitter"
+              href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
+            >
               <Image
-                className="twitter"
+                className="twitter-img"
                 fixed={data.twitterLogo.childImageSharp.fixed}
                 alt={`${data.site.siteMetadata.title}'s Twitter Page`}
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="instagram"
+              href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
+            >
+              <Image
+                className="instagram-img"
+                fixed={data.instagramLogo.childImageSharp.fixed}
+                alt={`${data.site.siteMetadata.title}'s Instagram Page`}
               />
             </a>
           </span>

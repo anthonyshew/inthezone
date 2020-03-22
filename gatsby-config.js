@@ -11,7 +11,8 @@ module.exports = {
     siteUrl: `https://www.shewperman.dev/`,
     social: {
       twitter: `/adoptmilbplayer`,
-      facebook: `/groups/218122932877473/`
+      facebook: `/groups/218122932877473/`,
+      instagram: `/adoptamilbplayer/`
     },
   },
   //Does this even do anything?

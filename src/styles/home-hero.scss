@@ -40,9 +40,18 @@
         position: absolute;
         right: 1rem;
         top: 1rem;
+        display: flex;
+        flex-direction: column;
 
-        .facebook {
-            margin-right: 1rem;
+        .facebook-img,
+        .twitter-img,
+        .instagram-img {
+            border-radius: 1rem;
+            box-shadow: 10px 10px 10px gray;
+        }
+
+        .twitter {
+            margin: .5rem 0;
         }
     }
 
