@@ -132,17 +132,12 @@ const Layout = ({ location, title, children }) => {
   } else {
     header = (
       <div className="page-hero">
-
+        A navbar goes here.
       </div>
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-      }}
-    >
+    <>
       <header>{header}</header>
       <main>{children}</main>
       <footer>
@@ -150,7 +145,7 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </div>
+    </>
   )
 }
 
