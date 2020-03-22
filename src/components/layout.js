@@ -40,9 +40,13 @@ const Layout = ({ location, title, children }) => {
         }
       }
     }
+    siteInfoJson {
+      totalSponsorships
+    }
   }
     `)
 
+  const totalSponsorships = data.siteInfoJson.totalSponsorships
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
@@ -63,11 +67,12 @@ const Layout = ({ location, title, children }) => {
             <Link to="/dear-players" className="link">
               Dear Players
               </Link>
-            <Link to="/dear-sponsors" className="link">
-              Dear Sponsors
-              </Link>
+
             <Link to="/Our Story" className="link">
               Our Story
+              </Link>
+            <Link to="/dear-sponsors" className="link">
+              Dear Sponsors
               </Link>
             <Link to="/Blog" className="link">
               Blog
@@ -90,6 +95,8 @@ const Layout = ({ location, title, children }) => {
             </a>
           </span>
         </nav>
+        <p className="total-sponsorships">{totalSponsorships}</p>
+        <p className="subline">Players&nbsp;Sponsored through Adopt&nbsp;a&nbsp;Minor&nbsp;Leaguer</p>
       </div>
     )
   } else {

@@ -1,3 +1,5 @@
+@import './global';
+
 .container-home-hero {
     height: 100vh;
     background-image: url('/media/home-hero.jpg');
@@ -16,14 +18,15 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
-        width: 35%;
+        width: 410px;
         height: 150px;
+        margin-left: 2rem;
 
         .link {
             display: inline-block;
             line-height: 250%;
-            flex-basis: 34%;
-            text-align: center;
+            flex-basis: 50%;
+            text-align: left;
             font-size: 20px;
             font-weight: 900;
         }
@@ -41,5 +44,27 @@
         .facebook {
             margin-right: 1rem;
         }
+    }
+
+    .total-sponsorships {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-25%, -50%);
+        color: $white;
+        font-size: 132px;
+        font-family: $passion;
+    }
+
+    .subline {
+        position: absolute;
+        bottom: 1rem;
+        margin-left: 1rem;
+        width: 50%;
+        color: $white;
+        font-size: 48px;
+        font-family: $raleway;
+        font-weight: 900;
+        line-height: 150%;
     }
 }

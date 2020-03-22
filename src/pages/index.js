@@ -7,12 +7,10 @@ import SEO from "../components/seo"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  const number = data.numberJson.thenumber
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
-      <p>{number}</p>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -47,9 +45,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
       }
-    }
-    siteInfoJson {
-      totalSponsorships
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 2) {
       edges {
