@@ -60,7 +60,7 @@ const Layout = ({ location, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <div className="container-home-hero">
+      <section className="container-home-hero">
         <nav className="navbar">
           <span className="logo">
             <Link to="/">
@@ -82,7 +82,7 @@ const Layout = ({ location, children }) => {
             <Link to="/dear-sponsors" className="link">
               Dear Sponsors
               </Link>
-            <Link to="/Blog" className="link">
+            <Link to="/blog" className="link">
               Blog
               </Link>
           </span>
@@ -130,7 +130,7 @@ const Layout = ({ location, children }) => {
           <p>Players&nbsp;Sponsored through</p>
           <h1>Adopt&nbsp;a&nbsp;Minor&nbsp;Leaguer</h1>
         </div>
-      </div>
+      </section>
     )
   } else {
     header = (

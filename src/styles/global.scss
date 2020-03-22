@@ -7,6 +7,7 @@ sans-serif;
 
 $white: #ffffff;
 $blue: #00235B;
+$light-blue: #88ABE2;
 $yellow: #F39116;
 
 a,
@@ -20,6 +21,13 @@ h5,
 h6 {
     color: $blue;
     font-family: $raleway;
+}
+
+h2 {
+    color: $blue;
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
 }
 
 .container-link-button {
