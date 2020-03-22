@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -13,7 +12,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
-      <Bio />
       <p>{number}</p>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -55,7 +53,7 @@ export const pageQuery = graphql`
       thenumber
       thestring
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 2) {
       edges {
         node {
           excerpt

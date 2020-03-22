@@ -1,0 +1,14 @@
+.container-home-hero {
+    height: 100vh;
+    background-image: url('/media/home-hero.png');
+    background-size: cover;
+    background-position: 50%;
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .site-logo {
+        border-radius: .5rem;
+    }
+}
