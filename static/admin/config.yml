@@ -21,8 +21,8 @@ collections:
   - name: "siteInfo"
     label: "Site Info"
     files:
-      - label: "Sponsorhips Created"
-        name: "totalSponsorships"
-        file: "content/number/siteInfo.json"
+      - label: "Sponsorships Created"
+        name: "siteInfo"
+        file: "content/siteInfo/siteInfo.json"
         fields:
-        - {label: "The Number", name: thenumber, widget: "number"}
+        - {label: "Sponsorships Created", name: totalSponsorships, widget: "number"}
