@@ -48,9 +48,8 @@ export const pageQuery = graphql`
         title
       }
     }
-    numberJson {
-      id
-      thenumber
+    siteInfoJson {
+      totalSponsorships
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 2) {
       edges {
