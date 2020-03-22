@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react'
 
 export default (mediaQuery) => {
-    const [isVerified, setIsVerified] = useState(!!window.matchMedia(mediaQuery).matches)
 
-    useEffect(() => {
-        const mediaQueryList = window.matchMedia(mediaQuery)
-        const documentChangeHandler = () => setIsVerified(!!mediaQueryList.matches)
+    if ('matchMedia' in window) {
+        const [isVerified, setIsVerified] = useState(!!window.matchMedia(mediaQuery).matches)
 
-        mediaQueryList.addListener(documentChangeHandler)
+        useEffect(() => {
+            const mediaQueryList = window.matchMedia(mediaQuery)
+            const documentChangeHandler = () => setIsVerified(!!mediaQueryList.matches)
 
-        documentChangeHandler()
-        return () => {
-            mediaQueryList.removeListener(documentChangeHandler)
-        }
-    }, [mediaQuery])
+            mediaQueryList.addListener(documentChangeHandler)
 
-    return isVerified
+            documentChangeHandler()
+            return () => {
+                mediaQueryList.removeListener(documentChangeHandler)
+            }
+        }, [mediaQuery])
+
+        return isVerified
+    }
+    return null
 }
