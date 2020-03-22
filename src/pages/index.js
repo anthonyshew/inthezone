@@ -51,7 +51,6 @@ export const pageQuery = graphql`
     numberJson {
       id
       thenumber
-      thestring
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 2) {
       edges {

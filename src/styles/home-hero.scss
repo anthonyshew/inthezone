@@ -1,14 +1,45 @@
 .container-home-hero {
     height: 100vh;
-    background-image: url('/media/home-hero.png');
+    background-image: url('/media/home-hero.jpg');
     background-size: cover;
     background-position: 50%;
 
     .navbar {
         padding: 1rem;
+        height: 150px;
+    }
+
+    .link-list {
+        position: absolute;
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 35%;
+        height: 150px;
+
+        .link {
+            display: inline-block;
+            line-height: 250%;
+            flex-basis: 34%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+        }
     }
 
     .site-logo {
         border-radius: .5rem;
+    }
+
+    .social-icons {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+        .facebook {
+            margin-right: 1rem;
+        }
     }
 }

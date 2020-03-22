@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Raleway:400,700&display=swap');
+
+$passion: 'Passion One',
+cursive;
+$raleway: 'Raleway',
+sans-serif;
+
+a,
+p {
+    font-family: $raleway;
+}
