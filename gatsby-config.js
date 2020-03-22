@@ -50,8 +50,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/number`,
-        name: `number`,
+        path: `${__dirname}/content/siteInfo`,
+        name: `siteInfo`,
       },
     },
     {
