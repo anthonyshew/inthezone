@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 export default (mediaQuery) => {
 
-    if ('matchMedia' in window) {
+    if (typeof window !== 'undefined') {
         const [isVerified, setIsVerified] = useState(!!window.matchMedia(mediaQuery).matches)
 
         useEffect(() => {
