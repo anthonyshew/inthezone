@@ -54,7 +54,7 @@ const Index = ({ data, location }) => {
             <p>Then, we did it again.</p>
             <p>Then, we did it again...</p>
             <Link className="link-button" to="/our-story">
-              {isSmallViewport ? "Our Story" : "Find Out How We Came To Be"}
+              {isSmallViewport ? "Our Story >" : "Find Out How We Came To Be"}
             </Link>
           </div>
           <div className="person-block company">
@@ -84,28 +84,31 @@ const Index = ({ data, location }) => {
         </div>
       </section>
 
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
+      <section className="section-blog">
+        <h2>Our Blog</h2>
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <div key={node.fields.slug} className="post">
+              <header>
+                <h3 className="post-title">
+                  <Link to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small className="post-date">{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </section>
+            </div>
+          )
+        })}
+      </section>
     </Layout>
   )
 }
