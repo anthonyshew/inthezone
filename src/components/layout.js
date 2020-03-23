@@ -6,6 +6,7 @@ import '../styles/home-hero.scss'
 
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -38,6 +39,13 @@ const Layout = ({ location, children }) => {
         }
       }
     }
+    homeHero: file(absolutePath: { regex: "/home-hero.jpg/" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
     site {
       siteMetadata {
         title
@@ -60,7 +68,11 @@ const Layout = ({ location, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <section className="container-home-hero">
+      <BackgroundImage
+        Tag="section"
+        className="container-home-hero"
+        fluid={data.homeHero.childImageSharp.fluid}
+      >
         <nav className="navbar">
           <span className="logo">
             <Link to="/">
@@ -130,7 +142,7 @@ const Layout = ({ location, children }) => {
           <p>Players&nbsp;Sponsored through</p>
           <h1>Adopt&nbsp;a&nbsp;Minor&nbsp;Leaguer</h1>
         </div>
-      </section>
+      </BackgroundImage>
     )
   } else {
     header = (
