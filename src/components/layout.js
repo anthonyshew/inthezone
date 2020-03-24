@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import '../styles/reset.scss'
 import '../styles/global.scss'
 import '../styles/home-hero.scss'
+import '../styles/footer.scss'
 
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
@@ -155,10 +156,69 @@ const Layout = ({ location, children }) => {
     <>
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <footer className="footer">
+        <div className="pages">
+          <p>Pages</p>
+          <ul>
+            <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
+            <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
+            <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
+            <li><Link className="link" activeClassName="active" to="/our-story">Our Story</Link></li>
+            <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
+            <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
+            <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>
+            <li><Link className="link" activeClassName="active" to="/privacy-policy">Privacy Policy</Link></li>
+          </ul>
+        </div>
+        <div className="socials">
+          <p>Connect With Us!</p>
+          <span className="icons">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="facebook"
+              href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
+            >
+              <Image
+                className="facebook-img"
+                fixed={data.facebookLogo.childImageSharp.fixed}
+                alt={`${data.site.siteMetadata.title}'s Facebook Group`}
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="twitter"
+              href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
+            >
+              <Image
+                className="twitter-img"
+                fixed={data.twitterLogo.childImageSharp.fixed}
+                alt={`${data.site.siteMetadata.title}'s Twitter Page`}
+              />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="instagram"
+              href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
+            >
+              <Image
+                className="instagram-img"
+                fixed={data.instagramLogo.childImageSharp.fixed}
+                alt={`${data.site.siteMetadata.title}'s Instagram Page`}
+              />
+            </a>
+          </span>
+        </div>
+        <div className="logo-container">
+          <Image
+            Tag="section"
+            className="container-home-hero"
+            fixed={data.companyLogo.childImageSharp.fixed}
+          />
+          <p className="tagline">#StandWithMiLB</p>
+        </div>
       </footer>
     </>
   )
