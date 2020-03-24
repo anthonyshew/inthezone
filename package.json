@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Anthony Shew",
   "scripts": {
+    "ngrok": "cd .. && ngrok http 3000",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "run-p start:**",
