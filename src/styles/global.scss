@@ -37,10 +37,12 @@ h2 {
     text-align: center;
 }
 
+button,
 .link-button {
     margin: 1rem auto 0;
     display: inline-block;
     padding: 1rem 2rem;
+    border: none;
     border-radius: 1rem;
     background-color: $yellow;
     font-family: $passion;

@@ -4,6 +4,7 @@ import '../styles/index.scss'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Carousel from '../components/carousel'
 import Image from "gatsby-image"
 
 import useMediaQuery from '../hooks/useMediaQuery'
@@ -40,9 +41,7 @@ const Index = ({ data, location }) => {
 
       <section className="section-carousel">
         <h2>How A Sponsorship Happens</h2>
-        <div className="carousel">
-          A carousel goes here.
-        </div>
+        <Carousel />
       </section>
 
       <section className="section-story">
