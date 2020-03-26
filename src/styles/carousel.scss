@@ -16,25 +16,83 @@
     }
 
     .slide {
+        position: relative;
         width: 25%;
+
+        h3 {
+            position: absolute;
+            margin: 1rem;
+            font-size: 32px;
+            font-weight: 900;
+            color: $white;
+        }
+
+        p {
+            position: absolute;
+            font-size: 24px;
+            color: $white;
+        }
     }
 
-    p {
-        color: $white;
-    }
-}
-
-.step-button {
-    position: absolute;
-    bottom: 1rem;
-    cursor: pointer;
-    transition: .2s all linear;
-
-    &.previous {
-        left: 1rem;
+    .one {
+        p {
+            top: 30%;
+            right: 1rem;
+            width: 45%;
+            min-width: 240px;
+        }
     }
 
-    &.next {
-        right: 1rem;
+    .two {
+        h3 {
+            left: 25%;
+        }
+
+        p {
+            bottom: 25%;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .three {
+        h3 {
+            left: 50%;
+        }
+
+        p {
+            top: 30%;
+            left: 1rem;
+            width: 45%;
+            min-width: 240px;
+        }
+    }
+
+    .four {
+        h3 {
+            right: 1rem;
+        }
+
+        p {
+            top: 30%;
+            right: 1rem;
+            width: 45%;
+            min-width: 240px;
+        }
+    }
+
+    .step-button {
+        position: absolute;
+        bottom: 1rem;
+        cursor: pointer;
+        transition: .2s all linear;
+
+        &.previous {
+            left: 1rem;
+        }
+
+        &.next {
+            right: 1rem;
+        }
     }
 }

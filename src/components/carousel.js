@@ -44,31 +44,35 @@ export default ({ ...props }) => {
             <div className="slides-container" style={{ left: `-${step}00%` }}>
                 <BackgroundImage
                     Tag="div"
-                    className="slide"
+                    className="slide one"
                     fluid={data.slideOne.childImageSharp.fluid}
                 >
-                    <p>StepOne.</p>
+                    <h3>Step 1</h3>
+                    <p>A player gets in touch with us that he would like to be sponsored.</p>
                 </BackgroundImage>
                 <BackgroundImage
                     Tag="div"
-                    className="slide"
+                    className="slide two"
                     fluid={data.slideTwo.childImageSharp.fluid}
                 >
-                    <p>StepTwo.</p>
+                    <h3>Step 2</h3>
+                    <p>We let our community know a player is up for sponsorship.</p>
                 </BackgroundImage>
                 <BackgroundImage
                     Tag="div"
-                    className="slide"
+                    className="slide three"
                     fluid={data.slideThree.childImageSharp.fluid}
                 >
-                    <p>StepThree.</p>
+                    <h3>Step 3</h3>
+                    <p>We select a sponsor from the community for the player.</p>
                 </BackgroundImage>
                 <BackgroundImage
                     Tag="div"
-                    className="slide"
+                    className="slide four"
                     fluid={data.slideFour.childImageSharp.fluid}
                 >
-                    <p>StepFour.</p>
+                    <h3>Step 4</h3>
+                    <p>We put player and sponsor into contact and their relationship grows.</p>
                 </BackgroundImage>
             </div>
             <button
