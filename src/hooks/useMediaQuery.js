@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+// Returns a boolean stating whether the media query is true or false
+
 export default (mediaQuery) => {
 
     if (typeof window !== 'undefined') {

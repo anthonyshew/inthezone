@@ -1,0 +1,50 @@
+@import './global.scss';
+
+.navbar {
+    padding: 1rem;
+    height: 150px;
+}
+
+.link-list {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 410px;
+    height: 150px;
+    margin-left: 2rem;
+
+    .link {
+        display: inline-block;
+        line-height: 250%;
+        flex-basis: 50%;
+        text-align: left;
+        font-size: 20px;
+        font-weight: 900;
+    }
+}
+
+.site-logo {
+    border-radius: .5rem;
+}
+
+.social-icons {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .facebook-img,
+    .twitter-img,
+    .instagram-img {
+        border-radius: 1rem;
+        box-shadow: 10px 10px 10px gray;
+    }
+
+    .twitter {
+        margin: .5rem 0;
+    }
+}

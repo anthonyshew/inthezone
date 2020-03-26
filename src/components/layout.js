@@ -2,8 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import '../styles/reset.scss'
 import '../styles/global.scss'
+import '../styles/navbar.scss'
 import '../styles/home-hero.scss'
 import '../styles/footer.scss'
+
+import useMediaQuery from '../hooks/useMediaQuery'
 
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
@@ -63,6 +66,7 @@ const Layout = ({ location, children }) => {
   }
     `)
 
+  const isSmallDisplay = useMediaQuery(`(max-width: 1000px)`)
   const totalSponsorships = data.siteInfoJson.totalSponsorships
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -74,70 +78,7 @@ const Layout = ({ location, children }) => {
         className="container-home-hero"
         fluid={data.homeHero.childImageSharp.fluid}
       >
-        <nav className="navbar">
-          <span className="logo">
-            <Link to="/">
-              <Image
-                className="site-logo"
-                fixed={data.companyLogo.childImageSharp.fixed}
-                alt={data.site.siteMetadata.title}
-              />
-            </Link>
-          </span>
-          <span className="link-list">
-            <Link to="/dear-players" className="link">
-              Dear Players
-              </Link>
-
-            <Link to="/Our Story" className="link">
-              Our Story
-              </Link>
-            <Link to="/dear-sponsors" className="link">
-              Dear Sponsors
-              </Link>
-            <Link to="/blog" className="link">
-              Blog
-              </Link>
-          </span>
-          <span className="social-icons">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="facebook"
-              href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
-            >
-              <Image
-                className="facebook-img"
-                fixed={data.facebookLogo.childImageSharp.fixed}
-                alt={`${data.site.siteMetadata.title}'s Facebook Group`}
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="twitter"
-              href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
-            >
-              <Image
-                className="twitter-img"
-                fixed={data.twitterLogo.childImageSharp.fixed}
-                alt={`${data.site.siteMetadata.title}'s Twitter Page`}
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="instagram"
-              href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
-            >
-              <Image
-                className="instagram-img"
-                fixed={data.instagramLogo.childImageSharp.fixed}
-                alt={`${data.site.siteMetadata.title}'s Instagram Page`}
-              />
-            </a>
-          </span>
-        </nav>
+        {isSmallDisplay ? <SmallDisplayNav data={data} /> : <IndexNav data={data} />}
         <p className="total-sponsorships">{totalSponsorships}</p>
         <div className="subline">
           <p>Players&nbsp;Sponsored through</p>
@@ -225,3 +166,87 @@ const Layout = ({ location, children }) => {
 }
 
 export default Layout
+
+const IndexNav = ({ data }) => (
+  <nav className="navbar">
+    <span className="logo">
+      <Link to="/">
+        <Image
+          className="site-logo"
+          fixed={data.companyLogo.childImageSharp.fixed}
+          alt={data.site.siteMetadata.title}
+        />
+      </Link>
+    </span>
+    <span className="link-list">
+      <Link to="/dear-players" className="link">
+        Dear Players
+      </Link>
+
+      <Link to="/Our Story" className="link">
+        Our Story
+      </Link>
+      <Link to="/dear-sponsors" className="link">
+        Dear Sponsors
+      </Link>
+      <Link to="/blog" className="link">
+        Blog
+      </Link>
+    </span>
+    <span className="social-icons">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="facebook"
+        href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
+      >
+        <Image
+          className="facebook-img"
+          fixed={data.facebookLogo.childImageSharp.fixed}
+          alt={`${data.site.siteMetadata.title}'s Facebook Group`}
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="twitter"
+        href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
+      >
+        <Image
+          className="twitter-img"
+          fixed={data.twitterLogo.childImageSharp.fixed}
+          alt={`${data.site.siteMetadata.title}'s Twitter Page`}
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="instagram"
+        href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
+      >
+        <Image
+          className="instagram-img"
+          fixed={data.instagramLogo.childImageSharp.fixed}
+          alt={`${data.site.siteMetadata.title}'s Instagram Page`}
+        />
+      </a>
+    </span>
+  </nav>
+)
+
+const SmallDisplayNav = ({ data }) => {
+  return (
+    <nav className="navbar">
+      <span className="logo">
+        <Link to="/">
+          <Image
+            className="site-logo"
+            fixed={data.companyLogo.childImageSharp.fixed}
+            alt={data.site.siteMetadata.title}
+          />
+        </Link>
+      </span>
+
+    </nav>
+  )
+}
