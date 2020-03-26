@@ -3,19 +3,38 @@
 .carousel {
     position: relative;
     width: 100%;
-    height: 350px;
-    background-color: $blue;
+    height: 400px;
+    overflow: hidden;
 
-    .step-button {
+    .slides-container {
         position: absolute;
-        bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        width: 400%;
+        height: 400px;
+        transition: .8s all ease;
+    }
 
-        &.previous {
-            left: 1rem;
-        }
+    .slide {
+        width: 25%;
+    }
 
-        &.next {
-            right: 1rem;
-        }
+    p {
+        color: $white;
+    }
+}
+
+.step-button {
+    position: absolute;
+    bottom: 1rem;
+    cursor: pointer;
+    transition: .2s all linear;
+
+    &.previous {
+        left: 1rem;
+    }
+
+    &.next {
+        right: 1rem;
     }
 }
