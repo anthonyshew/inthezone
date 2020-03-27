@@ -13,6 +13,11 @@ $blue: #00235B;
 $light-blue: #88ABE2;
 $yellow: #F39116;
 
+body,
+html {
+    width: 100vw;
+}
+
 a,
 a:visited,
 a:link,

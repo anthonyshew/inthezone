@@ -39,10 +39,10 @@ const Index = ({ data, location }) => {
         </div>
       </section>
 
-      {/* <section className="section-carousel">
+      <section className="section-carousel">
         <h2>How A Sponsorship Happens</h2>
         <Carousel />
-      </section> */}
+      </section>
 
       <section className="section-story">
         <h2>Our Story</h2>
