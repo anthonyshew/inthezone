@@ -64,3 +64,43 @@
         }
     }
 }
+
+@media (max-width: 850px) {
+    .footer {
+        flex-direction: column;
+
+        .pages,
+        .socials,
+        .logo-container {
+            width: 100%;
+        }
+
+        .socials,
+        .logo-container {
+            margin-top: 2rem;
+        }
+
+        .pages {
+            .footer-link-list {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .socials {
+            p {
+                font-size: 36px;
+            }
+
+            .icons {
+                margin-top: 1rem;
+            }
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+    }
+}

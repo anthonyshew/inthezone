@@ -15,9 +15,16 @@ import BackgroundImage from "gatsby-background-image"
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
   query LayoutQuery {
-    companyLogo: file(absolutePath: { regex: "/aaml-logo.png/" }) {
+    companyLogoLarge: file(absolutePath: { regex: "/aaml-logo.png/" }) {
       childImageSharp {
         fixed(width: 150, height: 150) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    companyLogoSmall: file(absolutePath: { regex: "/aaml-logo.png/" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -100,7 +107,7 @@ const Layout = ({ location, children }) => {
       <footer className="footer">
         <div className="pages">
           <p>Pages</p>
-          <ul>
+          <ul className="footer-link-list">
             <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
             <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
             <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
@@ -156,7 +163,7 @@ const Layout = ({ location, children }) => {
           <Image
             Tag="section"
             className="container-home-hero"
-            fixed={data.companyLogo.childImageSharp.fixed}
+            fixed={data.companyLogoLarge.childImageSharp.fixed}
           />
           <p className="tagline">#StandWithMiLB</p>
         </div>
@@ -173,7 +180,7 @@ const IndexNav = ({ data }) => (
       <Link to="/">
         <Image
           className="site-logo"
-          fixed={data.companyLogo.childImageSharp.fixed}
+          fixed={data.companyLogoLarge.childImageSharp.fixed}
           alt={data.site.siteMetadata.title}
         />
       </Link>
@@ -236,17 +243,28 @@ const IndexNav = ({ data }) => (
 
 const SmallDisplayNav = ({ data }) => {
   return (
-    <nav className="navbar">
+    <nav className="navbar mobile-navbar">
       <span className="logo">
         <Link to="/">
           <Image
-            className="site-logo"
-            fixed={data.companyLogo.childImageSharp.fixed}
+            className="site-logo mobile"
+            fixed={data.companyLogoSmall.childImageSharp.fixed}
             alt={data.site.siteMetadata.title}
           />
         </Link>
       </span>
-
+      <Hamburger />
     </nav>
   )
 }
+
+const Hamburger = ({ ...props }) => (
+  <span className="hamburger-container">
+    <svg className="hamburger" viewBox="0 0 131 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 6C0 2.68629 2.68629 0 6 0H125C128.314 0 131 2.68629 131 6V91C131 94.3137 128.314 97 125 97H6C2.68629 97 0 94.3137 0 91V6Z" fill="#00235B" />
+      <rect x="28.5" y="24.5" width="71" height="10" rx="3.5" fill="#CC0001" stroke="#CC0001" />
+      <rect x="29" y="43" width="72" height="11" rx="4" fill="#CC0001" />
+      <rect x="29.5" y="61.5" width="71" height="10" rx="3.5" fill="#CC0001" stroke="#CC0001" />
+    </svg>
+  </span>
+)

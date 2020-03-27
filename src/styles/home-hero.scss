@@ -31,3 +31,20 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .container-home-hero {
+        .subline {
+            bottom: 7rem;
+            font-size: 32px;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .container-home-hero {
+        .subline {
+            font-size: 24px;
+        }
+    }
+}

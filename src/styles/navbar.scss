@@ -28,6 +28,10 @@
 
 .site-logo {
     border-radius: .5rem;
+
+    &.mobile {
+        width: 10%;
+    }
 }
 
 .social-icons {
@@ -46,5 +50,24 @@
 
     .twitter {
         margin: .5rem 0;
+    }
+}
+
+.mobile-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 175px;
+
+    .hamburger-container {
+        display: inline-block;
+        width: 75px;
+        height: 175px;
+        margin-top: 3rem;
+    }
+
+    .hamburger {
+        width: 100%;
     }
 }
