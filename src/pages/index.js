@@ -52,7 +52,7 @@ const Index = ({ data, location }) => {
             <p>We connected a player with a sponsor.</p>
             <p>Then, we did it again.</p>
             <p>Then, we did it again...</p>
-            <Link className="link-button" to="/our-story">
+            <Link className="link-button" to="/ourstory">
               {isSmallViewport ? "Our Story >" : "Find Out How We Came To Be"}
             </Link>
           </div>
