@@ -6,11 +6,10 @@ import '../styles/navbar.scss'
 import '../styles/home-hero.scss'
 import '../styles/footer.scss'
 
-import useMediaQuery from '../hooks/useMediaQuery'
-
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
+import Hamburger from '../svg/hamburger.svg'
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -73,7 +72,6 @@ const Layout = ({ location, children }) => {
   }
     `)
 
-  const isSmallDisplay = useMediaQuery(`(max-width: 1000px)`)
   const totalSponsorships = data.siteInfoJson.totalSponsorships
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -85,7 +83,8 @@ const Layout = ({ location, children }) => {
         className="container-home-hero"
         fluid={data.homeHero.childImageSharp.fluid}
       >
-        {isSmallDisplay ? <SmallDisplayNav data={data} /> : <IndexNav data={data} />}
+        <SmallDisplayNav data={data} />
+        <IndexNav data={data} />
         <p className="total-sponsorships">{totalSponsorships}</p>
         <div className="subline">
           <p>Players&nbsp;Sponsored through</p>
@@ -175,7 +174,7 @@ const Layout = ({ location, children }) => {
 export default Layout
 
 const IndexNav = ({ data }) => (
-  <nav className="navbar">
+  <nav className="navbar full">
     <span className="logo">
       <Link to="/">
         <Image
@@ -253,18 +252,9 @@ const SmallDisplayNav = ({ data }) => {
           />
         </Link>
       </span>
-      <Hamburger />
+      <span className="hamburger-container">
+        <Hamburger />
+      </span>
     </nav>
   )
 }
-
-const Hamburger = ({ ...props }) => (
-  <span className="hamburger-container">
-    <svg className="hamburger" viewBox="0 0 131 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 6C0 2.68629 2.68629 0 6 0H125C128.314 0 131 2.68629 131 6V91C131 94.3137 128.314 97 125 97H6C2.68629 97 0 94.3137 0 91V6Z" fill="#00235B" />
-      <rect x="28.5" y="24.5" width="71" height="10" rx="3.5" fill="#CC0001" stroke="#CC0001" />
-      <rect x="29" y="43" width="72" height="11" rx="4" fill="#CC0001" />
-      <rect x="29.5" y="61.5" width="71" height="10" rx="3.5" fill="#CC0001" stroke="#CC0001" />
-    </svg>
-  </span>
-)

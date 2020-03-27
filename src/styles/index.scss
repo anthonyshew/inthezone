@@ -255,15 +255,15 @@
 
             .person-block {
                 &.player {
-                    top: 5%;
-                    right: -40px;
+                    top: 4%;
+                    right: -1rem;
                 }
             }
 
             .person-block {
                 &.sponsor {
-                    bottom: -5%;
-                    right: -40px;
+                    bottom: 4%;
+                    right: -1rem;
                 }
             }
         }
@@ -279,14 +279,14 @@
             .person-block {
                 &.player {
                     top: 10%;
-                    right: -42px;
+                    right: -1rem;
                 }
             }
 
             .person-block {
                 &.sponsor {
                     bottom: 10%;
-                    right: -42px;
+                    right: -1rem;
                 }
             }
         }
@@ -302,14 +302,14 @@
             .person-block {
                 &.player {
                     top: 8%;
-                    right: -8%;
+                    right: -1rem;
                 }
             }
 
             .person-block {
                 &.sponsor {
                     bottom: 8%;
-                    right: -8%;
+                    right: -1rem;
                 }
             }
         }
@@ -325,7 +325,7 @@
 
                 &.player,
                 &.sponsor {
-                    right: -6%;
+                    right: -1rem;
                 }
             }
         }

@@ -7,8 +7,6 @@ import SEO from "../components/seo"
 import Carousel from '../components/carousel'
 import Image from "gatsby-image"
 
-import useMediaQuery from '../hooks/useMediaQuery'
-
 export default ({ data, location }) => {
     return (
         <Layout location={location}>
