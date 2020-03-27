@@ -85,8 +85,7 @@ const Layout = ({ location, children }) => {
         className="container-home-hero"
         fluid={data.homeHero.childImageSharp.fluid}
       >
-        <IndexNav data={data} />
-        {/* {isSmallDisplay ? <SmallDisplayNav data={data} /> : <IndexNav data={data} />} */}
+        {isSmallDisplay ? <SmallDisplayNav data={data} /> : <IndexNav data={data} />}
         <p className="total-sponsorships">{totalSponsorships}</p>
         <div className="subline">
           <p>Players&nbsp;Sponsored through</p>
