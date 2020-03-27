@@ -25,6 +25,10 @@
             font-weight: 900;
         }
     }
+
+    .link-button {
+        font-weight: 900;
+    }
 }
 
 .section-carousel {
@@ -206,7 +210,8 @@
     .section-messages {
         .container-message {
             flex-basis: 100%;
-            padding: 5%;
+            padding: 2%;
+            padding-bottom: 3rem;
         }
 
         .container-sponsor-message {
@@ -240,17 +245,25 @@
             margin: 1rem;
             padding: 3rem;
 
+            .text {
+                width: 55%;
+
+                .link-button {
+                    padding: 1rem .5rem;
+                }
+            }
+
             .person-block {
                 &.player {
-                    top: -5%;
-                    right: -40px;
+                    top: 3%;
+                    right: -1rem;
                 }
             }
 
             .person-block {
                 &.sponsor {
-                    bottom: -5%;
-                    right: -40px;
+                    bottom: 3%;
+                    right: -1rem;
                 }
             }
         }
@@ -266,14 +279,14 @@
             .person-block {
                 &.player {
                     top: 10%;
-                    right: -42px;
+                    right: -1rem;
                 }
             }
 
             .person-block {
                 &.sponsor {
                     bottom: 10%;
-                    right: -42px;
+                    right: -1rem;
                 }
             }
         }
@@ -289,14 +302,14 @@
             .person-block {
                 &.player {
                     top: 8%;
-                    right: -8%;
+                    right: -1rem;
                 }
             }
 
             .person-block {
                 &.sponsor {
                     bottom: 8%;
-                    right: -8%;
+                    right: -1rem;
                 }
             }
         }
@@ -312,7 +325,7 @@
 
                 &.player,
                 &.sponsor {
-                    right: -6%;
+                    right: -1rem;
                 }
             }
         }

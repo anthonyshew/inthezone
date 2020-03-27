@@ -46,6 +46,13 @@
     }
 
     .two {
+
+        &:before,
+        &:after {
+            filter: brightness(.8);
+        }
+
+
         h3 {
             left: 25%;
         }
@@ -58,6 +65,12 @@
     }
 
     .three {
+
+        &:before,
+        &.after {
+            filter: brightness(.8);
+        }
+
         h3 {
             left: 50%;
         }
@@ -86,6 +99,7 @@
     .step-button {
         position: absolute;
         bottom: 1rem;
+        color: $blue;
         cursor: pointer;
         transition: .2s all linear;
 
