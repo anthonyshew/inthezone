@@ -11,7 +11,7 @@ import useMediaQuery from '../hooks/useMediaQuery'
 
 export default ({ data, location }) => {
     return (
-        <Layout>
+        <Layout location={location}>
             <div className="our-story">
                 This is where our story goes.
             </div>
