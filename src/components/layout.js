@@ -335,7 +335,7 @@ const Footer = ({ data }) => (
         <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
         <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
         <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
-        <li><Link className="link" activeClassName="active" to="/ourstory">Our Story</Link></li>
+        <li><Link className="link" activeClassName="active" to="/our-story">Our Story</Link></li>
         <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
         <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>
