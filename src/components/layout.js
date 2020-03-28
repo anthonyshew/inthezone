@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, useCallback } from "react"
 import { Link } from "gatsby"
 import '../styles/reset.scss'
 import '../styles/global.scss'
@@ -248,17 +248,10 @@ const MobileMenu = ({ setIsOpen }) => {
   const last = useRef()
   const shifted = useRef(false)
 
-  const handleClose = (e) => {
+  const handleClose = useCallback((e) => {
     container.current.classList.add("out")
     setTimeout(() => { setIsOpen(false) }, 250)
-  }
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Shift") shifted.current = true
-    if (e.key === "Escape") handleClose()
-    if (e.key === "Tab" && last.current === document.activeElement) first.current.focus()
-    if (e.key === "Tab" && first.current === document.activeElement && shifted.current) last.current.focus()
-  }
+  }, [setIsOpen])
 
   const handleKeyUp = (e) => {
     if (e.key === "Shift") shifted.current = false
@@ -267,6 +260,12 @@ const MobileMenu = ({ setIsOpen }) => {
   useEffect(() => {
     const background = container.current
     const lastLink = last.current
+    const handleKeyDown = (e) => {
+      if (e.key === "Shift") shifted.current = true
+      if (e.key === "Escape") handleClose()
+      if (e.key === "Tab" && last.current === document.activeElement) first.current.focus()
+      if (e.key === "Tab" && first.current === document.activeElement && shifted.current) last.current.focus()
+    }
 
     first.current.focus()
     background.addEventListener('keydown', handleKeyDown)
@@ -278,7 +277,7 @@ const MobileMenu = ({ setIsOpen }) => {
       lastLink.removeEventListener('keydown', handleKeyDown)
       background.removeEventListener('keyup', handleKeyUp)
     }
-  }, [])
+  }, [handleClose])
 
   return (
     <div className="mobile-menu-container"
@@ -292,7 +291,7 @@ const MobileMenu = ({ setIsOpen }) => {
           tabIndex={0}
           onClick={handleClose}
           onKeyDown={(e) => {
-            if (e.key === "Enter") setIsOpen(false)
+            if (e.key === "Enter") handleClose()
           }}
         >
 
