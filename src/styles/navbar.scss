@@ -85,10 +85,22 @@
     .link-list {
         max-width: initial;
         height: 150px;
+        margin-right: 5rem;
 
         .link {
             margin: 0 2rem;
             flex-basis: initial;
+        }
+    }
+
+    .social-icons {
+        top: .6rem;
+
+        .facebook-img,
+        .twitter-img,
+        .instagram-img {
+            border-radius: 1rem;
+            box-shadow: initial;
         }
     }
 }

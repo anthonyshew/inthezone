@@ -32,21 +32,21 @@ const Layout = ({ location, children }) => {
     }
     facebookLogo: file(absolutePath: { regex: "/facebook-logo.png/" }) {
       childImageSharp {
-        fixed(width: 75, height: 75) {
+        fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     twitterLogo: file(absolutePath: { regex: "/twitter-logo.png/" }) {
       childImageSharp {
-        fixed(width: 75, height: 75) {
+        fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     instagramLogo: file(absolutePath: { regex: "/instagram-logo.png/" }) {
       childImageSharp {
-        fixed(width: 75, height: 75) {
+        fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -204,6 +204,44 @@ const PageNav = ({ data }) => (
       <Link to="/blog" className="link">
         Blog
       </Link>
+    </span>
+    <span className="social-icons">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="facebook"
+        href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
+      >
+        <Image
+          className="facebook-img"
+          fixed={data.facebookLogo.childImageSharp.fixed}
+          alt={`${data.site.siteMetadata.title}'s Facebook Group`}
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="twitter"
+        href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
+      >
+        <Image
+          className="twitter-img"
+          fixed={data.twitterLogo.childImageSharp.fixed}
+          alt={`${data.site.siteMetadata.title}'s Twitter Page`}
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="instagram"
+        href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
+      >
+        <Image
+          className="instagram-img"
+          fixed={data.instagramLogo.childImageSharp.fixed}
+          alt={`${data.site.siteMetadata.title}'s Instagram Page`}
+        />
+      </a>
     </span>
   </nav>
 )
