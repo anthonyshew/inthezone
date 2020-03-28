@@ -11,7 +11,7 @@ import useBodyScrollLock from '../hooks/useBodyScrollLock'
 import Image from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import Hamburger from '../svg/hamburger.svg'
-import Xburger from '../svg/Xburger.svg'
+import Xburger from '../svg/xburger.svg'
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
