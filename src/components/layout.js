@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import { Link } from "gatsby"
 import '../styles/reset.scss'
 import '../styles/global.scss'
@@ -83,8 +83,8 @@ const Layout = ({ location, children }) => {
         className="container-home-hero"
         fluid={data.homeHero.childImageSharp.fluid}
       >
-        <SmallDisplayNav data={data} />
         <IndexNav data={data} />
+        <SmallDisplayNav data={data} />
         <p className="total-sponsorships">{totalSponsorships}</p>
         <div className="subline">
           <p>Players&nbsp;Sponsored through</p>
@@ -94,79 +94,18 @@ const Layout = ({ location, children }) => {
     )
   } else {
     header = (
-      <div className="page-hero">
-        A navbar goes here.
-      </div>
+      <>
+        <PageNav data={data} />
+        <SmallDisplayNav data={data} />
+      </>
     )
   }
+
   return (
     <>
       <header>{header}</header>
       <main>{children}</main>
-      <footer className="footer">
-        <div className="pages">
-          <p>Pages</p>
-          <ul className="footer-link-list">
-            <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
-            <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
-            <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
-            <li><Link className="link" activeClassName="active" to="/ourstory">Our Story</Link></li>
-            <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
-            <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
-            <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>
-            <li><Link className="link" activeClassName="active" to="/privacy-policy">Privacy Policy</Link></li>
-          </ul>
-        </div>
-        <div className="socials">
-          <p>Connect With Us!</p>
-          <span className="icons">
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="facebook"
-              href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
-            >
-              <Image
-                className="facebook-img"
-                fixed={data.facebookLogo.childImageSharp.fixed}
-                alt={`${data.site.siteMetadata.title}'s Facebook Group`}
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="twitter"
-              href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
-            >
-              <Image
-                className="twitter-img"
-                fixed={data.twitterLogo.childImageSharp.fixed}
-                alt={`${data.site.siteMetadata.title}'s Twitter Page`}
-              />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="instagram"
-              href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
-            >
-              <Image
-                className="instagram-img"
-                fixed={data.instagramLogo.childImageSharp.fixed}
-                alt={`${data.site.siteMetadata.title}'s Instagram Page`}
-              />
-            </a>
-          </span>
-        </div>
-        <div className="logo-container">
-          <Image
-            Tag="section"
-            className="container-home-hero"
-            fixed={data.companyLogoLarge.childImageSharp.fixed}
-          />
-          <p className="tagline">#StandWithMiLB</p>
-        </div>
-      </footer>
+      <Footer data={data} />
     </>
   )
 }
@@ -188,8 +127,7 @@ const IndexNav = ({ data }) => (
       <Link to="/dear-players" className="link">
         Dear Players
       </Link>
-
-      <Link to="/Our Story" className="link">
+      <Link to="/our-story" className="link">
         Our Story
       </Link>
       <Link to="/dear-sponsors" className="link">
@@ -240,7 +178,37 @@ const IndexNav = ({ data }) => (
   </nav>
 )
 
+const PageNav = ({ data }) => (
+  <nav className="navbar full page-nav">
+    <span className="logo">
+      <Link to="/">
+        <Image
+          className="site-logo"
+          fixed={data.companyLogoLarge.childImageSharp.fixed}
+          alt={data.site.siteMetadata.title}
+        />
+      </Link>
+    </span>
+    <span className="link-list">
+      <Link to="/dear-players" className="link">
+        Dear Players
+      </Link>
+      <Link to="/our-story" className="link">
+        Our Story
+      </Link>
+      <Link to="/dear-sponsors" className="link">
+        Dear Sponsors
+      </Link>
+      <Link to="/blog" className="link">
+        Blog
+      </Link>
+    </span>
+  </nav>
+)
+
 const SmallDisplayNav = ({ data }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <nav className="navbar mobile-navbar">
       <span className="logo">
@@ -252,9 +220,98 @@ const SmallDisplayNav = ({ data }) => {
           />
         </Link>
       </span>
+      <span className="mobile-nav-text">
+        Connecting minor leaguers with fan sponsors.
+        </span>
       <span className="hamburger-container">
-        <Hamburger />
+        <Hamburger onClick={() => setIsOpen(true)}
+        />
       </span>
-    </nav>
+      {isOpen && <MobileMenu setIsOpen={setIsOpen} />}
+    </nav >
   )
 }
+
+const MobileMenu = ({ setIsOpen }) => {
+  const container = useRef(null)
+
+  return (
+    <div className="mobile-menu-container" ref={container} onClick={() => {
+      container.current.classList.add("out")
+      setTimeout(() => {
+        setIsOpen(false)
+      }, 250)
+    }}>
+      <div className="mobile-menu" >
+        This is a mobile menu, it's beautiful.
+      </div>
+    </div>
+  )
+}
+
+const Footer = ({ data }) => (
+  <footer className="footer">
+    <div className="pages">
+      <p>Pages</p>
+      <ul className="footer-link-list">
+        <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
+        <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
+        <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
+        <li><Link className="link" activeClassName="active" to="/ourstory">Our Story</Link></li>
+        <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
+        <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
+        <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>
+        <li><Link className="link" activeClassName="active" to="/privacy-policy">Privacy Policy</Link></li>
+      </ul>
+    </div>
+    <div className="socials">
+      <p>Connect With Us!</p>
+      <span className="icons">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="facebook"
+          href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
+        >
+          <Image
+            className="facebook-img"
+            fixed={data.facebookLogo.childImageSharp.fixed}
+            alt={`${data.site.siteMetadata.title}'s Facebook Group`}
+          />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="twitter"
+          href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
+        >
+          <Image
+            className="twitter-img"
+            fixed={data.twitterLogo.childImageSharp.fixed}
+            alt={`${data.site.siteMetadata.title}'s Twitter Page`}
+          />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="instagram"
+          href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
+        >
+          <Image
+            className="instagram-img"
+            fixed={data.instagramLogo.childImageSharp.fixed}
+            alt={`${data.site.siteMetadata.title}'s Instagram Page`}
+          />
+        </a>
+      </span>
+    </div>
+    <div className="logo-container">
+      <Image
+        Tag="section"
+        className="container-home-hero"
+        fixed={data.companyLogoLarge.childImageSharp.fixed}
+      />
+      <p className="tagline">#StandWithMiLB</p>
+    </div>
+  </footer>
+)
