@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import '../styles/reset.scss'
 import '../styles/global.scss'
@@ -211,6 +211,10 @@ const PageNav = ({ data }) => (
 const SmallDisplayNav = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleKeyboardOpen = (e) => {
+    if (e.key === "Enter") setIsOpen(true)
+  }
+
   return (
     <nav className="navbar mobile-navbar">
       <span className="logo">
@@ -226,7 +230,10 @@ const SmallDisplayNav = ({ data }) => {
         Connecting minor leaguers with fan sponsors.
         </span>
       <span className="hamburger-container">
-        <Hamburger onClick={() => setIsOpen(true)}
+        <Hamburger
+          tabIndex={0}
+          onKeyDown={handleKeyboardOpen}
+          onClick={() => setIsOpen(true)}
         />
       </span>
       {isOpen && <MobileMenu setIsOpen={setIsOpen} />}
@@ -236,20 +243,62 @@ const SmallDisplayNav = ({ data }) => {
 
 const MobileMenu = ({ setIsOpen }) => {
   useBodyScrollLock()
-  const container = useRef(null)
+  const container = useRef()
+  const first = useRef()
+  const last = useRef()
+  const shifted = useRef(false)
 
-  const handleClose = () => {
+  const handleClose = (e) => {
     container.current.classList.add("out")
     setTimeout(() => { setIsOpen(false) }, 250)
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Shift") shifted.current = true
+    if (e.key === "Escape") handleClose()
+    if (e.key === "Tab" && last.current === document.activeElement) first.current.focus()
+    if (e.key === "Tab" && first.current === document.activeElement && shifted.current) last.current.focus()
+  }
+
+  const handleKeyUp = (e) => {
+    if (e.key === "Shift") shifted.current = false
+  }
+
+  useEffect(() => {
+    const background = container.current
+    const lastLink = last.current
+
+    first.current.focus()
+    background.addEventListener('keydown', handleKeyDown)
+    lastLink.addEventListener('keydown', handleKeyDown)
+    background.addEventListener('keyup', handleKeyUp)
+
+    return () => {
+      background.removeEventListener('keydown', handleKeyDown)
+      lastLink.removeEventListener('keydown', handleKeyDown)
+      background.removeEventListener('keyup', handleKeyUp)
+    }
+  }, [])
+
   return (
     <div className="mobile-menu-container"
       ref={container}
-      onClick={handleClose}
+      role="navigation"
     >
-      <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
-        <Xburger onClick={handleClose} />
+      <div className="mobile-menu" role="region">
+        <button
+          className="xburger-container"
+          ref={first}
+          tabIndex={0}
+          onClick={handleClose}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") setIsOpen(false)
+          }}
+        >
+
+          <Xburger />
+        </button>
+
         <div className="content">
           <div className="link-list">
             <div className="link-container">
@@ -258,17 +307,17 @@ const MobileMenu = ({ setIsOpen }) => {
             </Link>
             </div>
             <div className="link-container">
-              <Link to="/our-story" className="link">
-                Our Story
-            </Link>
-            </div>
-            <div className="link-container">
               <Link to="/dear-sponsors" className="link">
                 Dear Sponsors
             </Link>
             </div>
             <div className="link-container">
-              <Link to="/blog" className="link">
+              <Link to="/our-story" className="link">
+                Our Story
+            </Link>
+            </div>
+            <div className="link-container">
+              <Link to="/blog" className="link" ref={last} >
                 Blog
             </Link>
             </div>

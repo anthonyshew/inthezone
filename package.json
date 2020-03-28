@@ -14,7 +14,7 @@
     "build": "gatsby build && netlify-lambda build src/.netlify/functions",
     "build:app": "gatsby build",
     "build:lambda": "netlify-lambda build src/.netlify/functions",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -p 3000",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },

@@ -63,8 +63,8 @@
     .mobile-nav-text {
         padding: 2rem;
         color: $blue;
-        font-size: 24px;
-        font-family: $raleway;
+        font-size: 28px;
+        font-family: $passion;
         text-align: center;
     }
 
@@ -139,12 +139,27 @@
             }
         }
 
-        .xburger {
+
+
+        .xburger,
+        .xburger-container {
             position: absolute;
-            top: 1.5rem;
-            right: 1rem;
             width: 75px;
             cursor: pointer;
+        }
+
+        .xburger {
+            top: 0;
+            left: -2px;
+            width: 80px;
+        }
+
+        .xburger-container {
+            display: inline-block;
+            height: 55.53px;
+            top: 1.5rem;
+            right: 1rem;
+            border: none;
         }
 
         .content {
