@@ -77,6 +77,7 @@
 
     .hamburger {
         width: 75px;
+        cursor: pointer;
     }
 }
 
@@ -98,16 +99,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: gray;
-    z-index: 999999;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 999;
     animation: fadeIn .25s ease forwards;
     opacity: 0;
-
-    @keyframes fadeIn {
-        100% {
-            opacity: 1;
-        }
-    }
 
     &.out {
         animation: fadeOut .25s ease forwards;
@@ -128,8 +123,10 @@
         top: 0;
         right: 0;
         bottom: 0;
-        width: 250px;
-        background-color: green;
+        width: 75%;
+        background-color: $blue;
+        color: $white;
+        z-index: 1000;
         animation: slideIn .5s ease;
 
         @keyframes slideIn {
@@ -138,9 +135,59 @@
             }
 
             100% {
-                width: 250px;
+                width: 75%;
             }
         }
+
+        .xburger {
+            position: absolute;
+            top: 1.5rem;
+            right: 1rem;
+            width: 75px;
+            cursor: pointer;
+        }
+
+        .content {
+            width: 75%;
+            margin: 0 auto;
+            animation: fadeIn .5s ease forwards, slideUp .5s ease forwards;
+            animation-delay: .3s;
+            opacity: 0;
+
+            .link-list {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                margin-top: 7rem;
+
+                .link-container {
+                    width: 95%;
+                    padding: .2rem;
+                    border-bottom: 2px solid $gray;
+                }
+
+                .link {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translate(0)
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
     }
 }
 

@@ -7,9 +7,11 @@ import '../styles/home-hero.scss'
 import '../styles/footer.scss'
 
 import { useStaticQuery, graphql } from "gatsby"
+import useBodyScrollLock from '../hooks/useBodyScrollLock'
 import Image from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 import Hamburger from '../svg/hamburger.svg'
+import Xburger from '../svg/Xburger.svg'
 
 const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
@@ -233,17 +235,45 @@ const SmallDisplayNav = ({ data }) => {
 }
 
 const MobileMenu = ({ setIsOpen }) => {
+  useBodyScrollLock()
   const container = useRef(null)
 
+  const handleClose = () => {
+    container.current.classList.add("out")
+    setTimeout(() => { setIsOpen(false) }, 250)
+  }
+
   return (
-    <div className="mobile-menu-container" ref={container} onClick={() => {
-      container.current.classList.add("out")
-      setTimeout(() => {
-        setIsOpen(false)
-      }, 250)
-    }}>
-      <div className="mobile-menu" >
-        This is a mobile menu, it's beautiful.
+    <div className="mobile-menu-container"
+      ref={container}
+      onClick={handleClose}
+    >
+      <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+        <Xburger onClick={handleClose} />
+        <div className="content">
+          <div className="link-list">
+            <div className="link-container">
+              <Link to="/dear-players" className="link">
+                Dear Players
+            </Link>
+            </div>
+            <div className="link-container">
+              <Link to="/our-story" className="link">
+                Our Story
+            </Link>
+            </div>
+            <div className="link-container">
+              <Link to="/dear-sponsors" className="link">
+                Dear Sponsors
+            </Link>
+            </div>
+            <div className="link-container">
+              <Link to="/blog" className="link">
+                Blog
+            </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
