@@ -21,7 +21,7 @@ const Index = ({ data, location }) => {
       <section className="section-messages">
         <div className="container-message container-player-message">
           <h2>Dear Player,</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>You have a certain set of needs unlike any other. You're in the top .0001% of people who do what you do but it probably doesn't feel like it financially. Adopt a Minor Leaguer and our sponsor network are here to help you achieve your goals - and provide a little more comfort along the way. Our confidential process gets you the help you deserve.</p>
           <div className="container-link-button">
             <Link className="link-button" to="/dear-players">
               More&nbsp;Info&nbsp;&<br />Player&nbsp;Sign-Up
@@ -30,7 +30,7 @@ const Index = ({ data, location }) => {
         </div>
         <div className="container-message container-sponsor-message">
           <h2>Dear Sponsor,</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>You love baseball - and you know about the questionable treatment that minor leaguers receive. But here's the good part: You have the opportunity to help these young men achieve their dreams. By becoming a sponsor, you can impact a minor leaguer's life with a 1-to-1 relationship that he will remember forever.</p>
           <div className="container-link-button">
             <Link className="link-button" to="/dear-sponsors">
               More&nbsp;Info&nbsp;&<br />Sponsor&nbsp;Registration

@@ -2,14 +2,12 @@
 
 .section-messages {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 
     .container-message {
-        padding: 2rem 5%;
-        flex-basis: 50%;
+        position: relative;
+        margin: 2rem 5%;
+        padding-bottom: 7rem;
+        flex: 1;
 
         h2 {
             margin-bottom: 2rem;
@@ -20,9 +18,20 @@
         }
 
         p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-indent: 48px;
             font-size: 20px;
             font-weight: 900;
+            line-height: 150%;
+        }
+
+        .container-link-button {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     }
 
@@ -181,6 +190,16 @@
     }
 }
 
+@media (max-width: 815px) {
+    .section-messages {
+        .container-message {
+            h2 {
+                font-size: 44px;
+            }
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .section-story {
         .background-block {
@@ -206,12 +225,18 @@
     }
 }
 
-@media (max-width: 667px) {
+@media (max-width: 750px) {
     .section-messages {
+        flex-wrap: wrap;
+
         .container-message {
             flex-basis: 100%;
             padding: 2%;
-            padding-bottom: 3rem;
+            padding-bottom: 0;
+
+            .container-link-button {
+                position: relative;
+            }
         }
 
         .container-sponsor-message {
@@ -333,5 +358,13 @@
 
     .link-button {
         padding: 1rem .5rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .container-sponsor-message {
+        .link-button {
+            padding: 1rem;
+        }
     }
 }
