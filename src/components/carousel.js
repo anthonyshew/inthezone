@@ -80,7 +80,7 @@ export default ({ ...props }) => {
         </BackgroundImage>
       </div>
       <button
-        className="step-button previous"
+        className="button-default step-button previous"
         onClick={() => {
           if (step < 1) { return } else {
             setStep(step - 1)
@@ -90,7 +90,7 @@ export default ({ ...props }) => {
         Previous
             </button>
       <button
-        className="step-button next"
+        className="button-default step-button next"
         onClick={() => {
           if (step > 3) { return } else {
             setStep(step + 1)
