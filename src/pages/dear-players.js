@@ -16,8 +16,8 @@ export default ({ location }) => {
     )
 }
 
-const SuccessMessage = ({name}) => (
-<p>Thank you for signing up, {name}! You'll be hearing from us shortly (usually within the next 24 hours).</p>
+const SuccessMessage = ({lastName}) => (
+<p>Thank you for signing up, {lastName}! You'll be hearing from us shortly (usually within the next 24 hours).</p>
 )
 
 const SignUpForm = ({setSuccess}) => {
@@ -32,10 +32,7 @@ const SignUpForm = ({setSuccess}) => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(res => {
-                console.log(res)
-                setSuccess(true)
-            })
+            .then(res => setSuccess(true))
     }
 
     return (

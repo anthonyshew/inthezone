@@ -10,16 +10,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 sendGrid.setApiKey(process.env.SENDGRID_API_KEY)
 
-router.get('/hello', (req, res) => {
-    res.send({ msg: "hello, world" })
-})
-
 router.post('/player-registration', (req, res) => {
     const { firstName, lastName, organization, email, phoneNumber } = req.body
 
     const emailMessage = {
-        to: "anthony@shewperman.dev",
-        from: "anthony@shewperman.dev",
+        to: [process.env.EMAIL_TO, process.env.EMAIL_AGENCY],
+        from: email,
         subject: `New Player Sign Up!: ${firstName} ${lastName}`,
         html: `<h1>A new player has signed up for sponsorship.</h1>
     <div><h2>First Name: </h2><span>${firstName}</span><div>
@@ -35,7 +31,7 @@ router.post('/player-registration', (req, res) => {
             statusCode: 200,
             success: true,
             errors: [],
-            data: req.body
+            data: null
         }))
         .catch(err => res.send(err))
 })
