@@ -10,14 +10,14 @@ export default ({ location }) => {
     return (
         <Layout location={location}>
             <div className="page-dear-players">
-            {success ? <SuccessMessage  /> : <SignUpForm setSuccess={setSuccess} />}
+            {success ? <SuccessMessage name={success}  /> : <SignUpForm setSuccess={setSuccess} />}
             </div>
         </Layout>
     )
 }
 
-const SuccessMessage = () => (
-    <p>Thank you for signing up! You'll be hearing from us shortly (usually within the next 24 hours).</p>
+const SuccessMessage = ({name}) => (
+<p>Thank you for signing up, {name}! You'll be hearing from us shortly (usually within the next 24 hours).</p>
 )
 
 const SignUpForm = ({setSuccess}) => {
@@ -32,7 +32,7 @@ const SignUpForm = ({setSuccess}) => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(res => setSuccess(true))
+            .then(res => setSuccess(res.data))
     }
 
     return (

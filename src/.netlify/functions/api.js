@@ -15,7 +15,7 @@ router.get('/hello', (req, res) => {
 })
 
 router.post('/player-registration', (req, res) => {
-    const { firstName, lastName, organization, email, phoneNumber } = (req.body)
+    const { firstName, lastName, organization, email, phoneNumber } = req.body
 
     const emailMessage = {
         to: "anthony@shewperman.dev",
@@ -41,7 +41,7 @@ router.post('/player-registration', (req, res) => {
 })
 
 router.post('/sponsor-registration', (req, res) => {
-    const { firstName, lastName, teams, email, phoneNumber } = (req.body)
+    const { firstName, lastName, teams, email, phoneNumber } = req.body
 
     let teamString = teams.filter(elem => elem !== false).join(", ")
 
@@ -64,7 +64,7 @@ router.post('/sponsor-registration', (req, res) => {
         statusCode: 200,
         success: true,
         errors: [],
-        data: null
+        data: firstName
     })
 })
 
