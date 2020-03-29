@@ -31,6 +31,7 @@ router.post('/player-registration', (req, res) => {
     }
 
     sendGrid.send(emailMessage)
+        .catch(err => res.send(err))
 
     res.send({
         statusCode: 200,
