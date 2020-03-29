@@ -27,11 +27,11 @@ router.post('/player-registration', (req, res) => {
     }
 
     sendGrid.send(emailMessage)
-        .then(res => res.send({
+        .then(response => res.send({
             statusCode: 200,
             success: true,
             errors: [],
-            data: null
+            data: firstName
         }))
         .catch(err => res.send(err))
 })
@@ -42,7 +42,7 @@ router.post('/sponsor-registration', (req, res) => {
     let teamString = teams.filter(elem => elem !== false).join(", ")
 
     const emailMessage = {
-        to: process.env.EMAIL_TO,
+        to: [process.env.EMAIL_TO, process.env.EMAIL_AGENCY],
         from: email,
         subject: `New Sponsor Sign Up!: ${firstName} ${lastName}`,
         html: `<h1>A new player has signed up for sponsorship.</h1>
@@ -55,13 +55,13 @@ router.post('/sponsor-registration', (req, res) => {
     }
 
     sendGrid.send(emailMessage)
-
-    res.send({
-        statusCode: 200,
-        success: true,
-        errors: [],
-        data: firstName
-    })
+        .then(response => res.send({
+            statusCode: 200,
+            success: true,
+            errors: [],
+            data: firstName
+        }))
+        .catch(err => res.send(err))
 })
 
 if (process.env.ENVIRONMENT !== 'PRODUCTION') {
