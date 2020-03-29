@@ -26,9 +26,9 @@ const SignUpForm = ({setSuccess}) => {
         if (data.honeypot.length > 0) return console.log('Hello, robot!')
         fetch("/.netlify/functions/api/player-registration", {
             method: "POST",
-            // headers: {
-            //     "Content-Type": "application/json"
-            // },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(data)
         })
             .then(res => res.json())
