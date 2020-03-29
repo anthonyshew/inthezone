@@ -36,7 +36,7 @@ router.post('/player-registration', (req, res) => {
         statusCode: 200,
         success: true,
         errors: [],
-        data: firstName
+        data: req.body
     })
 })
 
