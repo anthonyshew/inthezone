@@ -10,7 +10,7 @@ export default ({ location }) => {
     return (
         <Layout location={location}>
             <div className="page-dear-players">
-            {success ? <SuccessMessage name={success}  /> : <SignUpForm setSuccess={setSuccess} />}
+            {success ? <SuccessMessage /> : <SignUpForm setSuccess={setSuccess} />}
             </div>
         </Layout>
     )
@@ -32,7 +32,10 @@ const SignUpForm = ({setSuccess}) => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(res => setSuccess(res.data))
+            .then(res => {
+                console.log(res)
+                setSuccess(true)
+            })
     }
 
     return (
