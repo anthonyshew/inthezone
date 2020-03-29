@@ -107,6 +107,11 @@ const Index = ({ data, location }) => {
             </div>
           )
         })}
+        <div className="container-link-button">
+          <Link to="/blog" className="link-button">
+            Visit All Posts
+        </Link>
+        </div>
       </section>
     </Layout>
   )

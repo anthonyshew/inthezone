@@ -6,7 +6,7 @@ export default ({ data, location }) => {
     return (
         <Layout location={location}>
             <div className="our-story">
-                This is where our story goes.
+                Pardon our dust! this page is still being constructed.
             </div>
         </Layout>
     )
