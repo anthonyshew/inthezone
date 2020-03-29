@@ -1,6 +1,6 @@
 @import './global.scss';
 
-.page-dear-players {
+.page-dear-sponsors {
 
     form {
         display: flex;
@@ -11,6 +11,11 @@
         h1 {
             font-size: 36px;
             font-family: $passion;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 24px;
         }
 
         .error {
@@ -56,6 +61,48 @@
             width: 0;
             height: 0;
             pointer-events: none;
+        }
+
+        .container-checkbox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkbox {
+            position: relative;
+            display: inline-block;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            min-width: initial;
+            border: 2px solid $blue;
+            appearance: none;
+            transition: all .25s;
+
+            &:checked {
+                background-color: $blue;
+
+                &:after {
+                    content: '\2713';
+                    position: absolute;
+                    left: 6px;
+                    color: $white;
+                    font-size: 18px;
+                    outline: none;
+                }
+            }
+        }
+
+        .checkbox-label {
+            display: inline-block;
+            width: initial;
+            min-width: initial;
+            max-width: initial;
+            padding-left: .5rem;
+            font-size: 18px;
+            font-weight: 400;
         }
 
         .submit-button {

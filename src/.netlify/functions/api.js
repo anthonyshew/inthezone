@@ -10,18 +10,45 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 sendGrid.setApiKey(process.env.SENDGRID_API_KEY)
 
-// API calls
-router.get('/hola', (req, res) => {
-    res.send({ msg: 'Hello from a backend server' })
-})
+router.post('/player-registration', (req, res) => {
+    const { firstName, lastName, organization, email, phoneNumber } = (req.body)
 
-router.post('/mail', (req, res) => {
     const emailMessage = {
         to: process.env.AGENCY_EMAIL,
         from: process.env.CLIENT_EMAIL,
-        subject: 'Message from MMSI!',
-        html: `<h1>It worked!</h1>
-    <p>A message.</p>
+        subject: `New Player Sign Up!: ${firstName} ${lastName}`,
+        html: `<h1>A new player has signed up for sponsorship.</h1>
+    <div><h2>First Name: </h2><span>${firstName}</span><div>
+    <div><h2>Last Name: </h2><span>${lastName}</span><div>
+    <div><h2>Organization: </h2><span>${organization}</span><div>
+    <div><h2>E-mail: </h2><span>${email}</span><div>
+    <div><h2>Phone Number: </h2><span>${phoneNumber}</span><div>
+    `,
+    }
+
+    sendGrid.send(emailMessage)
+
+    res.send({
+        statusCode: 200,
+        success: true,
+        errors: [],
+        data: null
+    })
+})
+
+router.post('/sponsor-registration', (req, res) => {
+    const { firstName, lastName, organizations, email, phoneNumber } = (req.body)
+
+    const emailMessage = {
+        to: process.env.AGENCY_EMAIL,
+        from: process.env.CLIENT_EMAIL,
+        subject: `New Sponsor Sign Up!: ${firstName} ${lastName}`,
+        html: `<h1>A new player has signed up for sponsorship.</h1>
+    <div><h2>First Name: </h2><span>${firstName}</span><div>
+    <div><h2>Last Name: </h2><span>${lastName}</span><div>
+    <div><h2>Organizations of Interest: </h2><span>${organizations}</span><div>
+    <div><h2>E-mail: </h2><span>${email}</span><div>
+    <div><h2>Phone Number: </h2><span>${phoneNumber}</span><div>
     `,
     }
 
