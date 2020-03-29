@@ -3,12 +3,14 @@ import '../styles/audience-forms.scss'
 import { useForm } from 'react-hook-form'
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default ({ location }) => {
     const [success, setSuccess] = useState(false)
 
     return (
         <Layout location={location}>
+        <SEO title="Player Sign Up Form" />
             <div className="page-dear-players">
             {success ? <SuccessMessage /> : <SignUpForm setSuccess={setSuccess} />}
             </div>

@@ -3,12 +3,14 @@ import '../styles/audience-forms.scss'
 import { useForm, useFieldArray } from 'react-hook-form'
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export default ({ location }) => {
     const [success, setSuccess] = useState(false)
 
     return (
         <Layout location={location}>
+        <SEO title="Sponsor Sign Up Form" />
             <div className="page-dear-sponsors">
             {success ? <SuccessMessage  /> : <SignUpForm setSuccess={setSuccess} />}
             </div>
