@@ -10,6 +10,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 sendGrid.setApiKey(process.env.SENDGRID_API_KEY)
 
+router.get('/hello', (req, res) => {
+    res.send({ msg: "hello, world" })
+})
+
 router.post('/player-registration', (req, res) => {
     const { firstName, lastName, organization, email, phoneNumber } = (req.body)
 
