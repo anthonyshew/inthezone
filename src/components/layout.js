@@ -132,8 +132,8 @@ const IndexNav = ({ data }) => (
       <Link to="/dear-sponsors" className="link">
         Dear Sponsors
       </Link>
-      <Link to="/our-story" className="link">
-        Our Story
+      <Link to="/about-us" className="link">
+        About Us
       </Link>
       <Link to="/blog" className="link">
         Blog
@@ -198,8 +198,8 @@ const PageNav = ({ data }) => (
       <Link to="/dear-sponsors" className="link">
         Dear Sponsors
       </Link>
-      <Link to="/our-story" className="link">
-        Our Story
+      <Link to="/about-us" className="link">
+        About Us
       </Link>
       <Link to="/blog" className="link">
         Blog
@@ -349,8 +349,8 @@ const MobileMenu = ({ setIsOpen }) => {
             </Link>
             </div>
             <div className="link-container">
-              <Link to="/our-story" className="link">
-                Our Story
+              <Link to="/about-us" className="link">
+                About Us
             </Link>
             </div>
             <div className="link-container">
@@ -373,7 +373,7 @@ const Footer = ({ data }) => (
         <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
         <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
         <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
-        <li><Link className="link" activeClassName="active" to="/our-story">Our Story</Link></li>
+        <li><Link className="link" activeClassName="active" to="/about-us">About Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
         <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>

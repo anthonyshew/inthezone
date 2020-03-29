@@ -7,12 +7,8 @@ import SEO from "../components/seo"
 import Carousel from '../components/carousel'
 import Image from "gatsby-image"
 
-import useMediaQuery from '../hooks/useMediaQuery'
-
 const Index = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
-
-  const isSmallViewport = useMediaQuery(`(max-width: 450px)`)
 
   return (
     <Layout location={location}>
@@ -52,8 +48,8 @@ const Index = ({ data, location }) => {
             <p>We connected a player with a sponsor.</p>
             <p>Then, we did it again.</p>
             <p>Then, we did it again...</p>
-            <Link className="link-button" to="/our-story">
-              {isSmallViewport ? "Our Story >" : "Find Out How We Came To Be"}
+            <Link className="link-button" to="/about-us">
+              About Us
             </Link>
           </div>
           <div className="person-block company">
