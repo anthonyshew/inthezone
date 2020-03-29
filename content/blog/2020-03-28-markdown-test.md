@@ -8,19 +8,19 @@ description: >-
 ---
 **Bold.**
 
-***Italic.***
+*Italic.*
 
-H1
+# H1
 
-H2
+## H2
 
-H3
+### H3
 
-H4
+#### H4
 
-H5
+##### H5
 
-H6
+###### H6
 
 pARAPGRAPHHHHH
 
@@ -31,12 +31,13 @@ pARAPGRAPHHHHH
 * Bulleted list
 * Another bullet
 
-  * An inner bullet?!
+Some paragraph.
 
-1. Numbered list
-2. Another numbered list item
+1. Numbered.
+2. List.
+3. Is Numbered.
 
-   ![Some alt text.](/img/background.jpg "Titley Title")
+![Some alt text.](/img/background.jpg "Titley Title")
 
 
 

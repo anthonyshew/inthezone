@@ -1,4 +1,5 @@
 import React from "react"
+import '../styles/blog-post.scss'
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -15,27 +16,20 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
+      <article className="blog-post">
         <header>
-          <h1
-            style={{
-              marginBottom: 0,
-            }}
-          >
+          <h1>
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              display: `block`
-            }}
-          >
+          <p className="post-date">
             {post.frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          className="article-body"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr />
-        <footer>
-        </footer>
       </article>
 
       <nav>
