@@ -31,14 +31,13 @@ router.post('/player-registration', (req, res) => {
     }
 
     sendGrid.send(emailMessage)
+        .then(res => res.send({
+            statusCode: 200,
+            success: true,
+            errors: [],
+            data: req.body
+        }))
         .catch(err => res.send(err))
-
-    res.send({
-        statusCode: 200,
-        success: true,
-        errors: [],
-        data: process.env.TEST_VAR
-    })
 })
 
 router.post('/sponsor-registration', (req, res) => {
