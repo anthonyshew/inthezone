@@ -129,11 +129,11 @@ const IndexNav = ({ data }) => (
       <Link to="/dear-players" className="link">
         Dear Players
       </Link>
-      <Link to="/our-story" className="link">
-        Our Story
-      </Link>
       <Link to="/dear-sponsors" className="link">
         Dear Sponsors
+      </Link>
+      <Link to="/our-story" className="link">
+        Our Story
       </Link>
       <Link to="/blog" className="link">
         Blog
@@ -195,11 +195,11 @@ const PageNav = ({ data }) => (
       <Link to="/dear-players" className="link">
         Dear Players
       </Link>
-      <Link to="/our-story" className="link">
-        Our Story
-      </Link>
       <Link to="/dear-sponsors" className="link">
         Dear Sponsors
+      </Link>
+      <Link to="/our-story" className="link">
+        Our Story
       </Link>
       <Link to="/blog" className="link">
         Blog
