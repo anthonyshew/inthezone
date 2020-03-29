@@ -37,9 +37,9 @@ const SignUpForm = ({setSuccess}) => {
 
     return (
         <>
-        <div className="obligations">
+        {/* <div className="obligations">
         Obligations.
-    </div>
+    </div> */}
     <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Player Sign Up Form</h1>
         <label htmlFor="firstName">First Name</label>
