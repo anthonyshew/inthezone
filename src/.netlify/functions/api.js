@@ -45,7 +45,7 @@ router.post('/sponsor-registration', (req, res) => {
         to: [process.env.EMAIL_TO, process.env.EMAIL_AGENCY],
         from: email,
         subject: `New Sponsor Sign Up!: ${firstName} ${lastName}`,
-        html: `<h1>A new player has signed up for sponsorship.</h1>
+        html: `<h1>A new sponsor has signed up for sponsorship.</h1>
     <div><h2>First Name: </h2><span>${firstName}</span><div>
     <div><h2>Last Name: </h2><span>${lastName}</span><div>
     <div><h2>Organizations of Interest: </h2><span>${teamString}</span><div>
