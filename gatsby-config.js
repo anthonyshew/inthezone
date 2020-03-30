@@ -12,7 +12,7 @@ module.exports = {
     social: {
       twitter: `/adoptmilbplayer`,
       facebook: `/groups/218122932877473/`,
-      instagram: `/adoptamilbplayer/`
+      instagram: `/adoptanmilbplayer/`
     },
   },
   //Does this even do anything?
