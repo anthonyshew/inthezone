@@ -15,7 +15,7 @@ import Balance from '../svg/balance.svg'
 import Checkmark from '../svg/checkmark.svg'
 import User from '../svg/userWithTie.svg'
 import UserWithCog from '../svg/userWithCog.svg'
-import UserWithPencil from '../svg/userWithPencil.svg'
+import UserWithPlus from '../svg/userWithPlus.svg'
 
 export default ({ location }) => {
     const data = useStaticQuery(graphql`
@@ -102,7 +102,7 @@ export default ({ location }) => {
                     <PeoplePanel
                         heading="Mariana Guzman"
                         text="<p>Co-Founder</p><p>Board Member, Latin Affairs</p><p>Head of Sponsor Relations</p><p>Head of Latin Communications</p>"
-                        svg={<UserWithPencil />}
+                        svg={<UserWithPlus />}
                     />
                 </section>
             </div>
