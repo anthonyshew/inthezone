@@ -7,8 +7,8 @@ module.exports = {
       name: `Anthony Shew`,
       summary: `who develops things.`,
     },
-    description: `A starter blog kit`,
-    siteUrl: `https://www.shewperman.dev/`,
+    description: `#StandwithMiLB`,
+    siteUrl: `https://adoptaminorleaguer.com/`,
     social: {
       twitter: `/adoptmilbplayer`,
       facebook: `/groups/218122932877473/`,
