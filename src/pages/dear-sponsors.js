@@ -97,7 +97,7 @@ const SignUpForm = ({setSuccess}) => {
             </li>
             <li>
             <span className="list-label bold">Matchmaking:</span>
-                We usually get a match made within 48 hours but we will be patient if it means waiting for the right fit. When we have reason to believe that a certain relationship may not be the best one for player, sponsor, or AaML, we may wait for a better one. For instance, if you are interested in a particular team(s), we'll wait to have a player from that organization.<br /><br />Trust us: matching people up just for the sake of getting a match made isn't the way to go. We will make sure things are right, and, if at any point you believe you aren't matched up well, let us know.
+                We usually match sponsors to players within 48 hours but we will be patient if it means waiting for the right fit. When we have reason to believe that a certain relationship may not be the best one for player, sponsor, or AaML, we may wait for a better one. For instance, if you are interested in a particular team(s), we'll wait to have a player from that organization.<br /><br />Trust us: matching people up just for the sake of getting a match made isn't the way to go. We will make sure things are right, and, if at any point you believe you aren't matched up well, let us know.
             </li>
         </ul>
         <h3>Player Responsibilities</h3>
@@ -111,7 +111,7 @@ const SignUpForm = ({setSuccess}) => {
                 We have never had an issue with this but we do believe it is worth stating: Our players are required to be reasonable with their aid requests. If you, as a sponsor, believe your player is asking for too much, please do not hesistate to let us know.
             </li>
             <li>
-            <span className="list-label bold">Don't Be Shy!:</span>
+            <span className="list-label bold">Don't Be Shy!</span>
             Sometimes it is hard to ask for help even when you and everyone around you knows you need it. We understand how awkward it can be to say "I haven't been able to eat my favorite snack for a long time because they don't sell it in my team's town. Can you send me some?" As a sponsor, do what you can to make your player comfortable and create a relationship where this becomes easier for a player.
             </li>
         </ul>

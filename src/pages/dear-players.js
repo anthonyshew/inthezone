@@ -52,7 +52,7 @@ const SignUpForm = ({setSuccess}) => {
             </li>
             <li>
             <span className="list-label bold">Matchmaking:</span>
-                We usually get a match made within 48 hours but we will be patient if it means waiting for the right fit. Some sponsors tell us that they only are interested in players from certain organizations or that have a certain set of financial needs. Therefore, if you don't fit with the sponsors that are available right now, we will wait until we find one that does fit with you.<br /><br />Trust us: matching people up just for the sake of getting a match made isn't the way to go. We will make sure things are right, and, if at any point you believe you aren't matched up well, let us know.
+                We usually math players to sponsors within 48 hours but we will be patient if it means waiting for the right fit. Some sponsors tell us that they only are interested in players from certain organizations or that have a certain set of financial needs. Therefore, if you don't fit with the sponsors that are available right now, we will wait until we find one that does fit with you.<br /><br />Trust us: matching people up just for the sake of getting a match made isn't the way to go. We will make sure things are right, and, if at any point you believe you aren't matched up well, let us know.
             </li>
         </ul>
         <h3>Sponsor Responsibilities</h3>
@@ -77,7 +77,7 @@ const SignUpForm = ({setSuccess}) => {
                 A baseball fan is about to help you purely out of passion for the game and wanting to make a difference in your life as a baseball player. We know that minor league baseball can be quite punishing but<span className="bold"> someone wants to ease your burden - and we are thankful for them.</span>
             </li>
             <li>
-                <span className="list-label bold">Don't Be Shy!:</span>
+                <span className="list-label bold">Don't Be Shy!</span>
                 Sometimes it is hard to ask for help even when you and everyone around you knows you need it. We understand how awkward it can be to say "I haven't been able to eat my favorite snack for a long time because they don't sell it in my team's town. Can you send me some?" But, please remember, your sponsor signed up for this exact reason. It is okay to ask for something (...within reason).<br /><br />Also, <span className="bold">get to know your sponsor!</span> If you don't know about their pets and kids, you're doing it wrong!
             </li>
             <li>
