@@ -15,7 +15,7 @@ import Balance from '../svg/balance.svg'
 import Checkmark from '../svg/checkmark.svg'
 import User from '../svg/userWithTie.svg'
 import UserWithCog from '../svg/userWithCog.svg'
-import UserWithPencil from '../svg/userWithPen.svg'
+import UserWithPencil from '../svg/userWithPencil.svg'
 
 export default ({ location }) => {
     const data = useStaticQuery(graphql`
