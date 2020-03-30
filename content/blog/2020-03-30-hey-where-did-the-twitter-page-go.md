@@ -23,6 +23,6 @@ But we tried to make the birthday on the account about the same date that we sta
 
 ## Not good.
 
-So, now we're looked out of our account until further notice. It looks like it doesn't exist but we're still here! We, promise! We will be working feverishly behind the scenes while our main channel for communication with players and sponsors is down. That way, once our Twitter account is back, we can serve our community even better. 
+So, now we're locked out of our account until further notice. It looks like it doesn't exist but we're still here! We, promise! We will be working feverishly behind the scenes while our main channel for communication with players and sponsors is down. That way, once our Twitter account is back, we can serve our community even better. 
 
 Stay tuned for many, many improvements to this website and a bunch of sweet new stuff! Like a newly formed non-profit...
