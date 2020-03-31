@@ -96,7 +96,7 @@ export default ({ location }) => {
                     <h2>Our People</h2>
                     <PeoplePanel
                         heading="Michael Rivers"
-                        text="<p>Founder</p><p>Chairman of the Board</p><p>Executive Chair</p><p>President</p>"
+                        text="<p>Principal Founder</p><p>Chairman of the Board</p><p>Executive Chair</p><p>President</p>"
                         svg={<User />}
                     />
                     <PeoplePanel

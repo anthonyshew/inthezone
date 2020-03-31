@@ -16,7 +16,6 @@ module.exports = {
       shop: `https://promotionsetc.commonsku.com/shop/e5be5b9c-b850-4648-9d5f-830033b386b2`
     },
   },
-  //Does this even do anything?
   developMiddleware: app => {
     app.use(
       "/.netlify/functions",
@@ -89,7 +88,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-162361305-1`,
       },
     },
     {
