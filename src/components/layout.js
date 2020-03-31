@@ -65,6 +65,7 @@ const Layout = ({ location, children }) => {
           twitter
           facebook
           instagram
+          shop
         }
       }
     }
@@ -138,6 +139,10 @@ const IndexNav = ({ data }) => (
       <Link to="/blog" className="link">
         Blog
       </Link>
+      <a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a>
+      <Link to="/donate" className="link link-special">
+        Donate
+      </Link>
     </span>
     <span className="social-icons">
       <a
@@ -204,6 +209,7 @@ const PageNav = ({ data }) => (
       <Link to="/blog" className="link">
         Blog
       </Link>
+      <a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a>
     </span>
     <span className="social-icons">
       <a
@@ -274,12 +280,12 @@ const SmallDisplayNav = ({ data }) => {
           onClick={() => setIsOpen(true)}
         />
       </span>
-      {isOpen && <MobileMenu setIsOpen={setIsOpen} />}
+      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} />}
     </nav >
   )
 }
 
-const MobileMenu = ({ setIsOpen }) => {
+const MobileMenu = ({ setIsOpen, data }) => {
   useBodyScrollLock()
   const container = useRef()
   const first = useRef()
@@ -349,6 +355,14 @@ const MobileMenu = ({ setIsOpen }) => {
             </Link>
             </div>
             <div className="link-container">
+              <Link to="/donate" className="link">
+                Donate
+            </Link>
+            </div>
+            <div className="link-container">
+              <a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a>
+            </div>
+            <div className="link-container">
               <Link to="/about-us" className="link">
                 About Us
             </Link>
@@ -358,6 +372,7 @@ const MobileMenu = ({ setIsOpen }) => {
                 Blog
             </Link>
             </div>
+
           </div>
         </div>
       </div>
@@ -373,8 +388,10 @@ const Footer = ({ data }) => (
         <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
         <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
         <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
+        <li><Link className="link" activeClassName="active" to="/donate">Donate</Link></li>
         <li><Link className="link" activeClassName="active" to="/about-us">About Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
+        <li><a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a></li>
         <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>
         <li><Link className="link" activeClassName="active" to="/privacy-policy">Privacy Policy</Link></li>
