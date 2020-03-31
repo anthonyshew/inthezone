@@ -13,7 +13,7 @@ export default ({ location }) => {
         <SEO title="Player Sign Up Form">
         <meta name="og:image" content="/media/aaml-logo.png" />
         <meta name="twitter:image" content="/media/aaml-logo.png" />
-        <meta name="twitter:image:alt" content="Player Sign Up - Adopt a Minor Leaguer" />
+        <meta name="twitter:image:alt" content="Player Sign Up - Adopt a Minor Leaguer Page" />
             </SEO>
             <div className="page-dear-players">
             {success ? <SuccessMessage /> : <SignUpForm setSuccess={setSuccess} />}

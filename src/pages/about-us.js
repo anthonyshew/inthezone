@@ -42,7 +42,7 @@ export default ({ location }) => {
             <SEO title="About Us">
                 <meta name="og:image" content="/media/aaml-logo.png" />
                 <meta name="twitter:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer About Us page" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer About Us Page" />
             </SEO>
 
             <div className="page-about-us">
