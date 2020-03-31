@@ -65,6 +65,8 @@ const Layout = ({ location, children }) => {
           twitter
           facebook
           instagram
+        }
+        donate {
           shop
         }
       }
@@ -139,7 +141,7 @@ const IndexNav = ({ data }) => (
       <Link to="/blog" className="link">
         Blog
       </Link>
-      <a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a>
+      <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
       <Link to="/donate" className="link link-special">
         Donate
       </Link>
@@ -209,7 +211,7 @@ const PageNav = ({ data }) => (
       <Link to="/blog" className="link">
         Blog
       </Link>
-      <a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a>
+      <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
     </span>
     <span className="social-icons">
       <a
@@ -360,7 +362,7 @@ const MobileMenu = ({ setIsOpen, data }) => {
             </Link>
             </div>
             <div className="link-container">
-              <a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a>
+              <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
             </div>
             <div className="link-container">
               <Link to="/about-us" className="link">
@@ -391,7 +393,7 @@ const Footer = ({ data }) => (
         <li><Link className="link" activeClassName="active" to="/donate">Donate</Link></li>
         <li><Link className="link" activeClassName="active" to="/about-us">About Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
-        <li><a className="link" href={data.site.siteMetadata.social.shop} target="_blank" rel="noopener noreferrer">Shop</a></li>
+        <li><a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a></li>
         <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
         <li><Link className="link" activeClassName="active" to="/terms-of-use">Terms of Use</Link></li>
         <li><Link className="link" activeClassName="active" to="/privacy-policy">Privacy Policy</Link></li>
