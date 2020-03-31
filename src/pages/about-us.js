@@ -39,7 +39,12 @@ export default ({ location }) => {
 
     return (
         <Layout location={location}>
-            <SEO title="About Us" />
+            <SEO title="About Us">
+                <meta name="og:image" content="/media/aaml-logo.png" />
+                <meta name="twitter:image" content="/media/aaml-logo.png" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer About Us page" />
+            </SEO>
+
             <div className="page-about-us">
                 <BackgroundImage
                     Tag="div"

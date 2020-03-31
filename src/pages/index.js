@@ -12,7 +12,14 @@ const Index = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+
+      >
+        <meta name="og:image" content="/media/aaml-logo.png" />
+        <meta name="twitter:image" content="/media/aaml-logo.png" />
+        <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Home Page" />
+      </SEO>
 
       <section className="section-messages">
         <div className="container-message container-player-message">

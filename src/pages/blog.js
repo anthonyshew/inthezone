@@ -32,7 +32,12 @@ export default ({ location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title="Blog - All Posts" />
+      <SEO title="Blog - All Posts">
+        <meta name="og:image" content="/media/aaml-logo.png" />
+        <meta name="twitter:image" content="/media/aaml-logo.png" />
+        <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Blog" />
+      </SEO>
+
       <div className="blog-index">
         <h1>Blog</h1>
         <div className="posts">

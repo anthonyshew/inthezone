@@ -10,7 +10,11 @@ export default ({ location }) => {
 
     return (
         <Layout location={location}>
-        <SEO title="Player Sign Up Form" />
+        <SEO title="Player Sign Up Form">
+        <meta name="og:image" content="/media/aaml-logo.png" />
+        <meta name="twitter:image" content="/media/aaml-logo.png" />
+        <meta name="twitter:image:alt" content="Player Sign Up - Adopt a Minor Leaguer" />
+            </SEO>
             <div className="page-dear-players">
             {success ? <SuccessMessage /> : <SignUpForm setSuccess={setSuccess} />}
             </div>
