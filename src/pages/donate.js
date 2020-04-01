@@ -107,7 +107,7 @@ const DonateForm = () => {
                 <input className="form-input" type="email" name="email" ref={register({ required: true, pattern: /^\S+@\S+$/i })} />
             </label>
             {errors.amount && <p className="error">A valid email is required.</p>}
-            <label htmlFor="name" className="currency-container">
+            <label htmlFor="amount" className="currency-container">
                 Your Donation Amount
                 <input className="form-input donation-amount" type="number" name="amount" ref={register({ required: true, min: 1, })} />
                 <p className="currency">$</p>

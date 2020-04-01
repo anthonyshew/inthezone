@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "adopt-minor-leaguer",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby, Markdown, and Netlify CMS",
-  "version": "0.1.0",
+  "description": "The Adopt a Minor Leaguer Webpage",
+  "version": "1.2.0",
   "author": "Anthony Shew",
   "scripts": {
     "ngrok": "cd .. && ngrok http 3000",
