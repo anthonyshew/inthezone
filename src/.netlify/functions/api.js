@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const serverless = require('serverless-http')
 const sendGrid = require('@sendgrid/mail')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 const app = express()
 const router = express.Router()
@@ -14,7 +15,7 @@ router.post('/player-registration', (req, res) => {
     const { firstName, lastName, organization, email, phoneNumber } = req.body
 
     const emailMessage = {
-        to: [process.env.EMAIL_TO, process.env.EMAIL_AGENCY],
+        to: process.env.EMAIL_TO,
         from: email,
         subject: `New Player Sign Up!: ${firstName} ${lastName}`,
         html: `<h1>A new player has signed up for sponsorship.</h1>
@@ -42,7 +43,7 @@ router.post('/sponsor-registration', (req, res) => {
     let teamString = teams.filter(elem => elem !== false).join(", ")
 
     const emailMessage = {
-        to: [process.env.EMAIL_TO, process.env.EMAIL_AGENCY],
+        to: process.env.EMAIL_TO,
         from: email,
         subject: `New Sponsor Sign Up!: ${firstName} ${lastName}`,
         html: `<h1>A new sponsor has signed up for sponsorship.</h1>
@@ -60,6 +61,44 @@ router.post('/sponsor-registration', (req, res) => {
             success: true,
             errors: [],
             data: firstName
+        }))
+        .catch(err => res.send(err))
+})
+
+router.post('/donate', async (req, res) => {
+    const clientSecret = await stripe.paymentIntents.create({
+        amount: req.body.donationAmount * 100,
+        currency: "usd"
+    }).catch(err => console.log(err))
+
+    res.send(clientSecret)
+})
+
+router.post('/donate-success', (req, res) => {
+    const { email, amount } = req.body
+
+    const emailMessage = {
+        to: [process.env.EMAIL_TO, email],
+        from: email,
+        subject: `Adopt a Minor Leaguer Thanks You for Your Donation`,
+        html: `<h1>Your donation is helping minor leaguers today.</h1>
+    <div><p>Your contribution helps us to help minor leaguers. We appreciate the support that you have shown players as they chase their dreams.</p><div>
+    <div><p>This email acts as a valid receipt for proof of your tax deductible contribution to a 501(3)(c). Please save it for your records and tax filings.</p><div>
+    <br />
+    <div><h2>Name of Organization: </h2><span>Adopt a Minor Leaguer</span><div>
+    <div><h2>Amount of Cash Contribution:</h2><span>$${amount}</span><div>
+    <br />
+    <div><small>There were no non-cash contributions donated in conjunction with this cash donation.</small><div>
+    <div><small>No goods or services were provided in return for this gracious contribution.</small><div>
+    `,
+    }
+
+    sendGrid.send(emailMessage)
+        .then(response => res.send({
+            statusCode: 200,
+            success: true,
+            errors: [],
+            data: {}
         }))
         .catch(err => res.send(err))
 })

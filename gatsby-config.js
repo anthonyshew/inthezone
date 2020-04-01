@@ -1,5 +1,7 @@
 let { createProxyMiddleware } = require("http-proxy-middleware")
 
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Adopt a Minor Leaguer`,
@@ -15,7 +17,7 @@ module.exports = {
       instagram: `/adoptanmilbplayer/`,
     },
     donate: {
-      shop: `https://promotionsetc.commonsku.com/shop/e5be5b9c-b850-4648-9d5f-830033b386b2`
+      shop: `https://promotionsetc.commonsku.com/shop/e5be5b9c-b850-4648-9d5f-830033b386b2`,
     }
   },
   developMiddleware: app => {

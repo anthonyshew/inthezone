@@ -212,6 +212,9 @@ const PageNav = ({ data }) => (
         Blog
       </Link>
       <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
+      <Link to="/donate" className="link link-special">
+        Donate
+      </Link>
     </span>
     <span className="social-icons">
       <a
@@ -374,7 +377,11 @@ const MobileMenu = ({ setIsOpen, data }) => {
                 Blog
             </Link>
             </div>
-
+            <div className="link-container">
+              <Link to="/donate" className="link link-special">
+                Donate
+              </Link>
+            </div>
           </div>
         </div>
       </div>
