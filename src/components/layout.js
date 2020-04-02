@@ -402,6 +402,7 @@ const Footer = ({ data }) => (
         <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
         <li><a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a></li>
         <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
+        <li><Link className="link" activeClassName="active" to="/press">Press</Link></li>
         <li><Link className="link" activeClassName="active" to="/legal/terms-of-use">Terms of Use</Link></li>
         <li><Link className="link" activeClassName="active" to="/legal/privacy-policy">Privacy Policy</Link></li>
       </ul>
