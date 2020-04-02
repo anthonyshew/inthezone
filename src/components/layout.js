@@ -377,11 +377,6 @@ const MobileMenu = ({ setIsOpen, data }) => {
                 Blog
             </Link>
             </div>
-            <div className="link-container">
-              <Link to="/donate" className="link link-special">
-                Donate
-              </Link>
-            </div>
           </div>
         </div>
       </div>
