@@ -9,28 +9,28 @@ export default ({ ...props }) => {
         query ImageSlides {
             slideOne: file(absolutePath: { regex: "/player-walking.png/" }) {
                 childImageSharp {
-                  fluid(maxWidth: 2000) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
               slideTwo: file(absolutePath: { regex: "/stadium.jpg/" }) {
                 childImageSharp {
-                  fluid(maxWidth: 2000) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
               slideThree: file(absolutePath: { regex: "/ball-on-grass.png/" }) {
                 childImageSharp {
-                  fluid(maxWidth: 2000) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid
                   }
                 }
               }
               slideFour: file(absolutePath: { regex: "/gift.jpg/" }) {
                 childImageSharp {
-                  fluid(maxWidth: 2000) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -46,7 +46,7 @@ export default ({ ...props }) => {
           Tag="div"
           className="slide one"
           fluid={data.slideOne.childImageSharp.fluid}
-          loading={"eager"}
+          loading="eager"
         >
           <h3>Step 1</h3>
           <p>A player gets in touch with us that he would like to be sponsored.</p>
@@ -55,7 +55,7 @@ export default ({ ...props }) => {
           Tag="div"
           className="slide two"
           fluid={data.slideTwo.childImageSharp.fluid}
-          loading={"eager"}
+          loading="eager"
         >
           <h3>Step 2</h3>
           <p>We let our community know a player is up for sponsorship.</p>
@@ -64,7 +64,7 @@ export default ({ ...props }) => {
           Tag="div"
           className="slide three"
           fluid={data.slideThree.childImageSharp.fluid}
-          loading={"eager"}
+          loading="eager"
         >
           <h3>Step 3</h3>
           <p>We select a sponsor from the community for the player.</p>
@@ -73,7 +73,7 @@ export default ({ ...props }) => {
           Tag="div"
           className="slide four"
           fluid={data.slideFour.childImageSharp.fluid}
-          loading={"eager"}
+          loading="eager"
         >
           <h3>Step 4</h3>
           <p>We put player and sponsor into contact and their relationship grows.</p>
