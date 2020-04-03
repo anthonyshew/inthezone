@@ -45,14 +45,12 @@ export default ({ location }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <section key={node.fields.slug} className="post">
-                <header>
-                  <h2 className="post-title">
-                    <Link to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h2>
-                  <small className="post-date">{node.frontmatter.date}</small>
-                </header>
+                <h2 className="post-title">
+                  <Link className="post-link" to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h2>
+                <small className="post-date">{node.frontmatter.date}</small>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,

@@ -42,7 +42,6 @@
 
         h2 {
             font-size: 42px;
-            letter-spacing: 1px;
         }
 
         h3 {
@@ -137,5 +136,14 @@
             border-radius: 1rem;
             font-family: "Courier"
         }
+    }
+}
+
+.blog-post-nav {
+    padding: 1rem;
+
+    a {
+        color: $blue;
+        font-family: $raleway;
     }
 }
