@@ -12,16 +12,6 @@
         font-size: 132px;
         font-family: $passion;
         cursor: default;
-        animation: fadeInAndUp .5s ease forwards;
-        animation-delay: 1.5s;
-        opacity: 0;
-
-        @keyframes fadeInAndUp {
-            100% {
-                opacity: 1;
-                top: 50%;
-            }
-        }
     }
 
     .subline {
