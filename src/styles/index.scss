@@ -8,6 +8,23 @@
         margin: 2rem 5%;
         padding-bottom: 7rem;
         flex: 1;
+        opacity: 0;
+
+        &.in {
+            animation: fadeInAndSlideUp .5s ease forwards;
+
+            @keyframes fadeInAndSlideUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(50px)
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0)
+                }
+            }
+        }
 
         h2 {
             margin-bottom: 2rem;
@@ -90,6 +107,13 @@
             border-radius: 1rem;
             background-color: $white;
 
+            .inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
             .avatar {
                 border-radius: 100%;
             }
@@ -105,17 +129,65 @@
                 right: 37%;
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
+
+                .inner.in {
+                    animation: fadeInAndSlideRight 2s ease forwards;
+
+                    @keyframes fadeInAndSlideRight {
+                        0% {
+                            opacity: 0;
+                            transform: translateX(-30px)
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0)
+                        }
+                    }
+                }
             }
 
             &.player {
                 top: -60px;
                 right: 20%;
+
+                .inner.in {
+                    animation: fadeInAndSlideDown 1.6s ease forwards;
+
+                    @keyframes fadeInAndSlideDown {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(-30px)
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0)
+                        }
+                    }
+                }
             }
 
 
             &.sponsor {
                 bottom: -60px;
                 right: 4%;
+
+                .inner.in {
+                    animation: fadeInAndSlideUp .8s ease forwards;
+
+                    @keyframes fadeInAndSlideUp {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(30px)
+                        }
+
+                        100% {
+                            opacity: 1;
+                            transform: translateY(0)
+                        }
+                    }
+                }
             }
         }
     }
@@ -133,6 +205,28 @@
     align-items: center;
     justify-content: center;
     padding: 5rem 0 4rem;
+
+    h2 {
+        animation: pulse 1.5s ease;
+
+        @keyframes pulse {
+            30% {
+                transform: scale(1.6)
+            }
+
+            40% {
+                transform: scale(1.4)
+            }
+
+            50% {
+                transform: scale(1.6)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+    }
 
     p {
         padding: .8rem 2rem;
