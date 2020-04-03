@@ -1,6 +1,6 @@
 @import 'global.scss';
 
-.page-press {
+.page-media {
     h1 {
         font-size: 48px;
         font-family: $passion;
@@ -27,7 +27,7 @@
         padding: 1rem 0;
     }
 
-    .story:nth-child(even) {
+    .story:nth-child(odd) {
         background-color: $blue;
 
         h2,
@@ -37,6 +37,14 @@
             color: $white;
         }
 
+    }
+
+    .media-notice {
+        padding: 1rem;
+
+        a {
+            text-decoration: underline;
+        }
     }
 
     .flex-row {

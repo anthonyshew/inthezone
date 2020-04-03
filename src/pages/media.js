@@ -1,6 +1,6 @@
 import React from "react"
-import '../styles/press.scss'
-import { useStaticQuery, graphql } from 'gatsby'
+import '../styles/media.scss'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 
 import Layout from "../components/layout"
@@ -8,36 +8,36 @@ import SEO from "../components/seo"
 
 export default ({ location }) => {
     const data = useStaticQuery(graphql`
-        query PressQuery {
-            royalsReview: file(absolutePath: { regex: "/press/royals-review.png/" }) {
+        query MediaPageQuery {
+            royalsReview: file(absolutePath: { regex: "/media/royals-review.png/" }) {
                 childImageSharp {
                   fixed(width: 200, height: 175) {
                     ...GatsbyImageSharpFixed
                   }
                 }
             }
-            twinkieTown: file(absolutePath: { regex: "/press/twinkie-town.png/" }) {
+            twinkieTown: file(absolutePath: { regex: "/media/twinkie-town.png/" }) {
                 childImageSharp {
                   fixed(width: 200, height: 175) {
                     ...GatsbyImageSharpFixed
                   }
                 }
             }
-            siCom: file(absolutePath: { regex: "/press/si.jpg/" }) {
+            siCom: file(absolutePath: { regex: "/media/si.jpg/" }) {
                 childImageSharp {
                   fixed(width: 175, height: 175) {
                     ...GatsbyImageSharpFixed
                   }
                 }
             }
-            twelveNews: file(absolutePath: { regex: "/press/12news.jpg/" }) {
+            twelveNews: file(absolutePath: { regex: "/media/12news.jpg/" }) {
                 childImageSharp {
                   fixed(width: 175, height: 175) {
                     ...GatsbyImageSharpFixed
                   }
                 }
             }
-            letsGetTwo: file(absolutePath: { regex: "/press/lets-get-two.jpg/" }) {
+            letsGetTwo: file(absolutePath: { regex: "/media/lets-get-two.jpg/" }) {
                 childImageSharp {
                   fixed(width: 175, height: 175) {
                     ...GatsbyImageSharpFixed
@@ -86,7 +86,7 @@ export default ({ location }) => {
             mediaType: "article",
             image: data.royalsReview.childImageSharp.fixed,
             imageAlt: "Adopt a MiLB player? Now you can.",
-            link: "https://www.royalsreview.com/platform/amp/2020/3/12/21175748/adopt-a-milb-player-now-you-can?utm_campaign=royalsreview&utm_content=chorus&utm_medium=social&utm_source=twitter&__twitter_impression=true&fbclid=IwAR1OfshBPSu2qUPzOJxA-Vg2XVmTqfcF_gsjvG-kPF0BGiOhNYUTD5E6hiI",
+            link: "https://www.royalsreview.com/platform/amp/2020/3/12/21175748/adopt-a-milb-player-now-you-can?utm_campaign=royalsreview&utm_content=chorus&utm_medium=social&utm_source=twitter&__twitter_immediaion=true&fbclid=IwAR1OfshBPSu2qUPzOJxA-Vg2XVmTqfcF_gsjvG-kPF0BGiOhNYUTD5E6hiI",
         },
         {
             publication: "Twinkie Town",
@@ -96,19 +96,20 @@ export default ({ location }) => {
             mediaType: "article",
             image: data.twinkieTown.childImageSharp.fixed,
             imageAlt: "Baseball shutting down is screwing over minor leaguers—here is how you can help",
-            link: "https://www.twinkietown.com/platform/amp/2020/3/12/21177534/mlb-minnesota-twins-baseball-shutting-down-coronavirus-delayed-season-is-screwing-over-minor-leagues?utm_campaign=twinkietown&utm_content=chorus&utm_medium=social&utm_source=twitter&__twitter_impression=true&fbclid=IwAR0NTls4TN3SwlsSf4ILXZvTLRYebnszhWxgc8griCoC8fE0XNyeqr757k4",
+            link: "https://www.twinkietown.com/platform/amp/2020/3/12/21177534/mlb-minnesota-twins-baseball-shutting-down-coronavirus-delayed-season-is-screwing-over-minor-leagues?utm_campaign=twinkietown&utm_content=chorus&utm_medium=social&utm_source=twitter&__twitter_immediaion=true&fbclid=IwAR0NTls4TN3SwlsSf4ILXZvTLRYebnszhWxgc8griCoC8fE0XNyeqr757k4",
         }
     ]
 
     return (
         <Layout location={location}>
-            <SEO title="In the Press">
+            <SEO title="In the Media">
                 <meta name="og:image" content="/media/aaml-logo.png" />
                 <meta name="twitter:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer In the Press Page" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer In the Media Page" />
             </SEO>
-            <div className="page-press">
-                <h1>In the Press</h1>
+            <div className="page-media">
+                <h1>In the Media</h1>
+                <MediaNotice />
                 {stories.map((story, index) => (
                     <Story
                         key={story.link}
@@ -122,10 +123,15 @@ export default ({ location }) => {
                         link={story.link}
                     />
                 ))}
+                <MediaNotice />
             </div>
         </Layout>
     )
 }
+
+const MediaNotice = () => (
+    <p className="media-notice">Are you a member of the media looking to have a word with us?<br /><Link to="/contact-us" className="underline">Click here to send us a message.</Link></p>
+)
 
 const Story = ({ publication,
     title,
