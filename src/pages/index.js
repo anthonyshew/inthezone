@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useRef } from "react"
 import { Link, graphql } from "gatsby"
 import '../styles/index.scss'
 
+import useAnimateOnVisible from "../hooks/useAnimateOnVisible"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Carousel from '../components/carousel'
@@ -10,6 +11,18 @@ import Arrow from "../svg/arrow-right.svg"
 
 const Index = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
+
+  const playerMessage = useRef(null)
+  const sponsorMessage = useRef(null)
+  useAnimateOnVisible({ element: playerMessage })
+  useAnimateOnVisible({ element: sponsorMessage })
+
+  const playerCard = useRef(null)
+  const sponsorCard = useRef(null)
+  const companyCard = useRef(null)
+  useAnimateOnVisible({ element: companyCard })
+  useAnimateOnVisible({ element: playerCard })
+  useAnimateOnVisible({ element: sponsorCard })
 
   return (
     <Layout location={location}>
@@ -23,7 +36,7 @@ const Index = ({ data, location }) => {
       </SEO>
 
       <section className="section-messages">
-        <div className="container-message container-player-message">
+        <div className="container-message container-player-message" ref={playerMessage}>
           <h2>Dear Player,</h2>
           <p>You have a certain set of needs unlike any other. You're in the top .0001% of people who do what you do and you're a part of a multi-billion dollar industry. But it probably doesn't feel like it financially. Adopt a Minor Leaguer and our sponsor network are here to help you achieve your goals - and provide a little more comfort along the way. Our confidential process gets you the help you deserve.</p>
           <div className="container-link-button">
@@ -32,7 +45,7 @@ const Index = ({ data, location }) => {
           </Link>
           </div>
         </div>
-        <div className="container-message container-sponsor-message">
+        <div className="container-message container-sponsor-message" ref={sponsorMessage}>
           <h2>Dear Sponsor,</h2>
           <p>You love baseball - and you know about the controversial treatment that minor leaguers receive. But here's the good part: You have the opportunity to help these young men achieve their dreams. By becoming a sponsor, you can impact a minor leaguer's life with a 1-to-1 relationship that he will remember forever.</p>
           <div className="container-link-button">
@@ -60,29 +73,35 @@ const Index = ({ data, location }) => {
               About&nbsp;Us
             </Link>
           </div>
-          <div className="person-block company">
-            <Image
-              className="avatar"
-              fixed={data.companyLogo.childImageSharp.fixed}
-              alt="Us, matchmaker."
-            />
-            <p>AaML,<br />Matchmaker</p>
+          <div className="person-block company" >
+            <div className="inner" ref={companyCard}>
+              <Image
+                className="avatar"
+                fixed={data.companyLogo.childImageSharp.fixed}
+                alt="Us, matchmaker."
+              />
+              <p>AaML,<br />Matchmaker</p>
+            </div>
           </div>
-          <div className="person-block player">
-            <Image
-              className="avatar"
-              fixed={data.anthony.childImageSharp.fixed}
-              alt="Anthony Shew, baseball player."
-            />
-            <p>Anthony Shew,<br />Player</p>
+          <div className="person-block player" >
+            <div className="inner" ref={playerCard}>
+              <Image
+                className="avatar"
+                fixed={data.anthony.childImageSharp.fixed}
+                alt="Anthony Shew, baseball player."
+              />
+              <p>Anthony Shew,<br />Player</p>
+            </div>
           </div>
           <div className="person-block sponsor">
-            <Image
-              className="avatar"
-              fixed={data.corrins.childImageSharp.fixed}
-              alt="The Corrins, fan sponsor."
-            />
-            <p>The Corrins,<br />Sponsor</p>
+            <div className="inner" ref={sponsorCard}>
+              <Image
+                className="avatar"
+                fixed={data.corrins.childImageSharp.fixed}
+                alt="The Corrins, fan sponsor."
+              />
+              <p>The Corrins,<br />Sponsor</p>
+            </div>
           </div>
         </div>
       </section>
