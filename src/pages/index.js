@@ -24,7 +24,7 @@ const Index = ({ data, location }) => {
       <section className="section-messages">
         <div className="container-message container-player-message">
           <h2>Dear Player,</h2>
-          <p>You have a certain set of needs unlike any other. You're in the top .0001% of people who do what you do but it probably doesn't feel like it financially. Adopt a Minor Leaguer and our sponsor network are here to help you achieve your goals - and provide a little more comfort along the way. Our confidential process gets you the help you deserve.</p>
+          <p>You have a certain set of needs unlike any other. You're in the top .0001% of people who do what you do and you're a part of a multi-billion dollar industry. But it probably doesn't feel like it financially. Adopt a Minor Leaguer and our sponsor network are here to help you achieve your goals - and provide a little more comfort along the way. Our confidential process gets you the help you deserve.</p>
           <div className="container-link-button">
             <Link className="link-button" to="/dear-players">
               More&nbsp;Info&nbsp;&<br />Player&nbsp;Sign-Up
