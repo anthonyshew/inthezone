@@ -23,10 +23,6 @@ html {
     scroll-behavior: smooth;
 }
 
-a,
-a:visited,
-a:link,
-a:hover,
 p,
 h1,
 h2,
@@ -66,4 +62,10 @@ h2 {
     font-family: $passion;
     font-size: 24px;
     text-align: center;
+
+    &:visited,
+    &:hover,
+    &:link {
+        color: $blue;
+    }
 }

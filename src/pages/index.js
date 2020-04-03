@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Carousel from '../components/carousel'
 import Image from "gatsby-image"
+import Arrow from "../svg/arrow-right.svg"
 
 const Index = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -56,7 +57,7 @@ const Index = ({ data, location }) => {
             <p>Then, we did it again.</p>
             <p>Then, we did it again...</p>
             <Link className="link-button" to="/about-us">
-              About Us
+              About&nbsp;Us
             </Link>
           </div>
           <div className="person-block company">
@@ -84,6 +85,12 @@ const Index = ({ data, location }) => {
             <p>The Corrins,<br />Sponsor</p>
           </div>
         </div>
+      </section>
+
+      <section className="section-media">
+        <h2>Extra! Extra!</h2>
+        <p>We have gotten some really special attention recently - and we're proud.</p>
+        <Link className="link-button" to="/media">AaML in the Media <Arrow /></Link>
       </section>
 
       <section className="section-blog">

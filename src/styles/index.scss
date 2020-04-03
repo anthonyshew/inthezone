@@ -34,10 +34,6 @@
             width: 100%;
         }
     }
-
-    .link-button {
-        font-weight: 900;
-    }
 }
 
 .section-carousel {
@@ -131,8 +127,31 @@
     }
 }
 
+.section-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0 4rem;
+
+    p {
+        padding: .8rem 2rem;
+        font-size: 24px;
+    }
+
+    .link-button {
+        color: red;
+
+        svg {
+            position: relative;
+            top: 3px;
+            left: 2px;
+            height: .8em;
+        }
+    }
+}
+
 .section-blog {
-    margin-top: 4.5rem;
     margin-bottom: 3rem;
 
     h2 {
@@ -156,10 +175,6 @@
             font-family: $raleway;
             font-weight: 900;
         }
-    }
-
-    .link-button {
-        font-family: $passion;
     }
 }
 
@@ -222,10 +237,6 @@
                 }
             }
         }
-    }
-
-    .section-blog {
-        margin-top: 3rem;
     }
 }
 
@@ -292,6 +303,10 @@
                 }
             }
         }
+    }
+
+    .section-media {
+        padding: 2rem 0 3rem;
     }
 }
 

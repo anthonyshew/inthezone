@@ -24,8 +24,10 @@
         display: inline-block;
         padding: .7em 0;
         flex-basis: 50%;
+        color: $blue;
         text-align: left;
         font-size: 22px;
+        font-family: $raleway;
         font-weight: 900;
 
         &.special {
@@ -163,8 +165,6 @@
             }
         }
 
-
-
         .xburger,
         .xburger-container {
             position: absolute;
@@ -209,6 +209,7 @@
                 .link {
                     padding: .5rem 0;
                     color: $white;
+                    font-family: $raleway;
 
                     &.special {
                         color: $yellow;
