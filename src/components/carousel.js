@@ -92,7 +92,7 @@ export default ({ ...props }) => {
       <button
         className="button-default step-button next"
         onClick={() => {
-          if (step > 3) { return } else {
+          if (step > 2) { return } else {
             setStep(step + 1)
           }
         }}

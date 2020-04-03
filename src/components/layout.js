@@ -281,9 +281,6 @@ const SmallDisplayNav = ({ data, navlinks }) => {
           />
         </Link>
       </span>
-      <span className="mobile-nav-text">
-        Connecting minor leaguers with fan sponsors.
-        </span>
       <span className="hamburger-container">
         <Hamburger
           tabIndex={0}
