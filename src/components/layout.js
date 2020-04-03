@@ -81,6 +81,15 @@ const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
 
+  const navlinks = [
+    ["/dear-players", "Dear Players"],
+    ["/dear-sponsors", "Dear Sponsors"],
+    ["/about-us", "About Us"],
+    ["/blog", "Blog"],
+    [data.site.siteMetadata.donate.shop, "Shop"],
+    ["/donate", "Donate"]
+  ]
+
   if (location.pathname === rootPath) {
     header = (
       <BackgroundImage
@@ -88,8 +97,8 @@ const Layout = ({ location, children }) => {
         className="container-home-hero"
         fluid={data.homeHero.childImageSharp.fluid}
       >
-        <IndexNav data={data} />
-        <SmallDisplayNav data={data} />
+        <IndexNav data={data} navlinks={navlinks} />
+        <SmallDisplayNav data={data} navlinks={navlinks} />
         <p className="total-sponsorships">{totalSponsorships}</p>
         <div className="subline">
           <p>Players&nbsp;Sponsored through</p>
@@ -100,8 +109,8 @@ const Layout = ({ location, children }) => {
   } else {
     header = (
       <>
-        <PageNav data={data} />
-        <SmallDisplayNav data={data} />
+        <PageNav data={data} navlinks={navlinks} />
+        <SmallDisplayNav data={data} navlinks={navlinks} />
       </>
     )
   }
@@ -117,7 +126,7 @@ const Layout = ({ location, children }) => {
 
 export default Layout
 
-const IndexNav = ({ data }) => (
+const IndexNav = ({ data, navlinks }) => (
   <nav className="navbar full">
     <span className="logo">
       <Link to="/">
@@ -129,22 +138,21 @@ const IndexNav = ({ data }) => (
       </Link>
     </span>
     <span className="link-list">
-      <Link to="/dear-players" className="link">
-        Dear Players
-      </Link>
-      <Link to="/dear-sponsors" className="link">
-        Dear Sponsors
-      </Link>
-      <Link to="/about-us" className="link">
-        About Us
-      </Link>
-      <Link to="/blog" className="link">
-        Blog
-      </Link>
-      <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
-      <Link to="/donate" className="link link-special">
-        Donate
-      </Link>
+      {navlinks.map((elem, index) => {
+        if (elem[0].startsWith("http")) {
+          return <div key={elem[0]} className="link-container">
+            <a href={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
+              {elem[1]}
+            </a>
+          </div>
+        } else {
+          return <div key={elem[0]} className="link-container">
+            <Link to={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`}>
+              {elem[1]}
+            </Link>
+          </div>
+        }
+      })}
     </span>
     <span className="social-icons">
       <a
@@ -187,7 +195,7 @@ const IndexNav = ({ data }) => (
   </nav>
 )
 
-const PageNav = ({ data }) => (
+const PageNav = ({ data, navlinks }) => (
   <nav className="navbar full page-nav">
     <span className="logo">
       <Link to="/">
@@ -199,22 +207,20 @@ const PageNav = ({ data }) => (
       </Link>
     </span>
     <span className="link-list">
-      <Link to="/dear-players" className="link">
-        Dear Players
-      </Link>
-      <Link to="/dear-sponsors" className="link">
-        Dear Sponsors
-      </Link>
-      <Link to="/about-us" className="link">
-        About Us
-      </Link>
-      <Link to="/blog" className="link">
-        Blog
-      </Link>
-      <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
-      <Link to="/donate" className="link link-special">
-        Donate
-      </Link>
+      <Link to="/" className="link">
+        Home
+          </Link>
+      {navlinks.map((elem, index) => {
+        if (elem[0].startsWith("http")) {
+          return <a key={elem[0]} href={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
+            {elem[1]}
+          </a>
+        } else {
+          return <Link key={elem[0]} to={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`}>
+            {elem[1]}
+          </Link>
+        }
+      })}
     </span>
     <span className="social-icons">
       <a
@@ -257,7 +263,7 @@ const PageNav = ({ data }) => (
   </nav>
 )
 
-const SmallDisplayNav = ({ data }) => {
+const SmallDisplayNav = ({ data, navlinks }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleKeyboardOpen = (e) => {
@@ -285,12 +291,12 @@ const SmallDisplayNav = ({ data }) => {
           onClick={() => setIsOpen(true)}
         />
       </span>
-      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} />}
+      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} navlinks={navlinks} />}
     </nav >
   )
 }
 
-const MobileMenu = ({ setIsOpen, data }) => {
+const MobileMenu = ({ setIsOpen, data, navlinks }) => {
   useBodyScrollLock()
   const container = useRef()
   const first = useRef()
@@ -350,33 +356,25 @@ const MobileMenu = ({ setIsOpen, data }) => {
         <div className="content">
           <div className="link-list">
             <div className="link-container">
-              <Link to="/dear-players" className="link">
-                Dear Players
-            </Link>
+              <Link to="/" className="link">
+                Home
+                  </Link>
             </div>
-            <div className="link-container">
-              <Link to="/dear-sponsors" className="link">
-                Dear Sponsors
-            </Link>
-            </div>
-            <div className="link-container">
-              <Link to="/donate" className="link">
-                Donate
-            </Link>
-            </div>
-            <div className="link-container">
-              <a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a>
-            </div>
-            <div className="link-container">
-              <Link to="/about-us" className="link">
-                About Us
-            </Link>
-            </div>
-            <div className="link-container">
-              <Link to="/blog" className="link" ref={last} >
-                Blog
-            </Link>
-            </div>
+            {navlinks.map((elem, index) => {
+              if (elem[0].startsWith("http")) {
+                return <div key={elem[0]} className="link-container">
+                  <a href={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} target="_blank" rel="noopener noreferrer" ref={navlinks.length === index + 1 ? last : undefined}>
+                    {elem[1]}
+                  </a>
+                </div>
+              } else {
+                return <div key={elem[0]} className="link-container">
+                  <Link to={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} ref={navlinks.length === index + 1 ? last : undefined}>
+                    {elem[1]}
+                  </Link>
+                </div>
+              }
+            })}
           </div>
         </div>
       </div>
