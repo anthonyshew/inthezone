@@ -11,8 +11,8 @@ export default ({ data, location }) => {
     return (
         <Layout location={location}>
             <SEO title="Contact Us" >
-                <meta name="og:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image" content="/media/aaml-logo.png" />
+                <meta name="og:image" content="/media/aaml-logo.jpg" />
+                <meta name="twitter:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image:alt" content="Contact Adopt a Minor Leaguer" />
             </SEO>
             <div className="page-contact">

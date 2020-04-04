@@ -27,8 +27,8 @@ export default ({ location }) => {
     return (
         <Layout location={location}>
             <SEO title="Donate">
-                <meta name="og:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image" content="/media/aaml-logo.png" />
+                <meta name="og:image" content="/media/aaml-logo.jpg" />
+                <meta name="twitter:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donation Page" />
             </SEO>
             <div className="page-404">

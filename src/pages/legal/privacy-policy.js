@@ -8,8 +8,8 @@ export default ({ location }) => {
     return (
         <Layout location={location}>
             <SEO title="Privacy Policy" >
-                <meta name="og:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image" content="/media/aaml-logo.png" />
+                <meta name="og:image" content="/media/aaml-logo.jpg" />
+                <meta name="twitter:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Privacy Policy" />
             </SEO>
             <div className="page-legal page-privacy-policy">

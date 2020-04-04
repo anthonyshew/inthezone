@@ -27,7 +27,7 @@ export default ({ location }) => {
                   }
                 }
             }
-            aamlLogo: file(absolutePath: { regex: "/aaml-logo.png/" }) {
+            aamlLogo: file(absolutePath: { regex: "/aaml-logo.jpg/" }) {
                 childImageSharp {
                   fixed(width: 150, height: 150) {
                     ...GatsbyImageSharpFixed
@@ -40,8 +40,8 @@ export default ({ location }) => {
     return (
         <Layout location={location}>
             <SEO title="About Us">
-                <meta name="og:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image" content="/media/aaml-logo.png" />
+                <meta name="og:image" content="/media/aaml-logo.jpg" />
+                <meta name="twitter:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image:alt" content="Adopt a Minor Leaguer About Us Page" />
             </SEO>
 

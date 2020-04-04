@@ -9,8 +9,8 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="404: Not Found" >
-        <meta name="og:image" content="/media/aaml-logo.png" />
-        <meta name="twitter:image" content="/media/aaml-logo.png" />
+        <meta name="og:image" content="/media/aaml-logo.jpg" />
+        <meta name="twitter:image" content="/media/aaml-logo.jpg" />
         <meta name="twitter:image:alt" content="Adopt a Minor Leaguer 404 Page" />
       </SEO>
       <div className="page-404">

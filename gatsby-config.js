@@ -104,7 +104,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/aaml-logo.png`,
+        icon: `content/assets/aaml-logo.jpg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

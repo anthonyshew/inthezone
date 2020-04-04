@@ -30,8 +30,8 @@ const Index = ({ data, location }) => {
         title="Home"
 
       >
-        <meta name="og:image" content="/media/aaml-logo.png" />
-        <meta name="twitter:image" content="/media/aaml-logo.png" />
+        <meta name="og:image" content="/media/aaml-logo.jpg" />
+        <meta name="twitter:image" content="/media/aaml-logo.jpg" />
         <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Home Page" />
       </SEO>
 
@@ -150,7 +150,7 @@ export default Index
 
 export const pageQuery = graphql`
   query IndexQuery {
-    companyLogo: file(absolutePath: { regex: "/aaml-logo.png/" }) {
+    companyLogo: file(absolutePath: { regex: "/aaml-logo.jpg/" }) {
       childImageSharp {
         fixed(width: 90, height: 90) {
           ...GatsbyImageSharpFixed

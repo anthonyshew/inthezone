@@ -38,6 +38,10 @@
     }
 
     .one {
+        background-image: url('/media/player-walking.jpg');
+        background-size: cover;
+        background-position: 50% 35%;
+
         p {
             top: 30%;
             right: 1rem;
@@ -47,12 +51,9 @@
     }
 
     .two {
-
-        &:before,
-        &:after {
-            filter: brightness(.8);
-        }
-
+        background-image: url('/media/stadium.jpg');
+        background-size: cover;
+        background-position: 50% 95%;
 
         h3 {
             left: 25%;
@@ -67,11 +68,9 @@
     }
 
     .three {
-
-        &:before,
-        &.after {
-            filter: brightness(.8);
-        }
+        background-image: url('/media/ball-on-grass.jpg');
+        background-size: cover;
+        background-position: 50% 55%;
 
         h3 {
             left: 50%;
@@ -86,6 +85,10 @@
     }
 
     .four {
+        background-image: url('/media/gift.jpg');
+        background-size: cover;
+        background-position: 50% 70%;
+
         h3 {
             left: 75%;
         }

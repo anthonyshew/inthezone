@@ -9,8 +9,8 @@ export default ({ location }) => {
     return (
         <Layout location={location}>
             <SEO title="Thank You!" >
-                <meta name="og:image" content="/media/aaml-logo.png" />
-                <meta name="twitter:image" content="/media/aaml-logo.png" />
+                <meta name="og:image" content="/media/aaml-logo.jpg" />
+                <meta name="twitter:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Thanks You" />
             </SEO>
             <div className="page-donation-thank-you">
