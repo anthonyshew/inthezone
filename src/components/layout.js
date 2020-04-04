@@ -51,9 +51,10 @@ const Layout = ({ location, children }) => {
         }
       }
     }
-    homeHero: file(absolutePath: { regex: "/home-hero.jpg/" }) {
+    homeHero: file(absolutePath: { regex: "/home-hero2.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
+        fluid(maxWidth: 2000, traceSVG: { background: "#b3d0ff", color: "#ffffff", threshold: 100 } ) {
+          tracedSVG
           ...GatsbyImageSharpFluid_noBase64
         }
       }
