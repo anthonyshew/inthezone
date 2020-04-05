@@ -49,7 +49,7 @@ export default ({ location }) => {
                 <BackgroundImage
                     Tag="div"
                     fluid={data.banner.childImageSharp.fluid}
-                    style={{ backgroundPosition: "bottom", marginBottom: "2rem" }}
+                    style={{ backgroundPosition: "50% 75%", marginBottom: "2rem" }}
                 >
                     <div className="container-inner-background">
                         <h1>About Us</h1>
