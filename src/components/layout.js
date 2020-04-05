@@ -8,8 +8,8 @@ import '../styles/footer.scss'
 
 import { useStaticQuery, graphql } from "gatsby"
 import useBodyScrollLock from '../hooks/useBodyScrollLock'
+import useMediaQuery from '../hooks/useMediaQuery'
 import Image from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
 import Hamburger from '../svg/hamburger.svg'
 import Xburger from '../svg/xburger.svg'
 
@@ -51,10 +51,16 @@ const Layout = ({ location, children }) => {
         }
       }
     }
-    homeHero: file(absolutePath: { regex: "/home-hero2.jpg/" }) {
+    homeHero: file(absolutePath: { regex: "/hero.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 2000, traceSVG: { background: "#b3d0ff", color: "#ffffff", threshold: 100 } ) {
-          tracedSVG
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid_noBase64
+        }
+      }
+    }
+    homeHeroLarge: file(absolutePath: { regex: "/hero-large.jpg/" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }
@@ -78,6 +84,7 @@ const Layout = ({ location, children }) => {
   }
     `)
 
+  const isSmallViewport = useMediaQuery("(max-width: 1000px)")
   const totalSponsorships = data.siteInfoJson.totalSponsorships
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -93,19 +100,22 @@ const Layout = ({ location, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <BackgroundImage
-        Tag="section"
-        className="container-home-hero"
-        fluid={data.homeHero.childImageSharp.fluid}
-      >
+      <section className="container-home-hero">
+        <Image
+          fluid={isSmallViewport ? data.homeHero.childImageSharp.fluid : data.homeHeroLarge.childImageSharp.fluid}
+          style={{ minHeight: "100%", minWidth: "100%", position: "absolute", filter: "blur(2px) saturate(1.5)", zIndex: "-1" }}
+          imgStyle={{ backgroundPosition: "80% 80%" }}
+        />
         <IndexNav data={data} navlinks={navlinks} />
         <SmallDisplayNav data={data} navlinks={navlinks} />
-        <p className="total-sponsorships">{totalSponsorships}</p>
-        <div className="subline">
-          <p>Players&nbsp;Sponsored through</p>
-          <h1>Adopt&nbsp;a&nbsp;Minor&nbsp;Leaguer</h1>
+        <div className="dark-box">
+          <p className="total-sponsorships">{totalSponsorships}</p>
+          <div className="subline">
+            <p>Players Sponsored through</p>
+            <h1>Adopt a Minor Leaguer</h1>
+          </div>
         </div>
-      </BackgroundImage>
+      </section>
     )
   } else {
     header = (

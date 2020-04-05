@@ -56,7 +56,7 @@ const SignUpForm = ({setSuccess}) => {
             </li>
             <li>
             <span className="list-label bold">Matchmaking:</span>
-                We usually math players to sponsors within 48 hours but we will be patient if it means waiting for the right fit. Some sponsors tell us that they only are interested in players from certain organizations or that have a certain set of financial needs. Therefore, if you don't fit with the sponsors that are available right now, we will wait until we find one that does fit with you.<br /><br />Trust us: matching people up just for the sake of getting a match made isn't the way to go. We will make sure things are right, and, if at any point you believe you aren't matched up well, let us know.
+                We usually match players to sponsors within 48 hours but we will be patient if it means waiting for the right fit. Some sponsors tell us that they only are interested in players from certain organizations or that have a certain set of financial needs. Therefore, if you don't fit with the sponsors that are available right now, we will wait until we find one that does fit with you.<br /><br />Trust us: matching people up just for the sake of getting a match made isn't the way to go. We will make sure things are right, and, if at any point you believe you aren't matched up well, let us know.
             </li>
         </ul>
         <h3>Sponsor Responsibilities</h3>
