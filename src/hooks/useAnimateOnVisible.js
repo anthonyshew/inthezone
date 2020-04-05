@@ -26,6 +26,7 @@ const useAnimateOnVisible = (options) => {
             observer.observe(options.element.current)
         }
 
+        return () => observer.disconnect()
     }, [options.element, options.inClass, options.outClass])
 }
 
