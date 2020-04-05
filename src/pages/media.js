@@ -44,6 +44,13 @@ export default ({ location }) => {
                   }
                 }
             }
+            wbtw: file(absolutePath: { regex: "/media/wbtw.jpg/" }) {
+                childImageSharp {
+                  fixed(width: 175) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
         }
     `)
 
@@ -77,6 +84,16 @@ export default ({ location }) => {
             image: data.letsGetTwo.childImageSharp.fixed,
             imageAlt: "Rubber Ducks, Redbirds, and Sea Dogs (Chapter Marker 4)",
             link: "https://letsgettwo.buzzsprout.com/247208/3112912-let-s-get-two-s2-e12-rubber-ducks-redbirds-and-sea-dogs",
+        },
+        {
+            publication: "WBTW",
+            title: "‘Adopt A Minor Leaguer’ makes an impact on Myrtle Beach Pelicans",
+            author: "Candace Martino",
+            date: "3 April 2020",
+            mediaType: "video",
+            image: data.wbtw.childImageSharp.fixed,
+            imageAlt: "‘Adopt A Minor Leaguer’ makes an impact on Myrtle Beach Pelicans",
+            link: "https://twitter.com/CandaceMartino/status/1246503976557776896",
         },
         {
             publication: "Royals Review",
