@@ -11,14 +11,14 @@ export default ({ location }) => {
         query MediaPageQuery {
             royalsReview: file(absolutePath: { regex: "/media/royals-review.png/" }) {
                 childImageSharp {
-                  fixed(width: 200, height: 175) {
+                  fixed(width: 200) {
                     ...GatsbyImageSharpFixed
                   }
                 }
             }
             twinkieTown: file(absolutePath: { regex: "/media/twinkie-town.png/" }) {
                 childImageSharp {
-                  fixed(width: 200, height: 175) {
+                  fixed(width: 200) {
                     ...GatsbyImageSharpFixed
                   }
                 }
