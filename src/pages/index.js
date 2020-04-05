@@ -28,7 +28,6 @@ const Index = ({ data, location }) => {
     <Layout location={location}>
       <SEO
         title="Home"
-
       >
         <meta name="og:image" content="/media/aaml-logo.jpg" />
         <meta name="twitter:image" content="/media/aaml-logo.jpg" />
