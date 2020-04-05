@@ -21,5 +21,6 @@ export default (mediaQuery) => {
 
         return isVerified
     }
+
     return null
 }
