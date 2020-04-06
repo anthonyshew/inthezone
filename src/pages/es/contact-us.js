@@ -10,20 +10,20 @@ export default ({ data, location }) => {
 
     return (
         <Layout location={location}>
-            <SEO title="Contact Us" >
+            <SEO title="Contactar Con Nosotros" >
                 <meta name="og:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image" content="/media/aaml-logo.jpg" />
-                <meta name="twitter:image:alt" content="Contact Adopt a Minor Leaguer" />
+                <meta name="twitter:image:alt" content="Contactar Adopt a Minor Leaguer" />
             </SEO>
             <div className="page-contact">
-                <h1>Contact Us</h1>
+                <h1>Contacto con Nosotros</h1>
                 {success ? <SuccessMessage /> : <ContactForm setSuccess={setSuccess} />}
             </div>
         </Layout>
     )
 }
 
-const SuccessMessage = () => <p className="success-message">Thank you for getting in touch with us. You'll be hearing from us shortly (usually within the next 48 hours).</p>
+const SuccessMessage = () => <p className="success-message">Gracias por nos contactando. En breve estarás escuchando de nosotros (generalmente en menos que 48 horas).</p>
 
 const ContactForm = ({ setSuccess }) => {
     const { register, handleSubmit, errors } = useForm()
@@ -40,28 +40,28 @@ const ContactForm = ({ setSuccess }) => {
     }
     return (
         <>
-            <p>If you'd like to get in touch with us, please use this form below to send us an email.</p>
+            <p>Si te gustaría contactar con nosotros, por favor usa la forma por enviarnos un email.</p>
             <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="name">
-                    Name
+                    Nombre
                 <input className="form-input" type="text" name="name" ref={register({ required: true, })} />
                 </label>
-                {errors.name && <p className="error">A name is required.</p>}
+                {errors.name && <p className="error">Se requiere un nombre.</p>}
 
                 <label htmlFor="email">
-                    Your Email
+                    Tu Email
                 <input className="form-input" type="email" name="email" ref={register({ required: true, pattern: /^\S+@\S+$/i })} />
                 </label>
-                {errors.email && <p className="error">A valid email is required.</p>}
+                {errors.email && <p className="error">Se requiere un email válido.</p>}
 
                 <label htmlFor="message">
-                    Your Message
+                    Tu Mensaje
                 <textarea className="form-input" type="textarea" name="message" ref={register({ required: true, min: 1, })} />
                 </label>
-                {errors.message && <p className="error">A message is required.</p>}
+                {errors.message && <p className="error">Se requiere un mensaje.</p>}
 
                 <button className="submit-button" type="submit">
-                    Send
+                    Enviar
                 </button>
             </form>
         </>

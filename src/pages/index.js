@@ -46,7 +46,7 @@ const Index = ({ data, location }) => {
         </div>
         <div className="container-message container-sponsor-message" ref={sponsorMessage}>
           <h2>Dear Sponsor,</h2>
-          <p>You love baseball - and you know about the controversial treatment that minor leaguers receive. But here's the good part: You have the opportunity to help these young men achieve their dreams. By becoming a sponsor, you can impact a minor leaguer's life with a 1-to-1 relationship that he will remember forever.</p>
+          <p>You love baseball - and you know about the controversial treatment that minor leaguers receive. But here's the good part: You have the opportunity to help these young men achieve their dreams. By becoming a sponsor, you can impact a minor leaguer's life with a 1-to-1 relationship that he will remember forever. Have an impact on your favorite team - and your new favorite player - today.</p>
           <div className="container-link-button">
             <Link className="link-button" to="/dear-sponsors">
               More&nbsp;Info&nbsp;&<br />Sponsor&nbsp;Registration
@@ -57,7 +57,7 @@ const Index = ({ data, location }) => {
 
       <section className="section-carousel">
         <h2>How A Sponsorship Happens</h2>
-        <Carousel />
+        <Carousel location={location} />
       </section>
 
       <section className="section-story">

@@ -88,17 +88,16 @@ const Layout = ({ location, children }) => {
   const isSmallViewport = useMediaQuery("(max-width: 1000px)")
   const totalSponsorships = data.siteInfoJson.totalSponsorships
   const rootPath = `${__PATH_PREFIX__}/`
-  const rootPathEs = `${__PATH_PREFIX__}/es/`
-  const rootPathEsNoSlash = `${__PATH_PREFIX__}/es`
+  const isSpanish = location.pathname === `${__PATH_PREFIX__}/es/` || location.pathname === `${__PATH_PREFIX__}/es`
   let header
 
   const navlinks = location.pathname.startsWith("/es") ? [
-    ["/es/dear-players", "Dear Players"],
-    ["/es/dear-sponsors", "Espanish"],
-    ["/es/about-us", "About Us"],
+    ["/es/dear-players", "Queridos Jugadores"],
+    ["/es/dear-sponsors", "Querida Padrinos"],
+    ["/es/about-us", "Sobre Nosotros"],
     ["/blog", "Blog"],
     [data.site.siteMetadata.donate.shop, "Shop"],
-    ["/es/donate", "Donate"]
+    ["/es/donate", "Donar"]
   ] : [
       ["/dear-players", "Dear Players"],
       ["/dear-sponsors", "Dear Sponsors"],
@@ -108,8 +107,7 @@ const Layout = ({ location, children }) => {
       ["/donate", "Donate"]
     ]
 
-  if (location.pathname === rootPath || location.pathname === rootPathEs || location.pathname === rootPathEsNoSlash) {
-
+  if (location.pathname === rootPath || isSpanish) {
     header = (
       <section className="container-home-hero">
         <Image
@@ -117,12 +115,12 @@ const Layout = ({ location, children }) => {
           style={{ minHeight: "100%", minWidth: "100%", position: "absolute", filter: "blur(2px) saturate(1.5)", zIndex: "-1" }}
           imgStyle={{ backgroundPosition: "80% 80%" }}
         />
-        <IndexNav data={data} location={location} navlinks={navlinks} />
-        <SmallDisplayNav data={data} location={location} navlinks={navlinks} />
+        <IndexNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
+        <SmallDisplayNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
         <div className="dark-box">
           <p className="total-sponsorships">{totalSponsorships}</p>
           <div className="subline">
-            <p>Players Sponsored through</p>
+            <p>{isSpanish ? "Jugadores Patrocinados por" : "Players Sponsored through"}</p>
             <h1>Adopt a Minor Leaguer</h1>
           </div>
         </div>
@@ -131,8 +129,8 @@ const Layout = ({ location, children }) => {
   } else {
     header = (
       <>
-        <PageNav data={data} location={location} navlinks={navlinks} />
-        <SmallDisplayNav data={data} location={location} navlinks={navlinks} />
+        <PageNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
+        <SmallDisplayNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
       </>
     )
   }
@@ -218,7 +216,7 @@ const IndexNav = ({ data, location, navlinks }) => (
   </nav>
 )
 
-const PageNav = ({ data, location, navlinks }) => (
+const PageNav = ({ data, location, isSpanish, navlinks }) => (
   <nav className="navbar full page-nav">
     <span className="logo">
       <Link to={location.pathname.startsWith("/es") ? "/es/" : "/"}>
@@ -231,8 +229,8 @@ const PageNav = ({ data, location, navlinks }) => (
     </span>
     <span className="link-list">
       <Link to={location.pathname.startsWith("/es") ? "/es/" : "/"} className="link">
-        Home
-          </Link>
+        {location.pathname.startsWith("/es") ? "Casa" : "Home"}
+      </Link>
       {navlinks.map((elem, index) => {
         if (elem[0].startsWith("http")) {
           return <a key={elem[0]} href={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
@@ -287,7 +285,7 @@ const PageNav = ({ data, location, navlinks }) => (
   </nav>
 )
 
-const SmallDisplayNav = ({ data, location, navlinks }) => {
+const SmallDisplayNav = ({ data, location, isSpanish, navlinks }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleKeyboardOpen = (e) => {
@@ -313,12 +311,12 @@ const SmallDisplayNav = ({ data, location, navlinks }) => {
           onClick={() => setIsOpen(true)}
         />
       </span>
-      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} location={location} navlinks={navlinks} />}
+      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />}
     </nav >
   )
 }
 
-const MobileMenu = ({ setIsOpen, data, location, navlinks }) => {
+const MobileMenu = ({ setIsOpen, isSpanish, location, navlinks }) => {
   useBodyScrollLock()
   const container = useRef()
   const first = useRef()
@@ -378,8 +376,8 @@ const MobileMenu = ({ setIsOpen, data, location, navlinks }) => {
           <div className="link-list">
             <div className="link-container">
               <Link to={location.pathname.startsWith("/es") ? "/es" : "/"} className="link">
-                Home
-                  </Link>
+                {location.pathname.startsWith("/es") ? "Casa" : "Home"}
+              </Link>
             </div>
             {navlinks.map((elem, index) => {
               if (elem[0].startsWith("http")) {
@@ -406,16 +404,16 @@ const MobileMenu = ({ setIsOpen, data, location, navlinks }) => {
 const Footer = ({ data, location }) => {
   const footerLinks = location.pathname.startsWith("/es") ? [
     ["/es/", "Casa"],
-    ["/es/dear-players", "Dear Latios"],
-    ["/es/dear-sponsors", "Dear Sponsors"],
-    ["/es/donate", "Donate"],
-    ["/es/about-us", "About Us"],
-    ["/es/blog", "Blog"],
+    ["/es/dear-players", "Queridos Jugadores"],
+    ["/es/dear-sponsors", "Queridos Padrinos"],
+    ["/es/donate", "Donar"],
+    ["/es/about-us", "Sobre Nosotros"],
+    ["/blog", "Blog"],
     [data.site.siteMetadata.donate.shop, "Shop"],
-    ["/es/contact-us", "Contact Us"],
-    ["/es/media", "Media"],
-    ["/es/terms-of-use", "Terms of Use"],
-    ["/es/privacy-policy", "Privacy Policy"],
+    ["/es/contact-us", "Contacto"],
+    ["/media", "Medios de Comunicación"],
+    ["/legal/terms-of-use", "Términos de Uso"],
+    ["/legal/privacy-policy", "Aviso de Privacidad"],
   ]
     :
     [
@@ -428,8 +426,8 @@ const Footer = ({ data, location }) => {
       [data.site.siteMetadata.donate.shop, "Shop"],
       ["/contact-us", "Contact Us"],
       ["/media", "Media"],
-      ["/terms-of-use", "Terms of Use"],
-      ["/privacy-policy", "Privacy Policy"],
+      ["/legal/terms-of-use", "Terms of Use"],
+      ["/legal/privacy-policy", "Privacy Policy"],
     ]
 
   return (
@@ -456,7 +454,7 @@ const Footer = ({ data, location }) => {
         </ul>
       </div>
       <div className="socials">
-        <p>Connect With Us!</p>
+        <p>{location.pathname.startsWith("/es") ? "Conectar con Nosotros!" : "Connect With Us!"}</p>
         <span className="icons">
           <a
             target="_blank"

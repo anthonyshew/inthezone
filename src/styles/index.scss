@@ -66,6 +66,7 @@
 .section-story {
     h2 {
         margin-bottom: 2rem;
+        padding: 2rem;
     }
 
     .background-block {
@@ -453,6 +454,14 @@
     .container-sponsor-message {
         .link-button {
             padding: 1rem;
+        }
+    }
+
+    .background-block {
+        .text {
+            .link-button {
+                padding: 1rem;
+            }
         }
     }
 }

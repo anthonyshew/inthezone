@@ -39,10 +39,10 @@ export default ({ location }) => {
 
     return (
         <Layout location={location}>
-            <SEO title="About Us">
+            <SEO title="Sobre Nosotros">
                 <meta name="og:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image" content="/media/aaml-logo.jpg" />
-                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer About Us Page" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Sobre Nostros Pagina" />
             </SEO>
 
             <div className="page-about-us">
@@ -52,61 +52,61 @@ export default ({ location }) => {
                     style={{ backgroundPosition: "50% 75%", marginBottom: "2rem" }}
                 >
                     <div className="container-inner-background">
-                        <h1>About Us</h1>
+                        <h1>Sobre Nosotros</h1>
                     </div>
                 </BackgroundImage>
                 <section>
-                    <h2>Mission Statement</h2>
-                    <p className="mission-statement">To make the lives of minor league baseball players more fulfilling.</p>
+                    <h2>Nuestra Misión</h2>
+                    <p className="mission-statement">Para hacer que la vida de los jugadores de ligas menores más satisfactoria.</p>
                 </section>
                 <section className="company-values-container">
-                    <h2>Our Values</h2>
+                    <h2>Nuestros Valores</h2>
                     <div className="company-values">
                         <div className="value-container">
                             <span className="icon">
-                                <h3>Player Committed</h3>
+                                <h3>Jugador Comprometido</h3>
                                 <Baseball />
                             </span>
-                            <p>In our work, players come first and foremost. Any time we feel like we can't make a decision easily, we ask ourselves "How would players benefit the most?" That usually leads us to where we need to go pretty quickly.</p>
+                            <p>En nuestro trabajo, los jugadores son lo primero. Cuando nos sentimos cómo no podemos tomar un decisión, nos pregunstamos "Cómo los jugadores benificiarse el máximo?" Eso generalmente nos guia donde queremos ir bastante rápido.</p>
                         </div>
                         <div className="value-container">
                             <span className="icon">
-                                <h3>Service</h3>
+                                <h3>Servicio</h3>
                                 <Service />
                             </span>
-                            <p>If we as an organization are to execute our mission statement, we must act from a place of altruism. Our goals are to improve the lives of others and we mean to put them first whenever we can.</p>
+                            <p>Si estámos ejecutando nuestro misión, tenemos que obrar de un lugar de altruismo. Nuestras metas son mejorar las vidas de otros y vamos a ponerles lo primero siempre que podamos.</p>
                         </div>
                         <div className="value-container">
                             <span className="icon">
-                                <h3>Integrity</h3>
+                                <h3>Integridad</h3>
                                 <Balance />
                             </span>
-                            <p>We will let the dictionary speak for itself here. Definition #1: the quality of being honest and having strong moral principles. Definition #2: the state of being whole and undivided.</p>
+                            <p>Dejaremos que el diccionario habla por sí mismo aquí. Definición #1: la calidad de ser honesto y mantener principios morales fuertes. Definición #2: el estado de ser completo e indiviso.</p>
                         </div>
                         <div className="value-container">
                             <span className="icon">
-                                <h3>Accountability</h3>
+                                <h3>Responsibilidad</h3>
                                 <Checkmark />
                             </span>
-                            <p>We strongly believe that staying accountable is the only way that we can run our non-profit properly. We want to remain transparent with our work and become a trustworthy and reputable member of the baseball commnity.</p>
+                            <p>Creemos fuerte que quedarse responsibilidad es la camina sola que podemos llevar nuestro no lucrativo correcatmente. Queremos quedarnos transparente con nuestro trabajo y convertirnos en un miembro confiable y de buena reputación de la comunidad del beisbol profesional.</p>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <h2>Our People</h2>
+                    <h2>Nuestra Gente</h2>
                     <PeoplePanel
                         heading="Michael Rivers"
-                        text="<p>Principal Founder</p><p>Chairman of the Board</p><p>Executive Chair</p><p>President</p>"
+                        text="<p>Fundador Principal</p><p>Presidente de al Junta</p><p>Presidente Ejecutivo</p><p>CEO</p>"
                         svg={<User />}
                     />
                     <PeoplePanel
                         heading="Anthony Shew"
-                        text="<p>Co-Founder</p><p>Board Member, Player Representative</p><p>Secretary</p><p>Software Engineer</p>"
+                        text="<p>Cofundador</p><p>Miembro de la Junta, Representativo de Jugadores</p><p>Secretario de la Junta</p><p>CTO</p>"
                         svg={<UserWithCog />}
                     />
                     <PeoplePanel
                         heading="Mariana Guzman"
-                        text="<p>Co-Founder</p><p>Board Member, Latin Affairs</p><p>Head of Sponsor Relations</p><p>Head of Latin Communications</p>"
+                        text="<p>Cofundadora</p><p>Miembro de la Junta, Asuntos Latinos</p><p>Jefe de Relaciones con Patrocinadores</p><p>Jefe de Comunicaciones Latinos</p>"
                         svg={<UserWithPlus />}
                     />
                 </section>

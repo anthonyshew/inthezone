@@ -26,18 +26,18 @@ const style = {
 export default ({ location }) => {
     return (
         <Layout location={location}>
-            <SEO title="Donate">
+            <SEO title="Donar">
                 <meta name="og:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image" content="/media/aaml-logo.jpg" />
-                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donation Page" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donar Pagina" />
             </SEO>
             <div className="page-404">
-                <h1>Donate Directly to Our Non-Profit</h1>
-                <p>Pardon our dust! We're still under construction and don't quite have our donation channel prepared.</p>
-                <p>We appreciate your enthusiasm for this cause and you'll be able to donate here in about one short week. We will keep you updated when this page comes online!</p>
+                <h1>Donar Directamente a Nuestro No Comercial</h1>
+                <p>¡Perdonanos! Todavía estamos en construcción y todavía no tenemos nuestro canal de donación preparado. </p>
+                <p>Apreciamos tu entusiasmo por nuestro motivo and podrás donar aquí en una poca semana.</p>
             </div>
             {/* <div className="page-donate">
-                <h1>Donate Directly to Our Non-Profit</h1>
+                <h1>Donar Directamente a Nuestro No Comercial</h1>
                 <StripeWrapper />
             </div> */}
         </Layout>
@@ -103,32 +103,32 @@ const DonateForm = () => {
     return (
         <form className="donate-form" onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="email">
-                Your Email
+                Tu Email
                 <input className="form-input" type="email" name="email" ref={register({ required: true, pattern: /^\S+@\S+$/i })} />
             </label>
             {errors.amount && <p className="error">A valid email is required.</p>}
             <label htmlFor="amount" className="currency-container">
-                Your Donation Amount
+                Tu Monto de Donación (USD)
                 <input className="form-input donation-amount" type="number" name="amount" ref={register({ required: true, min: 1, })} />
                 <p className="currency">$</p>
             </label>
-            {errors.amount && <p className="error">An amount greater than 1 is required.</p>}
+            {errors.amount && <p className="error">Se requiere un monto más que 1.</p>}
             <label htmlFor="cardnumber">
-                Card Number
+                Número de Tarjeta
                 <CardNumberElement
                     className="form-input"
                     options={style}
                 />
             </label>
             <label htmlFor="exp-date">
-                Expiration Date
+                Fecha de Caducidad
             <CardExpiryElement
                     className="form-input"
                     options={style}
                 />
             </label>
             <label htmlFor="cvc">
-                Security Code (CVC)
+                Código de Seguridad
                 <CardCvcElement
                     className="form-input"
                     options={style}

@@ -36,40 +36,40 @@ const Index = ({ data, location }) => {
 
       <section className="section-messages">
         <div className="es container-message container-player-message" ref={playerMessageEs}>
-          <h2>Espanol,</h2>
-          <p>You have a certain set of needs unlike any other. You're in the top .0001% of people who do what you do and you're a part of a multi-billion dollar industry. But it probably doesn't feel like it financially. Adopt a Minor Leaguer and our sponsor network are here to help you achieve your goals - and provide a little more comfort along the way. Our confidential process gets you the help you deserve.</p>
+          <h2>Querido Jugador,</h2>
+          <p>Tienes necesidades como nadie más. Estás en el .0001% superior gropu de gente que hacen que haces y eres un aparte de una industria multimillonaria. Pero problamente no siente asi financialmente. Adopt a Minor Leaguer and nuestro comunidad de padrinos están aqui por ayudarte con tus metas - y proveer un poco mas comodidad  en tu camina. Nuestro proceso confidencial te brinda la ayuda que mereces.</p>
           <div className="container-link-button">
-            <Link className="link-button" to="/dear-players">
-              More&nbsp;Info&nbsp;&<br />Player&nbsp;Sign-Up
+            <Link className="link-button" to="/es/dear-players">
+              Más&nbsp;Información&nbsp;&<br />Jugador&nbsp;Registro
           </Link>
           </div>
         </div>
         <div className="container-message container-sponsor-message" ref={sponsorMessageEs}>
-          <h2>Dear Sponsor,</h2>
-          <p>You love baseball - and you know about the controversial treatment that minor leaguers receive. But here's the good part: You have the opportunity to help these young men achieve their dreams. By becoming a sponsor, you can impact a minor leaguer's life with a 1-to-1 relationship that he will remember forever.</p>
+          <h2>Querido Padrino,</h2>
+          <p>Te encanta al beisbol - y también sabes sobre el tratamiento polémico que reciben jugadores de ligas menores. Pero, aqui esta la parte buena: Tienes la oportunidad por ayudar estos jóvenes conseguin sus sueños. Al convertirse en padrino, puedes impactar la vida de un jugador de ligas menores con un 1-a-1 relación que va a recordarle siempre. Tener un impacto en tu equipo favorito - y tu nuevo jugador favorito - hoy.</p>
           <div className="container-link-button">
-            <Link className="link-button" to="/dear-sponsors">
-              More&nbsp;Info&nbsp;&<br />Sponsor&nbsp;Registration
+            <Link className="link-button" to="/es/dear-sponsors">
+              Más&nbsp;Información&nbsp;&<br />Padrino&nbsp;Registro
           </Link>
           </div>
         </div>
       </section>
 
       <section className="section-carousel">
-        <h2>How A Sponsorship Happens</h2>
-        <Carousel />
+        <h2>Cómo Sucede un Patricinio</h2>
+        <Carousel location={location} />
       </section>
 
       <section className="section-story">
-        <h2>Our Story</h2>
+        <h2>Nuestra Historia</h2>
         <div className="background-block">
           <div className="text">
-            <h3>Making baseball happen through pure goodwill.</h3>
-            <p>We connected a player with a sponsor.</p>
-            <p>Then, we did it again.</p>
-            <p>Then, we did it again...</p>
-            <Link className="link-button" to="/about-us">
-              About&nbsp;Us
+            <h3>Haciendo que el béisbol suceda a través de la buena voluntad puro.</h3>
+            <p>Conectamos un jugador con un padrino.</p>
+            <p>Y otra vez.</p>
+            <p>Y otra vez...</p>
+            <Link className="link-button" to="/es/about-us">
+              Sobre Nosotros
             </Link>
           </div>
           <div className="person-block company" >
@@ -77,9 +77,9 @@ const Index = ({ data, location }) => {
               <Image
                 className="avatar"
                 fixed={data.companyLogo.childImageSharp.fixed}
-                alt="Us, matchmaker."
+                alt="Nosotros, casamentero."
               />
-              <p>AaML,<br />Matchmaker</p>
+              <p>AaML,<br />Casamentero</p>
             </div>
           </div>
           <div className="person-block player" >
@@ -87,9 +87,9 @@ const Index = ({ data, location }) => {
               <Image
                 className="avatar"
                 fixed={data.anthony.childImageSharp.fixed}
-                alt="Anthony Shew, baseball player."
+                alt="Anthony Shew, jugador."
               />
-              <p>Anthony Shew,<br />Player</p>
+              <p>Anthony Shew,<br />Jugador</p>
             </div>
           </div>
           <div className="person-block sponsor">
@@ -99,20 +99,20 @@ const Index = ({ data, location }) => {
                 fixed={data.corrins.childImageSharp.fixed}
                 alt="The Corrins, fan sponsor."
               />
-              <p>The Corrins,<br />Sponsor</p>
+              <p>The Corrins,<br />Padrinos</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="section-media">
-        <h2>Extra! Extra!</h2>
-        <p>We have gotten some really special attention recently - and we're proud.</p>
-        <Link className="link-button" to="/media">AaML in the Media <Arrow /></Link>
+        <h2>En Los Medios</h2>
+        <p>Hemos recibido alguna atención - y estamos orgullosos.</p>
+        <Link className="link-button" to="/media">Noticias Sobre AaML<Arrow /></Link>
       </section>
 
       <section className="section-blog">
-        <h2>Our Blog</h2>
+        <h2>Nuestro Blog</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -137,7 +137,7 @@ const Index = ({ data, location }) => {
         })}
         <div className="container-link-button">
           <Link to="/blog" className="link-button">
-            Visit All Posts
+            Visita Todos Artículos
         </Link>
         </div>
       </section>

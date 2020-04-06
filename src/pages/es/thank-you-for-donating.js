@@ -8,17 +8,17 @@ import SEO from "../../components/seo"
 export default ({ location }) => {
     return (
         <Layout location={location}>
-            <SEO title="Thank You!" >
+            <SEO title="¡Gracias!" >
                 <meta name="og:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image" content="/media/aaml-logo.jpg" />
-                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Thanks You" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Dice Gracias" />
             </SEO>
             <div className="page-donation-thank-you">
-                <h1>Thank you!</h1>
-                <p>Your donation will have a direct impact on improving the lives of minor league baseball players.</p>
-                <p>You will be receiving your tax-deductible receipt shortly.</p>
+                <h1>¡Gracias!</h1>
+                <p>Tu donación impactará directamente la vida de los jugadores de ligas menores.</p>
+                <p>Reciberás tu recibo deducible de impuestos US dentor de poco.</p>
                 <div className="link-button-container">
-                    <Link to="/" className="link-button">Back to Home</Link>
+                    <Link to="/es" className="link-button">Regrasa a Casa</Link>
                 </div>
             </div>
         </Layout>
