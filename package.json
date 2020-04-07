@@ -2,7 +2,7 @@
   "name": "adopt-minor-leaguer",
   "private": true,
   "description": "The Adopt a Minor Leaguer Webpage",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "author": "Anthony Shew",
   "scripts": {
     "ngrok": "cd .. && ngrok http 3000",

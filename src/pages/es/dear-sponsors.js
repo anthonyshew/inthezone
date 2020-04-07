@@ -159,7 +159,7 @@ const SignUpForm = ({ setSuccess }) => {
                 {Object.values(watch()).filter((elem => elem === false)).length === 31 && <p className="error">Debes seleccionar al menos una organización.</p>}
                 <input className="honeypot" name="honeypot" ref={register()} />
 
-                <input type="submit" className="submit-button">Enviar</input>
+                <button type="submit" className="submit-button">Enviar</button>
             </form>
         </>
     )

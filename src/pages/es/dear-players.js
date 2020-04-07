@@ -84,7 +84,7 @@ const SignUpForm = ({ setSuccess }) => {
                     </li>
                     <li>
                         <span className="list-label bold">¡No seas tímido!</span>
-                        A veces, es dificil pedir ayuda incluso cuando tu y todos a tu alrededor saben que la necesitas. Entendemos que torpe puede ser decir "No he podido comer mi bocadillo favorito por mucho tiempo porque no lo vender in la ciudad be mi equipo. ¿Puedes enviarme algunos?" Pero, por favor recuerde, tu padrino fichó por esta razón exacta. Está ben preguntar (con razón).)<br /><br />También, <span className="bold">¡conoce a tu padrino!</span> ¡Si no sabes sobre sus mascotas y niños, lo estás haciendo mal!
+                        A veces, es dificil pedir ayuda incluso cuando tu y todos a tu alrededor saben que la necesitas. Entendemos que torpe puede ser decir "No he podido comer mi bocadillo favorito por mucho tiempo porque no lo vender in la ciudad be mi equipo. ¿Puedes enviarme algunos?" Pero, por favor recuerde, tu padrino fichó por esta razón exacta. Está bien preguntar (con razón).<br /><br />También, <span className="bold">¡conoce a tu padrino!</span> ¡Si no sabes sobre sus mascotas y niños, lo estás haciendo mal!
             </li>
                     <li>
                         <span className="list-label bold">Difundir la Palabra:</span>
@@ -147,7 +147,7 @@ const SignUpForm = ({ setSuccess }) => {
                 {errors.phoneNumber && <p className="error">Se requiere un número de teléfono de 10 dígitos.</p>}
                 <input className="honeypot" name="honeypot" ref={register()} />
 
-                <input type="submit" className="submit-button">Enviar</input>
+                <button type="submit" className="submit-button">Enviar</button>
             </form>
         </>
     )
