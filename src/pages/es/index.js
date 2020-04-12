@@ -37,7 +37,7 @@ const Index = ({ data, location }) => {
       <section className="section-messages">
         <div className="es container-message container-player-message" ref={playerMessageEs}>
           <h2>Querido Jugador,</h2>
-          <p>Tienes necesidades como nadie más. Estás en el .0001% superior gropu de gente que hacen que haces y eres un aparte de una industria multimillonaria. Pero problamente no siente asi financialmente. Adopt a Minor Leaguer and nuestro comunidad de padrinos están aqui por ayudarte con tus metas - y proveer un poco mas comodidad  en tu camina. Nuestro proceso confidencial te brinda la ayuda que mereces.</p>
+          <p>Al igual que todos, tu también tienes cierto tipo de necesidades. Formas parte el .0001% de las personas que se dedican a hacer lo que tu hace y eres parte de una industria multilmillionaria pero, fianancieramente hablando, probablemente no lo sientas de esa manera. Adopta a un Jugador de Ligas Menores (Adopt a Minor Leaguer) y nuestra comunidad de padrinos, están aqui para ayudarte a alcanzar tus metas y facilitarte un poco más tu camino a las Grandes Ligas. Nuestro proceso confidencial te brinda la ayuda que mereces.</p>
           <div className="container-link-button">
             <Link className="link-button" to="/es/dear-players">
               Más&nbsp;Información&nbsp;&<br />Jugador&nbsp;Registro
@@ -46,7 +46,7 @@ const Index = ({ data, location }) => {
         </div>
         <div className="container-message container-sponsor-message" ref={sponsorMessageEs}>
           <h2>Querido Padrino,</h2>
-          <p>Te encanta al beisbol - y también sabes sobre el tratamiento polémico que reciben jugadores de ligas menores. Pero, aqui esta la parte buena: Tienes la oportunidad por ayudar estos jóvenes conseguin sus sueños. Al convertirse en padrino, puedes impactar la vida de un jugador de ligas menores con un 1-a-1 relación que va a recordarle siempre. Tener un impacto en tu equipo favorito - y tu nuevo jugador favorito - hoy.</p>
+          <p>Te encanta al beisbol - y también tienes conocimiento de toda la controversia y vicisitudes que atraviesan los jugadores de Ligas Menores. Pero, afortunadamente, te tenemos una buena noticia...Tu tienes la oportunidad de ayudar a esos jóvenes jugadoers a hacer sus sueños realidad. Al convertirte en padrino, puedes impactar la vida de un jugador de Ligas Menores y crear un vinculo que ambas partes recordaran para siempre.</p>
           <div className="container-link-button">
             <Link className="link-button" to="/es/dear-sponsors">
               Más&nbsp;Información&nbsp;&<br />Padrino&nbsp;Registro
@@ -77,9 +77,9 @@ const Index = ({ data, location }) => {
               <Image
                 className="avatar"
                 fixed={data.companyLogo.childImageSharp.fixed}
-                alt="Nosotros, casamentero."
+                alt="Nosotros, el no lucrativo."
               />
-              <p>AaML,<br />Casamentero</p>
+              <p>AaML,<br />El No Lucrativo</p>
             </div>
           </div>
           <div className="person-block player" >

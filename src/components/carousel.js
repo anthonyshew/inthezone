@@ -37,19 +37,19 @@ const textContent = {
     step: {
       one: {
         label: "Paso 1",
-        text: "Un jugador se pone en contacto con nosotros que le gustaría ser patrocinado.",
+        text: "Un jugador nos contacta y nos deja saber que le gustaría ser apadrinado.",
       },
       two: {
         label: "Paso 2",
-        text: "Le decimos a nuestra comunidad que un jugador está listo para ser patrocinado.",
+        text: "Le dejamos saber a nuestra comunidad de posibles padrinos que tenemos a un jugador listo para ser apadrinado.",
       },
       three: {
         label: "Paso 3",
-        text: "Seleccionamos un patrocinador de la comunidad para el jugador.",
+        text: "Seleccionamos un padrino de nuestra comunidad.",
       },
       four: {
         label: "Paso 4",
-        text: "Ponemos en contacto al jugador y al patrocinador y su relación crece.",
+        text: "Nos encargamos de poner en contactor al jugador y al padrino.",
       }
     }
   }

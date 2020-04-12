@@ -45,54 +45,54 @@ const SignUpForm = ({ setSuccess }) => {
         <>
             <section className="obligations">
                 <h2>Querido Jugador,</h2>
-                <p>Estás aquí para ayuda y nos vamos a asegurar lo recibes.<span className="bold"> Por favor, lee todo en esta página antes de registrando para que sabes esperar.</span></p>
-                <h3>Que Pasaré</h3>
-                <p>Nos dejarás que quieres ser patrocinado. Vamos a ver tu mensaje, informar nuestra comijndad que un jugador está disponible por patrocinado, y tenerás un 1-a-1 relación nuevo con un compañero aficionado del beisbol por ayudarte en tu camina a Las Grandes Ligas. Generalmente, el proceso toma menos que 48 horas.</p>
-                <h3>Tus Responsibilidades</h3>
+                <p>ELlegaste a nosotros en busca de ayuda, así que nos aseguraremos que recibas el apoyo que necesitas.<span className="bold"> Por favor, lee todo en esta sección antes de registrando para que sabes esperar.</span></p>
+                <h3>¿Qué va a suceder?</h3>
+                <p>Estas a punto de dejarnos saber que necesitas ayuda y que deseas ser apadrinado. Tan pronto recibamos tu mensaje, le informaremos a nuestra red de padrinos que tenemos a un jugador esperando ser apadrinado. Luego, tu padrino tendrá 48 horas para colocarse en contacto contigo y comenzar a construir una relación que hará que tu camino a las Grandes Ligas sea mas fácil.</p>
+                <h3>Nuestra Responsabilidad</h3>
                 <ul>
                     <li>
-                        <span className="list-label bold">Anónimo:</span>
-                        Respetamos que algunos judagores quieren quedarse anónimo durante este proceso. La sola persona que vamos a compartir tu identidad es tu padrino. Tu padrino ha recibido instrucciones que tiene que respetar to anonimato también.<br /><br />Si eliges, puedes dejar tu padrino que no te importas si se compartir tu identidad con familia y amigos. También, puedes dejarnos que no te importas si te referimos tu nombre (por publicaciones en redes socials, por ejemplo).
-                We respect that some players will want to stay anonymous through this process. The only person we will share your identity with is your sponsor. Your sponsor has received instructions that they need to respect your anonymity as well.<br /><br />If you choose, you can let your sponsor know that you don't mind if they share your identity with family and friends. Additionally, you can let us know at any point that you don't mind if we refer to your name (for social media posts, for example).
+                        <span className="list-label bold">Anonimato:</span>
+                        Respetamos el hecho de que algunos jugadores deseen permanecer en el anonimato, es por eso que el padrino será la única persona con la que compartiremos tu identidad. Es importante que sepas que tu padrino ha recibido instrucciones de que también deben respetar tu deseo de permanecer bajo el anonimato. Si por el contrario no tienes problema con el hecho de que tu padrino comparta tu identidad con sus familiares y amigos, entonces puedes dejárselo saber.
+                        <br /><br />También puedes dejarnos saber si deseas que compartamos tu identidad en nuestras publicaciones de Redes Sociales; si por el contrario decides permanecer bajo el anonimato, nos encargaremos de cumplir con tu voluntad y proteger tu identidad..
             </li>
                     <li>
-                        <span className="list-label bold">Casamentro:</span>
-                        Generalmente, emparejamos jugadores con padrinos en menos que 48 horas pero seramos pacient si significa esperando por un ajuste correcto. Algunos padrions nos dicen que prefieren jugadores de ciertas organizaciones o que tienen cierto conjunto necesidades financieras. Por lo tanto, si no cabes con los padrinos que están disponibles ahora, vamos a esperar hasta encuentramos uno que te cabe.<br /><br />Confía con nosotros: emparejar persons por el bien de haciendo un casamiento no es la camina. Nos aseguraramos que el casamiento es correcto primero y, si en cualquier punto, crees que tu casamiento es menos que perfecto, haznos saber.
+                        <span className="list-label bold">Establecimiento de Contacto:</span>
+                        Por lo general, tratamos de enlazar a los padrinos y a los jugadores en un lapso de 48  horas, pero seremos pacientes si eso significa esperar por el padrino mas indicado para un jugador. Algunos padrinos están interesados ​​en jugadores de ciertas organizaciones o tienen un conjunto de necesidades financieras que no se adaptan a las necesidades de cualquier jugador. Por lo tanto, si un jugador no encaja con los padrinos que están disponible, entonces esperaremos hasta encontrar un padrino que se ajuste a las necesidades del jugador.<br /><br />Confía en nosotros: Conectar a un jugador y a un padrino por el simple hecho de hacerlo no es el camino a seguir. Nos aseguraremos de hacer y mantener bien las cosas. Si en algún momento siente que su relación de apadrinamiento no es la mejor, entonces no dude en comunicárnoslo.
             </li>
                 </ul>
-                <h3>Responsibilidades de Padrinos</h3>
+                <h3>Responsabilidades del Padrino</h3>
                 <ul>
                     <li>
-                        <span className="list-label bold">Anónimo:</span>
-                        Cómo dicemos arriba, padrinos están instruidos mantener tu identidad un secreto. Sin embargo, si estás comodo con ellos mencionando to nombre, puedes dejarles.
+                        <span className="list-label bold">Anonimato:</span>
+                        Como lo mencionamos anteriormente, siempre recomendamos que la identidad de nuestros jugadores y padrinos se mantengan en el anonimato. Cuando eres parte del programa de apadrinamiento, solo develaremos tu identidad a la persona que te estará apadrinando. Queda a discreción del jugador el querer revelar o no su identidad y dejarle saber a todos que forma parte de este proyecto. Si no tienes problema develando tu identidad entonces puedes comunicarle eso a tu padrino y a nosotros.
             </li>
                     <li>
                         <span className="list-label bold">Desinterés:</span>
-                        Nuestros padrinos están informados que a ellos no se les debe nada para sus servicio a un jugador. No tienen un hoja de tu salario del futuro, no es obligatrio que comprás boletos por juegos, y no les debes información del dentro sobre tu club. Ellos están ayudandote como un acto de bonda y nada más. (Pero deberias decir gracias.)
+                        Es nuestra obligación  dejarle saber a nuestros padrinos y a nuestros jugadores que la ayuda que le brindan y reciben, respectivamente, es de manera solidaria y desinteresada. Mas allá del un profundo agradecimiento, los jugadores NO tienen ningún tipo de obligación con los padrinos. El apadrinamiento no es un intercambio comercial, es una acto de bondad y solidaridad.
             </li>
                     <li>
-                        <span className="list-label bold">Ayuda Financiera o Superdotada:</span>
-                        La dejamos a cada padrino individual para decidir como quieres ayudarte. Tipicamente, padrinos ayudan enviando paquetes de cuidado, tarjetas de regalo por ristorantes o comestibles, o, aveces, pagos de Venmo. Recomiendas que padrinos el total de los dolares cuestan cerca de $100-150 USD por mes hasta el proximo Spring Training del año siguiente. La mayoría de las veces, sin embargo, estas relaciones duran much más.
+                        <span className="list-label bold">Ayuda Financiera o Regalos:</span>
+                        Dejamos a discreción de cada padrino la modalidad con la cual decida ayudar a su jugador. Algunos padrinos deciden ayudar enviándole paquetes de regalo a sus jugadores, otros envían tarjetas de regalo; y otros deciden transferirle dinero vía PayPal o Venmo. Hay muchas manera de ayudar y apoyar a un jugador y eso es algo que el padrino ira descubriendo a medida que crezca la comunicación entre este y el jugador. Consideramos que una ayuda mínima que este $100 y $150 mensuales es un monto que podría ayudar considerablemente a un jugador y como mínimo requerimos que el compromiso del padrino sea por una temporada; pero siempre a la espera de que el vinculo entre entre padrino y jugador sea de por vida.
 
             </li>
                 </ul>
-                <h3>Tus Responsibilidades</h3>
+                <h3>Tus Responsabilidades</h3>
                 <ul>
                     <li>
                         <span className="list-label bold">Agradecimiento:</span>
-                        Un fanático de beisbol está a punto de ayudarte puromente porque tiene el pasión por el juego y quieren hacer una diferencia en la vida de un jugador del beisbol. Sabemos que la vida de las ligas mernoes pueden ser agotador pero<span className="bold"> alguien quiere aliviar su carge - y estamos agradecidos por ellos.</span>
+                        Un fanático del béisbol está a punto de ayudarte por pura pasión, amor y convicción. Este padrino quiere marcar una diferencia en tu vida. Sabemos que la vida en Ligas Menores puede ser bastante difícil,<span className="bold"> alguien quiere aliviar su carga - y sabemos que tnatoto como nosotros estamos agradecidos per eso.</span>
                     </li>
                     <li>
                         <span className="list-label bold">¡No seas tímido!</span>
-                        A veces, es dificil pedir ayuda incluso cuando tu y todos a tu alrededor saben que la necesitas. Entendemos que torpe puede ser decir "No he podido comer mi bocadillo favorito por mucho tiempo porque no lo vender in la ciudad be mi equipo. ¿Puedes enviarme algunos?" Pero, por favor recuerde, tu padrino fichó por esta razón exacta. Está bien preguntar (con razón).<br /><br />También, <span className="bold">¡conoce a tu padrino!</span> ¡Si no sabes sobre sus mascotas y niños, lo estás haciendo mal!
+                        A veces, es difícil pedir ayuda incluso cuando tu y todos a tu alrededor saben que la necesitas. Sabemos que para algunas personas puede ser incomodo y vergonzoso admitir que esta atravesando por una situación difícil. Sin embargo, exhortamos a nuestro jugadores a confiar y a hablar de manera clara y honesta con sus padrinos; esa es la única manera en la que ellos podrán saber que tipo de ayuda necesitas.<br /><br />También, <span className="bold">conversa con tu padrino sobre su familia, mascotas, y su vida, recuerda que se trata de formar un vinculo de amistad.</span>
+                    </li>
+                    <li>
+                        <span className="list-label bold">¡Riega la Voz!</span>
+                        Es muy posible que muchos de tus compañeros de equipo también estén atravesando por un momento difícil y estén necesitando el apoyo de un padrino. Te invitamos a regar la voz y a dejarle saber a tus compañeros sobre nuestra organización y de cómo podemos ayudarlos. Si te sientes cómodo haciéndolo, también puedes regar la voz en Redes Sociales. Una publicación en Redes Sociales sobre nosotros o sobre algún obsequio que recibas de tu padrino, ayudan a dar a conocer nuestro proyecto y al mismo tiempo motiva a más personas se sumarse al mismo.
             </li>
                     <li>
-                        <span className="list-label bold">Difundir la Palabra:</span>
-                        Lo más probable es que muchose de tus compañeros puedan usar un padrino, también. Siéntate libre de difundir la palabra en el clubhouse sobre tu padrino, nuestro organización, y como ayudamos. También, puedes crear un publicación en los medios de comunicación social si te sientes. ¡Puestes de apreciación con los paquetes de cuidados de tus padrinos son nuestros favoritos!
-            </li>
-                    <li>
-                        <span className="list-label bold">Si Algo No es Correcto, dinos</span>
-                        Estámos aquí para ti si algo no parece correcto con la relación estás construyendo con tu padrino. No dudaremos pbrar si indicas que hay una problema que necisitamos arreglar que podemos controlar.
+                        <span className="list-label bold">Déjanos saber si algo no esta bien</span>
+                        Para nosotros es fundamental que la relación entre los jugadores y los padrinos sea la mejor. Por eso, no dudaremos en tomar acciones que beneficien a nuestros jugadores. Si un jugador tiene algún problema con su padrino entonces no dudaremos en anular ese apadrinamiento.
             </li>
                 </ul>
             </section>

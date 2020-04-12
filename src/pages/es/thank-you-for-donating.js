@@ -15,10 +15,10 @@ export default ({ location }) => {
             </SEO>
             <div className="page-donation-thank-you">
                 <h1>¡Gracias!</h1>
-                <p>Tu donación impactará directamente la vida de los jugadores de ligas menores.</p>
+                <p>Tu donación impactará directamente la vida de los jugadores de Ligas Menores.</p>
                 <p>Reciberás tu recibo deducible de impuestos US dentor de poco.</p>
                 <div className="link-button-container">
-                    <Link to="/es" className="link-button">Regrasa a Casa</Link>
+                    <Link to="/es" className="link-button">Regrasa a Principal</Link>
                 </div>
             </div>
         </Layout>

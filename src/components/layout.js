@@ -96,14 +96,14 @@ const Layout = ({ location, children }) => {
     ["/es/dear-sponsors", "Querida Padrinos"],
     ["/es/about-us", "Sobre Nosotros"],
     ["/blog", "Blog"],
-    [data.site.siteMetadata.donate.shop, "Shop"],
+    [data.site.siteMetadata.donate.shop, "Tienda"],
     ["/es/donate", "Donar"]
   ] : [
       ["/dear-players", "Dear Players"],
       ["/dear-sponsors", "Dear Sponsors"],
       ["/about-us", "About Us"],
       ["/blog", "Blog"],
-      [data.site.siteMetadata.donate.shop, "Shop"],
+      [data.site.siteMetadata.donate.shop, "Tienda"],
       ["/donate", "Donate"]
     ]
 
@@ -229,7 +229,7 @@ const PageNav = ({ data, location, isSpanish, navlinks }) => (
     </span>
     <span className="link-list">
       <Link to={location.pathname.startsWith("/es") ? "/es/" : "/"} className="link">
-        {location.pathname.startsWith("/es") ? "Casa" : "Home"}
+        {location.pathname.startsWith("/es") ? "Principal" : "Home"}
       </Link>
       {navlinks.map((elem, index) => {
         if (elem[0].startsWith("http")) {
@@ -376,7 +376,7 @@ const MobileMenu = ({ setIsOpen, isSpanish, location, navlinks }) => {
           <div className="link-list">
             <div className="link-container">
               <Link to={location.pathname.startsWith("/es") ? "/es" : "/"} className="link">
-                {location.pathname.startsWith("/es") ? "Casa" : "Home"}
+                {location.pathname.startsWith("/es") ? "Principal" : "Home"}
               </Link>
             </div>
             {navlinks.map((elem, index) => {
@@ -403,13 +403,13 @@ const MobileMenu = ({ setIsOpen, isSpanish, location, navlinks }) => {
 
 const Footer = ({ data, location }) => {
   const footerLinks = location.pathname.startsWith("/es") ? [
-    ["/es/", "Casa"],
+    ["/es/", "Principal"],
     ["/es/dear-players", "Queridos Jugadores"],
     ["/es/dear-sponsors", "Queridos Padrinos"],
     ["/es/donate", "Donar"],
     ["/es/about-us", "Sobre Nosotros"],
     ["/blog", "Blog"],
-    [data.site.siteMetadata.donate.shop, "Shop"],
+    [data.site.siteMetadata.donate.shop, "Tienda"],
     ["/es/contact-us", "Contacto"],
     ["/media", "Medios de Comunicación"],
     ["/legal/terms-of-use", "Términos de Uso"],
@@ -423,7 +423,7 @@ const Footer = ({ data, location }) => {
       ["/donate", "Donate"],
       ["/about-us", "About Us"],
       ["/blog", "Blog"],
-      [data.site.siteMetadata.donate.shop, "Shop"],
+      [data.site.siteMetadata.donate.shop, "Tienda"],
       ["/contact-us", "Contact Us"],
       ["/media", "Media"],
       ["/legal/terms-of-use", "Terms of Use"],
