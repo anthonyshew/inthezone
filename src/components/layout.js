@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react"
 import { Link } from "gatsby"
+import { navigate } from "@reach/router"
 import '../styles/reset.scss'
 import '../styles/global.scss'
 import '../styles/navbar.scss'
@@ -87,18 +88,26 @@ const Layout = ({ location, children }) => {
   const isSmallViewport = useMediaQuery("(max-width: 1000px)")
   const totalSponsorships = data.siteInfoJson.totalSponsorships
   const rootPath = `${__PATH_PREFIX__}/`
+  const isSpanish = location.pathname === `${__PATH_PREFIX__}/es/` || location.pathname === `${__PATH_PREFIX__}/es`
   let header
 
-  const navlinks = [
-    ["/dear-players", "Dear Players"],
-    ["/dear-sponsors", "Dear Sponsors"],
-    ["/about-us", "About Us"],
+  const navlinks = location.pathname.startsWith("/es") ? [
+    ["/es/dear-players", "Queridos Jugadores"],
+    ["/es/dear-sponsors", "Querida Padrinos"],
+    ["/es/about-us", "Sobre Nosotros"],
     ["/blog", "Blog"],
-    [data.site.siteMetadata.donate.shop, "Shop"],
-    ["/donate", "Donate"]
-  ]
+    [data.site.siteMetadata.donate.shop, "Tienda"],
+    ["/es/donate", "Donar"]
+  ] : [
+      ["/dear-players", "Dear Players"],
+      ["/dear-sponsors", "Dear Sponsors"],
+      ["/about-us", "About Us"],
+      ["/blog", "Blog"],
+      [data.site.siteMetadata.donate.shop, "Tienda"],
+      ["/donate", "Donate"]
+    ]
 
-  if (location.pathname === rootPath) {
+  if (location.pathname === rootPath || isSpanish) {
     header = (
       <section className="container-home-hero">
         <Image
@@ -106,12 +115,12 @@ const Layout = ({ location, children }) => {
           style={{ minHeight: "100%", minWidth: "100%", position: "absolute", filter: "blur(2px) saturate(1.5)", zIndex: "-1" }}
           imgStyle={{ backgroundPosition: "80% 80%" }}
         />
-        <IndexNav data={data} navlinks={navlinks} />
-        <SmallDisplayNav data={data} navlinks={navlinks} />
+        <IndexNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
+        <SmallDisplayNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
         <div className="dark-box">
           <p className="total-sponsorships">{totalSponsorships}</p>
           <div className="subline">
-            <p>Players Sponsored through</p>
+            <p>{isSpanish ? "Jugadores Patrocinados por" : "Players Sponsored through"}</p>
             <h1>Adopt a Minor Leaguer</h1>
           </div>
         </div>
@@ -120,8 +129,8 @@ const Layout = ({ location, children }) => {
   } else {
     header = (
       <>
-        <PageNav data={data} navlinks={navlinks} />
-        <SmallDisplayNav data={data} navlinks={navlinks} />
+        <PageNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
+        <SmallDisplayNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
       </>
     )
   }
@@ -130,17 +139,17 @@ const Layout = ({ location, children }) => {
     <>
       <header>{header}</header>
       <main>{children}</main>
-      <Footer data={data} />
+      <Footer data={data} location={location} navlinks={navlinks} />
     </>
   )
 }
 
 export default Layout
 
-const IndexNav = ({ data, navlinks }) => (
+const IndexNav = ({ data, location, navlinks }) => (
   <nav className="navbar full">
     <span className="logo">
-      <Link to="/">
+      <Link to={location.pathname.startsWith("/es") ? "/es" : "/"}>
         <Image
           className="site-logo"
           fixed={data.companyLogoLarge.childImageSharp.fixed}
@@ -152,20 +161,21 @@ const IndexNav = ({ data, navlinks }) => (
       {navlinks.map((elem, index) => {
         if (elem[0].startsWith("http")) {
           return <div key={elem[0]} className="link-container">
-            <a href={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
+            <a href={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
               {elem[1]}
             </a>
           </div>
         } else {
           return <div key={elem[0]} className="link-container">
-            <Link to={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`}>
+            <Link to={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`}>
               {elem[1]}
             </Link>
           </div>
         }
       })}
     </span>
-    <span className="social-icons">
+    <span className="container-right">
+      <LanguageSwitch location={location} />
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -206,10 +216,10 @@ const IndexNav = ({ data, navlinks }) => (
   </nav>
 )
 
-const PageNav = ({ data, navlinks }) => (
+const PageNav = ({ data, location, isSpanish, navlinks }) => (
   <nav className="navbar full page-nav">
     <span className="logo">
-      <Link to="/">
+      <Link to={location.pathname.startsWith("/es") ? "/es/" : "/"}>
         <Image
           className="site-logo"
           fixed={data.companyLogoLarge.childImageSharp.fixed}
@@ -218,22 +228,23 @@ const PageNav = ({ data, navlinks }) => (
       </Link>
     </span>
     <span className="link-list">
-      <Link to="/" className="link">
-        Home
-          </Link>
+      <Link to={location.pathname.startsWith("/es") ? "/es/" : "/"} className="link">
+        {location.pathname.startsWith("/es") ? "Principal" : "Home"}
+      </Link>
       {navlinks.map((elem, index) => {
         if (elem[0].startsWith("http")) {
-          return <a key={elem[0]} href={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
+          return <a key={elem[0]} href={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
             {elem[1]}
           </a>
         } else {
-          return <Link key={elem[0]} to={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`}>
+          return <Link key={elem[0]} to={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`}>
             {elem[1]}
           </Link>
         }
       })}
     </span>
-    <span className="social-icons">
+    <span className="container-right">
+      <LanguageSwitch location={location} />
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -274,7 +285,7 @@ const PageNav = ({ data, navlinks }) => (
   </nav>
 )
 
-const SmallDisplayNav = ({ data, navlinks }) => {
+const SmallDisplayNav = ({ data, location, isSpanish, navlinks }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleKeyboardOpen = (e) => {
@@ -284,7 +295,7 @@ const SmallDisplayNav = ({ data, navlinks }) => {
   return (
     <nav className="navbar mobile-navbar">
       <span className="logo">
-        <Link to="/">
+        <Link to={location.pathname.startsWith("/es") ? "/es/" : "/"}>
           <Image
             className="site-logo mobile"
             fixed={data.companyLogoSmall.childImageSharp.fixed}
@@ -293,18 +304,19 @@ const SmallDisplayNav = ({ data, navlinks }) => {
         </Link>
       </span>
       <span className="hamburger-container">
+        <LanguageSwitch location={location} />
         <Hamburger
           tabIndex={0}
           onKeyDown={handleKeyboardOpen}
           onClick={() => setIsOpen(true)}
         />
       </span>
-      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} navlinks={navlinks} />}
+      {isOpen && <MobileMenu setIsOpen={setIsOpen} data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />}
     </nav >
   )
 }
 
-const MobileMenu = ({ setIsOpen, data, navlinks }) => {
+const MobileMenu = ({ setIsOpen, isSpanish, location, navlinks }) => {
   useBodyScrollLock()
   const container = useRef()
   const first = useRef()
@@ -357,27 +369,26 @@ const MobileMenu = ({ setIsOpen, data, navlinks }) => {
             if (e.key === "Enter") handleClose()
           }}
         >
-
           <Xburger />
         </button>
 
         <div className="content">
           <div className="link-list">
             <div className="link-container">
-              <Link to="/" className="link">
-                Home
-                  </Link>
+              <Link to={location.pathname.startsWith("/es") ? "/es" : "/"} className="link">
+                {location.pathname.startsWith("/es") ? "Principal" : "Home"}
+              </Link>
             </div>
             {navlinks.map((elem, index) => {
               if (elem[0].startsWith("http")) {
                 return <div key={elem[0]} className="link-container">
-                  <a href={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} target="_blank" rel="noopener noreferrer" ref={navlinks.length === index + 1 ? last : undefined}>
+                  <a href={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} target="_blank" rel="noopener noreferrer" ref={navlinks.length === index + 1 ? last : undefined}>
                     {elem[1]}
                   </a>
                 </div>
               } else {
                 return <div key={elem[0]} className="link-container">
-                  <Link to={elem[0]} className={`link${elem[0] === "/donate" ? " special" : ""}`} ref={navlinks.length === index + 1 ? last : undefined}>
+                  <Link to={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} ref={navlinks.length === index + 1 ? last : undefined}>
                     {elem[1]}
                   </Link>
                 </div>
@@ -390,72 +401,142 @@ const MobileMenu = ({ setIsOpen, data, navlinks }) => {
   )
 }
 
-const Footer = ({ data }) => (
-  <footer className="footer">
-    <div className="pages">
-      <p>Pages</p>
-      <ul className="footer-link-list">
-        <li><Link className="link" activeClassName="active" to="/">Home</Link></li>
-        <li><Link className="link" activeClassName="active" to="/dear-players">Dear Players</Link></li>
-        <li><Link className="link" activeClassName="active" to="/dear-sponsors">Dear Sponsors</Link></li>
-        <li><Link className="link" activeClassName="active" to="/donate">Donate</Link></li>
-        <li><Link className="link" activeClassName="active" to="/about-us">About Us</Link></li>
-        <li><Link className="link" activeClassName="active" to="/blog">Blog</Link></li>
-        <li><a className="link" href={data.site.siteMetadata.donate.shop} target="_blank" rel="noopener noreferrer">Shop</a></li>
-        <li><Link className="link" activeClassName="active" to="/contact-us">Contact Us</Link></li>
-        <li><Link className="link" activeClassName="active" to="/media">Media</Link></li>
-        <li><Link className="link" activeClassName="active" to="/legal/terms-of-use">Terms of Use</Link></li>
-        <li><Link className="link" activeClassName="active" to="/legal/privacy-policy">Privacy Policy</Link></li>
-      </ul>
-    </div>
-    <div className="socials">
-      <p>Connect With Us!</p>
-      <span className="icons">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="facebook"
-          href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
-        >
-          <Image
-            className="facebook-img"
-            fixed={data.facebookLogo.childImageSharp.fixed}
-            alt={`${data.site.siteMetadata.title}'s Facebook Group`}
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="twitter"
-          href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
-        >
-          <Image
-            className="twitter-img"
-            fixed={data.twitterLogo.childImageSharp.fixed}
-            alt={`${data.site.siteMetadata.title}'s Twitter Page`}
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="instagram"
-          href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
-        >
-          <Image
-            className="instagram-img"
-            fixed={data.instagramLogo.childImageSharp.fixed}
-            alt={`${data.site.siteMetadata.title}'s Instagram Page`}
-          />
-        </a>
+const Footer = ({ data, location }) => {
+  const footerLinks = location.pathname.startsWith("/es") ? [
+    ["/es/", "Principal"],
+    ["/es/dear-players", "Queridos Jugadores"],
+    ["/es/dear-sponsors", "Queridos Padrinos"],
+    ["/es/donate", "Donar"],
+    ["/es/about-us", "Sobre Nosotros"],
+    ["/blog", "Blog"],
+    [data.site.siteMetadata.donate.shop, "Tienda"],
+    ["/es/contact-us", "Contacto"],
+    ["/media", "Medios de Comunicación"],
+    ["/legal/terms-of-use", "Términos de Uso"],
+    ["/legal/privacy-policy", "Aviso de Privacidad"],
+  ]
+    :
+    [
+      ["/", "Home"],
+      ["/dear-players", "Dear Players"],
+      ["/dear-sponsors", "Dear Sponsors"],
+      ["/donate", "Donate"],
+      ["/about-us", "About Us"],
+      ["/blog", "Blog"],
+      [data.site.siteMetadata.donate.shop, "Tienda"],
+      ["/contact-us", "Contact Us"],
+      ["/media", "Media"],
+      ["/legal/terms-of-use", "Terms of Use"],
+      ["/legal/privacy-policy", "Privacy Policy"],
+    ]
+
+  return (
+    <footer className="footer">
+      <div className="pages">
+        <p>Pages</p>
+        <ul className="footer-link-list">
+          {footerLinks.map((elem, index) => {
+            if (elem[0].startsWith("http")) {
+              return <div key={elem[0]} className="link-container">
+                <a href={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
+                  {elem[1]}
+                </a>
+              </div>
+            } else {
+              return <div key={elem[0]} className="link-container">
+                <Link to={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} activeClassName="active">
+                  {elem[1]}
+                </Link>
+              </div>
+            }
+          }
+          )}
+        </ul>
+      </div>
+      <div className="socials">
+        <p>{location.pathname.startsWith("/es") ? "Conectar con Nosotros!" : "Connect With Us!"}</p>
+        <span className="icons">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="facebook"
+            href={`https://facebook.com${data.site.siteMetadata.social.facebook}`}
+          >
+            <Image
+              className="facebook-img"
+              fixed={data.facebookLogo.childImageSharp.fixed}
+              alt={`${data.site.siteMetadata.title}'s Facebook Group`}
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="twitter"
+            href={`https://twitter.com${data.site.siteMetadata.social.twitter}`}
+          >
+            <Image
+              className="twitter-img"
+              fixed={data.twitterLogo.childImageSharp.fixed}
+              alt={`${data.site.siteMetadata.title}'s Twitter Page`}
+            />
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="instagram"
+            href={`https://instagram.com${data.site.siteMetadata.social.instagram}`}
+          >
+            <Image
+              className="instagram-img"
+              fixed={data.instagramLogo.childImageSharp.fixed}
+              alt={`${data.site.siteMetadata.title}'s Instagram Page`}
+            />
+          </a>
+        </span>
+      </div>
+      <div className="logo-container">
+        <Image
+          Tag="section"
+          className="container-home-hero"
+          fixed={data.companyLogoLarge.childImageSharp.fixed}
+        />
+        <p className="tagline">#StandWithMiLB</p>
+      </div>
+    </footer>
+  )
+}
+
+const LanguageSwitch = ({ location }) => {
+  const { pathname } = location
+  const [activeLang] = useState(pathname.startsWith('/es') ? "1" : "0")
+
+  const switchLang = (e) => {
+    const selection = e.target.value
+    if (selection !== activeLang) {
+      if (selection === "0") navigate(pathname.split("/es")[1])
+      if (selection === "1") navigate("/es" + pathname)
+    }
+  }
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") return switchLang(e)
+  }
+
+  return (
+    <>
+      <span className="language-switch">
+        <span className="language-label">EN</span>
+        <input
+          className="language-range"
+          type="range"
+          min="0" max="1"
+          defaultValue={activeLang}
+          onKeyPress={handleEnter}
+          onMouseUp={switchLang}
+          onTouchEnd={switchLang}
+        />
+        <span className="language-label">SP</span>
       </span>
-    </div>
-    <div className="logo-container">
-      <Image
-        Tag="section"
-        className="container-home-hero"
-        fixed={data.companyLogoLarge.childImageSharp.fixed}
-      />
-      <p className="tagline">#StandWithMiLB</p>
-    </div>
-  </footer>
-)
+    </>
+  )
+}

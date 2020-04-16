@@ -1,18 +1,17 @@
 import React, { useState } from 'react'
-import '../styles/donate.scss'
+import '../../styles/donate.scss'
 import { Elements, CardNumberElement, CardExpiryElement, CardCvcElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { useForm } from 'react-hook-form'
 import { loadStripe } from '@stripe/stripe-js'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 const stripePromise = loadStripe(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
 
 const style = {
     style: {
         base: {
-            height: "3rem",
             fontFamily: '"Raleway", sans-serif',
             fontSize: "16px",
             color: "#00235B",
@@ -27,13 +26,13 @@ const style = {
 export default ({ location }) => {
     return (
         <Layout location={location}>
-            <SEO title="Donate">
+            <SEO title="Donar">
                 <meta name="og:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image" content="/media/aaml-logo.jpg" />
-                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donation Page" />
+                <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donar Pagina" />
             </SEO>
             <div className="page-donate">
-                <h1>Donate Directly to Our Non-Profit</h1>
+                <h1>Donar Directamente a Nuestro No Comercial</h1>
                 <StripeWrapper />
             </div>
         </Layout>
@@ -99,32 +98,32 @@ const DonateForm = () => {
     return (
         <form className="donate-form" onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="email">
-                Your Email
+                Tu Email
                 <input className="form-input" type="email" name="email" ref={register({ required: true, pattern: /^\S+@\S+$/i })} />
             </label>
             {errors.amount && <p className="error">A valid email is required.</p>}
             <label htmlFor="amount" className="currency-container">
-                Your Donation Amount
+                Tu Monto de Donación (USD)
                 <input className="form-input donation-amount" type="number" name="amount" ref={register({ required: true, min: 1, })} />
                 <p className="currency">$</p>
             </label>
-            {errors.amount && <p className="error">An amount greater than 1 is required.</p>}
+            {errors.amount && <p className="error">Se requiere un monto más que 1.</p>}
             <label htmlFor="cardnumber">
-                Card Number
+                Número de Tarjeta
                 <CardNumberElement
                     className="form-input"
                     options={style}
                 />
             </label>
             <label htmlFor="exp-date">
-                Expiration Date
+                Fecha de Caducidad
             <CardExpiryElement
                     className="form-input"
                     options={style}
                 />
             </label>
             <label htmlFor="cvc">
-                Security Code (CVC)
+                Código de Seguridad
                 <CardCvcElement
                     className="form-input"
                     options={style}

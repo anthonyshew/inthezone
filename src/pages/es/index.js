@@ -1,28 +1,28 @@
 import React, { useRef } from "react"
 import { Link, graphql } from "gatsby"
-import '../styles/index.scss'
+import '../../styles/index.scss'
 
-import useAnimateOnVisible from "../hooks/useAnimateOnVisible"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Carousel from '../components/carousel'
+import useAnimateOnVisible from "../../hooks/useAnimateOnVisible"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import Carousel from '../../components/carousel'
 import Image from "gatsby-image"
-import Arrow from "../svg/arrow-right.svg"
+import Arrow from "../../svg/arrow-right.svg"
 
 const Index = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
-  const playerMessage = useRef(null)
-  const sponsorMessage = useRef(null)
-  useAnimateOnVisible({ element: playerMessage })
-  useAnimateOnVisible({ element: sponsorMessage })
+  const playerMessageEs = useRef(null)
+  const sponsorMessageEs = useRef(null)
+  useAnimateOnVisible({ element: playerMessageEs })
+  useAnimateOnVisible({ element: sponsorMessageEs })
 
-  const playerCard = useRef(null)
-  const sponsorCard = useRef(null)
-  const companyCard = useRef(null)
-  useAnimateOnVisible({ element: companyCard })
-  useAnimateOnVisible({ element: playerCard })
-  useAnimateOnVisible({ element: sponsorCard })
+  const playerCardEs = useRef(null)
+  const sponsorCardEs = useRef(null)
+  const companyCardEs = useRef(null)
+  useAnimateOnVisible({ element: companyCardEs })
+  useAnimateOnVisible({ element: playerCardEs })
+  useAnimateOnVisible({ element: sponsorCardEs })
 
   return (
     <Layout location={location}>
@@ -35,84 +35,84 @@ const Index = ({ data, location }) => {
       </SEO>
 
       <section className="section-messages">
-        <div className="container-message container-player-message" ref={playerMessage}>
-          <h2>Dear Player,</h2>
-          <p>You have a certain set of needs unlike any other. You're in the top .0001% of people who do what you do and you're a part of a multi-billion dollar industry. But it probably doesn't feel like it financially. Adopt a Minor Leaguer and our sponsor network are here to help you achieve your goals - and provide a little more comfort along the way. Our confidential process gets you the help you deserve.</p>
+        <div className="es container-message container-player-message" ref={playerMessageEs}>
+          <h2>Querido Jugador,</h2>
+          <p>Al igual que todos, tu también tienes cierto tipo de necesidades. Formas parte el .0001% de las personas que se dedican a hacer lo que tu hace y eres parte de una industria multilmillionaria pero, fianancieramente hablando, probablemente no lo sientas de esa manera. Adopta a un Jugador de Ligas Menores (Adopt a Minor Leaguer) y nuestra comunidad de padrinos, están aqui para ayudarte a alcanzar tus metas y facilitarte un poco más tu camino a las Grandes Ligas. Nuestro proceso confidencial te brinda la ayuda que mereces.</p>
           <div className="container-link-button">
-            <Link className="link-button" to="/dear-players">
-              More&nbsp;Info&nbsp;&<br />Player&nbsp;Sign-Up
+            <Link className="link-button" to="/es/dear-players">
+              Más&nbsp;Información&nbsp;&<br />Jugador&nbsp;Registro
           </Link>
           </div>
         </div>
-        <div className="container-message container-sponsor-message" ref={sponsorMessage}>
-          <h2>Dear Sponsor,</h2>
-          <p>You love baseball - and you know about the controversial treatment that minor leaguers receive. But here's the good part: You have the opportunity to help these young men achieve their dreams. By becoming a sponsor, you can impact a minor leaguer's life with a 1-to-1 relationship that he will remember forever. Have an impact on your favorite team - and your new favorite player - today.</p>
+        <div className="container-message container-sponsor-message" ref={sponsorMessageEs}>
+          <h2>Querido Padrino,</h2>
+          <p>Te encanta al beisbol - y también tienes conocimiento de toda la controversia y vicisitudes que atraviesan los jugadores de Ligas Menores. Pero, afortunadamente, te tenemos una buena noticia...Tu tienes la oportunidad de ayudar a esos jóvenes jugadoers a hacer sus sueños realidad. Al convertirte en padrino, puedes impactar la vida de un jugador de Ligas Menores y crear un vinculo que ambas partes recordaran para siempre.</p>
           <div className="container-link-button">
-            <Link className="link-button" to="/dear-sponsors">
-              More&nbsp;Info&nbsp;&<br />Sponsor&nbsp;Registration
+            <Link className="link-button" to="/es/dear-sponsors">
+              Más&nbsp;Información&nbsp;&<br />Padrino&nbsp;Registro
           </Link>
           </div>
         </div>
       </section>
 
       <section className="section-carousel">
-        <h2>How A Sponsorship Happens</h2>
+        <h2>Cómo Sucede un Patricinio</h2>
         <Carousel location={location} />
       </section>
 
       <section className="section-story">
-        <h2>Our Story</h2>
+        <h2>Nuestra Historia</h2>
         <div className="background-block">
           <div className="text">
-            <h3>Making baseball happen through pure goodwill.</h3>
-            <p>We connected a player with a sponsor.</p>
-            <p>Then, we did it again.</p>
-            <p>Then, we did it again...</p>
-            <Link className="link-button" to="/about-us">
-              About&nbsp;Us
+            <h3>Haciendo que el béisbol suceda a través de la buena voluntad puro.</h3>
+            <p>Conectamos un jugador con un padrino.</p>
+            <p>Y otra vez.</p>
+            <p>Y otra vez...</p>
+            <Link className="link-button" to="/es/about-us">
+              Sobre Nosotros
             </Link>
           </div>
           <div className="person-block company" >
-            <div className="inner" ref={companyCard}>
+            <div className="inner" ref={companyCardEs}>
               <Image
                 className="avatar"
                 fixed={data.companyLogo.childImageSharp.fixed}
-                alt="Us, matchmaker."
+                alt="Nosotros, el no lucrativo."
               />
-              <p>AaML,<br />Matchmaker</p>
+              <p>AaML,<br />El No Lucrativo</p>
             </div>
           </div>
           <div className="person-block player" >
-            <div className="inner" ref={playerCard}>
+            <div className="inner" ref={playerCardEs}>
               <Image
                 className="avatar"
                 fixed={data.anthony.childImageSharp.fixed}
-                alt="Anthony Shew, baseball player."
+                alt="Anthony Shew, jugador."
               />
-              <p>Anthony Shew,<br />Player</p>
+              <p>Anthony Shew,<br />Jugador</p>
             </div>
           </div>
           <div className="person-block sponsor">
-            <div className="inner" ref={sponsorCard}>
+            <div className="inner" ref={sponsorCardEs}>
               <Image
                 className="avatar"
                 fixed={data.corrins.childImageSharp.fixed}
                 alt="The Corrins, fan sponsor."
               />
-              <p>The Corrins,<br />Sponsor</p>
+              <p>The Corrins,<br />Padrinos</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="section-media">
-        <h2>Extra! Extra!</h2>
-        <p>We have gotten some really special attention recently - and we're proud.</p>
-        <Link className="link-button" to="/media">AaML in the Media <Arrow /></Link>
+        <h2>En Los Medios</h2>
+        <p>Hemos recibido alguna atención - y estamos orgullosos.</p>
+        <Link className="link-button" to="/media">Noticias Sobre AaML<Arrow /></Link>
       </section>
 
       <section className="section-blog">
-        <h2>Our Blog</h2>
+        <h2>Nuestro Blog</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -137,7 +137,7 @@ const Index = ({ data, location }) => {
         })}
         <div className="container-link-button">
           <Link to="/blog" className="link-button">
-            Visit All Posts
+            Visita Todos Artículos
         </Link>
         </div>
       </section>
@@ -148,7 +148,7 @@ const Index = ({ data, location }) => {
 export default Index
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexEsQuery {
     companyLogo: file(absolutePath: { regex: "/aaml-logo.jpg/" }) {
       childImageSharp {
         fixed(width: 90, height: 90) {

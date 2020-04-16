@@ -4,7 +4,58 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Image from 'gatsby-image'
 
-export default ({ ...props }) => {
+const textContent = {
+  english: {
+    buttons: {
+      prev: "Previous",
+      next: "Next"
+    },
+    step: {
+      one: {
+        label: "Step 1",
+        text: "A player gets in touch with us that he would like to be sponsored."
+      },
+      two: {
+        label: "Step 2",
+        text: "We let our community know a player is up for sponsorship."
+      },
+      three: {
+        label: "Step 3",
+        text: "We select a sponsor from the community for the player."
+      },
+      four: {
+        label: "Step 4",
+        text: "We put player and sponsor into contact and their relationship grows."
+      }
+    }
+  },
+  spanish: {
+    buttons: {
+      prev: "Previo",
+      next: "Proximo"
+    },
+    step: {
+      one: {
+        label: "Paso 1",
+        text: "Un jugador nos contacta y nos deja saber que le gustaría ser apadrinado.",
+      },
+      two: {
+        label: "Paso 2",
+        text: "Le dejamos saber a nuestra comunidad de posibles padrinos que tenemos a un jugador listo para ser apadrinado.",
+      },
+      three: {
+        label: "Paso 3",
+        text: "Seleccionamos un padrino de nuestra comunidad.",
+      },
+      four: {
+        label: "Paso 4",
+        text: "Nos encargamos de poner en contactor al jugador y al padrino.",
+      }
+    }
+  }
+}
+
+export default ({ location }) => {
   const data = useStaticQuery(graphql`
     query CarouselQuery {
       slideOne: file(absolutePath: { regex: "/player-walking.jpg/" }) {
@@ -40,6 +91,7 @@ export default ({ ...props }) => {
   `)
 
   const [step, setStep] = useState(0)
+  const [language] = useState(location.pathname.startsWith("/es") ? textContent.spanish : textContent.english)
 
   return (
     <div className="carousel">
@@ -49,32 +101,32 @@ export default ({ ...props }) => {
             fluid={data.slideOne.childImageSharp.fluid}
             style={{ minHeight: "100%", minWidth: "100%", position: "absolute", bottom: 0 }}
           />
-          <h3>Step 1</h3>
-          <p>A player gets in touch with us that he would like to be sponsored.</p>
+          <h3>{language.step.one.label}</h3>
+          <p>{language.step.one.text}</p>
         </div>
         <div className="slide two">
           <Image
             fluid={data.slideTwo.childImageSharp.fluid}
             style={{ minHeight: "100%", minWidth: "100%", position: "absolute", bottom: 0 }}
           />
-          <h3>Step 2</h3>
-          <p>We let our community know a player is up for sponsorship.</p>
+          <h3>{language.step.two.label}</h3>
+          <p>{language.step.two.text}</p>
         </div>
         <div className="slide three">
           <Image
             fluid={data.slideThree.childImageSharp.fluid}
             style={{ minHeight: "100%", minWidth: "100%", position: "absolute", bottom: 0 }}
           />
-          <h3>Step 3</h3>
-          <p>We select a sponsor from the community for the player.</p>
+          <h3>{language.step.three.label}</h3>
+          <p>{language.step.three.text}</p>
         </div>
         <div className="slide four">
           <Image
             fluid={data.slideFour.childImageSharp.fluid}
             style={{ minHeight: "100%", minWidth: "100%", position: "absolute", top: 0, bottom: "50%" }}
           />
-          <h3>Step 4</h3>
-          <p>We put player and sponsor into contact and their relationship grows.</p>
+          <h3>{language.step.four.label}</h3>
+          <p>{language.step.four.text}</p>
         </div>
       </div>
       <button
