@@ -32,7 +32,7 @@ export default ({ location }) => {
                 <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donar Pagina" />
             </SEO>
             <div className="page-donate">
-                <h1>Donar Directamente a Nuestro No Comercial</h1>
+                <h1>Donar Directamente a Nuestro Fundación</h1>
                 <StripeWrapper />
             </div>
         </Layout>
@@ -103,7 +103,7 @@ const DonateForm = () => {
             </label>
             {errors.amount && <p className="error">A valid email is required.</p>}
             <label htmlFor="amount" className="currency-container">
-                Tu Monto de Donación (USD)
+                Monto a Donar (USD)
                 <input className="form-input donation-amount" type="number" name="amount" ref={register({ required: true, min: 1, })} />
                 <p className="currency">$</p>
             </label>
@@ -116,7 +116,7 @@ const DonateForm = () => {
                 />
             </label>
             <label htmlFor="exp-date">
-                Fecha de Caducidad
+                Fecha de Vencimiento
             <CardExpiryElement
                     className="form-input"
                     options={style}
