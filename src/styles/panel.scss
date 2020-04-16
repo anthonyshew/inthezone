@@ -61,6 +61,7 @@
 @media (max-width: 750px) {
     .container-slide-panel {
         flex-direction: column;
+        padding: 0;
 
         svg {
             color: $red;
@@ -68,6 +69,12 @@
 
         .container-inner {
             width: 80%;
+
+            p {
+                padding: 0;
+            }
         }
+
+
     }
 }
