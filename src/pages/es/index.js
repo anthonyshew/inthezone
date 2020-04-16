@@ -56,7 +56,7 @@ const Index = ({ data, location }) => {
       </section>
 
       <section className="section-carousel">
-        <h2>Cómo Sucede un Patricinio</h2>
+        <h2>Como Sucede un Patricinio</h2>
         <Carousel location={location} />
       </section>
 
