@@ -103,7 +103,7 @@ const Layout = ({ location, children }) => {
       ["/dear-sponsors", "Dear Sponsors"],
       ["/about-us", "About Us"],
       ["/blog", "Blog"],
-      [data.site.siteMetadata.donate.shop, "Tienda"],
+      [data.site.siteMetadata.donate.shop, "Shop"],
       ["/donate", "Donate"]
     ]
 
@@ -423,7 +423,7 @@ const Footer = ({ data, location }) => {
       ["/donate", "Donate"],
       ["/about-us", "About Us"],
       ["/blog", "Blog"],
-      [data.site.siteMetadata.donate.shop, "Tienda"],
+      [data.site.siteMetadata.donate.shop, "Shop"],
       ["/contact-us", "Contact Us"],
       ["/media", "Media"],
       ["/legal/terms-of-use", "Terms of Use"],
