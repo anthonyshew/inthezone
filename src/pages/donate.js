@@ -32,15 +32,15 @@ export default ({ location }) => {
                 <meta name="twitter:image" content="/media/aaml-logo.jpg" />
                 <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Donation Page" />
             </SEO>
-            <div className="page-404">
+            {/* <div className="page-404">
                 <h1>Donate Directly to Our Non-Profit</h1>
                 <p>Pardon our dust! We're still under construction and don't quite have our donation channel prepared.</p>
                 <p>We appreciate your enthusiasm for this cause and you'll be able to donate here in about one short week. We will keep you updated when this page comes online!</p>
-            </div>
-            {/* <div className="page-donate">
+            </div> */}
+            <div className="page-donate">
                 <h1>Donate Directly to Our Non-Profit</h1>
                 <StripeWrapper />
-            </div> */}
+            </div>
         </Layout>
     )
 
