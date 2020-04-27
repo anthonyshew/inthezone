@@ -79,7 +79,7 @@ router.post('/donate-success', (req, res) => {
 
     const emailMessage = {
         to: [process.env.EMAIL_TO, email],
-        from: email,
+        from: process.env.EMAIL_FROM,
         subject: `Adopt a Minor Leaguer Thanks You for Your Donation`,
         html: `<h1>Your donation is helping minor leaguers today.</h1>
     <div><p>Your contribution helps us to help minor leaguers. We appreciate the support that you have shown players as they chase their dreams.</p><div>
