@@ -35,15 +35,15 @@ Wanting to donate physical goods? That's great, too! Send us an email at the lin
 
 This is a great question and we are glad you asked. At this time, there are several ways that we plan on using donation money.
 
-### \    1. Special Projects
+### 1. Special Projects
 
 As players toil their way through minor league life, certain situations may come up for them that can only be solved with a few extra bucks. For instance, our first Special Project was sending help to the New York Yankee minor leaguers who got quarantined in their hotel because a few players tested positively for coronavirus while in Spring Training. As you can imagine, being locked away in a hotel room isn't too fun compared to getting to go back home like nearly every other minor leaguer across the nation. Adopt a Minor Leaguer sent pizzas, games, Legos, and other stuff that helped these players get through their quarantine.
 
-### \    2. "The Fund"
+### 2. "The Fund"
 
 We have an idea for getting players paid more. Simply put, there are certain types of low-risk investments out there that pay out monthly. And we think we can tap into that to try to add to the "income" that players receive. We think this would be especially useful in the offseason - a time where players don't get paid despite the fact that they spend a ton of their time training to perform during the season. We are still in the earliest stages of this project so we can't get too specific on details. But we're excited about where this can go.
 
-### \    3. Paying Those Who Work on This Foundation
+### 3. Paying Those Who Work on This Foundation
 
 This is last on the list for a reason - and it's not to be shy or sneaky about paying ourselves. We want those who donate to us to understand that our top priority is to let donations directly affect the lives of players. To this day, we're impacting over 400 players - and we want that to only be the start. They are the only reason that we are embarking on this journey. However, it takes work and time. That's time that we could be spending with our loved ones, playing with hobbies, or, well, just relaxing. That means we believe it's fair to give ourselves at least a small something. We'll never be the non-profit paying the CEO millions of dollars. But we'll make sure he can pay for tickets to a minor league baseball game with his family every now and then.
 
