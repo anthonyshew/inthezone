@@ -9,6 +9,13 @@ import SEO from "../components/seo"
 export default ({ location }) => {
     const data = useStaticQuery(graphql`
         query MediaPageQuery {
+            elUniversal: file(absolutePath: { regex: "/media/el-universal.png/" }) {
+                childImageSharp {
+                  fixed(width: 175) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
             royalsReview: file(absolutePath: { regex: "/media/royals-review.png/" }) {
                 childImageSharp {
                   fixed(width: 200) {
@@ -64,6 +71,16 @@ export default ({ location }) => {
             image: data.siCom.childImageSharp.fixed,
             imageAlt: "'Adopt a Minor Leaguer' Program Gives Players a Lifeline as MLB Shuts Down",
             link: "https://www.si.com/mlb/2020/03/17/adopt-a-minor-leaguer-program",
+        },
+        {
+            publication: "El Universal",
+            title: "Aficionados Ayudan Económicamente a Peloteros de Ligas Menores",
+            author: "Alain Arenas",
+            date: "3 April 2020",
+            mediaType: "article",
+            image: data.elUniversal.childImageSharp.fixed,
+            imageAlt: "Aficionados Ayudan Económicamente a Peloteros de Ligas Menores",
+            link: "https://www.eluniversal.com.mx/universal-deportes/beisbol/covid-19-aficionados-ayudan-economicamente-peloteros-de-ligas-menores",
         },
         {
             publication: "Arizona 12News",
