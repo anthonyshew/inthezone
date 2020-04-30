@@ -15,7 +15,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-      />
+      >
+        <meta name="og:image" content="/media/aaml-logo.jpg" />
+        <meta name="twitter:image" content="/media/aaml-logo.jpg" />
+        <meta name="twitter:image:alt" content="Adopt a Minor Leaguer Blog" />
+      </SEO>
       <article className="blog-post">
         <header>
           <h1>
