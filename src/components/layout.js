@@ -91,7 +91,7 @@ const Layout = ({ location, children }) => {
   const isSpanish = location.pathname === `${__PATH_PREFIX__}/es/` || location.pathname === `${__PATH_PREFIX__}/es`
   let header
 
-  const navlinks = location.pathname.startsWith("/es") ? [
+  const indexNavlinks = location.pathname.startsWith("/es") ? [
     ["/es/dear-players", "Queridos Jugadores"],
     ["/es/dear-sponsors", "Querida Padrinos"],
     ["/es/about-us", "Sobre Nosotros"],
@@ -107,6 +107,23 @@ const Layout = ({ location, children }) => {
       ["/donate", "Donate"]
     ]
 
+  const navlinks = location.pathname.startsWith("/es") ? [
+    ["/es/dear-players", "Queridos Jugadores"],
+    ["/es/dear-sponsors", "Querida Padrinos"],
+    ["/es/about-us", "Sobre Nosotros"],
+    ["/blog", "Blog"],
+    [data.site.siteMetadata.donate.shop, "Tienda"],
+    ["/es/donate", "Donar"]
+  ] : [
+      ["/dear-players", "Dear Players"],
+      ["/dear-sponsors", "Dear Sponsors"],
+      ["/about-us", "About Us"],
+      ["/blog", "Blog"],
+      ["/business-sponsors", "Business Sponsors"],
+      [data.site.siteMetadata.donate.shop, "Shop"],
+      ["/donate", "Donate"]
+    ]
+
   if (location.pathname === rootPath || isSpanish) {
     header = (
       <section className="container-home-hero">
@@ -115,7 +132,7 @@ const Layout = ({ location, children }) => {
           style={{ minHeight: "100%", minWidth: "100%", position: "absolute", filter: "blur(2px) saturate(1.5)", zIndex: "-1" }}
           imgStyle={{ backgroundPosition: "80% 80%" }}
         />
-        <IndexNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
+        <IndexNav data={data} location={location} isSpanish={isSpanish} indexNavlinks={indexNavlinks} />
         <SmallDisplayNav data={data} location={location} isSpanish={isSpanish} navlinks={navlinks} />
         <div className="dark-box">
           <p className="total-sponsorships">{totalSponsorships}</p>
@@ -146,7 +163,7 @@ const Layout = ({ location, children }) => {
 
 export default Layout
 
-const IndexNav = ({ data, location, navlinks }) => (
+const IndexNav = ({ data, location, indexNavlinks }) => (
   <nav className="navbar full">
     <span className="logo">
       <Link to={location.pathname.startsWith("/es") ? "/es" : "/"}>
@@ -158,7 +175,7 @@ const IndexNav = ({ data, location, navlinks }) => (
       </Link>
     </span>
     <span className="link-list">
-      {navlinks.map((elem, index) => {
+      {indexNavlinks.map((elem, index) => {
         if (elem[0].startsWith("http")) {
           return <div key={elem[0]} className="link-container">
             <a href={elem[0]} className={`link${elem[0].endsWith("/donate") ? " special" : ""}`} target="_blank" rel="noopener noreferrer">
@@ -423,6 +440,7 @@ const Footer = ({ data, location }) => {
       ["/donate", "Donate"],
       ["/about-us", "About Us"],
       ["/blog", "Blog"],
+      ["/business-sponsors", "Business Sponsors"],
       [data.site.siteMetadata.donate.shop, "Shop"],
       ["/contact-us", "Contact Us"],
       ["/media", "Media"],
