@@ -60,6 +60,18 @@ const Index = ({ data, location }) => {
         <Carousel location={location} />
       </section>
 
+      <section className="section-business-sponsors">
+        <h2>Shop Our Sponsors</h2>
+        <p>Shop with our business sponsors to support minor leaguers that own businesses - and us!</p>
+        <Link className="sponsors-link" to="/business-sponsors">
+          <div className="sponsors-flex">
+            <Image className="business-sponsor" fixed={data.orvilleAndrew.childImageSharp.fixed} alt="Orville Andrew" />
+            <Image className="business-sponsor" fixed={data.backwoodPine.childImageSharp.fixed} alt="Backwood Pine" />
+          </div>
+        </Link>
+        <Link className="link-button" to="/business-sponsors">Shop <Arrow /></Link>
+      </section>
+
       <section className="section-story">
         <h2>Our Story</h2>
         <div className="background-block">
@@ -166,6 +178,20 @@ export const pageQuery = graphql`
     corrins: file(absolutePath: {regex: "/the-corrins.png/"}) {
       childImageSharp {
         fixed(width: 90, height: 90) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    orvilleAndrew: file(absolutePath: {regex: "/OA-icon.png/"}) {
+      childImageSharp {
+        fixed(width: 70) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    backwoodPine: file(absolutePath: {regex: "/backwood-pine.jpg/"}) {
+      childImageSharp {
+        fixed(height: 70) {
           ...GatsbyImageSharpFixed
         }
       }

@@ -201,7 +201,8 @@
     }
 }
 
-.section-media {
+.section-media,
+.section-business-sponsors {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -222,6 +223,23 @@
             left: 2px;
             height: .8em;
         }
+    }
+}
+
+.section-business-sponsors {
+    padding: 2rem;
+
+    .sponsors-link {
+        width: 100%;
+    }
+
+    .sponsors-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
     }
 }
 
@@ -379,8 +397,13 @@
         }
     }
 
-    .section-media {
+    .section-media,
+    .section-business-sponsors {
         padding: 2rem 0 3rem;
+    }
+
+    .section-business-sponsors {
+        padding: 1rem;
     }
 }
 

@@ -1,0 +1,123 @@
+@import 'global.scss';
+
+.page-business-sponsors {
+    h1 {
+        margin-bottom: 1rem;
+        font-size: 48px;
+        font-family: $passion;
+        text-align: center;
+    }
+
+    .subline {
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        width: 80%;
+        font-size: 18px;
+    }
+
+    .sponsor-card {
+        margin: 5%;
+        padding: 1rem 0;
+        padding-bottom: 0;
+        border: 5px solid $blue;
+        border-bottom: 0;
+        border-radius: 3rem;
+
+        h2 {
+            color: $blue;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 225px;
+
+            .img-container {
+                width: 50%;
+                text-align: center;
+            }
+
+            .text-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 100%;
+                padding: 0 1rem;
+                font-size: 18px;
+
+                h3 {
+                    font-family: $raleway;
+                    font-size: 24px;
+                    font-weight: 900;
+                    text-align: center;
+
+                    .code {
+                        font-family: $passion;
+                        font-size: 32px;
+                        font-weight: initial;
+                    }
+                }
+
+                P {
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        .card-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 3rem;
+            background-color: $blue;
+            border-bottom: 5px solid $blue;
+            border-bottom-left-radius: 2.8rem;
+            border-bottom-right-radius: 2.8rem;
+            color: $white;
+            font-family: $passion;
+            font-size: 36px;
+            transition: .2s;
+        }
+    }
+}
+
+@media (hover:hover) {
+    .page-business-sponsors {
+        .sponsor-card {
+            .card-link:hover {
+                background-color: $light-blue;
+                color: $blue;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .page-business-sponsors {
+        .sponsor-card {
+            .flex {
+                flex-direction: column;
+                height: initial;
+
+                .text-container,
+                .img-container {
+                    width: 80%;
+                    padding: 1rem 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .page-business-sponsors {
+        .subline {
+            font-size: 16px;
+        }
+    }
+}
