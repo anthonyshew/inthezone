@@ -164,6 +164,12 @@
             appearance: none;
         }
     }
+
+    .success {
+        width: 100%;
+        min-height: 50vh;
+        max-width: initial;
+    }
 }
 
 @media (max-width: 500px) {

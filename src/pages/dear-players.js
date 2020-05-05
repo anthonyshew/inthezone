@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 export default ({ location }) => {
     const [success, setSuccess] = useState(false)
+    const [firstName, setFirstName] = useState('')
 
     return (
         <Layout location={location}>
@@ -16,17 +17,17 @@ export default ({ location }) => {
         <meta name="twitter:image:alt" content="Player Sign Up - Adopt a Minor Leaguer Page" />
             </SEO>
             <div className="page-dear-players">
-            {success ? <SuccessMessage /> : <SignUpForm setSuccess={setSuccess} />}
+            {success ? <SuccessMessage firstName={firstName} /> : <SignUpForm setSuccess={setSuccess} setFirstName={setFirstName} />}
             </div>
         </Layout>
     )
 }
 
-const SuccessMessage = ({lastName}) => (
-<p>Thank you for signing up, {lastName}! You'll be hearing from us shortly (usually within the next 24 hours).</p>
+const SuccessMessage = ({firstName}) => (
+<p className="success">Thank you for signing up, {firstName}! You'll be hearing from us shortly (usually within the next 24 hours).</p>
 )
 
-const SignUpForm = ({setSuccess}) => {
+const SignUpForm = ({setSuccess, setFirstName}) => {
     const { register, errors, handleSubmit } = useForm()
     const onSubmit = data => {
         if (data.honeypot.length > 0) return console.log('Hello, robot!')
@@ -38,7 +39,10 @@ const SignUpForm = ({setSuccess}) => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(res => setSuccess(true))
+            .then(res => {
+                setFirstName(data.firstName)
+                setSuccess(true)
+            })
     }
 
     return (
