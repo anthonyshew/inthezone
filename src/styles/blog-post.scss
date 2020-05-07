@@ -1,6 +1,9 @@
 @import './global.scss';
 
 .blog-post {
+    max-width: 1000px;
+    margin: 0 auto;
+
     h1 {
         padding: 0 .5rem;
         font-size: 48px;
