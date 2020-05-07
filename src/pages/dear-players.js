@@ -109,6 +109,7 @@ const SignUpForm = ({setSuccess, setFirstName}) => {
         <label htmlFor="organization">Organization</label>
         <select name="organization" ref={register({ required: true, minLength: 5 })} style={errors.organization ? { borderColor: '#CC0001' } : null}>
             <option></option>
+            <option value="Free Agent/Independent">Free Agent/Independent</option>
             <option value="Arizona Diamondbacks">Arizona Diamondbacks</option>
             <option value="Atlanta Braves">Atlanta Braves</option>
             <option value="Baltimore Orioles">Baltimore Orioles</option>
