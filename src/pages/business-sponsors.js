@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import '../styles/business-sponsors.scss'
 import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image'
@@ -74,20 +74,26 @@ export default ({ location }) => {
     )
 }
 
-const Card = ({ name, description, image, imageAlt, code, link }) => (
-    <section className="sponsor-card">
-        <h2>{name}</h2>
-        <div className="flex">
-            <div className="img-container">
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                    <Image className="sponsor-image" fixed={image} alt={imageAlt} />
-                </a>
+const Card = ({ name, description, image, imageAlt, code, link }) => {
+    const card = useRef(null)
+    useAnimateOnVisible({ element: card })
+
+    return (
+        <section className="sponsor-card" ref={card}>
+            <h2>{name}</h2>
+            <div className="flex">
+                <div className="img-container">
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                        <Image className="sponsor-image" fixed={image} alt={imageAlt} />
+                    </a>
+                </div>
+                <div className="text-container">
+                    {code !== "" && <h3>USE CODE AT CHECKOUT: <span className="code">{code}</span></h3>}
+                    <p>{description}</p>
+                </div>
             </div>
-            <div className="text-container">
-                {code !== "" && <h3>USE CODE AT CHECKOUT: <span className="code">{code}</span></h3>}
-                <p>{description}</p>
-            </div>
-        </div>
-        <a className="card-link" href={link} target="_blank" rel="noopener noreferrer">Visit</a>
-    </section>
-)
+            <a className="card-link" href={link} target="_blank" rel="noopener noreferrer">Visit</a>
+        </section>
+    )
+
+}
