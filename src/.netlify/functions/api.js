@@ -16,7 +16,8 @@ router.post('/player-registration', (req, res) => {
 
     const emailMessage = {
         to: process.env.EMAIL_TO,
-        from: email,
+        from: process.env.EMAIL_FROM,
+        replyTo: email,
         subject: `New Player Sign Up!: ${firstName} ${lastName}`,
         html: `<h1>A new player has signed up for sponsorship.</h1>
     <div><h2>First Name: </h2><span>${firstName}</span><div>
@@ -44,7 +45,8 @@ router.post('/sponsor-registration', (req, res) => {
 
     const emailMessage = {
         to: process.env.EMAIL_TO,
-        from: email,
+        from: process.env.EMAIL_FROM,
+        replyTo: email,
         subject: `New Sponsor Sign Up!: ${firstName} ${lastName}`,
         html: `<h1>A new sponsor has signed up for sponsorship.</h1>
     <div><h2>First Name: </h2><span>${firstName}</span><div>
@@ -109,7 +111,8 @@ router.post('/contact-us', (req, res) => {
 
     const emailMessage = {
         to: process.env.EMAIL_CONTACT,
-        from: email,
+        from: process.env.EMAIL_FROM,
+        replyTo: email,
         subject: `New Message from Website Contact Form`,
         html: `<h1>${name} has sent Adopt a Minor Leaguer a message!</h1>
     <div><h2>Their message is:</h2><div>
