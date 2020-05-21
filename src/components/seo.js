@@ -56,6 +56,10 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `/media/aaml-logo.jpg`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -70,6 +74,10 @@ const SEO = ({ description, lang, meta, title }) => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: `/media/aaml-logo.jpg`,
         },
       ].concat(meta)}
     />
