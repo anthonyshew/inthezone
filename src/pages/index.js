@@ -1,6 +1,4 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-// import { useSpring, animated } from "react-spring"
 import "../styles/global.scss"
 
 import { Accordion, AccordionItem } from "../components/accordion"
@@ -51,7 +49,7 @@ export default () => {
       <Logo />
       <Field />
       <ReturnToTop />
-      <Link className="contact-button" to="#contact-form">CONTACT US</Link>
+      <a className="contact-button" href="#contact-form">CONTACT US</a>
 
       <section className="hero">
         <h2>Painting the corners on your website.</h2>
@@ -64,13 +62,19 @@ export default () => {
 
       <Accordion>
         <AccordionItem header="Website Builds">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus ratione maiores adipisci molestiae fugiat facere, quam est non repellat ea reiciendis cupiditate deleniti aut accusamus ipsum eaque aspernatur. Numquam consectetur placeat voluptatum architecto quod iusto ex sunt omnis tenetur magni!
+          <div className="container">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus ratione maiores adipisci molestiae fugiat facere, quam est non repellat ea reiciendis cupiditate deleniti aut accusamus ipsum eaque aspernatur. Numquam consectetur placeat voluptatum architecto quod iusto ex sunt omnis tenetur magni!
+          </div>
         </AccordionItem>
         <AccordionItem header="App Builds">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus ratione maiores adipisci molestiae fugiat facere, quam est non repellat ea reiciendis cupiditate deleniti aut accusamus ipsum eaque aspernatur. Numquam consectetur placeat voluptatum architecto quod iusto ex sunt omnis tenetur magni!
+          <div className="container">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus ratione maiores adipisci molestiae fugiat facere, quam est non repellat ea reiciendis cupiditate deleniti aut accusamus ipsum eaque aspernatur. Numquam consectetur placeat voluptatum architecto quod iusto ex sunt omnis tenetur magni!
+          </div>
         </AccordionItem>
         <AccordionItem header="Maintenance Work">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus ratione maiores adipisci molestiae fugiat facere, quam est non repellat ea reiciendis cupiditate deleniti aut accusamus ipsum eaque aspernatur. Numquam consectetur placeat voluptatum architecto quod iusto ex sunt omnis tenetur magni!
+          <div className="container">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus ratione maiores adipisci molestiae fugiat facere, quam est non repellat ea reiciendis cupiditate deleniti aut accusamus ipsum eaque aspernatur. Numquam consectetur placeat voluptatum architecto quod iusto ex sunt omnis tenetur magni!
+          </div>
         </AccordionItem>
       </Accordion>
 
@@ -110,7 +114,7 @@ export default () => {
 
       <section id="contact-form" className="contact">
         <h2>Get In Touch</h2>
-        <p>Whether you need a custom application or a Wordpress site (or don't even know what you need!), we want to hear how we can add value to your business. Fill in the form below and we'll respond to you within 48 hours (unless we're on the road and the hotel wifi is out.)</p>
+        <p>Whether you need a custom application or a basic Wordpress site (or don't even know what you need!), we want to hear how we can add value to your business. Fill in the form below and we'll respond to you within 48 hours (unless we're on the road and the hotel wifi is out.)</p>
         <ContactForm />
       </section>
 

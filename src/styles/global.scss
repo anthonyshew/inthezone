@@ -195,6 +195,16 @@ h3 {
     }
 }
 
+.accordion-container {
+    .accordion-item {
+        .container {
+            padding: 1rem;
+            font-size: 18px;
+            font-family: $catamaran;
+        }
+    }
+}
+
 .contact {
     p {
         max-width: 1000px;
