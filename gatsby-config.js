@@ -1,10 +1,26 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+let { createProxyMiddleware } = require("http-proxy-middleware")
+
+require('dotenv').config()
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions",
+      createProxyMiddleware({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions": "",
+        },
+      })
+    )
+  },
+  plugins: [
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    },
+  ],
 }

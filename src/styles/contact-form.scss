@@ -1,0 +1,10 @@
+@import "variables.scss";
+
+.contact-form-body {
+    font-size: 18px;
+
+    .form-input {
+        display: block;
+        border: 2px solid $black;
+    }
+}

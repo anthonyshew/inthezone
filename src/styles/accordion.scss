@@ -1,0 +1,148 @@
+@import "./variables.scss";
+
+.accordion-container {
+    padding: 1rem;
+
+    .accordion-item {
+        .header-button {
+            appearance: none;
+            display: flex;
+            flex-direction: rpw;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid $dark-blue;
+            background-color: $dark-blue;
+            color: $white;
+            font-family: $catamaran;
+            font-size: 36px;
+            font-weight: 700;
+            text-align: left;
+            transition: .2s;
+
+            h3,
+            .arrow {
+                display: inline-block;
+            }
+
+            .arrow {
+                height: 18px;
+                transition: .2s;
+            }
+
+            &:focus {
+                outline: 3px solid $black;
+            }
+
+            .star {
+                display: inline-block;
+                height: 25px;
+                margin-right: 0.5rem;
+                position: relative;
+                top: 2px;
+            }
+        }
+
+        .content {
+            max-height: 0;
+            margin-bottom: .5rem;
+            padding: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: .2s;
+
+            &.open {
+                border: 2px solid $blue;
+                border-top: none;
+                border-bottom-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                opacity: 1;
+                transition: .2s;
+            }
+
+            .menu-item {
+                padding: 1.5rem 1rem;
+
+                h4 {
+                    margin-bottom: .5rem;
+                    font-size: 36px;
+                    font-family: $catamaran;
+                    text-align: center;
+
+                    .star {
+                        height: 30px;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+
+                .menu-item-body {
+                    width: 85%;
+                    margin: 0 auto;
+                    font-family: $catamaran;
+                    font-size: 20px;
+
+                    .menu-item-image {
+                        float: right;
+                        min-height: 200px;
+                        max-height: 200px;
+                        padding-left: 1rem;
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+
+            .specials {
+                h4 {
+                    margin-bottom: 0;
+                }
+
+                .special-subtitle {
+                    text-align: center;
+                    font-family: $catamaran;
+                    font-size: 24px;
+                }
+
+                .special-description {
+                    padding-top: .5rem;
+                    font-size: 18px;
+                    font-family: $catamaran;
+                }
+            }
+        }
+    }
+}
+
+@media (hover:hover) {
+    .accordion-container {
+        .accordion-item {
+            .header-button:hover {
+                border: 2px solid $catamaran;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .accordion-container {
+        .accordion-item {
+            .content {
+                .menu-item {
+                    .menu-item-body {
+                        .menu-item-image {
+                            display: block;
+                            text-align: center;
+                            padding-left: 0;
+                            padding-right: 0;
+                            width: 100%;
+                            max-height: initial;
+                            min-height: initial;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
