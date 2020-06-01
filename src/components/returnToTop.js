@@ -42,12 +42,13 @@ const ReturnToTop = () => {
         return (
             <button
                 style={
-                    scroll.y > 0 ? {
+                    scroll.y > 0 && (window.innerHeight + window.scrollY) !== document.body.offsetHeight ? {
                         ...buttonStyles,
                         transition: ".5s",
                         width: "50px",
                         height: "50px",
                         opacity: 1,
+                        zIndex: 9999.
                     } : {
                             ...buttonStyles,
                             transition: ".5s",
@@ -62,7 +63,7 @@ const ReturnToTop = () => {
                 tabIndex={0}
                 ref={element}
             >
-                <Arrow style={scroll.y > 0 ? {
+                <Arrow style={scroll.y > 0 && (window.innerHeight + window.scrollY) !== document.body.offsetHeight ? {
                     ...arrowStyles,
                     height: "20px",
                     width: "20px",

@@ -47,12 +47,13 @@ export default () => {
   return (
     <div>
       <Logo />
-      <Field />
       <ReturnToTop />
       <a className="contact-button" href="#contact-form">CONTACT US</a>
 
       <section className="hero">
+        <Field />
         <h2>Painting the corners on your website.</h2>
+        <p>In the Zone development is committed to adding value to your business through the power of digital media.</p>
       </section>
 
       <section className="services">

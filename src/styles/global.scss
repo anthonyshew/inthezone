@@ -70,6 +70,7 @@ $white: #FFFFFF;
 
 body {
     width: 100%;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
@@ -82,6 +83,7 @@ strong {
 }
 
 h2 {
+    padding: 0 5%;
     font-size: 72px;
     font-weight: 700;
     font-family: $catamaran;
@@ -103,8 +105,11 @@ h3 {
 
 .field {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
-    width: 100%;
+    width: 200%;
 }
 
 .contact-button {
@@ -121,16 +126,29 @@ h3 {
 }
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 
     h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         max-width: 50%;
         text-align: left;
+    }
+
+    p {
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        padding: 0 2rem;
+        font-size: 24px;
+        font-family: $catamaran;
     }
 }
 
@@ -166,17 +184,7 @@ h3 {
 
 .staff {
     position: relative;
-    background-image: linear-gradient(rgba(255, 255, 255, 1) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 1) 100%), url("/images/axiom-pattern.png");
-    ;
-
-    .blob {
-        position: absolute;
-        z-index: -1;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-height: 100%;
-    }
+    background-image: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.001) 20%, rgba(255, 255, 255, 0.001) 80%, rgba(255, 255, 255, 1) 100%), url("/images/axiom-pattern.png");
 
     .flex {
         display: flex;
@@ -206,9 +214,12 @@ h3 {
 }
 
 .contact {
+    margin-top: 1rem;
+
     p {
         max-width: 1000px;
         margin: 0 auto;
+        padding: 0 2rem;
         font-family: $catamaran;
         font-size: 20px;
     }
@@ -220,6 +231,156 @@ h3 {
             .client-link:hover {
                 transform: scale(1.1)
             }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        p {
+            bottom: 1.5rem
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .hero {
+        h2 {
+            max-width: initial;
+            width: 100%;
+            font-size: 64px;
+        }
+
+        p {
+            bottom: 2rem;
+        }
+
+    }
+}
+
+@media (max-width: 850px) {
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 750px) {
+    .staff {
+        .flex {
+            flex-direction: column;
+            align-items: center;
+
+            .player-card {
+                width: 90%;
+
+                h3 {
+                    font-size: 36px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+
+                &:nth-of-type(1) {
+                    margin: 0;
+                }
+
+                &:nth-of-type(2) {
+                    margin-top: 24px;
+                }
+
+                .player-image {
+                    max-height: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    p {
+        font-size: 14px;
+    }
+
+    .previous-work {
+        .flex {
+            .client-link {
+                width: 75px;
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        h2 {
+            max-width: 80%;
+            font-size: 48px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .contact-button {
+        top: 36px;
+        font-size: 18px;
+    }
+
+
+}
+
+@media (max-width: 550px) {
+    .hero {
+        h2 {
+            top: 30%;
+            transform: translate(-50%, -30%);
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .hero {
+        p {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 370px) {
+    .hero {
+        h2 {
+            top: 20%;
+            transform: translate(-50%, -20%);
+            max-width: 90%;
+            font-size: 27px;
+        }
+    }
+
+    .contact {
+        p {
+            font-size: 14px;
         }
     }
 }

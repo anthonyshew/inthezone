@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-image: linear-gradient(rgba(255, 255, 255, 1) 0%, transparent 20%), url("/images/cubes.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.001) 20%), url("/images/cubes.png");
 }
 
 .contact-form-container {
@@ -23,6 +23,7 @@
         width: 50%;
         min-width: 300px;
         max-width: 600px;
+        padding: 0 1rem;
     }
 
     label {
