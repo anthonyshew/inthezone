@@ -22,5 +22,17 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `In The Zone Development`,
+        short_name: "In the Zone",
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#000000`,
+        display: `minimal-ui`,
+        icon: `static/images/agency-logo.png`,
+      },
+    },
   ],
 }

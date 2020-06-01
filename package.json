@@ -23,12 +23,12 @@
     "express": "^4.17.1",
     "gatsby": "^2.22.12",
     "gatsby-plugin-google-analytics": "^2.3.2",
+    "gatsby-plugin-manifest": "^2.4.9",
     "gatsby-plugin-sass": "^2.3.2",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-hook-form": "^5.7.2",
-    "react-spring": "^8.0.27"
+    "react-hook-form": "^5.7.2"
   },
   "devDependencies": {
     "http-proxy-middleware": "^1.0.4",
