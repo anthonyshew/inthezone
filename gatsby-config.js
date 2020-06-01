@@ -98,8 +98,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Adopt a Minor Leaguer`,
+        short_name: `Adopt Minor Leaguer`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
