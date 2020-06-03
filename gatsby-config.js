@@ -3,6 +3,10 @@ let { createProxyMiddleware } = require("http-proxy-middleware")
 require('dotenv').config()
 
 module.exports = {
+  siteMetadata: {
+    title: `In the Zone Development`,
+    description: `Two baseball players that are also professional web developers.`
+  },
   developMiddleware: app => {
     app.use(
       "/.netlify/functions",

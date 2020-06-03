@@ -35,6 +35,8 @@ export const AccordionItem = ({ header, children }) => {
             </button>
             <div className="content" ref={content}>
                 {children}
+
+                <a className="quote-button" href="#contact-form">Get your quote!</a>
             </div>
         </div>
     )
