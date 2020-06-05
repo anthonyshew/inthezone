@@ -1,5 +1,7 @@
-import React from "react"
-
 export default () => {
-    return <p> 404</p>
+    if (typeof window !== 'undefined') {
+        window.location = '/';
+    }
+
+    return null
 }
