@@ -17,8 +17,8 @@ router.post('/contact-us', (req, res) => {
         to: process.env.EMAIL_CONTACT,
         from: process.env.EMAIL_FROM,
         replyTo: email,
-        subject: `New Message from Website Contact Form`,
-        html: `<h1>${name} has sent Adopt a Minor Leaguer a message!</h1>
+        subject: `Thanks for contacting In the Zone Development!`,
+        html: `<h1>${name} has sent In the Zone Development a message!</h1>
     <div><h2>Their message is:</h2><div>
     <div><p>${message}</p><div>
     <br />
