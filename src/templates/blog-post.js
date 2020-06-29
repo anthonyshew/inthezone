@@ -1,5 +1,4 @@
 import React from "react"
-import '../styles/blog-post.scss'
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"

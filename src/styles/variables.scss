@@ -1,13 +1,12 @@
-$passion:'Passion One',
-"Times New Roman";
-$raleway: 'Raleway',
-sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Staatliches&display=swap');
 
-$black: #000000;
+$staatliches: "Staatliches",
+sans-serif;
+$patua: "Patua One",
+serif;
+
 $white: #ffffff;
-$gray: #AEAEAE;
-$red: #CC0001;
-$dark-red: #800000;
-$blue: #00235B;
-$light-blue: #88ABE2;
-$yellow: #F39116;
+
+$primary-color: #1D2355;
+$secondary-color: #F6472C;
+$text-color: #ffffff;

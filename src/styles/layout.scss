@@ -1,0 +1,84 @@
+@import "variables.scss";
+@import "reset.scss";
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    background-color: $primary-color;
+    font-family: $staatliches;
+    font-size: 24px;
+
+    a {
+        color: $text-color;
+    }
+
+    .image-container {
+        position: absolute;
+        z-index: 999;
+        top: 100%;
+        width: 15%;
+
+        .svg-body {
+            top: 0;
+            width: 100%;
+
+
+            .svg-path {
+                fill: $primary-color;
+            }
+        }
+
+        .team-logo {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.text-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: $secondary-color;
+    color: $primary-color;
+
+    p {
+        width: 40%;
+        text-align: center;
+        font-family: $patua;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+}
+
+footer {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: $primary-color;
+
+    .image-container {
+        max-width: 100px;
+        margin: 0 auto;
+    }
+
+    p {
+        padding-top: 1rem;
+        color: $text-color;
+        text-align: center;
+        font-family: $patua;
+    }
+
+    .attribution-link {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}

@@ -4,20 +4,15 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Adopt a Minor Leaguer`,
+    title: `Team Pages Project`,
     author: {
       name: `Anthony Shew`,
       summary: `who develops things.`,
     },
-    description: `#StandwithMiLB`,
-    siteUrl: `https://adoptaminorleaguer.com/`,
+    description: `Team Page`,
+    siteUrl: `${process.env.ROOT_URL}`,
     social: {
-      twitter: `/adoptmilbplayer`,
-      facebook: `/groups/218122932877473/`,
-      instagram: `/adoptanmilbplayer/`,
-    },
-    donate: {
-      shop: `https://promotionsetc.commonsku.com/shop/e5be5b9c-b850-4648-9d5f-830033b386b2`,
+      twitter: `/theunrealashew`,
     }
   },
   developMiddleware: app => {
@@ -49,15 +44,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        path: `${__dirname}/content/logo`,
+        name: `logo`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/siteInfo`,
-        name: `siteInfo`,
+        path: `${__dirname}/content/hero`,
+        name: `hero`,
       },
     },
     {
@@ -104,7 +99,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/aaml-logo.jpg`,
+        icon: `static/img/logowithtext.jpg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
