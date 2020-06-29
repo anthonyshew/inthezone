@@ -26,3 +26,4 @@ collections:
         file: "content/siteInfo/siteInfo.json"
         fields:
         - {label: "Sponsorships Created", name: totalSponsorships, widget: "number"}
+        - {label: "Color", name: "daColor", widget: color }
