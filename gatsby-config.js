@@ -37,36 +37,79 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/news`,
+        name: `news`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/logo`,
-        name: `logo`,
+        path: `${__dirname}/content/customPages`,
+        name: `customPages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/hero`,
-        name: `hero`,
+        path: `${__dirname}/static/cms/custompages`,
+        name: `customPageCovers`,
       },
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        rule: {
-          include: /svg/
-        }
+        path: `${__dirname}/content/basics.json`,
+        name: `basics`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/colors.json`,
+        name: `colors`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/schedule.json`,
+        name: `schedule`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/homePage.json`,
+        name: `homePage`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/coaches.json`,
+        name: `coaches`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/players.json`,
+        name: `players`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/cms/cms.js`
       }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -99,7 +142,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/img/logowithtext.jpg`,
+        icon: `static/media/aaml-logo.jpg`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

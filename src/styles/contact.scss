@@ -1,0 +1,83 @@
+@import 'variables.scss';
+
+.page-contact {
+    padding-top: 10vw;
+    font-family: $patua;
+
+    h1 {
+        font-size: 48px;
+        font-family: $staatliches;
+        text-align: center;
+    }
+
+    p {
+        margin: 0 1rem;
+        text-align: center;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+
+        .error {
+            margin-top: .5rem;
+            padding: 0 1rem;
+            padding-bottom: 1rem;
+            color: #b30000;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            width: 50%;
+            min-width: 280px;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .form-input {
+            display: block;
+            width: 100%;
+            min-width: 280px;
+            max-width: 560px;
+            margin: .4rem auto 1rem;
+            padding: .4rem .6rem;
+            border-radius: 1rem;
+            font-weight: 900;
+            letter-spacing: .5px;
+
+            &[type="textarea"] {
+                height: 150px;
+            }
+        }
+
+        .submit-button {
+            width: 25%;
+            min-width: 140px;
+            margin-top: 1rem;
+            margin-bottom: 2%;
+            padding: .5rem;
+            border-radius: 1rem;
+            font-size: 24px;
+            font-family: $staatliches;
+            cursor: pointer;
+            appearance: none;
+        }
+    }
+
+    .success-message {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .page-contact {
+        p {
+            text-align: left;
+        }
+    }
+}

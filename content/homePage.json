@@ -1,0 +1,19 @@
+{
+  "scheduleIcon": {
+    "imageBool": true,
+    "image": "/cms/homePage/img/img_0293-removebg-preview.png"
+  },
+  "heroImage": "/cms/homePage/img/img_2588.jpg",
+  "coachesIcon": {
+    "imageBool": false,
+    "image": "/cms/homePage/img/img_2588.jpg"
+  },
+  "playersIcon": {
+    "imageBool": false,
+    "image": ""
+  },
+  "heroText": "",
+  "auxText": "This is where the team proposition thing dealio goes. It will have some words and stuff and will look great.",
+  "quoteAttr": "",
+  "quotation": ""
+}

@@ -3,40 +3,48 @@ import { Link } from "gatsby"
 import "../styles/layout.scss"
 
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 const Layout = ({ location, children, cssPageName }) => {
-  const data = useStaticQuery(graphql`
-    query LayoutQuery {
-      file(sourceInstanceName: {eq: "logo"}) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
+  const { data, colors } = useStaticQuery(graphql`
+  query LayoutQuery {
+    data: file(sourceInstanceName: {eq: "basics"}) {
+      childContentJson {
+        teamLogo
       }
     }
+    colors: file(sourceInstanceName: {eq: "colors"}) {
+      childContentJson {
+        primaryColor
+        secondaryColor
+        textColor
+      }
+    }
+  }
   `)
+
+  const primaryColor = colors.childContentJson.primaryColor
+  const secondaryColor = colors.childContentJson.secondaryColor
+  const textColor = colors.childContentJson.textColor
 
   let header, footer
 
   header = (
     <>
-      <nav className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/schedule">Schedule</Link>
-        <Link to="/coaches">Coaches</Link>
-        <Link to="/players">Players</Link>
-        <Link to="/contact">Contact</Link>
+      <nav className="navbar" style={{ backgroundColor: primaryColor }}>
+        <Link to="/" style={{ color: textColor }}>Home</Link>
+        <Link to="/schedule" style={{ color: textColor }}>Schedule</Link>
+        <Link to="/coaches" style={{ color: textColor }}>Coaches</Link>
+        <Link to="/players" style={{ color: textColor }}>Players</Link>
+        <Link to="/contact" style={{ color: textColor }}>Contact</Link>
         <div className="image-container">
           <svg className="svg-body" viewBox="0 0 129 129" fill="green" xmlns="http://www.w3.org/2000/svg">
-            <path className="svg-path" d="M0 64.5V0H129V64.5L64.5 129L0 64.5Z" fill="#C4C4C4" />
+            <path className="svg-path" d="M0 64.5V0H129V64.5L64.5 129L0 64.5Z" style={{ fill: primaryColor }} />
           </svg>
-          <Image className="team-logo" fluid={data.file.childImageSharp.fluid} alt="Team logo." style={{ position: "absolute" }} />
+          <img className="team-logo" src={data.childContentJson.teamLogo} alt="Team logo." style={{ position: "absolute" }} />
         </div>
       </nav>
 
-      <div className="text-bar">
+      <div className="text-bar" style={{ backgroundColor: secondaryColor, color: primaryColor }}>
         <p>The Official Home of</p>
         <p>The New York Knights</p>
       </div>
@@ -45,17 +53,17 @@ const Layout = ({ location, children, cssPageName }) => {
 
   footer = (
     <>
-      <nav className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/schedule">Schedule</Link>
-        <Link to="/coaches">Coaches</Link>
-        <Link to="/players">Players</Link>
-        <Link to="/contact">Contact</Link>
+      <nav className="navbar" style={{ backgroundColor: primaryColor }}>
+        <Link to="/" style={{ color: textColor }}>Home</Link>
+        <Link to="/schedule" style={{ color: textColor }}>Schedule</Link>
+        <Link to="/coaches" style={{ color: textColor }}>Coaches</Link>
+        <Link to="/players" style={{ color: textColor }}>Players</Link>
+        <Link to="/contact" style={{ color: textColor }}>Contact</Link>
       </nav>
       <div className="image-container">
-        <Image fluid={data.file.childImageSharp.fluid} alt="Team logo." />
+        <img src={data.childContentJson.teamLogo} alt="Team logo." />
       </div>
-      <p>This site was created by <a className="attribution-link" href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">In the Zone Development</a> using the <a className="attribution-link" href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">TeamPagePlaceholderName platform</a>.</p>
+      <p style={{ color: secondaryColor }}>This site was created by <a className="attribution-link" style={{ color: secondaryColor }} href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">In the Zone Development</a> using the <a className="attribution-link" style={{ color: secondaryColor }} href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">TeamStage platform</a>.</p>
     </>
   )
 
@@ -63,7 +71,7 @@ const Layout = ({ location, children, cssPageName }) => {
     <>
       <header>{header}</header>
       <main className={`${cssPageName ? `page-${cssPageName}` : ""}`}>{children}</main>
-      <footer>{footer}</footer>
+      <footer style={{ backgroundColor: primaryColor }}>{footer}</footer>
     </>
   )
 }

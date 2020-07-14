@@ -1,0 +1,22 @@
+{
+  "coachesArray": [
+    {
+      "name": "Lou Brown",
+      "title": "Head Coach",
+      "image": "/cms/coaches/img/our-wedding-day-100.jpg",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet leo sed nulla ultrices aliquet. Sed sed congue felis. Vestibulum tempus tincidunt purus, malesuada convallis tortor blandit interdum. Fusce aliquam velit odio, vitae mollis est consequat sit amet. Proin feugiat aliquam arcu, ultrices ultrices lectus dictum laoreet. Donec vel nulla ultricies, sollicitudin lacus eu, rutrum felis. Sed at justo eget purus volutpat semper ut id nisi. Sed nec feugiat nibh, eget sagittis velit. Vestibulum ultrices ullamcorper turpis, sed tincidunt sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed augue est, aliquam ultrices feugiat ac, fringilla et sapien. Nunc suscipit neque ut libero venenatis, vel feugiat erat finibus.\n\nMorbi fermentum, ligula consequat lobortis vestibulum, justo eros tristique nunc, vel vulputate elit purus aliquet mauris. Cras pellentesque, turpis id dictum laoreet, lorem odio tempor turpis, vitae aliquam purus erat ac massa. Fusce volutpat urna eu leo condimentum, in mollis orci porta. Integer tempus odio vel leo condimentum, aliquam aliquet mauris ultricies. Vivamus eu libero fringilla, pellentesque odio quis, porttitor neque. Vestibulum commodo feugiat facilisis. Aenean sit amet laoreet ligula, ac bibendum risus. Pellentesque fermentum feugiat efficitur. Donec non fermentum diam."
+    },
+    {
+      "name": "Phil Brickma",
+      "title": "Pitching Coach",
+      "image": "/cms/coaches/img/img_0293-removebg-preview.png",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat vestibulum lorem, sit amet mollis nulla efficitur at. Duis consectetur pretium justo, nec pellentesque enim maximus vel. Vivamus lectus dolor, maximus vitae eros efficitur, euismod tempus mauris. Vivamus nulla ligula, pellentesque a arcu vel, tempor aliquam mi. Vivamus id lobortis ipsum. Curabitur ullamcorper nibh sit amet ornare scelerisque. Nulla libero justo, lacinia sed sem vitae, laoreet sodales arcu. Duis porttitor odio id massa consequat aliquet. Donec nec commodo sapien. Nam posuere justo ac finibus vestibulum. Integer dapibus maximus urna imperdiet semper. Ut nec tempus est."
+    },
+    {
+      "name": "Pop Fisher",
+      "title": "Hitting Coach",
+      "image": "/cms/coaches/img/img_2588.jpg",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat vestibulum lorem, sit amet mollis nulla efficitur at. Duis consectetur pretium justo, nec pellentesque enim maximus vel. Vivamus lectus dolor, maximus vitae eros efficitur, euismod tempus mauris. Vivamus nulla ligula, pellentesque a arcu vel, tempor aliquam mi. Vivamus id lobortis ipsum. Curabitur ullamcorper nibh sit amet ornare scelerisque. Nulla libero justo, lacinia sed sem vitae, laoreet sodales arcu. Duis porttitor odio id massa consequat aliquet. Donec nec commodo sapien. Nam posuere justo ac finibus vestibulum. Integer dapibus maximus urna imperdiet semper. Ut nec tempus est."
+    }
+  ]
+}

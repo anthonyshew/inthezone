@@ -1,0 +1,66 @@
+{
+  "practices": [
+    {
+      "day": "Monday",
+      "startTime": "6 PM",
+      "endTime": "8 PM",
+      "addressObject": {
+        "location": "Anypark Place",
+        "streetAddress": "123 Cool Street",
+        "city": "Anytown",
+        "state": "AK",
+        "zipCode": 12345
+      }
+    },
+    {
+      "day": "Thursday",
+      "startTime": "5 PM",
+      "endTime": "7 PM",
+      "addressObject": {
+        "location": "Fielder Field",
+        "streetAddress": "123123 Place place",
+        "city": "Brookikngs",
+        "state": "OR",
+        "zipCode": 97415
+      }
+    }
+  ],
+  "games": [
+    {
+      "addressObject": {
+        "location": "Someplace",
+        "streetAddress": "123123123",
+        "city": "asdfasdf",
+        "state": "AS",
+        "zipCode": 12345
+      },
+      "startTime": "2020-07-09T21:18:09.417Z",
+      "side": "Home",
+      "opponent": "asdfasd"
+    },
+    {
+      "addressObject": {
+        "location": "asdfasdf",
+        "streetAddress": "asdfasdfasdfasdfdasf",
+        "city": "asdfasdfasdfasdfasdf",
+        "state": "AS",
+        "zipCode": 12345
+      },
+      "startTime": "2020-07-09T22:30:48.269Z",
+      "side": "Away",
+      "opponent": "werqqwer"
+    },
+    {
+      "addressObject": {
+        "location": "Fart butt stink",
+        "streetAddress": "123412312312",
+        "city": "3123213213",
+        "state": "AR",
+        "zipCode": 12345
+      },
+      "startTime": "2020-07-09T22:30:48.295Z",
+      "side": "Away",
+      "opponent": "jklhhjkl"
+    }
+  ]
+}

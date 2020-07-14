@@ -5,6 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  // const customPage = path.resolve(`./src/templates/custom-page.js`)
   const result = await graphql(
     `
       {
@@ -33,6 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges
+  const customPages = result.data.allMarkdownRemark.edges
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -48,6 +50,17 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // customPages.forEach((page) => {
+
+  //   createPage({
+  //     path: page.node.fields.slug,
+  //     component: customPage,
+  //     context: {
+  //       slug: page.node.fields.slug,
+  //     },
+  //   })
+  // })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

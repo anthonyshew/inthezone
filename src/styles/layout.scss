@@ -7,13 +7,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 2%;
-    background-color: $primary-color;
     font-family: $staatliches;
     font-size: 24px;
 
     a {
-        color: $text-color;
+        padding: 2% 0;
     }
 
     .image-container {
@@ -25,15 +23,10 @@
         .svg-body {
             top: 0;
             width: 100%;
-
-
-            .svg-path {
-                fill: $primary-color;
-            }
         }
 
         .team-logo {
-            top: 0;
+            top: 15%;
             left: 50%;
             transform: translateX(-50%);
             width: 60%;
@@ -48,8 +41,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 2%;
-    background-color: $secondary-color;
-    color: $primary-color;
 
     p {
         width: 40%;
@@ -63,22 +54,23 @@
 footer {
     margin-top: 1rem;
     padding-bottom: 1rem;
-    background-color: $primary-color;
 
     .image-container {
         max-width: 100px;
         margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
     }
 
     p {
         padding-top: 1rem;
-        color: $text-color;
         text-align: center;
         font-family: $patua;
     }
 
     .attribution-link {
-        color: $text-color;
         text-decoration: underline;
     }
 }

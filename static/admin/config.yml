@@ -2,13 +2,15 @@ backend:
   name: git-gateway
   branch: master
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "news"
+    label: "News"
+    folder: "content/news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
@@ -18,12 +20,270 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "siteInfo"
-    label: "Site Info"
+  - name: "teamInfo"
+    label: "Team Info"
+    editor:
+      preview: false
     files:
-      - label: "Sponsorships Created"
-        name: "siteInfo"
-        file: "content/siteInfo/siteInfo.json"
+      - name: "basic"
+        label: "Basic Info"
+        file: "content/basics.json"
+        media_folder: /static/cms/teamInfo/img
+        public_folder: /cms/teamInfo/img
         fields:
-        - {label: "Sponsorships Created", name: totalSponsorships, widget: "number"}
-        - {label: "Color", name: "daColor", widget: color }
+        - { label: "Team Name", name: "teamName", widget: string }
+        - { label: "Team Logo", name: "teamLogo", widget: image }
+        - { label: "Hometown", name: "hometown", widget: string, required: false }
+        - { label: "Age Group", name: "ageGroup", widget: string, required: false }
+      - name: "colors"
+        label: "Colors"
+        file: "content/colors.json"
+        fields:
+        - { label: "Primary Color", name: "primaryColor", widget: color }
+        - { label: "Secondary Color", name: "secondaryColor", widget: color }
+        - { label: "Text Color", name: "textColor", widget: color }
+      - name: "schedule"
+        label: "Schedule"
+        file: "content/schedule.json"
+        fields:
+        - label: "Weekly Practice Schedule"
+          name: "practices"
+          widget: list
+          fields:
+            - { label: "Day of the Week", name: "day", widget: select, options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]}
+            - label: "Address"
+              name: "addressObject"
+              widget: object
+              fields:
+                - { label: "Location Name", name: "location", widget: string, options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]}
+                - { label: "Street Address", name: "streetAddress", widget: string }
+                - { label: "City", name: "city", widget: string }
+                - { label: "State", name: "state", widget: select, options: [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'] }
+                - { label: "Zip Code", name: "zipCode", widget: number, min: 10000, max: 99999 }
+            - { label: "Start Time", name: "startTime", widget: select, options: ["12 AM", "12:30 AM", "1 AM", "1:30 AM", "2 AM", "2:30 AM", "3 AM", "3:30 AM", "4 AM", "4:30 AM", "5 AM", "5:30 AM", "6 AM", "6:30AM", "7 AM", "7:30 AM", "8 AM", "8:30 AM", "9 AM", "9:30 AM", "10 AM", "10:30 AM", "11 AM", "11:30 AM", "12 PM", "12:30 PM", "1 PM", "1:30 PM", "2 PM", "2:30 PM", "3 PM", "3:30 PM", "4 PM", "4:30 PM", "5 PM", "5:30 PM", "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM", "11 PM", "11:30 PM"]}
+            - { label: "End Time", name: "endTime", widget: select, options: ["12 AM", "12:30 AM", "1 AM", "1:30 AM", "2 AM", "2:30 AM", "3 AM", "3:30 AM", "4 AM", "4:30 AM", "5 AM", "5:30 AM", "6 AM", "6:30AM", "7 AM", "7:30 AM", "8 AM", "8:30 AM", "9 AM", "9:30 AM", "10 AM", "10:30 AM", "11 AM", "11:30 AM", "12 PM", "12:30 PM", "1 PM", "1:30 PM", "2 PM", "2:30 PM", "3 PM", "3:30 PM", "4 PM", "4:30 PM", "5 PM", "5:30 PM", "6 PM", "6:30 PM", "7 PM", "7:30 PM", "8 PM", "8:30 PM", "9 PM", "9:30 PM", "10 PM", "10:30 PM", "11 PM", "11:30 PM"]}
+        - label: "Upcoming Games"
+          name: "games"
+          widget: list
+          fields:
+            - { label: "Start Time", name: "startTime", widget: datetime}
+            - { label: "Home or Away?", name: "side", widget: select, options: ["Home", "Away"] }
+            - { label: "Opponent", name: "opponent", widget: string }
+            - label: "Address"
+              name: "addressObject"
+              widget: object
+              fields:
+                - { label: "Location Name", name: "location", widget: string, options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]}
+                - { label: "Street Address", name: "streetAddress", widget: string }
+                - { label: "City", name: "city", widget: string }
+                - { label: "State", name: "state", widget: select, options: [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'] }
+                - { label: "Zip Code", name: "zipCode", widget: number, min: 10000, max: 99999 }
+  - name: "pages"
+    label: "Required Pages"
+    editor:
+      preview: false
+    files:
+    - name: "homePage"
+      label: "Home Page"
+      file: "content/homePage.json"
+      media_folder: /static/cms/homePage/img
+      public_folder: "/cms/homePage/img"
+      fields:
+      - label: "Header Image"
+        name: "heroImage"
+        widget: image
+      - label: "Header Image Text"
+        name: "heroText"
+        widget: text
+        required: false
+      - label: "Schedule Icon"
+        name: "scheduleIcon"
+        widget: object
+        fields:
+          - { label: "Use Custom Image?", name: "imageBool", widget: boolean, default: false, required: false }
+          - { label: "Image", name: "image", widget: image, required: false }
+      - label: "Coaches Icon"
+        name: "coachesIcon"
+        widget: object
+        fields:
+          - { label: "Use Custom Image?", name: "imageBool", widget: boolean, default: false, required: false }
+          - { label: "Image", name: "image", widget: image, required: false }
+      - label: "Players Icon"
+        name: "playersIcon"
+        widget: object
+        fields:
+          - { label: "Use Custom Image?", name: "imageBool", widget: boolean, default: false, required: false }
+          - { label: "Image", name: "image", widget: image, required: false }
+      - { label: "Text Below Icons", name: "auxText", widget: text, required: false }
+      - { label: "Quote", name: "quotation", widget: text, required: false }
+      - { label: "Quote Attribution", name: "quoteAttr", widget: text, required: false }
+    - name: "coaches"
+      label: "Coaches"
+      file: "content/coaches.json"
+      media_folder: /static/cms/coaches/img
+      public_folder: "/cms/coaches/img"
+      fields:
+      - label: "List"
+        name: "coachesArray"
+        widget: list
+        fields:
+        - {label: "Name", name: "name", widget: string}
+        - {label: "Title/Position", name: "title", widget: string}
+        - {label: "Image", name: "image", widget: image}
+        - {label: "Bio", name: "bio", widget: text}
+    - name: "players"
+      label: "Players"
+      file: "content/players.json"
+      media_folder: /static/cms/players/img
+      public_folder: "/cms/players/img"
+      fields:
+      - label: "Show stats?"
+        name: "statsBool"
+        widget: boolean
+      - label: "Roster"
+        name: "playersArray"
+        widget: list
+        fields:
+        - label: "Name"
+          name: "name"
+          widget: string
+        - label: "Use Player Headshot?"
+          name: "imgBool"
+          widget: boolean
+          default: false
+        - label: "Player Headshot"
+          name: "image"
+          widget: image
+          required: false
+        - label: "Positions"
+          name: "positions"
+          widget: select
+          options: ["P", "C", "INF", "1B", "2B", "3B", "SS", "OF", "LF", "CF", "RF"]
+          multiple: true
+        - label: "Pitching Stats"
+          name: "pitchingStats"
+          widget: object
+          fields:
+          - label: "Wins"
+            name: "wins"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Losses"
+            name: "losses"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "ERA"
+            name: "era"
+            widget: number
+            valueType: float
+            default: 0
+          - label: "Innings Pitched"
+            name: "inningsPitched"
+            widget: number
+            valueType: float
+            default: 0
+          - label: "Hits"
+            name: "hits"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Runs"
+            name: "runs"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Earned Runs"
+            name: "earnedRuns"
+            widget: number
+            valueType: float
+            default: 0
+          - label: "Walks"
+            name: "walks"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Strikeouts"
+            name: "strikeouts"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Batting Average Against"
+            name: "battingAverageAgainst"
+            widget: number
+            valueType: float
+            default: 0
+          - label: "WHIP"
+            name: "whip"
+            widget: number
+            valueType: float
+            default: 0
+        - label: "Hitting Stats"
+          name: "hittingStats"
+          widget: object
+          fields:
+          - label: "Games"
+            name: "games"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "At Bats"
+            name: "atBats"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Hits"
+            name: "hits"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Home Runs"
+            name: "homeRuns"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Triples"
+            name: "triples"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Doubles"
+            name: "doubles"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Walks"
+            name: "walks"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Strikeouts"
+            name: "strikeouts"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "RBIs"
+            name: "rbi"
+            widget: number
+            valueType: int
+            default: 0
+          - label: "Batting Average"
+            name: "battingAverage"
+            widget: number
+            valueType: float
+            default: 0
+  - name: "customPages"
+    label: "Custom Pages"
+    folder: "content/customPages"
+    media_folder: /static/cms/customPages
+    public_folder: /cms/customPages
+    create: true
+    slug: "{{title}}"
+    editor:
+     preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover Image", name: "coverImage", widget: "image" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

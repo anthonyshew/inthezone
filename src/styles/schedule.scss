@@ -1,0 +1,71 @@
+@import "variables";
+
+.page-schedule {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vw;
+
+    h2 {
+        padding: 2% 5%;
+        border-radius: 1rem;
+        font-family: $staatliches;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+
+        .practice-list,
+        .games-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 5%;
+        }
+
+        .practice,
+        .game {
+            width: 100%;
+            margin: 2%;
+            padding: 5%;
+            border-radius: 1rem;
+            font-family: $staatliches;
+            font-size: 24px;
+
+            .address {
+                text-align: right;
+            }
+        }
+    }
+
+    .practices-container {
+        border-right: 1px solid black;
+    }
+}
+
+@media (max-width: 800px) {
+    .page-schedule {
+        flex-direction: column;
+
+        .practices-container {
+            border: none;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .page-schedule {
+        .column {
+            width: 100%;
+        }
+    }
+}

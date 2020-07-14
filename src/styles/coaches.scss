@@ -1,0 +1,50 @@
+@import "variables";
+
+.page-coaches {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vw;
+
+    h1 {
+        width: 100%;
+        font-family: $staatliches;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .coach {
+        width: 100%;
+        padding: 2%;
+
+        img {
+            margin-right: 5%;
+            margin-bottom: 2%;
+            max-width: 50%;
+            max-height: 250px;
+            float: left;
+        }
+
+        h2 {
+            font-family: $staatliches;
+            font-size: 40px;
+            line-height: 100%;
+        }
+
+        h3 {
+            font-family: $staatliches;
+            font-size: 28px;
+            line-height: 150%;
+        }
+
+        p {
+            font-family: $patua;
+        }
+
+        .bio-p {
+            padding-bottom: 1rem;
+            font-size: 18px;
+        }
+    }
+}
