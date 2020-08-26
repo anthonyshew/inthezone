@@ -2,6 +2,11 @@ const fs = require('fs-extra')
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onPreInit = () => {
+  //Copy everything from content assets into public folder.
+  fs.copySync(path.join(__dirname, `/content/assets`), path.join(__dirname, `/public/cms`))
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -98,7 +103,35 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.onPreInit = () => {
-  //Copy everything from content assets into public folder.
-  fs.copySync(path.join(__dirname, `/content/assets`), path.join(__dirname, `/public/cms`))
+// Allow end user to have no markdown content created
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+
+  type File implements Node {
+    childMarkdownRemark: MarkdownRemark
+  }
+
+  type MarkdownRemark {
+    excerpt: String
+    fields: Fields
+    frontmatter: Frontmatter
+    html: String
+  }
+
+  type Fields implements Node {
+    slug: String
+  }
+
+  type Frontmatter implements Node {
+    coverImage: String
+    date: Date @dateformat(formatString: "MMMM DD, YYYY")
+    description: String
+    shortDescription: String
+    title: String
+  }
+  `
+
+  createTypes(typeDefs)
 }

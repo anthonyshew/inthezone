@@ -103,10 +103,11 @@ export default ({ location, title, description, seoImage, children }) => {
           <Link to="/players" style={{ color: textColor }}>Players</Link>
           <Link to="/contact" style={{ color: textColor }}>Contact Us</Link>
         </div>
-        <div className="footer-explore-container">
+        {pages.edges.length > 0 && <div className="footer-explore-container">
           <h4 style={{ color: secondaryColor }}>Explore</h4>
           {pages.edges.map(({ node }) => <Link key={node.childMarkdownRemark.fields.slug} className="link" to={`/page${node.childMarkdownRemark.fields.slug}`}>{node.childMarkdownRemark.frontmatter.title}</Link>)}
-        </div>
+        </div>}
+
       </nav>
 
       <p className="attribution" style={{ color: secondaryColor }}>This site was created by <a className="attribution-link" style={{ color: secondaryColor }} href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">In the Zone Development</a> using the <a className="attribution-link" style={{ color: secondaryColor }} href="https://teamstage.inthezone.dev" target="_blank" rel="noopener noreferrer">TeamStage platform</a>.</p>
