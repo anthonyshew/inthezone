@@ -4,12 +4,12 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `Team Pages Project`,
+    title: `TeamStage`,
     author: {
       name: `Anthony Shew`,
       summary: `who develops things.`,
     },
-    description: `Team Page`,
+    description: `TeamStage`,
     siteUrl: `${process.env.ROOT_URL}`,
     social: {
       twitter: `/theunrealashew`,

@@ -2,7 +2,7 @@
   "name": "teamstage",
   "private": true,
   "description": "A sports team page template.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Anthony Shew",
   "scripts": {
     "ngrok": "cd .. && ngrok http 3000",

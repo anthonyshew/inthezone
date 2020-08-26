@@ -4,15 +4,18 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ description, lang, meta, title, image }) => {
-  const { site } = useStaticQuery(
+  const { site, contentJson } = useStaticQuery(
     graphql`
-      query {
+      query SeoQuery {
         site {
           siteMetadata {
             title
             description
             social { twitter }
           }
+        }
+        contentJson {
+          teamName
         }
       }
     `
@@ -26,7 +29,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${contentJson.teamName} | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
