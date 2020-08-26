@@ -37,8 +37,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/news`,
-        name: `news`,
+        path: `${__dirname}/content/assets/teamInfo`,
+        name: `teamLogo`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
     },
     {
@@ -51,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/cms/custompages`,
-        name: `customPageCovers`,
+        path: `${__dirname}/content/assets/customPages`,
+        name: `customPageImgs`,
       },
     },
     {
@@ -86,6 +93,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/assets/homePage`,
+        name: `homePageImgs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/coaches.json`,
         name: `coaches`,
       },
@@ -93,8 +107,29 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/assets/coaches`,
+        name: `coachesImgs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/players.json`,
         name: `players`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/players`,
+        name: `playersImgs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/siteOptions/emails.json`,
+        name: `contactEmail`,
       },
     },
     {
@@ -132,19 +167,7 @@ module.exports = {
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
       },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Adopt a Minor Leaguer`,
-        short_name: `Adopt Minor Leaguer`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `static/media/aaml-logo.jpg`,
-      },
-    },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

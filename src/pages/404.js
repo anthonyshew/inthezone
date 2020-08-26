@@ -1,10 +1,14 @@
 import React from 'react'
+import { Link } from "gatsby"
 import '../styles/404.scss'
 
-export default ({ ...props }) => {
+import Layout from "../components/layout"
+
+export default ({ location }) => {
     return (
-        <div className="">
-            Make something great with the 404 component here!
-        </div>
+        <Layout location={location} title="404: Not Found">
+            <p>Oops, it doesn't look like there is anything here!</p>
+            <Link to="/">Back to Home</Link>
+        </Layout>
     )
 }

@@ -4,22 +4,22 @@ backend:
 
 local_backend: true
 
-media_folder: static/img
-public_folder: /img
+media_folder: /content/assets
+public_folder: /cms
 
 collections:
   - name: "news"
-    label: "News"
-    folder: "content/news"
+    label: "Blog"
+    folder: "content/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}-{{year}}-{{month}}-{{day}}"
     editor:
      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "heading-six", "quote", "bulleted-list", "numbered-list"], editorComponents: ["image"] }
   - name: "teamInfo"
     label: "Team Info"
     editor:
@@ -28,13 +28,12 @@ collections:
       - name: "basic"
         label: "Basic Info"
         file: "content/basics.json"
-        media_folder: /static/cms/teamInfo/img
-        public_folder: /cms/teamInfo/img
+        media_folder: /content/assets/teamInfo
+        public_folder: /cms/teamInfo
         fields:
         - { label: "Team Name", name: "teamName", widget: string }
         - { label: "Team Logo", name: "teamLogo", widget: image }
-        - { label: "Hometown", name: "hometown", widget: string, required: false }
-        - { label: "Age Group", name: "ageGroup", widget: string, required: false }
+        - { label: "Hometown", name: "hometown", widget: string }
       - name: "colors"
         label: "Colors"
         file: "content/colors.json"
@@ -86,8 +85,8 @@ collections:
     - name: "homePage"
       label: "Home Page"
       file: "content/homePage.json"
-      media_folder: /static/cms/homePage/img
-      public_folder: "/cms/homePage/img"
+      media_folder: /content/assets/homePage
+      public_folder: "/cms/homePage"
       fields:
       - label: "Header Image"
         name: "heroImage"
@@ -96,32 +95,14 @@ collections:
         name: "heroText"
         widget: text
         required: false
-      - label: "Schedule Icon"
-        name: "scheduleIcon"
-        widget: object
-        fields:
-          - { label: "Use Custom Image?", name: "imageBool", widget: boolean, default: false, required: false }
-          - { label: "Image", name: "image", widget: image, required: false }
-      - label: "Coaches Icon"
-        name: "coachesIcon"
-        widget: object
-        fields:
-          - { label: "Use Custom Image?", name: "imageBool", widget: boolean, default: false, required: false }
-          - { label: "Image", name: "image", widget: image, required: false }
-      - label: "Players Icon"
-        name: "playersIcon"
-        widget: object
-        fields:
-          - { label: "Use Custom Image?", name: "imageBool", widget: boolean, default: false, required: false }
-          - { label: "Image", name: "image", widget: image, required: false }
       - { label: "Text Below Icons", name: "auxText", widget: text, required: false }
       - { label: "Quote", name: "quotation", widget: text, required: false }
       - { label: "Quote Attribution", name: "quoteAttr", widget: text, required: false }
     - name: "coaches"
       label: "Coaches"
       file: "content/coaches.json"
-      media_folder: /static/cms/coaches/img
-      public_folder: "/cms/coaches/img"
+      media_folder: /content/assets/coaches
+      public_folder: "/cms/coaches"
       fields:
       - label: "List"
         name: "coachesArray"
@@ -134,8 +115,8 @@ collections:
     - name: "players"
       label: "Players"
       file: "content/players.json"
-      media_folder: /static/cms/players/img
-      public_folder: "/cms/players/img"
+      media_folder: /content/assets/players
+      public_folder: "/cms/players"
       fields:
       - label: "Show stats?"
         name: "statsBool"
@@ -276,14 +257,26 @@ collections:
   - name: "customPages"
     label: "Custom Pages"
     folder: "content/customPages"
-    media_folder: /static/cms/customPages
+    media_folder: /content/assets/customPages
     public_folder: /cms/customPages
     create: true
     slug: "{{title}}"
     editor:
      preview: false
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", pattern: ["^.{1,25}$", "Max length is 25 characters"] }
       - { label: "Cover Image", name: "coverImage", widget: "image" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Description", name: "shortDescription", widget: "string", pattern: ["^.{1,35}$", "Max length is 35 characters"] }
+      - { label: "Page Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "heading-six", "quote", "bulleted-list", "numbered-list"], editorComponents: ["image"] }
+  - name: "siteOptions"
+    label: "Site Options"
+    editor:
+      preview: false
+    files:
+    - name: "contactEmail"
+      label: "Contact Email"
+      file: "content/siteOptions/emails.json"
+      fields:
+      - label: "Contact Email"
+        name: "contactAddress"
+        widget: "string"

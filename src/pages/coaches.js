@@ -1,19 +1,33 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 import '../styles/coaches.scss'
+import { getOriginalImageName } from "../utils/getOriginalImageName"
 
 import Layout from "../components/layout"
 
 export default ({ location }) => {
-  const { data, colors } = useStaticQuery(graphql`
+  const { coachesData, coachesImages, colors } = useStaticQuery(graphql`
   query CoachesQuery {
-    data: file(sourceInstanceName: {eq: "coaches"}) {
+    coachesData: file(sourceInstanceName: {eq: "coaches"}) {
       childContentJson {
         coachesArray {
           bio
           image
           name
           title
+        }
+      }
+    }
+    coachesImages: allFile(filter: {sourceInstanceName: {eq: "coachesImgs"}}) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              originalName
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
@@ -27,15 +41,19 @@ export default ({ location }) => {
   }
     `)
 
-  const coachArray = data.childContentJson.coachesArray
+  const coachesArray = coachesData.childContentJson.coachesArray
+  const coachesImageArray = coachesImages.edges
   const { primaryColor, secondaryColor } = colors.childContentJson
 
   return (
-    <Layout location={location} cssPageName="coaches">
+    <Layout location={location} title="Coaches">
       <h1 style={{ color: primaryColor }}>Coaching Staff</h1>
-      {coachArray.map(coach => (
+      {coachesArray.map(coach => (
         <div key={coach.name} className="coach">
-          <img className="" src={coach.image} alt={coach.name} />
+          <Image className="coach-avatar"
+            fluid={coachesImageArray.find(image => image.node.childImageSharp.fluid.originalName === getOriginalImageName(coach.image)).node.childImageSharp.fluid}
+            alt={coach.name}
+          />
           <h2 style={{ color: secondaryColor }}>{coach.name}</h2>
           <h3 style={{ color: primaryColor }}>{coach.title}</h3>
           {coach.bio.split('\n\n').map(paragraph => <p className="bio-p" style={{ color: primaryColor }}>{paragraph}</p>)}

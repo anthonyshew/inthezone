@@ -2,25 +2,24 @@ import { useState, useEffect } from 'react'
 
 // Returns a boolean stating whether the media query is true or false
 
-export default (mediaQuery) => {
+export const useMediaQuery = (mediaQuery) => {
 
-    if (typeof window !== 'undefined') {
-        const [isVerified, setIsVerified] = useState(!!window.matchMedia(mediaQuery).matches)
+    const [isVerified, setIsVerified] = useState(typeof window !== "undefined" ? !!window.matchMedia(mediaQuery).matches : null)
 
-        useEffect(() => {
+    useEffect(() => {
+        if (typeof window !== "undefined") {
             const mediaQueryList = window.matchMedia(mediaQuery)
             const documentChangeHandler = () => setIsVerified(!!mediaQueryList.matches)
 
             mediaQueryList.addListener(documentChangeHandler)
 
             documentChangeHandler()
+
             return () => {
                 mediaQueryList.removeListener(documentChangeHandler)
             }
-        }, [mediaQuery])
+        }
+    }, [mediaQuery])
 
-        return isVerified
-    }
-
-    return null
+    return isVerified
 }

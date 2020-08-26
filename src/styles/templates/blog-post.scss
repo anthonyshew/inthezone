@@ -1,0 +1,107 @@
+@import "../variables.scss";
+
+.page-blog-post {
+    padding-top: 10vw;
+
+    h1 {
+        font-family: $staatliches;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .post-date {
+        color: gray;
+        font-family: $patua;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .article-body {
+        padding: 2%;
+        padding-top: 7%;
+        line-height: 200%;
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: $staatliches;
+            line-height: 100%;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 24px;
+        }
+
+        h5 {
+            font-size: 20px;
+        }
+
+        h6 {
+            font-size: 18px;
+        }
+
+        p {
+            padding-bottom: 3%;
+            font-family: $patua;
+            font-size: 18px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        blockquote {
+            margin: 5%;
+            padding-left: 5%;
+            border-left: 5px solid gray;
+        }
+
+        ul {
+            margin-left: 5%;
+            list-style: disc;
+            font-family: $patua;
+        }
+
+        ol {
+            margin-left: 5%;
+            list-style: decimal;
+            font-family: $patua;
+        }
+
+        img {
+            display: block;
+            width: 50%;
+            max-height: 50vh;
+            margin: 5% auto;
+        }
+    }
+
+    .blog-post-nav {
+        padding: 0 2%;
+        font-family: $patua;
+        text-decoration: underline;
+
+        li {
+            margin: 2% 0;
+        }
+    }
+}

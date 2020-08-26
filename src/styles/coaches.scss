@@ -18,11 +18,11 @@
         width: 100%;
         padding: 2%;
 
-        img {
+        .coach-avatar {
             margin-right: 5%;
             margin-bottom: 2%;
-            max-width: 50%;
-            max-height: 250px;
+            width: 50%;
+            max-height: 50vh;
             float: left;
         }
 
@@ -45,6 +45,17 @@
         .bio-p {
             padding-bottom: 1rem;
             font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .page-coaches {
+        .coach {
+            .coach-avatar {
+                width: 100%;
+                float: none;
+            }
         }
     }
 }

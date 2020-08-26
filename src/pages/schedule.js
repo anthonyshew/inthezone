@@ -67,7 +67,7 @@ export default ({ location }) => {
   }
 
   return (
-    <Layout location={location} cssPageName="schedule">
+    <Layout location={location} title="Schedule">
       <div className="column practices-container">
         <h2 style={{ backgroundColor: primaryColor, color: textColor }}>Practices</h2>
         <div className="list practice-list">

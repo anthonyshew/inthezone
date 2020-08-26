@@ -56,7 +56,8 @@
     .page-schedule {
         flex-direction: column;
 
-        .practices-container {
+        .column {
+            width: 100%;
             border: none;
         }
     }

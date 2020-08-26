@@ -6,54 +6,54 @@ import { useForm } from 'react-hook-form'
 import Layout from "../components/layout"
 
 export default ({ location }) => {
-    const { colors } = useStaticQuery(graphql`
-query ContactForm {
-    colors: file(sourceInstanceName: {eq: "colors"}) {
-        childContentJson {
-          secondaryColor
-          primaryColor
-          textColor
+    const { colors, siteOptionsJson } = useStaticQuery(graphql`
+    query ContactForm {
+        colors: file(sourceInstanceName: {eq: "colors"}) {
+            childContentJson {
+              secondaryColor
+              primaryColor
+              textColor
+            }
         }
-      }
-}
-    `
-    )
+        siteOptionsJson {
+            contactAddress
+        }
+    }
+    `)
 
     const { primaryColor, secondaryColor, textColor } = colors.childContentJson
 
     const [success, setSuccess] = useState(false)
 
     return (
-        <Layout location={location}>
-            <div className="page-contact">
-                <h1 style={{ color: secondaryColor }}>Contact Us</h1>
-                {success ? <SuccessMessage primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} /> : <ContactForm setSuccess={setSuccess} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} />}
-            </div>
+        <Layout location={location} title="Contact">
+            <h1 style={{ color: secondaryColor }}>Contact Us</h1>
+            {success ? <SuccessMessage primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} /> : <ContactForm setSuccess={setSuccess} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} contactAddress={siteOptionsJson.contactAddress} />}
         </Layout>
     )
 }
 
-const SuccessMessage = () => <p className="success-message">Thank you for getting in touch with us. You'll be hearing from us shortly (usually within the next 48 hours).</p>
+const SuccessMessage = () => <p className="success-message">Thank you for getting in touch with us. You'll be hearing from us shortly.</p>
 
-
-
-
-const ContactForm = ({ setSuccess, primaryColor, secondaryColor, textColor }) => {
+const ContactForm = ({ setSuccess, primaryColor, secondaryColor, textColor, contactAddress }) => {
     const { register, handleSubmit, errors } = useForm()
 
     const onSubmit = (formData, e) => {
-        fetch("/.netlify/functions/api / contact - us", {
+        fetch("/.netlify/functions/api/contact-us", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({
+                ...formData,
+                contactEmail: contactAddress
+            })
         })
             .then(res => setSuccess(true))
     }
 
     const inputStyles = {
-        border: `2px solid ${secondaryColor}`
+        border: `5px solid ${secondaryColor}`
     }
 
     const labelStyles = {
@@ -82,7 +82,7 @@ const ContactForm = ({ setSuccess, primaryColor, secondaryColor, textColor }) =>
                 </label>
                 {errors.message && <p className="error">A message is required.</p>}
 
-                <button className="submit-button" type="submit" style={{ border: `2px solid ${primaryColor}`, color: textColor, backgroundColor: secondaryColor }}>
+                <button className="submit-button" type="submit" style={{ border: `5px solid ${primaryColor}`, color: textColor, backgroundColor: secondaryColor }}>
                     Send
                 </button>
             </form>

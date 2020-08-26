@@ -6,9 +6,9 @@
       "endTime": "8 PM",
       "addressObject": {
         "location": "Anypark Place",
-        "streetAddress": "123 Cool Street",
+        "streetAddress": "123 Main Street",
         "city": "Anytown",
-        "state": "AK",
+        "state": "NY",
         "zipCode": 12345
       }
     },
@@ -17,11 +17,11 @@
       "startTime": "5 PM",
       "endTime": "7 PM",
       "addressObject": {
-        "location": "Fielder Field",
-        "streetAddress": "123123 Place place",
-        "city": "Brookikngs",
-        "state": "OR",
-        "zipCode": 97415
+        "location": "Fielder's Square",
+        "streetAddress": "123 A Street",
+        "city": "Anyplace",
+        "state": "CA",
+        "zipCode": 12345
       }
     }
   ],
@@ -34,33 +34,33 @@
         "state": "AS",
         "zipCode": 12345
       },
-      "startTime": "2020-07-09T21:18:09.417Z",
+      "startTime": "2020-07-09T21:15:09.417Z",
       "side": "Home",
-      "opponent": "asdfasd"
+      "opponent": "Warriors"
     },
     {
       "addressObject": {
-        "location": "asdfasdf",
-        "streetAddress": "asdfasdfasdfasdfdasf",
-        "city": "asdfasdfasdfasdfasdf",
-        "state": "AS",
+        "location": "The Lake Fields",
+        "streetAddress": "12345 Main St",
+        "city": "Anywhere",
+        "state": "AL",
         "zipCode": 12345
       },
       "startTime": "2020-07-09T22:30:48.269Z",
       "side": "Away",
-      "opponent": "werqqwer"
+      "opponent": "Renegades"
     },
     {
       "addressObject": {
-        "location": "Fart butt stink",
-        "streetAddress": "123412312312",
-        "city": "3123213213",
-        "state": "AR",
+        "location": "The Polo Grounds",
+        "streetAddress": "123 Riverside Dr",
+        "city": "Anyville",
+        "state": "TX",
         "zipCode": 12345
       },
       "startTime": "2020-07-09T22:30:48.295Z",
       "side": "Away",
-      "opponent": "jklhhjkl"
+      "opponent": "Angels"
     }
   ]
 }

@@ -8,9 +8,9 @@
         "battingAverageAgainst": 0.091,
         "runs": 82,
         "walks": 9,
-        "losses": 5,
+        "losses": 2,
         "era": 1.23,
-        "wins": 20,
+        "wins": 5,
         "strikeouts": 90,
         "whip": 0.58,
         "earnedRuns": 6
@@ -27,14 +27,15 @@
         "rbi": 150,
         "battingAverage": 0.5
       },
-      "name": "Baby Ruth",
+      "name": "Carl McDonald",
       "positions": [
         "C",
         "2B",
-        "LF"
+        "LF",
+        "P"
       ],
       "imgBool": true,
-      "image": "/cms/players/img/me.png"
+      "image": "/cms/players/jefferson-haddox-c9s2yvxhd0u-unsplash.jpg"
     },
     {
       "imgBool": false,
@@ -52,20 +53,54 @@
         "earnedRuns": 0
       },
       "hittingStats": {
-        "hits": 0,
-        "games": 0,
-        "doubles": 0,
-        "homeRuns": 0,
-        "walks": 0,
-        "atBats": 0,
-        "triples": 0,
-        "strikeouts": 0,
-        "rbi": 0,
-        "battingAverage": 0
+        "hits": 34,
+        "games": 50,
+        "doubles": 5,
+        "homeRuns": 1,
+        "walks": 10,
+        "atBats": 100,
+        "triples": 2,
+        "strikeouts": 2,
+        "rbi": 52,
+        "battingAverage": 0.34
       },
-      "name": "Tommy Tables",
+      "name": "Tommy Rawlings",
       "positions": [
         "C"
+      ]
+    },
+    {
+      "imgBool": true,
+      "pitchingStats": {
+        "hits": 24,
+        "inningsPitched": 12,
+        "battingAverageAgainst": 0.32,
+        "runs": 21,
+        "walks": 10,
+        "losses": 4,
+        "era": 5.06,
+        "wins": 3,
+        "strikeouts": 6,
+        "whip": 2.6,
+        "earnedRuns": 21
+      },
+      "hittingStats": {
+        "hits": 25,
+        "games": 25,
+        "doubles": 10,
+        "homeRuns": 5,
+        "walks": 2,
+        "atBats": 60,
+        "triples": 6,
+        "strikeouts": 0,
+        "rbi": 37,
+        "battingAverage": 0.417
+      },
+      "name": "Alex Wilson",
+      "image": "/cms/players/nikolas-noonan-uwioolruov4-unsplash.jpg",
+      "positions": [
+        "INF",
+        "P"
       ]
     }
   ]

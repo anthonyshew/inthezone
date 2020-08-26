@@ -4,16 +4,27 @@
     position: relative;
 
     .hero {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 400px;
+        height: 83vh;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
 
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
         h2 {
+            z-index: 1;
+            padding: 3%;
             color: $white;
             font-family: $patua;
             font-size: 24px;
@@ -47,27 +58,16 @@
             justify-content: center;
             padding: 1rem;
             padding-bottom: 1.5rem;
-            width: 30%;
-            height: 350px;
+            width: 30vw;
+            height: 30vw;
             border-radius: 1rem;
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
             font-family: $patua;
-            font-size: 24px;
+            font-size: 5vw;
             text-align: center;
-
-            .gradient-mask {
-                position: absolute;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                border-bottom-left-radius: 1rem;
-                border-bottom-right-radius: 1rem;
-                background-image: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) 20%, transparent 30%);
-            }
+            transition: .2s;
 
             .link-text {
                 position: relative;
@@ -76,37 +76,34 @@
 
             svg {
                 display: block;
-                width: 50%;
+                width: 15vw;
+                min-width: 40px;
+                height: 15vw;
+                min-height: 40px;
                 margin: 0 auto;
-                margin-bottom: 2rem;
+                margin-bottom: 10%;
             }
         }
     }
 
     .coaches {
-        margin-top: 20vh;
+        margin-top: 10vh;
     }
 
     .players {
-        margin-top: 40vh
+        margin-top: 20vh
     }
 
     .team-proposition {
         position: relative;
-        top: -50px;
-        width: 50%;
-        margin-top: -2%;
-        margin-left: 2%;
-        padding: 3%;
+        padding: 10%;
         border-radius: 1rem;
         font-family: $patua;
-        font-size: 40px;
+        font-size: 3vw;
     }
 
     .testimonial-container {
         position: relative;
-        top: -50px;
-        padding-top: 10%;
         overflow: hidden;
 
         .background-svg {
@@ -122,7 +119,7 @@
         .avatar {
             position: absolute;
             top: 15%;
-            right: 8%;
+            right: 3%;
         }
 
         .quotation-mark {
@@ -160,5 +157,188 @@
         }
     }
 
+    .explore-container {
+        padding: 5% 2%;
 
+        .explore-heading {
+            width: 100%;
+            font-family: $staatliches;
+            font-size: 52px;
+            text-align: center;
+        }
+
+        .explore-tiles-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100%;
+
+
+            .explore-tile {
+                position: relative;
+                height: 30vw;
+                overflow: hidden;
+                transition: .2s;
+
+                .background-image {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    z-index: -1;
+                }
+
+                .dimmer-gradient {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10% 0 5%;
+                    background: linear-gradient(to top, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, .3) 70%, rgba(0, 0, 0, 0) 100%);
+                    color: $white;
+                }
+
+                .link-title {
+                    font-family: $staatliches;
+                    font-size: 2.8vw;
+                }
+
+                .link-description {
+                    font-family: $patua;
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+
+    .blog-container {
+        margin-bottom: 1%;
+
+        .blog-heading {
+            width: 100%;
+            font-family: $staatliches;
+            font-size: 52px;
+            text-align: center;
+        }
+
+        .blog-link {
+            display: block;
+            width: 100%;
+            padding: 2%;
+            transition: .05s;
+
+            h4 {
+                font-family: $staatliches;
+                font-size: 24px;
+            }
+
+            p {
+                font-family: $patua;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (hover:hover) {
+    .page-home {
+        .panels {
+            a:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .explore-container {
+            .explore-tiles-container {
+                .explore-tile:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+        .blog-container {
+            .blog-link:hover {
+                background-color: lightgray;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .page-home {
+        .explore-container {
+            .explore-tiles-container {
+                grid-template-columns: 1fr 1fr;
+
+                .explore-tile {
+                    height: 40vw;
+
+                    .link-title {
+                        font-size: 4.3vw;
+                    }
+
+                    .link-description {
+                        font-size: 2.2vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .page-home {
+        .team-proposition {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .page-home {
+        .testimonial-container {
+
+            .avatar {
+                width: 48px;
+                top: 5%;
+            }
+
+            .quotation {
+                font-size: 24px;
+            }
+
+            .quotation-mark.open {
+                top: 10%;
+                left: 5%;
+            }
+
+            .quotation-mark.close {
+                right: 5%;
+            }
+
+            .attribution {
+                font-size: 18px;
+            }
+        }
+
+        .explore-container {
+            .explore-tiles-container {
+                grid-template-columns: 1fr;
+
+                .explore-tile {
+                    height: 80vw;
+
+                    .link-title {
+                        font-size: 8.5vw;
+                    }
+
+                    .link-description {
+                        font-size: 4.2vw;
+                    }
+                }
+            }
+        }
+    }
 }

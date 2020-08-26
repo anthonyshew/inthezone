@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -50,7 +50,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:image`,
-          content: `https://adoptaminorleaguer.com/media/aaml-logo.jpg`,
+          content: image || `https://inthezone.dev/images/teamstage-logo.png`,
         },
         {
           name: `twitter:card`,
@@ -70,7 +70,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:image`,
-          content: `https://adoptaminorleaguer.com/media/aaml-logo.jpg`,
+          content: image || `https://inthezone.dev/images/teamstage-logo.png`,
         },
       ].concat(meta)}
     />

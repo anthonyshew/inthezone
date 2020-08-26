@@ -1,14 +1,16 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Image from "gatsby-image"
 import '../styles/players.scss'
 
 import Layout from "../components/layout"
 import Player from "../components/svg/player"
+import { getOriginalImageName } from '../utils/getOriginalImageName'
 
 export default ({ location }) => {
-  const { data, colors } = useStaticQuery(graphql`
+  const { playersData, playersImagesData, colors } = useStaticQuery(graphql`
   query PlayersQuery {
-    data: file(sourceInstanceName: {eq: "players"}) {
+    playersData: file(sourceInstanceName: {eq: "players"}) {
       childContentJson {
         statsBool
         playersArray {
@@ -44,6 +46,18 @@ export default ({ location }) => {
         }
       }
     }
+    playersImagesData: allFile(filter: {sourceInstanceName: {eq: "playersImgs"}}) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              originalName
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
     colors: file(sourceInstanceName: {eq: "colors"}) {
       childContentJson {
         secondaryColor
@@ -54,17 +68,17 @@ export default ({ location }) => {
   }
     `)
 
-  const playersArray = data.childContentJson.playersArray
+  const playersArray = playersData.childContentJson.playersArray
+  const playersImages = playersImagesData.edges
   const { primaryColor, secondaryColor } = colors.childContentJson
-  console.log(playersArray[0])
 
   return (
-    <Layout location={location} cssPageName="players">
+    <Layout location={location} title="Players">
       <h1 style={{ color: secondaryColor }}>Roster</h1>
       {playersArray.map(player => (
         <div key={player.name} className="player">
           <div className="image-column">
-            {player.imgBool ? <img className="player-image" src={player.image} alt={player.name} /> : <Player className="player-placeholder" secondaryColor={secondaryColor} />}
+            {player.imgBool ? <Image className="player-image" fluid={playersImages.find(image => image.node.childImageSharp.fluid.originalName === getOriginalImageName(player.image)).node.childImageSharp.fluid} alt={player.name} /> : <Player className="player-placeholder" secondaryColor={secondaryColor} />}
           </div>
           <div className="content-container">
             <h2 className="player-name" style={{ color: primaryColor }}>{player.name}</h2>
@@ -76,7 +90,7 @@ export default ({ location }) => {
               }
             })}</p>
 
-            {data.childContentJson.statsBool && <Stats player={player} />}
+            {playersData.childContentJson.statsBool && <Stats player={player} />}
 
           </div>
           <hr />

@@ -1,19 +1,11 @@
 {
   "scheduleIcon": {
-    "imageBool": true,
+    "imageBool": false,
     "image": "/cms/homePage/img/img_0293-removebg-preview.png"
   },
-  "heroImage": "/cms/homePage/img/img_2588.jpg",
-  "coachesIcon": {
-    "imageBool": false,
-    "image": "/cms/homePage/img/img_2588.jpg"
-  },
-  "playersIcon": {
-    "imageBool": false,
-    "image": ""
-  },
-  "heroText": "",
-  "auxText": "This is where the team proposition thing dealio goes. It will have some words and stuff and will look great.",
-  "quoteAttr": "",
-  "quotation": ""
+  "heroImage": "/cms/homePage/jefferson-haddox-vlgwqfczqyw-unsplash.jpg",
+  "heroText": "Remember that team that played the right way all the time? That's this team.",
+  "auxText": "The New York Knights Baseball Club is a 13U team based in Rochester, NY. On our way to winning, we will develop character and heart through the power of baseball.",
+  "quoteAttr": "Kathy Roberts",
+  "quotation": "The coaching staff that the Knights have is second to none in New York!"
 }
