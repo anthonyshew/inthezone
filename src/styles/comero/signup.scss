@@ -1,0 +1,189 @@
+@import "./comero.scss";
+
+.email-signup {
+    width: 100%;
+    padding: 0 1rem;
+    padding-top: 2rem;
+    text-align: center;
+    opacity: 0;
+
+    &.in {
+        animation: fadeInAndUp 1s ease forwards;
+
+        @keyframes fadeInAndUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+    }
+
+    .email {
+        width: 85%;
+        border: 2px solid $blue;
+        border-top-left-radius: .5rem;
+        border-bottom-left-radius: .5rem;
+        font-family: $zilla;
+        font-size: 24px;
+
+        &::placeholder {
+            text-align: center;
+        }
+    }
+
+    .honeypot {
+        width: 0;
+        height: 0;
+    }
+
+    .submit {
+        position: relative;
+        appearance: none;
+        width: 82.275px;
+        height: 49px;
+        border: none;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        background-color: $red;
+        color: $white;
+        font-family: $poppins;
+        font-size: 22px;
+        font-weight: 700;
+        transition: all 1s;
+
+        .spinner {
+            position: relative;
+            top: 4px;
+            height: 22px;
+
+            .inner {
+                animation: rotateInner 5.2s linear infinite;
+                transform-origin: 50% 50%;
+
+                @keyframes rotateInner {
+                    to {
+                        transform: rotate(360deg)
+                    }
+                }
+            }
+
+            .outer {
+                animation: rotateOuter 7.8s linear infinite;
+                transform-origin: 50% 50%;
+
+                @keyframes rotateOuter {
+                    from {
+                        transform: rotate(360deg)
+                    }
+                }
+            }
+        }
+
+        &.success {
+            background-color: green;
+
+            .checkmark {
+                position: relative;
+                top: 4px;
+                height: 22px;
+                filter: saturate(0);
+                animation: growIn .5s ease forwards;
+
+                @keyframes growIn {
+                    0% {
+                        transform: scale(0)
+                    }
+
+                    80% {
+                        transform: scale(1.2)
+                    }
+
+                    100% {
+                        transform: scale(1)
+                    }
+                }
+            }
+        }
+    }
+
+    .email,
+    .submit {
+        padding: .5rem .8rem;
+    }
+
+    .submit {
+        position: relative;
+        top: -1px;
+        cursor: pointer;
+    }
+
+    .error,
+    .error-placeholder {
+        height: 18px;
+        margin-top: .3rem;
+        margin-bottom: 1rem;
+        color: $red;
+        font-family: $poppins;
+    }
+
+    .error {
+        opacity: 0;
+        animation: fadeInAndUp .5s ease forwards;
+
+        @keyframes fadeInAndUp {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .email-signup {
+        .email {
+            margin-bottom: 1rem;
+            border-radius: .5rem;
+        }
+    }
+
+    .submit {
+        border-radius: .5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .email-signup {
+        .email {
+            font-size: 18px;
+
+            &::placeholder {
+                font-size: 18px;
+                color: rgba(1, 1, 1, .7);
+            }
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .email-signup {
+        .email {
+            font-size: 14px;
+
+            &::placeholder {
+                font-size: 14px;
+                color: rgba(1, 1, 1, .7);
+            }
+        }
+    }
+}

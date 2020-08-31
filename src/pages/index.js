@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../styles/global.scss"
+import "../styles/portfolio.scss"
 
 import SEO from "../components/seo"
 import { Accordion, AccordionItem } from "../components/accordion"
@@ -46,7 +47,7 @@ export default () => {
   const [hoveredClient, setHoveredClient] = useState("")
 
   return (
-    <div>
+    <div className="portfolio">
       <SEO
         title="Home"
       >

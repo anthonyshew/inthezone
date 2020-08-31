@@ -1,0 +1,25 @@
+@import './reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Zilla+Slab:wght@400;700&display=swap');
+
+$poppins: 'Poppins',
+serif;
+$zilla: 'Zilla Slab',
+sans-serif;
+
+$black: #000000;
+$white: #FFFFFF;
+$red: #E50101;
+$blue: #13276B;
+
+body {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#___gatsby {
+    overflow-x: hidden;
+}
