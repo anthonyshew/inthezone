@@ -10,7 +10,6 @@ module.exports = {
       summary: `who develops things.`,
     },
     description: `TeamStage`,
-    siteUrl: `${process.env.ROOT_URL}`,
     social: {
       twitter: `/theunrealashew`,
     }
@@ -37,9 +36,51 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets/teamInfo`,
-        name: `teamLogo`
+        path: `${__dirname}/content/assets/blogImages`,
+        name: `blogImgs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/customPages`,
+        name: `customPageImgs`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/gallery`,
+        name: `galleryImgs`
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/homePage`,
+        name: `homePageImgs`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/logo`,
+        name: `orgLogos`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/teams`,
+        name: `teamsImgs`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets/homePage`,
+        name: `homePageImgs`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -53,13 +94,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/customPages`,
         name: `customPages`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets/customPages`,
-        name: `customPageImgs`,
       },
     },
     {
@@ -93,22 +127,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets/homePage`,
-        name: `homePageImgs`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/coaches.json`,
         name: `coaches`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets/coaches`,
-        name: `coachesImgs`,
       },
     },
     {
@@ -121,15 +141,36 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets/players`,
-        name: `playersImgs`,
+        path: `${__dirname}/content/gallery`,
+        name: `gallery`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/siteOptions/emails.json`,
-        name: `contactEmail`,
+        path: `${__dirname}/content/siteOptions/contact.json`,
+        name: `contact`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/siteOptions/social.json`,
+        name: `socials`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/about.md`,
+        name: `about`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/teams`,
+        name: `teams`,
       },
     },
     {

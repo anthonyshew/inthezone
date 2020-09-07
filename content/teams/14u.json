@@ -1,0 +1,134 @@
+{
+  "ageGroup": "14u",
+  "bio": "sdfgfdgs dfgdfgsfg dfgsddfg sfs dgfsdgf gsd\n\nHere's more more more.\n\n",
+  "coaches": [
+    {
+      "name": "asdfasdf",
+      "title": "asdfasdfasdf",
+      "image": "img_2623.jpg",
+      "bio": "asdfasdfaesrasedrf"
+    }
+  ],
+  "players": [
+    {
+      "imgBool": false,
+      "pitchingStats": {
+        "hits": 0,
+        "inningsPitched": 0,
+        "battingAverageAgainst": 0,
+        "runs": 0,
+        "walks": 0,
+        "losses": 0,
+        "era": 0,
+        "wins": 0,
+        "strikeouts": 0,
+        "whip": 0,
+        "earnedRuns": 0
+      },
+      "hittingStats": {
+        "hits": 0,
+        "games": 0,
+        "doubles": 0,
+        "homeRuns": 0,
+        "walks": 0,
+        "atBats": 0,
+        "triples": 0,
+        "strikeouts": 0,
+        "rbi": 0,
+        "battingAverage": 0
+      },
+      "name": "asdfaesrasdg",
+      "positions": [
+        "1B"
+      ]
+    },
+    {
+      "imgBool": true,
+      "pitchingStats": {
+        "hits": 0,
+        "inningsPitched": 0,
+        "battingAverageAgainst": 0,
+        "runs": 0,
+        "walks": 0,
+        "losses": 0,
+        "era": 0,
+        "wins": 0,
+        "strikeouts": 0,
+        "whip": 0,
+        "earnedRuns": 0
+      },
+      "hittingStats": {
+        "hits": 0,
+        "games": 0,
+        "doubles": 0,
+        "homeRuns": 0,
+        "walks": 0,
+        "atBats": 0,
+        "triples": 0,
+        "strikeouts": 0,
+        "rbi": 0,
+        "battingAverage": 0
+      },
+      "name": "yuipotuipltu",
+      "image": "letter-logo.png",
+      "positions": [
+        "OF"
+      ]
+    }
+  ],
+  "schedule": {
+    "practices": [
+      {
+        "day": "Monday",
+        "addressObject": {
+          "location": "asdfsadf",
+          "streetAddress": "asdfasdfasdf",
+          "city": "asdfasdfasdf",
+          "state": "AK",
+          "zipCode": 12342
+        },
+        "startTime": "12:45 AM",
+        "endTime": "1:15 AM"
+      },
+      {
+        "day": "Wednesday",
+        "addressObject": {
+          "location": "sdfgsdfggffgsgfsd",
+          "streetAddress": "rtetrwewrteretwrtetrwe",
+          "city": "utyjtyurykyurkyut",
+          "state": "LA",
+          "zipCode": 12355
+        },
+        "startTime": "12 AM",
+        "endTime": "5 AM"
+      }
+    ],
+    "games": [
+      {
+        "startTime": "Wednesday, September 9, 2020 12:00 AM",
+        "side": "Home",
+        "opponent": "3245rdfg",
+        "addressObject": {
+          "location": "dfgsfgsdf",
+          "streetAddress": "453e6tyesryhs",
+          "city": "asdcvxzcvbfcg",
+          "state": "AR",
+          "zipCode": 12345
+        }
+      },
+      {
+        "startTime": "Wednesday, September 23, 2020 7:00 PM",
+        "side": "Away",
+        "opponent": "3w45tstrgdasghdfs",
+        "addressObject": {
+          "location": "dfgsdrsgh",
+          "streetAddress": "sfdghcxvnrfgtjh",
+          "city": "sdrtgxcgjmtygej",
+          "state": "CA",
+          "zipCode": 43567
+        }
+      }
+    ]
+  },
+  "statsBool": true
+}

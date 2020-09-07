@@ -6,18 +6,10 @@ import { useForm } from 'react-hook-form'
 import Layout from "../components/layout"
 
 export default ({ location }) => {
-    const { colors, siteOptionsJson } = useStaticQuery(graphql`
-    query ContactForm {
-        colors: file(sourceInstanceName: {eq: "colors"}) {
-            childContentJson {
-              secondaryColor
-              primaryColor
-              textColor
-            }
-        }
-        siteOptionsJson {
-            contactAddress
-        }
+    const { colors, contactInfo } = useStaticQuery(graphql`
+    {
+        ...Colors
+        ...ContactInfo
     }
     `)
 
@@ -28,7 +20,7 @@ export default ({ location }) => {
     return (
         <Layout location={location} title="Contact">
             <h1 style={{ color: secondaryColor }}>Contact Us</h1>
-            {success ? <SuccessMessage primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} /> : <ContactForm setSuccess={setSuccess} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} contactAddress={siteOptionsJson.contactAddress} />}
+            {success ? <SuccessMessage primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} /> : <ContactForm setSuccess={setSuccess} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} contactAddress={contactInfo.childSiteOptionsJson.contactAddress} />}
         </Layout>
     )
 }

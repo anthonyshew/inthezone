@@ -1,0 +1,181 @@
+@import "./variables.scss";
+
+.page-gallery {
+    margin-top: 10vw;
+
+    .page-title {
+        font-family: $staatliches;
+        font-size: 52px;
+        text-align: center;
+    }
+
+    .gallery-items-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .gallery-item {
+            flex-basis: 40%;
+            margin: 3%;
+            padding: 2%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: .2s;
+
+            .gatsby-image-wrapper {
+                height: 40vw;
+            }
+
+            .event-title {
+                margin-top: 8px;
+                font-family: $staatliches;
+                font-size: 18px;
+            }
+
+            .event-date {
+                font-family: $patua;
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .modal-background-container {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: initial;
+        border: none;
+        background-color: rgba(0, 0, 0, .8);
+        animation: fadeIn 1s ease forwards;
+        opacity: 0;
+
+        &.out {
+            animation: fadeOut .6s ease forwards;
+            opacity: 1;
+        }
+
+        .modal-background-button {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .modal-container {
+            width: 95%;
+            max-width: 1000px;
+            height: 95%;
+            overflow: hidden;
+            animation: slideUp .6s ease forwards, fadeIn .4s ease forwards;
+            position: relative;
+            top: 0;
+            opacity: 0;
+
+            &.out {
+                animation: slideDown .6s ease forwards, fadeOut .6s ease forwards;
+                top: 0;
+                opacity: 1;
+            }
+
+            .close-button {
+                appearance: none;
+                position: absolute;
+                top: 12px;
+                right: 48px;
+                z-index: 1;
+                border: none;
+                box-shadow: 0 0 20px gray;
+                font-family: $staatliches;
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            .navigation-wrapper {
+                position: relative;
+                height: 100%;
+
+                .keen-slider {
+                    height: 100%;
+
+                    .gatsby-image-wrapper {
+                        width: 50%;
+                    }
+                }
+
+                .arrow-container {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    z-index: 10;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 8%;
+                    max-width: 40px;
+                    height: 100%;
+
+                    &.left {
+                        left: 0;
+                    }
+
+                    &.right {
+                        right: 0;
+                    }
+                }
+
+                .arrow {
+                    cursor: pointer;
+
+                    &.arrow--disabled {
+                        display: none;
+                    }
+
+                    svg {
+                        width: 100%;
+                    }
+                }
+
+                .dots {
+                    position: absolute;
+                    bottom: 4px;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    .dot {
+                        width: 12px;
+                        height: 12px;
+                        margin: 0 4px;
+                        border: none;
+                        border-radius: 100%;
+                        cursor: pointer;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (hover:hover) {
+    .page-gallery {
+        .gallery-items-container {
+            .gallery-item:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

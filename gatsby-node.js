@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const customPage = path.resolve(`./src/templates/custom-page.js`)
+  const teamPage = path.resolve(`./src/templates/team-page.js`)
   const result = await graphql(
     `
       {
@@ -49,6 +50,13 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        teams: allFile(filter: {sourceInstanceName: {eq: "teams"}}) {
+          edges {
+            node {
+              name
+            }
+          }
+        }
       }
     `
   )
@@ -57,14 +65,27 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors
   }
 
-  // Create blog posts pages.
   const posts = result.data.blogPosts.edges
-  const customPages = result.data.customPages.edges
+
+  // Create blog post index pagination
+  const postsPerPage = 5
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, index) => {
+    createPage({
+      path: index === 0 ? `/blog` : `/blog/${index + 1}`,
+      component: path.resolve("./src/templates/blog-list.js"),
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
+        numPages,
+        currentPage: index + 1,
+      },
+    })
+  })
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
-
 
     createPage({
       path: `/blog${post.node.childMarkdownRemark.fields.slug}`,
@@ -77,8 +98,10 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  customPages.forEach((page) => {
+  // Create blog posts pages.
+  const customPages = result.data.customPages.edges
 
+  customPages.forEach((page) => {
     createPage({
       path: `page${page.node.childMarkdownRemark.fields.slug}`,
       component: customPage,
@@ -86,6 +109,19 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: page.node.childMarkdownRemark.fields.slug,
         image: page.node.childMarkdownRemark.frontmatter.coverImage.split("/").pop()
       },
+    })
+  })
+
+  // Create teams pages.
+  const teams = result.data.teams.edges
+
+  teams.forEach((team) => {
+    createPage({
+      path: `teams/${team.node.name}`,
+      component: teamPage,
+      context: {
+        name: team.node.name
+      }
     })
   })
 }
@@ -103,12 +139,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-// Allow end user to have no markdown content created
+// Create all graphql fields even if they have no content.
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 
   const typeDefs = `
-
   type File implements Node {
     childMarkdownRemark: MarkdownRemark
   }

@@ -1,0 +1,11 @@
+@import "/variables.scss";
+
+.page-about-us {
+    padding-top: 10vw;
+
+    .about-header {
+        text-align: center;
+        font-family: $staatliches;
+        font-size: 48px;
+    }
+}

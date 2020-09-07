@@ -32,14 +32,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             <li>
               {previous && (
-                <Link to={`/blog/${previous.childMarkdownRemark.fields.slug}`} rel="prev">
+                <Link to={`/blog${previous.childMarkdownRemark.fields.slug}`} rel="prev">
                   ← Previous Post: {previous.childMarkdownRemark.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={`/blog/${next.childMarkdownRemark.fields.slug}`} rel="next">
+                <Link to={`/blog${next.childMarkdownRemark.fields.slug}`} rel="next">
                   Next Up: {next.childMarkdownRemark.frontmatter.title} →
                 </Link>
               )}

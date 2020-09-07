@@ -5,87 +5,18 @@ import '../styles/index.scss'
 import { getOriginalImageName } from "../utils/getOriginalImageName"
 
 import Layout from "../components/layout"
-import Schedule from "../components/svg/schedule"
-import Coach from "../components/svg/coach"
-import Player from "../components/svg/player"
 
 export default ({ location }) => {
-  const { homePageData, colors, heroImages, customPagesData, customPageImgsData, blogPosts } = useStaticQuery(graphql`
+  const { homePageData, colors, heroImages, customPagesData, customPageImgsData, blogPosts, teams, socialMediaLinks } = useStaticQuery(graphql`
     {
-        heroImages: allFile(filter: {sourceInstanceName: {eq: "homePageImgs"}}) {
-          edges {
-            node {
-              childImageSharp {
-                fluid {
-                  originalName
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        homePageData: file(sourceInstanceName: {eq: "homePage"}) {
-            childContentJson {
-                heroImage
-                heroText
-                quotation
-                quoteAttr
-                teamLogo
-                teamName
-                auxText
-            }
-          }
-        customPagesData: allFile(filter: {sourceInstanceName: {eq: "customPages"}}) {
-          edges {
-            node {
-              childMarkdownRemark {
-                fields {
-                    slug
-                }
-                frontmatter {
-                  coverImage
-                  shortDescription
-                  title
-                }
-              }
-            }
-          }
-        }
-        customPageImgsData: allFile(filter: {sourceInstanceName: {eq: "customPageImgs"}}) {
-            edges {
-              node {
-                childImageSharp {
-                  fluid {
-                    originalName
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-          blogPosts: allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
-            edges {
-              node {
-                childMarkdownRemark {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                    description
-                  }
-                  html
-                }
-              }
-            }
-          }
-        colors: file(sourceInstanceName: {eq: "colors"}) {
-            childContentJson {
-              secondaryColor
-              primaryColor
-              textColor
-            }
-          }
+      ...AllHeroImages
+      ...HomePageData
+      ...AllCustomPageData
+      ...AllCustomPageImages
+      ...AllBlogPosts
+      ...AllTeamsData
+      ...SocialMediaLinks
+      ...Colors
     }
     `)
 
@@ -95,30 +26,30 @@ export default ({ location }) => {
   const customPageImgs = customPageImgsData.edges
   const blog = blogPosts.edges
 
-  const primaryColor = colors.childContentJson.primaryColor
-  const secondaryColor = colors.childContentJson.secondaryColor
-  const textColor = colors.childContentJson.textColor
+  const { primaryColor, secondaryColor, textColor } = colors.childContentJson
 
   return (
     <Layout location={location} title="Home">
       <section className="hero">
         <Image className="hero-image" fluid={heroImage} alt={homePageJson.heroText} style={{ position: "absolute" }} />
         {homePageJson.heroText && <h2 style={{ color: textColor }}>{homePageJson.heroText}</h2>}
+        <div className="social-icon-links">
+          {socialMediaLinks.childSiteOptionsJson.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
+          {socialMediaLinks.childSiteOptionsJson.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
+          {socialMediaLinks.childSiteOptionsJson.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
+          {socialMediaLinks.childSiteOptionsJson.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
+        </div>
       </section>
 
       <section className="panels" style={{ background: `linear-gradient(22deg, transparent 55%, ${secondaryColor} 55%)` }}>
-        <Link className="index-link-button schedule" to="/schedule" style={{ backgroundColor: primaryColor, color: textColor }} >
-          <Schedule primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} />
-          <h2 className="link-text">Schedule</h2>
-        </Link>
-        <Link className="index-link-button coaches" to="/coaches" style={{ backgroundColor: primaryColor, color: textColor }}>
-          <Coach primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} />
-          <h2 className="link-text">Coaches</h2>
-        </Link>
-        <Link className="index-link-button players" to="/players" style={{ backgroundColor: primaryColor, color: textColor }}>
-          <Player primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} />
-          <h2 className="link-text">Players</h2>
-        </Link>
+        <h2 className="panels-header" style={{ color: primaryColor }}>Teams</h2>
+        <div className="panels-container">
+          {teams.edges.map(({ node }) => (
+            <Link key={node.ageGroup} className="index-link-button" to={`/teams/${node.ageGroup}`} style={{ backgroundColor: primaryColor, color: textColor }} >
+              <h3 className="link-text">{node.ageGroup}</h3>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="team-proposition" style={{ backgroundColor: textColor, color: primaryColor }}>
@@ -186,6 +117,9 @@ const Blog = ({ blog, primaryColor, secondaryColor }) => {
         )
       })}
 
+      <div className="link-container">
+        <Link className="all-posts-link" to="/blog" style={{ backgroundColor: secondaryColor, color: primaryColor }}>All Posts</Link>
+      </div>
     </section>
   )
 }

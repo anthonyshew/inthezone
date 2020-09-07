@@ -3,25 +3,13 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import FocusLock from "react-focus-lock"
 import "../styles/components/mobile-menu.scss"
 
-import useBodyScrollLock from "../hooks/useBodyScrollLock"
+import { useBodyScrollLock } from "../hooks/useBodyScrollLock"
 
 export default ({ setIsMenuOpen, primaryColor, secondaryColor, textColor }) => {
-    const { pages } = useStaticQuery(graphql`
+    const { customPagesData, teams } = useStaticQuery(graphql`
     query MobileMenuQuery {
-        pages: allFile(filter: {sourceInstanceName: {eq: "customPages"}}) {
-            edges {
-              node {
-                childMarkdownRemark {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                      title
-                  }
-                }
-              }
-            }
-          }
+        ...AllCustomPageData
+        ...AllTeamsData
     }
     `)
 
@@ -45,11 +33,17 @@ export default ({ setIsMenuOpen, primaryColor, secondaryColor, textColor }) => {
                 <div className="mobile-menu-body" style={{ backgroundColor: primaryColor }} ref={menuBody}>
                     <nav className="link-list">
                         <Link className="link" to="/" >Home</Link>
-                        <Link className="link" to="/schedule" >Schedule</Link>
-                        <Link className="link" to="/coaches" >Coaches</Link>
-                        <Link className="link" to="/players" >Players</Link>
-                        {pages.edges.map(({ node }) => <Link key={node.childMarkdownRemark.fields.slug} className="link" to={`/page${node.childMarkdownRemark.fields.slug}`}>{node.childMarkdownRemark.frontmatter.title}</Link>)}
+                        {customPagesData.edges.map(({ node }) => <Link key={node.childMarkdownRemark.fields.slug} className="link" to={`/page${node.childMarkdownRemark.fields.slug}`}>{node.childMarkdownRemark.frontmatter.title}</Link>)}
+                        <Link className="link" to="/shop" >Shop</Link>
+                        <Link className="link" to="/blog" >Blog</Link>
+                        <Link className="link" to="/gallery" >Gallery</Link>
                         <Link className="link" to="/contact" >Contact Us</Link>
+                        <h2 className="teams-header" style={{ color: secondaryColor }}>Teams</h2>
+                        <div className="teams-links-container">
+                            {teams.edges.map(({ node }) => (
+                                <Link key={node.ageGroup} className="link" to={`/teams/${node.ageGroup}`} >{node.ageGroup}</Link>
+                            ))}
+                        </div>
                     </nav>
                     <button
                         className="close-button"

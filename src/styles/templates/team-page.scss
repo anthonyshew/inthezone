@@ -1,0 +1,198 @@
+@import "../variables.scss";
+
+main[class^="page-team"] {
+    padding-top: 10vw;
+
+    .heading {
+        font-family: $staatliches;
+        font-size: 52px;
+        text-align: center;
+    }
+
+    .accordion-container {
+        .accordion-item {
+            .header-button {
+                border-radius: 12px;
+            }
+
+            .content {
+                opacity: 0;
+            }
+        }
+    }
+
+    h3 {
+        font-family: $staatliches;
+        font-size: 28px;
+    }
+
+    .games-container {
+        font-family: $patua;
+
+        .game {
+            padding-bottom: 24px;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+    .practices-container {
+        font-family: $patua;
+
+        .practice {
+            padding-bottom: 24px;
+
+            .day-and-time {
+                font-family: $staatliches;
+                font-size: 24px;
+            }
+
+        }
+    }
+
+    .coaches-container {
+        .coach {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 2%;
+            padding-bottom: 2%;
+
+            .coach-image {
+                min-width: 250px;
+                width: 50%;
+                max-width: 600px;
+                border-radius: 12px;
+            }
+
+            .coach-text-container {
+                min-width: 250px;
+
+                .coach-name {
+                    font-family: $staatliches;
+                    font-size: 28px;
+                }
+
+                .coach-title {
+                    font-family: $patua;
+                    font-size: 22px;
+                }
+            }
+
+            .coach-bio {
+                min-width: 100%;
+                padding-top: 2%;
+                font-family: $patua;
+                font-size: 18px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .players-container {
+        .player {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 5% 2%;
+
+            .image-column {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .player-image {
+                    width: 100%;
+                }
+
+                .player-placeholder {
+                    max-width: 250px;
+                }
+            }
+
+            .content-container {
+                width: 100%;
+                margin-left: 8%;
+                overflow: hidden;
+            }
+
+            .player-name {
+                font-family: $staatliches;
+                font-size: 44px;
+                line-height: 100%;
+            }
+
+            .positions {
+                font-family: $staatliches;
+                font-size: 20px;
+                line-height: 100%;
+            }
+
+            h3 {
+                margin-top: 1rem;
+                font-family: $staatliches;
+                font-size: 24px;
+            }
+
+            .stats-table-container {
+                width: 100%;
+                overflow-x: auto;
+                mask-image: linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
+
+
+                .stats-table {
+                    border: 2px solid black;
+                    border-collapse: collapse;
+                    font-family: $patua;
+
+                    th,
+                    td {
+                        padding: 1rem;
+                        border: 2px solid black;
+                        border-collapse: collapse;
+                        text-align: center;
+                    }
+
+
+                    th {
+                        font-family: $staatliches;
+                        font-size: 24px;
+                        line-height: 50%;
+
+                        &:first-of-type,
+                        &:nth-of-type(2),
+                        &:nth-of-type(3) {
+                            padding: 1rem 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .team-bio {
+        font-family: $patua;
+    }
+}
+
+@media (max-width: 500px) {
+    main[class^="page-team"] .players-container .player {
+        flex-direction: column;
+
+        .content-container {
+            margin-top: 5%;
+        }
+    }
+}

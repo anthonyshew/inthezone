@@ -7,63 +7,29 @@ import { getOriginalImageName } from "../utils/getOriginalImageName"
 import useSetFavicon from "../hooks/useSetFavicon"
 import SEO from "./seo"
 import MobileMenu from "./mobileMenu"
+import Phone from "./svg/phone"
+import Map from "./svg/map"
 
 export default ({ location, title, description, seoImage, children }) => {
-  const { data, colors, teamLogos, teamName, pages } = useStaticQuery(graphql`
+  const { orgBasics, colors, allOrgLogos, customPagesData, socialMediaLinks, teams, contactInfo } = useStaticQuery(graphql`
   query LayoutQuery {
-    teamLogos: allFile(filter: {sourceInstanceName: {eq: "teamLogo"}}) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              originalName
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-    teamName: file(sourceInstanceName: {eq: "basics"}) {
-      childContentJson {
-        teamName
-      }
-    }
-    data: file(sourceInstanceName: {eq: "basics"}) {
-      childContentJson {
-        teamLogo
-      }
-    }
-    pages: allFile(filter: {sourceInstanceName: {eq: "customPages"}}) {
-      edges {
-        node {
-          childMarkdownRemark {
-            fields {
-              slug
-            }
-            frontmatter {
-                title
-            }
-          }
-        }
-      }
-    }
-    colors: file(sourceInstanceName: {eq: "colors"}) {
-      childContentJson {
-        primaryColor
-        secondaryColor
-        textColor
-      }
-    }
+    ...AllOrgLogos
+    ...OrganizationBasics
+    ...AllCustomPageData
+    ...Colors
+    ...SocialMediaLinks
+    ...AllTeamsData
+    ...ContactInfo
   }
   `)
 
-  const teamLogo = teamLogos.edges.find(({ node }) => node.childImageSharp.fluid.originalName === getOriginalImageName(data.childContentJson.teamLogo)).node.childImageSharp.fluid
+  const teamLogo = allOrgLogos.edges.find(({ node }) => node.childImageSharp.fluid.originalName === getOriginalImageName(orgBasics.childContentJson.orgLogo)).node.childImageSharp.fluid
   const primaryColor = colors.childContentJson.primaryColor
   const secondaryColor = colors.childContentJson.secondaryColor
   const textColor = colors.childContentJson.textColor
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  useSetFavicon(data.childContentJson.teamLogo)
+  useSetFavicon(orgBasics.childContentJson.teamLogo)
 
 
   let header, footer
@@ -84,7 +50,7 @@ export default ({ location, title, description, seoImage, children }) => {
 
       <div className="text-bar" style={{ backgroundColor: secondaryColor, color: primaryColor }}>
         <p>Home of</p>
-        <p>{teamName.childContentJson.teamName}</p>
+        <p>{orgBasics.childContentJson.orgName}</p>
       </div>
     </>
   )
@@ -92,24 +58,36 @@ export default ({ location, title, description, seoImage, children }) => {
   footer = (
     <>
       <nav className="navbar" style={{ backgroundColor: primaryColor }}>
-        <div className="image-container">
+        <div className="first-container">
           <Image fluid={teamLogo} alt="Team logo." />
+          <div className="contact-line" style={{ color: textColor }}><Phone fill={secondaryColor} /><span>{contactInfo.childSiteOptionsJson.phoneNumber}</span></div>
+          <div className="contact-line" style={{ color: textColor }}><Map fill={secondaryColor} /><span><p>{contactInfo.childSiteOptionsJson.address.streetAddress},</p> {contactInfo.childSiteOptionsJson.address.city} {contactInfo.childSiteOptionsJson.address.state} {contactInfo.childSiteOptionsJson.address.zipCode}</span></div>
         </div>
         <div className="pages-container">
           <h4 style={{ color: secondaryColor }}>Pages</h4>
           <Link to="/" style={{ color: textColor }}>Home</Link>
-          <Link to="/schedule" style={{ color: textColor }}>Schedule</Link>
-          <Link to="/coaches" style={{ color: textColor }}>Coaches</Link>
-          <Link to="/players" style={{ color: textColor }}>Players</Link>
+          <Link to="/about" style={{ color: textColor }}>About</Link>
+          {customPagesData.edges.map(({ node }) => <Link key={node.childMarkdownRemark.fields.slug} className="link" to={`/page${node.childMarkdownRemark.fields.slug}`}>{node.childMarkdownRemark.frontmatter.title}</Link>)}
+          <Link to="/shop" style={{ color: textColor }}>Shop</Link>
+          <Link to="/blog" style={{ color: textColor }}>Blog</Link>
+          <Link to="/gallery" style={{ color: textColor }}>Gallery</Link>
           <Link to="/contact" style={{ color: textColor }}>Contact Us</Link>
         </div>
-        {pages.edges.length > 0 && <div className="footer-explore-container">
-          <h4 style={{ color: secondaryColor }}>Explore</h4>
-          {pages.edges.map(({ node }) => <Link key={node.childMarkdownRemark.fields.slug} className="link" to={`/page${node.childMarkdownRemark.fields.slug}`}>{node.childMarkdownRemark.frontmatter.title}</Link>)}
-        </div>}
 
+        <div className="teams-container">
+          <h4 style={{ color: secondaryColor }}>Teams</h4>
+          {teams.edges.map(({ node }) => (
+            <Link key={node.ageGroup} className="link" to={`/teams/${node.ageGroup}`} >{node.ageGroup}</Link>
+          ))}
+        </div>
       </nav>
 
+      <div className="social-icon-links">
+        {socialMediaLinks.childSiteOptionsJson.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
+        {socialMediaLinks.childSiteOptionsJson.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
+        {socialMediaLinks.childSiteOptionsJson.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
+        {socialMediaLinks.childSiteOptionsJson.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
+      </div>
       <p className="attribution" style={{ color: secondaryColor }}>This site was created by <a className="attribution-link" style={{ color: secondaryColor }} href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">In the Zone Development</a> using the <a className="attribution-link" style={{ color: secondaryColor }} href="https://teamstage.inthezone.dev" target="_blank" rel="noopener noreferrer">TeamStage platform</a>.</p>
     </>
   )
@@ -127,9 +105,10 @@ export default ({ location, title, description, seoImage, children }) => {
 const LinkList = ({ textColor }) => (
   <div className="link-list">
     <Link to="/" style={{ color: textColor }}>Home</Link>
-    <Link to="/schedule" style={{ color: textColor }}>Schedule</Link>
-    <Link to="/coaches" style={{ color: textColor }}>Coaches</Link>
-    <Link to="/players" style={{ color: textColor }}>Players</Link>
+    <Link to="/about" style={{ color: textColor }}>About</Link>
+    <Link to="/shop" style={{ color: textColor }}>Shop</Link>
+    <Link to="/blog" style={{ color: textColor }}>Blog</Link>
+    <Link to="/gallery" style={{ color: textColor }}>Gallery</Link>
     <Link to="/contact" style={{ color: textColor }}>Contact</Link>
   </div>
 )

@@ -84,5 +84,19 @@
                 }
             }
         }
+
+        .teams-header {
+            margin-top: 5%;
+            font-family: $staatliches;
+            font-size: 24px;
+        }
+
+        .teams-links-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+        }
     }
 }

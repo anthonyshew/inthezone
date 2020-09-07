@@ -1,5 +1,5 @@
 {
-  "teamName": "The New York Knights",
-  "teamLogo": "/cms/teamInfo/letter-logo.png",
-  "hometown": "Anytown, USA"
+  "orgName": "The New York Knights",
+  "orgLogo": "letter-logo.png",
+  "hometown": "New York, New York"
 }
