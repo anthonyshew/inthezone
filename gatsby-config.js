@@ -152,7 +152,7 @@ module.exports = {
         path: `${__dirname}/content/teams`,
         name: `teams`,
       },
-    },
+    } : "",
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
