@@ -41,13 +41,13 @@ module.exports = {
         name: `placeholder`
       }
     },
-    fs.existsSync(`${__dirname}/content/assets/blogImages`) && {
+    fs.existsSync(`${__dirname}/content/assets/blogImages`) ? {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/blogImages`,
         name: `blogImgs`,
       },
-    },
+    } : {},
     {
       resolve: `gatsby-source-filesystem`,
       options: {
