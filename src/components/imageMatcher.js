@@ -45,7 +45,7 @@ export const ImageMatcher = ({
 }
 
 ImageMatcher.propTypes = {
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
     style: PropTypes.object,
     imageSharps: PropTypes.array.isRequired,
     originalName: PropTypes.string.isRequired,

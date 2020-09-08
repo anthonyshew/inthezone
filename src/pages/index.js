@@ -99,7 +99,7 @@ const Explore = ({ customPages, customPageImgs, secondaryColor }) => (
           <Link key={fields.slug} className="explore-tile" to={`/page${fields.slug}`}>
             <ImageMatcher
               className="background-image"
-              imageSharpsArray={customPageImgs}
+              imageSharps={customPageImgs}
               originalName={frontmatter.coverImage}
               alt={frontmatter.title}
             />

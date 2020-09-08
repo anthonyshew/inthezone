@@ -7,6 +7,7 @@ import "../styles/gallery.scss"
 
 import { useBodyScrollLock } from "../hooks/useBodyScrollLock"
 import Layout from "../components/layout"
+import { ImageMatcher } from "../components/imageMatcher"
 
 export default ({ location }) => {
     const { allGalleryImages, galleryItemsArray, colors } = useStaticQuery(graphql`
@@ -35,7 +36,12 @@ export default ({ location }) => {
             <div className="gallery-items-container">
                 {
                     galleryItems.map(item => <button className="gallery-item" key={item.node.childGalleryJson.name} onClick={() => handleModalOpen(item.node.childGalleryJson)}>
-                        <Image fluid={galleryImages.find(image => image.node.childImageSharp.fluid.originalName === item.node.childGalleryJson.imageList[0].image).node.childImageSharp.fluid} style={{ objectFit: "contain" }} />
+                        <ImageMatcher
+                            imageSharps={galleryImages}
+                            originalName={item.node.childGalleryJson.imageList[0].image}
+                            alt={item.node.childGalleryJson.name}
+                            style={{ objectFit: "contain" }}
+                        />
                         <h2 className="event-title" style={{ color: primaryColor }}>{item.node.childGalleryJson.name}</h2>
                         <p className="event-date" style={{ color: secondaryColor }}>{item.node.childGalleryJson.datetime}</p>
                     </button>)

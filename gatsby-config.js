@@ -41,62 +41,62 @@ module.exports = {
         name: `placeholder`
       }
     },
-    fs.existsSync(`${__dirname}/content/assets/blogImages`) ? {
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/blogImages`,
         name: `blogImgs`,
       },
-    } : "",
-    fs.existsSync(`${__dirname}/content/assets/customPages`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/customPages`,
         name: `customPageImgs`,
       },
-    } : "",
-    fs.existsSync(`${__dirname}/content/assets/gallery`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/gallery`,
         name: `galleryImgs`
       }
-    } : "",
-    fs.existsSync(`${__dirname}/content/assets/homePage`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/homePage`,
         name: `homePageImgs`
       }
-    } : "",
-    fs.existsSync(`${__dirname}/content/assets/logo`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/logo`,
         name: `orgLogos`
       }
-    } : "",
-    fs.existsSync(`${__dirname}/content/assets/teams`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/teams`,
         name: `teamsImgs`
       }
-    } : "",
-    fs.existsSync(`${__dirname}/content/blog`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
-    } : "",
-    fs.existsSync(`${__dirname}/content/customPages`) ? {
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/customPages`,
         name: `customPages`,
       },
-    } : "",
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -118,13 +118,13 @@ module.exports = {
         name: `homePage`,
       },
     },
-    fs.existsSync(`${__dirname}/content/gallery`) ? {
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/gallery`,
         name: `gallery`,
       },
-    } : "",
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -146,13 +146,13 @@ module.exports = {
         name: `about`,
       },
     },
-    fs.existsSync(`${__dirname}/content/teams`) ? {
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/teams`,
         name: `teams`,
       },
-    } : "",
+    },
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
