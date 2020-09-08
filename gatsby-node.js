@@ -71,25 +71,26 @@ exports.createPages = async ({ graphql, actions }) => {
   const postsPerPage = 5
   const numPages = Math.ceil(posts.length / postsPerPage)
 
-  if (numPages == 0) {
+  if (numPages === 0) {
     createPage({
       path: `/blog`,
       component: path.resolve("./src/templates/empty-blog-list.js"),
     })
+  } else {
+    Array.from({ length: numPages }).forEach((_, index) => {
+      createPage({
+        path: index === 0 ? `/blog` : `/blog/${index + 1}`,
+        component: path.resolve("./src/templates/blog-list.js"),
+        context: {
+          limit: postsPerPage,
+          skip: index * postsPerPage,
+          numPages,
+          currentPage: index + 1,
+        },
+      })
+    })
   }
 
-  Array.from({ length: numPages }).forEach((_, index) => {
-    createPage({
-      path: index === 0 ? `/blog` : `/blog/${index + 1}`,
-      component: path.resolve("./src/templates/blog-list.js"),
-      context: {
-        limit: postsPerPage,
-        skip: index * postsPerPage,
-        numPages,
-        currentPage: index + 1,
-      },
-    })
-  })
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
