@@ -67,7 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.blogPosts.edges
 
-  // Create blog post index pagination
+  // Create blog post index pagination.
   const postsPerPage = 5
   const numPages = Math.ceil(posts.length / postsPerPage)
 
@@ -85,6 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
 
+  // Create blog posts pages.
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -100,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create blog posts pages.
+  //Create custom pages.
   const customPages = result.data.customPages.edges
 
   customPages.forEach((page) => {
