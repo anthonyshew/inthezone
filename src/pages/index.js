@@ -1,13 +1,20 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import Image from "gatsby-image"
 import '../styles/index.scss'
-import { getOriginalImageName } from "../utils/getOriginalImageName"
+
+import { ImageMatcher } from "../components/imageMatcher"
 
 import Layout from "../components/layout"
 
 export default ({ location }) => {
-  const { homePageData, colors, heroImages, customPagesData, customPageImgsData, blogPosts, teams, socialMediaLinks } = useStaticQuery(graphql`
+  const { homePageData,
+    colors,
+    heroImages,
+    customPagesData,
+    customPageImgsData,
+    blogPosts,
+    teams,
+    socialMediaLinks } = useStaticQuery(graphql`
     {
       ...AllHeroImages
       ...HomePageData
@@ -20,7 +27,6 @@ export default ({ location }) => {
     }
     `)
 
-  const heroImage = heroImages.edges.find(({ node }) => node.childImageSharp.fluid.originalName === getOriginalImageName(homePageData.childContentJson.heroImage)).node.childImageSharp.fluid
   const homePageJson = homePageData.childContentJson
   const customPages = customPagesData.edges
   const customPageImgs = customPageImgsData.edges
@@ -31,7 +37,13 @@ export default ({ location }) => {
   return (
     <Layout location={location} title="Home">
       <section className="hero">
-        <Image className="hero-image" fluid={heroImage} alt={homePageJson.heroText} style={{ position: "absolute" }} />
+        <ImageMatcher
+          className="hero-image"
+          imageSharps={heroImages.edges}
+          originalName={homePageData.childContentJson.heroImage}
+          alt={homePageData.childContentJson.heroText}
+          style={{ position: "absolute" }}
+        />
         {homePageJson.heroText && <h2 style={{ color: textColor }}>{homePageJson.heroText}</h2>}
         <div className="social-icon-links">
           {socialMediaLinks.childSiteOptionsJson.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
@@ -85,7 +97,12 @@ const Explore = ({ customPages, customPageImgs, secondaryColor }) => (
 
         return (
           <Link key={fields.slug} className="explore-tile" to={`/page${fields.slug}`}>
-            <Image className="background-image" fluid={customPageImgs.find(image => image.node.childImageSharp.fluid.originalName === getOriginalImageName(frontmatter.coverImage)).node.childImageSharp.fluid} />
+            <ImageMatcher
+              className="background-image"
+              imageSharpsArray={customPageImgs}
+              originalName={frontmatter.coverImage}
+              alt={frontmatter.title}
+            />
             <div className="dimmer-gradient">
               <h3 className="link-title">{frontmatter.title}</h3>
               <p className="link-description">{frontmatter.shortDescription}</p>

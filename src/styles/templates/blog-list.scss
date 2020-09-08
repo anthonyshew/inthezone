@@ -73,6 +73,12 @@ main[class^="page-blog"] {
             text-align: center;
         }
     }
+
+    .empty-list-p {
+        padding: 2%;
+        font-family: $patua;
+        font-size: 18px;
+    }
 }
 
 @media (hover:hover) {

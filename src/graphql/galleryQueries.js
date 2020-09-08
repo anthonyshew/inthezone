@@ -16,3 +16,21 @@ export const allGalleryQuery = graphql`
         }
   }
 `
+
+export const galleryItemsArray = graphql`
+fragment GalleryItemsArray on Query {
+  galleryItemsArray:  allFile(filter: {sourceInstanceName: {eq: "gallery"}}) {
+    edges {
+        node {
+            childGalleryJson {
+                datetime
+                name
+                imageList {
+                  image
+                }
+            }
+        }
+    }
+  }
+}
+`

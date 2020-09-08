@@ -11,31 +11,8 @@ import Layout from "../components/layout"
 export default ({ location }) => {
     const { allGalleryImages, galleryItemsArray, colors } = useStaticQuery(graphql`
     query GalleryQuery{
-        allGalleryImages: allFile(filter: {sourceInstanceName: {eq: "galleryImgs"}}) {
-            edges {
-              node {
-                childImageSharp {
-                  fluid {
-                    originalName
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        galleryItemsArray:  allFile(filter: {sourceInstanceName: {eq: "gallery"}}) {
-            edges {
-                node {
-                    childGalleryJson {
-                        datetime
-                        name
-                        imageList {
-                          image
-                        }
-                    }
-                }
-            }
-          }
+        ...AllGalleryImages
+        ...GalleryItemsArray
         ...Colors
     }
   `)

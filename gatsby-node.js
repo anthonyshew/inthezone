@@ -70,6 +70,14 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog post index pagination
   const postsPerPage = 5
   const numPages = Math.ceil(posts.length / postsPerPage)
+
+  if (numPages == 0) {
+    createPage({
+      path: `/blog`,
+      component: path.resolve("./src/templates/empty-blog-list.js"),
+    })
+  }
+
   Array.from({ length: numPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? `/blog` : `/blog/${index + 1}`,
@@ -146,6 +154,8 @@ exports.createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
   type File implements Node {
     childMarkdownRemark: MarkdownRemark
+    childGalleryJson: GalleryJson
+    childTeamsJson: TeamsJson
   }
 
   type MarkdownRemark {
@@ -165,6 +175,94 @@ exports.createSchemaCustomization = ({ actions }) => {
     description: String
     shortDescription: String
     title: String
+  }
+
+  type GalleryJson implements Node {
+    datetime: Date
+    name: String
+    imageList: [Image]
+  }
+
+  type Image implements Node {
+    image: String
+  }
+
+  type TeamsJson implements Node {
+    ageGroup: String
+    bio: String
+    statsBool: Boolean
+    coaches: [Coach]
+    players: [Player]
+    schedule: Schedule
+  }
+
+  type Coach implements Node {
+    name: String
+    title: String
+    image: String
+    bio: String
+  }
+
+  type Player implements Node {
+    name: String
+    positions: [String]
+    imgBool: Boolean
+    image: String
+    pitchingStats: PitchingStats
+    hittingStats: HittingStats
+  }
+
+  type PitchingStats implements Node {
+    hits: Int
+    inningsPitched: Int
+    battingAverageAgainst: Int
+    runs: Int
+    walks: Int
+    losses: Int
+    era: Int
+    wins: Int
+    strikeouts: Int
+    whip: Int
+    earnedRuns: Int
+  }
+
+  type HittingStats implements Node {
+    hits: Int
+    games: Int
+    doubles: Int
+    homeRuns: Int
+    walks: Int
+    atBats: Int
+    triples: Int
+    strikeouts: Int
+    rbi: Int
+    battingAverage: Int
+  }
+
+  type Schedule implements Node {
+    games: [Game]
+    practices: [Practice]
+  }
+
+  type Game implements Node {
+    startTime: String
+    side: String
+    opponent: String
+  }
+
+  type Practice implements Node {
+    day: String
+    startTime: String
+    endTime: String
+    addressObject: AddressObject
+  }
+
+  type AddressObject implements Node {
+    location: String
+    streetAddress: String
+    city: String
+    state: String
+    zipCode: String
   }
   `
 

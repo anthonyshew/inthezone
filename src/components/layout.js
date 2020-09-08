@@ -1,17 +1,22 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Image from "gatsby-image"
 import "../styles/components/layout.scss"
-import { getOriginalImageName } from "../utils/getOriginalImageName"
 
 import useSetFavicon from "../hooks/useSetFavicon"
 import SEO from "./seo"
+import { ImageMatcher } from "./imageMatcher"
 import MobileMenu from "./mobileMenu"
 import Phone from "./svg/phone"
 import Map from "./svg/map"
 
 export default ({ location, title, description, seoImage, children }) => {
-  const { orgBasics, colors, allOrgLogos, customPagesData, socialMediaLinks, teams, contactInfo } = useStaticQuery(graphql`
+  const { orgBasics,
+    colors,
+    allOrgLogos,
+    customPagesData,
+    socialMediaLinks,
+    teams,
+    contactInfo } = useStaticQuery(graphql`
   query LayoutQuery {
     ...AllOrgLogos
     ...OrganizationBasics
@@ -23,14 +28,12 @@ export default ({ location, title, description, seoImage, children }) => {
   }
   `)
 
-  const teamLogo = allOrgLogos.edges.find(({ node }) => node.childImageSharp.fluid.originalName === getOriginalImageName(orgBasics.childContentJson.orgLogo)).node.childImageSharp.fluid
   const primaryColor = colors.childContentJson.primaryColor
   const secondaryColor = colors.childContentJson.secondaryColor
   const textColor = colors.childContentJson.textColor
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   useSetFavicon(orgBasics.childContentJson.teamLogo)
-
 
   let header, footer
 
@@ -41,10 +44,16 @@ export default ({ location, title, description, seoImage, children }) => {
         <button className="button-menu-opener" onClick={() => setIsMenuOpen(true)} style={{ backgroundColor: primaryColor, color: textColor }}>Menu</button>
         <LinkList textColor={textColor} />
         <div className="header-image-container">
-          <svg className="svg-body" viewBox="0 0 129 129" fill="green" xmlns="http://www.w3.org/2000/svg">
+          <svg className="svg-body" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="dsvg-path" d="M0 64.5V0H129V64.5L64.5 129L0 64.5Z" style={{ fill: primaryColor }} />
           </svg>
-          <Image className="team-logo" fluid={teamLogo} alt="Team logo." style={{ position: "absolute" }} />
+          <ImageMatcher
+            className="team-logo"
+            imageSharps={allOrgLogos.edges}
+            originalName={orgBasics.childContentJson.orgLogo}
+            alt="Team logo."
+            style={{ position: "absolute" }}
+          />
         </div>
       </nav>
 
@@ -59,7 +68,12 @@ export default ({ location, title, description, seoImage, children }) => {
     <>
       <nav className="navbar" style={{ backgroundColor: primaryColor }}>
         <div className="first-container">
-          <Image fluid={teamLogo} alt="Team logo." />
+          <ImageMatcher
+            className="team-logo"
+            imageSharps={allOrgLogos.edges}
+            originalName={orgBasics.childContentJson.orgLogo}
+            alt="Team logo."
+          />
           <div className="contact-line" style={{ color: textColor }}><Phone fill={secondaryColor} /><span>{contactInfo.childSiteOptionsJson.phoneNumber}</span></div>
           <div className="contact-line" style={{ color: textColor }}><Map fill={secondaryColor} /><span><p>{contactInfo.childSiteOptionsJson.address.streetAddress},</p> {contactInfo.childSiteOptionsJson.address.city} {contactInfo.childSiteOptionsJson.address.state} {contactInfo.childSiteOptionsJson.address.zipCode}</span></div>
         </div>
