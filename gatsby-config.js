@@ -1,4 +1,5 @@
 let { createProxyMiddleware } = require("http-proxy-middleware")
+const fs = require("fs")
 
 require('dotenv').config()
 
@@ -40,7 +41,7 @@ module.exports = {
         name: `placeholder`
       }
     },
-    {
+    fs.existsSync(`${__dirname}/content/assets/blogImages`) && {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets/blogImages`,
