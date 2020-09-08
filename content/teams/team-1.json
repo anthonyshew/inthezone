@@ -2,6 +2,7 @@
   "players": [
     {
       "imgBool": false,
+      "positions": [],
       "pitchingStats": {
         "hits": 0,
         "inningsPitched": 0,
@@ -30,5 +31,10 @@
     }
   ],
   "ageGroup": "Team 1",
-  "bio": "This is our first team!"
+  "bio": "This is our first team!",
+  "schedule": {
+    "games": [],
+    "practices": []
+  },
+  "coaches": []
 }
