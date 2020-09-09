@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        teams: allFile(filter: {sourceInstanceName: {eq: "teams"}}) {
+        teams: allFile(filter: {sourceInstanceName: {eq: "teams"}, extension: {eq: "json"}}) {
           edges {
             node {
               name

@@ -34,21 +34,69 @@ fragment TeamImages on Query {
 
 export const teams = graphql`
 fragment AllTeamsData on Query {
-  teams: allTeamsJson(sort: {fields: ageGroup}) {
+  teams: allFile(filter: {sourceInstanceName: {eq: "teams"}, extension: {eq: "json"}}) {
     edges {
       node {
-        ageGroup
-        bio
-        coaches {
+        childTeamsJson {
+          ageGroup
           bio
-          image
-          name
-          title
-        }
-        players {
-          imgBool
-          name
-          image
+          coaches {
+            bio
+            image
+            name
+            title
+          }
+          players {
+            hittingStats {
+              atBats
+              battingAverage
+              doubles
+              games
+              hits
+              homeRuns
+              rbi
+              strikeouts
+              triples
+              walks
+            }
+            image
+            imgBool
+            name
+            pitchingStats {
+              battingAverageAgainst
+              earnedRuns
+              era
+              hits
+              inningsPitched
+              losses
+              runs
+              strikeouts
+              walks
+              whip
+              wins
+            }
+            positions
+          }
+          schedule {
+            games {
+              opponent
+              side
+              startTime
+            }
+            practices {
+              addressObject {
+                city
+                location
+                state
+                streetAddress
+                zipCode
+              }
+              day
+              endTime
+              startTime
+            }
+          }
+          statsBool
         }
       }
     }

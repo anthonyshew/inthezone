@@ -41,7 +41,7 @@ export default ({ setIsMenuOpen, primaryColor, secondaryColor, textColor }) => {
                         <h2 className="teams-header" style={{ color: secondaryColor }}>Teams</h2>
                         <div className="teams-links-container">
                             {teams.edges.map(({ node }) => (
-                                <Link key={node.ageGroup} className="link" to={`/teams/${node.ageGroup}`} >{node.ageGroup}</Link>
+                                <Link key={node.childTeamsJson.ageGroup} className="link" to={`/teams/${node.childTeamsJson.ageGroup}`} >{node.childTeamsJson.ageGroup}</Link>
                             ))}
                         </div>
                     </nav>
