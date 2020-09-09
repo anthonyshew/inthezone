@@ -15,6 +15,7 @@ collections:
     media_folder: /content/assets/blogImages
     public_folder: ""
     slug: "{{slug}}-{{year}}-{{month}}-{{day}}"
+    extension: "md"
     editor:
      preview: false
     fields:

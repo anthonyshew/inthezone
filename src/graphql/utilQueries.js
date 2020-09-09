@@ -2,7 +2,7 @@ import { graphql } from "gatsby"
 
 export const allBlogPosts = graphql`
 fragment AllBlogPosts on Query {
-    blogPosts: allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+    blogPosts: allFile(filter: {sourceInstanceName: {eq: "blog"}, childMarkdownRemark: {frontmatter: {title: {ne: "DEVELOPMENT"}}}}) {
         edges {
           node {
             childMarkdownRemark {

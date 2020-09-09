@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        blogPosts: allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+        blogPosts: allFile(filter: {sourceInstanceName: {eq: "blog"}, childMarkdownRemark: {frontmatter: {title: {ne: "DEVELOPMENT"}}}}) {
           edges {
             node {
               childMarkdownRemark {
@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        customPages: allFile(filter: {sourceInstanceName: {eq: "customPages"}}) {
+        customPages: allFile(filter: {sourceInstanceName: {eq: "customPages"}, childMarkdownRemark: {frontmatter: {title: {ne: "DEVELOPMENT"}}}}) {
           edges {
             node {
               childMarkdownRemark {

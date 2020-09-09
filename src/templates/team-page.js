@@ -20,7 +20,7 @@ export default ({ data, pageContext, location }) => {
                 <AccordionItem header="Schedule">
                     <div className="games-container">
                         <h3 style={{ color: secondaryColor }}>Upcoming Games</h3>
-                        {schedule.games.map(game => (
+                        {schedule && schedule.games && schedule.games.map(game => (
                             <div key={game.startTime + game.side + game.opponent} className="game">
                                 <p>{game.side === "Home" ? ".vs" : "@"} {game.opponent}</p>
                                 <p>{game.startTime}</p>
@@ -29,7 +29,7 @@ export default ({ data, pageContext, location }) => {
                     </div>
                     <div className="practices-container">
                         <h3 style={{ color: secondaryColor }}>Practice Schedule</h3>
-                        {schedule.practices.map(practice => (
+                        {schedule && schedule.practices > 0 && schedule.practices.map(practice => (
                             <div key={practice.day + practice.startTime + practice.endTime} className="practice">
                                 <p className="day-and-time">{practice.day}, {practice.startTime}-{practice.endTime}</p>
                                 <p className="location">{practice.addressObject.location}</p>
@@ -41,7 +41,7 @@ export default ({ data, pageContext, location }) => {
                 </AccordionItem>
                 <AccordionItem header="Coaches">
                     <div className="coaches-container">
-                        {coaches.map(coach => (
+                        {coaches && coaches.map(coach => (
                             <div key={coach} className="coach">
                                 <ImageMatcher
                                     className="coach-image"
@@ -72,7 +72,7 @@ export default ({ data, pageContext, location }) => {
                                 </div>
                                 <div className="content-container">
                                     <h2 className="player-name" style={{ color: primaryColor }}>{player.name}</h2>
-                                    <p className="positions">{player.positions.map((position, index) => {
+                                    <p className="positions">{player.positions && player.positions.map((position, index) => {
                                         if (index === player.positions.length - 1) {
                                             return `${position}`
                                         } else {
