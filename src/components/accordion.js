@@ -11,7 +11,7 @@ export const Accordion = ({ children }) => {
     )
 }
 
-export const AccordionItem = ({ header, children }) => {
+export const AccordionItem = ({ header, children, primaryColor, secondaryColor, textColor }) => {
     const content = useRef(null)
     const [open, setOpen] = useState(false)
 
@@ -29,11 +29,16 @@ export const AccordionItem = ({ header, children }) => {
 
     return (
         <div className="accordion-item">
-            <button className="header-button" onClick={toggleVisibility} tabIndex={0}>
+            <button
+                className="header-button"
+                onClick={toggleVisibility}
+                tabIndex={0}
+                style={{ border: `2px solid ${primaryColor}`, backgroundColor: primaryColor }}
+            >
                 <h3>{header}</h3>
                 <Arrow style={{ transform: open ? "rotate(90deg)" : "rotate(0deg)" }} />
             </button>
-            <div className="content" ref={content}>
+            <div className="content" ref={content} style={open ? { border: `2px solid ${primaryColor}` } : {}}>
                 {children}
 
                 <a className="quote-button" href="#contact-form">Get your quote!</a>
