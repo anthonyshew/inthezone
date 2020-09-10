@@ -57,7 +57,11 @@ export default ({ location }) => {
         <h2 className="panels-header" style={{ color: primaryColor }}>Teams</h2>
         <div className="panels-container">
           {teams.edges.map(({ node }) => (
-            <Link key={node.childTeamsJson.ageGroup} className="index-link-button" to={`/teams/${node.childTeamsJson.ageGroup}`} style={{ backgroundColor: primaryColor, color: textColor }}>
+            <Link
+              key={node.childTeamsJson.ageGroup}
+              className="index-link-button"
+              to={`/teams/${node.childTeamsJson.ageGroup}`}
+              style={{ backgroundColor: primaryColor, color: textColor }}>
               <h3 className="link-text">{node.childTeamsJson.ageGroup}</h3>
             </Link>
           ))}

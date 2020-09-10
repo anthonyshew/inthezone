@@ -34,7 +34,7 @@ fragment TeamImages on Query {
 
 export const teams = graphql`
 fragment AllTeamsData on Query {
-  teams: allFile(filter: {sourceInstanceName: {eq: "teams"}, extension: {eq: "json"}}) {
+  teams: allFile(filter: {sourceInstanceName: {eq: "teams"}, extension: {eq: "json"}}, sort: {fields: childTeamsJson___ageGroup}) {
     edges {
       node {
         childTeamsJson {
@@ -76,6 +76,8 @@ fragment AllTeamsData on Query {
               wins
             }
             positions
+            hobbies
+            jerseyNumber
           }
           schedule {
             games {

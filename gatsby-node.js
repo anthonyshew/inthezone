@@ -201,6 +201,8 @@ exports.createSchemaCustomization = ({ actions }) => {
   type Player implements Node {
     name: String
     positions: [String]
+    hobbies: String
+    jerseyNumber: String
     imgBool: Boolean
     image: String
     pitchingStats: PitchingStats

@@ -133,11 +133,20 @@ collections:
           name: "image"
           widget: image
           required: false
+        - label: "Jersey Number"
+          name: "jerseyNumber"
+          widget: "number"
+          required: false
+        - label: "Player's Interests & Hobbies"
+          name: "hobbies"
+          widget: string
+          required: false
         - label: "Positions"
           name: "positions"
           widget: select
           options: ["P", "C", "INF", "1B", "2B", "3B", "SS", "OF", "LF", "CF", "RF"]
           multiple: true
+          required: false
         - label: "Pitching Stats"
           name: "pitchingStats"
           widget: object

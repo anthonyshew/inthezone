@@ -62,6 +62,7 @@ export default ({ data, pageContext, location }) => {
                     <div className="players-container">
                         {players.map(player => (
                             <div key={player.name} className="player">
+                                {console.log(player)}
                                 <div className="image-column">
                                     {player.imgBool ? <ImageMatcher
                                         className="player-image"
@@ -71,7 +72,7 @@ export default ({ data, pageContext, location }) => {
                                         : <Player className="player-placeholder" secondaryColor={secondaryColor} />}
                                 </div>
                                 <div className="content-container">
-                                    <h2 className="player-name" style={{ color: primaryColor }}>{player.name}</h2>
+                                    <h2 className="player-name" style={{ color: primaryColor }}>{player.name}{player.jerseyNumber && ` - #${player.jerseyNumber}`}</h2>
                                     <p className="positions">{player.positions && player.positions.map((position, index) => {
                                         if (index === player.positions.length - 1) {
                                             return `${position}`
@@ -79,6 +80,8 @@ export default ({ data, pageContext, location }) => {
                                             return `${position}, `
                                         }
                                     })}</p>
+
+                                    {player.hobbies && <p className="hobbies">Interests & Hobbies: {player.hobbies}</p>}
 
                                     {statsBool && <Stats player={player} />}
 
@@ -175,66 +178,68 @@ query TeamPageQuery($name: String!) {
         childTeamsJson {
             ageGroup
             bio
-            statsBool
             coaches {
+              bio
+              image
               name
               title
-              image
-              bio
             }
             players {
               hittingStats {
-                hits
-                games
-                doubles
-                homeRuns
-                walks
                 atBats
-                triples
-                strikeouts
-                rbi
                 battingAverage
-              }
-              pitchingStats {
+                doubles
+                games
                 hits
-                inningsPitched
-                battingAverageAgainst
-                runs
-                walks
-                losses
-                era
-                wins
+                homeRuns
+                rbi
                 strikeouts
-                whip
-                earnedRuns
+                triples
+                walks
               }
               image
               imgBool
               name
+              pitchingStats {
+                battingAverageAgainst
+                earnedRuns
+                era
+                hits
+                inningsPitched
+                losses
+                runs
+                strikeouts
+                walks
+                whip
+                wins
+              }
               positions
+              hobbies
+              jerseyNumber
             }
             schedule {
-                games {
-                  startTime
-                  side
-                  opponent
+              games {
+                opponent
+                side
+                startTime
+              }
+              practices {
+                addressObject {
+                  city
+                  location
+                  state
+                  streetAddress
+                  zipCode
                 }
-                practices {
-                  day
-                  startTime
-                  endTime
-                  addressObject {
-                    location
-                    streetAddress
-                    city
-                    state
-                    zipCode
-                  }
-                }
+                day
+                endTime
+                startTime
+              }
             }
+            statsBool
           }
+        }
+        ...TeamImages
+        ...Colors
     }
-    ...TeamImages
-    ...Colors
-}
 `
