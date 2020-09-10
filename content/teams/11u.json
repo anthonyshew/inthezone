@@ -28,9 +28,7 @@
         "battingAverage": 0
       },
       "name": "Brady Powell",
-      "positions": [
-        "INF"
-      ],
+      "positions": null,
       "jerseyNumber": "",
       "hobbies": ""
     },
@@ -62,9 +60,7 @@
         "battingAverage": 0
       },
       "name": "Brady Weaver",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     },
     {
       "imgBool": false,
@@ -94,9 +90,7 @@
         "battingAverage": 0
       },
       "name": "Brody Duran",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     },
     {
       "imgBool": false,
@@ -126,9 +120,8 @@
         "battingAverage": 0
       },
       "name": "Chase Sanger",
-      "positions": [
-        "INF"
-      ]
+      "positions": null,
+      "jerseyNumber": 27
     },
     {
       "imgBool": false,
@@ -158,9 +151,7 @@
         "battingAverage": 0
       },
       "name": "Gage Remington",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     },
     {
       "imgBool": false,
@@ -190,9 +181,7 @@
         "battingAverage": 0
       },
       "name": "JJ Mundfrom",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     },
     {
       "imgBool": false,
@@ -222,9 +211,7 @@
         "battingAverage": 0
       },
       "name": "Keaton Quick Bear",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     },
     {
       "imgBool": false,
@@ -254,9 +241,7 @@
         "battingAverage": 0
       },
       "name": "Zach Rubick",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     },
     {
       "imgBool": false,
@@ -286,9 +271,7 @@
         "battingAverage": 0
       },
       "name": "Ty Johnson",
-      "positions": [
-        "INF"
-      ]
+      "positions": null
     }
   ],
   "ageGroup": "11u",
