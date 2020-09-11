@@ -29,7 +29,7 @@
       },
       "name": "Brady Powell",
       "positions": null,
-      "jerseyNumber": "",
+      "jerseyNumber": 7,
       "hobbies": "",
       "faveAthlete": "HI."
     },
@@ -61,7 +61,8 @@
         "battingAverage": 0
       },
       "name": "Brady Weaver",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 13
     },
     {
       "imgBool": false,
@@ -91,7 +92,8 @@
         "battingAverage": 0
       },
       "name": "Brody Duran",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 2
     },
     {
       "imgBool": false,
@@ -122,7 +124,8 @@
       },
       "name": "Chase Sanger",
       "positions": null,
-      "jerseyNumber": ""
+      "jerseyNumber": 27,
+      "faveAthlete": "Trevor Story"
     },
     {
       "imgBool": false,
@@ -152,7 +155,8 @@
         "battingAverage": 0
       },
       "name": "Gage Remington",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 21
     },
     {
       "imgBool": false,
@@ -182,7 +186,8 @@
         "battingAverage": 0
       },
       "name": "JJ Mundfrom",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 422
     },
     {
       "imgBool": false,
@@ -212,7 +217,8 @@
         "battingAverage": 0
       },
       "name": "Keaton Quick Bear",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 28
     },
     {
       "imgBool": false,
@@ -242,7 +248,8 @@
         "battingAverage": 0
       },
       "name": "Zach Rubick",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 10
     },
     {
       "imgBool": false,
@@ -272,9 +279,20 @@
         "battingAverage": 0
       },
       "name": "Ty Johnson",
-      "positions": null
+      "positions": null,
+      "jerseyNumber": 11
     }
   ],
   "ageGroup": "11u",
-  "bio": "The Colorado Centennials 11u team is a AA team which plays in the Longmont League, which includes two tournaments, and 5-6 other tournaments in Colorado and Wyoming, including Steamboat.  The team is coached by Ryan Sanger and Dan Weaver."
+  "bio": "The Colorado Centennials 11u team is a AA team which plays in the Longmont League, which includes two tournaments, and 5-6 other tournaments in Colorado and Wyoming, including Steamboat.  The team is coached by Ryan Sanger and Dan Weaver.",
+  "coaches": [
+    {
+      "name": "Ryan Sanger",
+      "title": "Head Coach"
+    },
+    {
+      "name": "Dan Weaver",
+      "title": "Asst. Coach"
+    }
+  ]
 }
