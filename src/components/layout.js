@@ -81,7 +81,16 @@ export default ({ location, title, description, seoImage, children }) => {
           <h4 style={{ color: secondaryColor }}>Pages</h4>
           <Link to="/" style={{ color: textColor }}>Home</Link>
           <Link to="/about" style={{ color: textColor }}>About</Link>
-          {customPagesData.edges.map(({ node }) => <Link key={node.childMarkdownRemark.fields.slug} className="link" to={`/page${node.childMarkdownRemark.fields.slug}`}>{node.childMarkdownRemark.frontmatter.title}</Link>)}
+          {customPagesData.edges.map(({ node }) =>
+            <Link
+              key={node.childMarkdownRemark.fields.slug}
+              className="link"
+              to={`/page${node.childMarkdownRemark.fields.slug}`}
+              style={{ color: textColor }}
+            >
+              {node.childMarkdownRemark.frontmatter.title}
+            </Link>
+          )}
           <Link to="/shop" style={{ color: textColor }}>Shop</Link>
           <Link to="/blog" style={{ color: textColor }}>Blog</Link>
           <Link to="/gallery" style={{ color: textColor }}>Gallery</Link>
