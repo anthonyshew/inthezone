@@ -43,17 +43,17 @@ export default ({ data, pageContext, location }) => {
                     <div className="coaches-container">
                         {coaches && coaches.map(coach => (
                             <div key={coach} className="coach">
-                                <ImageMatcher
+                                {coach.image && <ImageMatcher
                                     className="coach-image"
                                     imageSharps={teamImages.edges}
                                     originalName={coach.image}
                                     alt={coach.name}
-                                />
+                                />}
                                 <div className="coach-text-container">
                                     <p className="coach-name" style={{ color: primaryColor }}>{coach.name}</p>
                                     <p className="coach-title" style={{ color: secondaryColor }}>{coach.title}</p>
                                 </div>
-                                <p className="coach-bio">{coach.bio}</p>
+                                {coach.bio && <p className="coach-bio">{coach.bio}</p>}
                             </div>
                         ))}
                     </div>
@@ -62,7 +62,6 @@ export default ({ data, pageContext, location }) => {
                     <div className="players-container">
                         {players.map(player => (
                             <div key={player.name} className="player">
-                                {console.log(player)}
                                 <div className="image-column">
                                     {player.imgBool ? <ImageMatcher
                                         className="player-image"
@@ -82,6 +81,7 @@ export default ({ data, pageContext, location }) => {
                                     })}</p>
 
                                     {player.hobbies && <p className="hobbies">Interests & Hobbies: {player.hobbies}</p>}
+                                    {player.faveAthlete && <p className="fave-athlete">Favorite Athlete: {player.faveAthlete}</p>}
 
                                     {statsBool && <Stats player={player} />}
 
@@ -215,6 +215,7 @@ query TeamPageQuery($name: String!) {
               }
               positions
               hobbies
+              faveAthlete
               jerseyNumber
             }
             schedule {

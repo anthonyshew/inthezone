@@ -111,8 +111,8 @@ collections:
         fields:
         - {label: "Name", name: "name", widget: string}
         - {label: "Title/Position", name: "title", widget: string}
-        - {label: "Image", name: "image", widget: image}
-        - {label: "Bio", name: "bio", widget: text}
+        - {label: "Image", name: "image", widget: image, required: false, hint: "Optional but highly recommended!" }
+        - {label: "Bio", name: "bio", widget: text, required: false, hint: "Optional but highly recommended!" }
       - label: "Show player stats?"
         name: "statsBool"
         widget: boolean
@@ -136,10 +136,15 @@ collections:
         - label: "Jersey Number"
           name: "jerseyNumber"
           widget: "number"
+          value_type: "fart"
           required: false
         - label: "Player's Interests & Hobbies"
           name: "hobbies"
           widget: string
+          required: false
+        - label: "Favorite Athlete"
+          name: "faveAthlete"
+          widget: "string"
           required: false
         - label: "Positions"
           name: "positions"

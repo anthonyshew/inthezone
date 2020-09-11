@@ -91,7 +91,14 @@ export default ({ location, title, description, seoImage, children }) => {
         <div className="teams-container">
           <h4 style={{ color: secondaryColor }}>Teams</h4>
           {teams.edges.map(({ node }) => (
-            <Link key={node.childTeamsJson.ageGroup} className="link" to={`/teams/${node.childTeamsJson.ageGroup}`} >{node.childTeamsJson.ageGroup}</Link>
+            <Link
+              key={node.childTeamsJson.ageGroup}
+              className="link"
+              to={`/teams/${node.childTeamsJson.ageGroup}`}
+              style={{ color: textColor }}
+            >
+              {node.childTeamsJson.ageGroup}
+            </Link>
           ))}
         </div>
       </nav>

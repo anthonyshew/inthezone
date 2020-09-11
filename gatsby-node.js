@@ -202,6 +202,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     name: String
     positions: [String]
     hobbies: String
+    faveAthlete: String
     jerseyNumber: String
     imgBool: Boolean
     image: String
