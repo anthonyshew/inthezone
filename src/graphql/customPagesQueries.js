@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 export const allCustomPageImages = graphql`
 fragment AllCustomPageImages on Query {
-    customPageImgsData: allFile(filter: {sourceInstanceName: {eq: "customPagesImgs"}, childMarkdownRemark: {frontmatter: {title: {ne: "DEVELOPMENT"}}}}) {
+    customPageImgs: allFile(filter: {sourceInstanceName: {eq: "customPageImgs"}, childMarkdownRemark: {frontmatter: {title: {ne: "DEVELOPMENT"}}}}) {
         edges {
           node {
             childImageSharp {

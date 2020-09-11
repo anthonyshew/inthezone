@@ -11,7 +11,7 @@ export default ({ location }) => {
     colors,
     heroImages,
     customPagesData,
-    customPageImgsData,
+    customPageImgs,
     blogPosts,
     teams,
     socialMediaLinks } = useStaticQuery(graphql`
@@ -29,7 +29,7 @@ export default ({ location }) => {
 
   const homePageJson = homePageData.childContentJson
   const customPages = customPagesData.edges
-  const customPageImgs = customPageImgsData.edges
+  const customPageImages = customPageImgs.edges
   const blog = blogPosts.edges
 
   const { primaryColor, secondaryColor, textColor } = colors.childContentJson
@@ -74,7 +74,7 @@ export default ({ location }) => {
 
       {homePageJson.quotation && <Testimonial homePageJson={homePageJson} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} />}
 
-      {customPages.length > 0 && <Explore customPages={customPages} customPageImgs={customPageImgs} secondaryColor={secondaryColor} />}
+      {customPages.length > 0 && <Explore customPages={customPages} customPageImgs={customPageImages} secondaryColor={secondaryColor} />}
 
       {blog.length > 0 && <Blog blog={blog} primaryColor={primaryColor} secondaryColor={secondaryColor} />}
 
