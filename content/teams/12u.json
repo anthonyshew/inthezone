@@ -26,9 +26,21 @@
         "strikeouts": 0,
         "rbi": 0,
         "battingAverage": 0
-      }
+      },
+      "name": "James Beets",
+      "jerseyNumber": 19
     }
   ],
   "ageGroup": "12u",
-  "bio": "The Colorado Centennials 12u team is a AAA, tournament only, team which which plays in  12 tournaments in Arizona, California, Colorado, Nebraska, Wyoming, etc.  The team is coached by Jeremy Beets."
+  "bio": "The Colorado Centennials 12u team is a AAA, tournament only, team which which plays in  12 tournaments in Arizona, California, Colorado, Nebraska, Wyoming, etc.  The team is coached by Jeremy Beets.",
+  "coaches": [
+    {
+      "name": "Jeremy Beets",
+      "title": "Head Coach"
+    },
+    {
+      "name": "Tony Wittmus",
+      "title": "Hitting Instructor"
+    }
+  ]
 }
