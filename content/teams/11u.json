@@ -314,5 +314,6 @@
         "endTime": "9 PM"
       }
     ]
-  }
+  },
+  "statsBool": false
 }
