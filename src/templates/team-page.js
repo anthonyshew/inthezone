@@ -29,7 +29,7 @@ export default ({ data, pageContext, location }) => {
                     </div>
                     <div className="practices-container">
                         <h3 style={{ color: secondaryColor }}>Practice Schedule</h3>
-                        {schedule && schedule.practices > 0 && schedule.practices.map(practice => (
+                        {schedule && schedule.practices && schedule.practices.map(practice => (
                             <div key={practice.day + practice.startTime + practice.endTime} className="practice">
                                 <p className="day-and-time">{practice.day}, {practice.startTime}-{practice.endTime}</p>
                                 <p className="location">{practice.addressObject.location}</p>
