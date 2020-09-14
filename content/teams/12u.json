@@ -42,5 +42,20 @@
       "name": "Tony Wittmus",
       "title": "Hitting Coach"
     }
-  ]
+  ],
+  "schedule": {
+    "upcomingPractices": [
+      {
+        "startTime": "Wednesday, September 16, 2020 5:00 PM",
+        "endTime": "9:30 PM",
+        "addressObject": {
+          "location": "Elworthy Residence - shop behind house",
+          "streetAddress": "1956 Kestrel Ct",
+          "city": "Windsor",
+          "state": "CO",
+          "zipCode": 80550
+        }
+      }
+    ]
+  }
 }
