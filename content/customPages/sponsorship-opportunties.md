@@ -7,8 +7,8 @@ If you are interest in a sponsorship, please go to the contact us section.  Addi
 
 Levels:
 
-Single - $250
-Double - $500
-Triple - $750
-Home Run - $1,000
+Single - $250;
+Double - $500;
+Triple - $750;
+Home Run - $1,000;
 Grand Slam - over $1,000
