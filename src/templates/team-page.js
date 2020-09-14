@@ -13,23 +13,41 @@ export default ({ data, pageContext, location }) => {
     const { ageGroup, bio, coaches, players, schedule, statsBool } = teamData.childTeamsJson
     const { primaryColor, secondaryColor } = colors.childContentJson
 
+    console.log(schedule)
+
     return (
         <Layout location={location} title={`Team: ${ageGroup}`}>
             <h1 className="heading" style={{ color: secondaryColor }}>{ageGroup}</h1>
             <Accordion>
                 <AccordionItem header="Schedule">
                     <div className="games-container">
-                        <h3 style={{ color: secondaryColor }}>Upcoming Games</h3>
+                        {schedule && schedule.games && schedule.games.length > 0 ? <h3 style={{ color: secondaryColor }}>Upcoming Games</h3> : null}
                         {schedule && schedule.games && schedule.games.map(game => (
                             <div key={game.startTime + game.side + game.opponent} className="game">
-                                <p>{game.side === "Home" ? ".vs" : "@"} {game.opponent}</p>
-                                <p>{game.startTime}</p>
+                                <p className="day-and-time">{game.startTime}</p>
+                                <p className="opponent">{game.side === "Home" ? ".vs" : "@"} {game.opponent}</p>
+                                <p className="location">{game.addressObject.location}</p>
+                                <p className="address-line-1">{game.addressObject.streetAddress}</p>
+                                <p className="address-line-2">{game.addressObject.city}, {game.addressObject.state} {game.addressObject.zipCode}</p>
                             </div>
                         ))}
                     </div>
+                    {schedule && schedule.games && schedule.games.length > 0 && <hr style={{ backgroundColor: primaryColor }} />}
+                    <div className="upcoming-practices-container">
+                        {schedule && schedule.upcomingPractices && schedule.upcomingPractices.length > 0 ? <h3 style={{ color: secondaryColor }}>Upcoming Practices</h3> : null}
+                        {schedule && schedule.upcomingPractices && schedule.upcomingPractices.map(practice => (
+                            <div key={practice.startTime + practice.endTime + practice.addressObject.location} className="practice">
+                                <p className="day-and-time">{practice.startTime} - {practice.endTime}</p>
+                                <p className="location">{practice.addressObject.location}</p>
+                                <p className="address-line-1">{practice.addressObject.streetAddress}</p>
+                                <p className="address-line-2">{practice.addressObject.city}, {practice.addressObject.state} {practice.addressObject.zipCode}</p>
+                            </div>
+                        ))}
+                    </div>
+                    {schedule && schedule.upcomingPractices && schedule.upcomingPractices.length > 0 && <hr style={{ backgroundColor: primaryColor }} />}
                     <div className="practices-container">
-                        <h3 style={{ color: secondaryColor }}>Practice Schedule</h3>
-                        {schedule && schedule.practices && schedule.practices.map(practice => (
+                        {schedule && schedule.recurringPractices && schedule.recurringPractices.length > 0 ? <h3 style={{ color: secondaryColor }}>Weekly Practice Schedule</h3> : null}
+                        {schedule && schedule.recurringPractices && schedule.recurringPractices.map(practice => (
                             <div key={practice.day + practice.startTime + practice.endTime} className="practice">
                                 <p className="day-and-time">{practice.day}, {practice.startTime}-{practice.endTime}</p>
                                 <p className="location">{practice.addressObject.location}</p>
@@ -42,7 +60,7 @@ export default ({ data, pageContext, location }) => {
                 <AccordionItem header="Coaches">
                     <div className="coaches-container">
                         {coaches && coaches.map(coach => (
-                            <div key={coach} className="coach">
+                            <div key={coach.name + coach.title} className="coach">
                                 {coach.image && <ImageMatcher
                                     className="coach-image"
                                     imageSharps={teamImages.edges}
@@ -215,16 +233,22 @@ query TeamPageQuery($name: String!) {
               }
               positions
               hobbies
-              faveAthlete
               jerseyNumber
             }
             schedule {
               games {
+                addressObject {
+                    city
+                    location
+                    state
+                    streetAddress
+                    zipCode
+                }
                 opponent
                 side
                 startTime
               }
-              practices {
+              recurringPractices {
                 addressObject {
                   city
                   location
@@ -233,6 +257,17 @@ query TeamPageQuery($name: String!) {
                   zipCode
                 }
                 day
+                endTime
+                startTime
+              }
+              upcomingPractices {
+                addressObject {
+                  city
+                  location
+                  state
+                  streetAddress
+                  zipCode
+                }
                 endTime
                 startTime
               }

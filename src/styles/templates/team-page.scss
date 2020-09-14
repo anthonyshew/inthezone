@@ -26,30 +26,29 @@ main[class^="page-team"] {
         font-size: 28px;
     }
 
-    .games-container {
-        font-family: $patua;
-
-        .game {
-            padding-bottom: 24px;
-        }
-
-        &:last-of-type {
-            padding-bottom: 0;
-        }
+    hr {
+        height: 3px;
     }
 
+    .games-container,
+    .upcoming-practices-container,
     .practices-container {
         font-family: $patua;
 
-        .practice {
-            padding-bottom: 24px;
-
-            .day-and-time {
-                font-family: $staatliches;
-                font-size: 24px;
-            }
-
+        .game {
+            margin-bottom: 24px;
         }
+
+        .practice {
+            margin-bottom: 24px;
+        }
+
+        .day-and-time {
+            font-family: $staatliches;
+            font-size: 24px;
+        }
+
+
     }
 
     .coaches-container {

@@ -70,10 +70,11 @@ collections:
         collapsed: true
         fields:
         - label: "Weekly Practice Schedule"
-          name: "practices"
+          name: "recurringPractices"
           widget: "list"
           minimize_collapsed: true
-          label_singular: "practice"
+          label_singular: "weekly practice"
+          hint: "These practices will show as recurring every week. This way, you can \"set it and forget it\" if your practices are consistent every week."
           fields:
             - { label: "Day of the Week", name: "day", widget: select, options: ["Sundays", "Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays"]}
             - label: "Address"
@@ -87,12 +88,30 @@ collections:
                 - { label: "Zip Code", name: "zipCode", widget: number, min: 10000, max: 99999 }
             - { label: "Start Time", name: "startTime",  widget: select, options: ["12 AM", "12:15 AM", "12:30 AM", "12:45 AM", "1 AM", "1:15 AM", "1:30 AM", "1:45 AM", "2 AM", "2:15 AM", "2:30 AM", "2:45 AM", "3 AM", "3:15 AM", "3:30 AM", "3:45 AM", "4 AM", "4:15 AM", "4:30 AM", "4:45 AM", "5 AM", "5:15 AM", "5:30 AM", "5:45 AM", "6 AM", "6:15 AM", "6:30AM", "6:45 AM", "7 AM", "7:15 AM", "7:30 AM", "7:45 AM", "8 AM", "8:15 AM", "8:30 AM", "8:45 AM", "9 AM", "9:15 AM", "9:30 AM", "9:45 AM", "10 AM", "10:15 AM", "10:30 AM", "10:45 AM", "11 AM", "11:15 AM", "11:30 AM", "11:45 AM", "12 PM", "12:15 PM", "12:30 PM", "12:45 PM", "1 PM", "1:15 PM",  "1:30 PM", "1:45 PM", "2 PM", "2:15 PM", "2:30 PM", "2:45 PM", "3 PM", "3:15 PM", "3:30 PM", "3:45 PM", "4 PM", "4:15 PM", "4:30 PM", "4:45 PM", "5 PM", "5:15 PM", "5:30 PM", "5:45 PM", "6 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8 PM", "8:15 PM", "8:30 PM", "8:45 PM", "9 PM", "9:15 PM", "9:30 PM", "9:45 PM", "10 PM", "10:15 PM", "10:30 PM", "10:45 PM", "11 PM", "11:15 PM", "11:30 PM", "11:45 PM"] }
             - { label: "End Time", name: "endTime", widget: select, options: ["12 AM", "12:15 AM", "12:30 AM", "12:45 AM", "1 AM", "1:15 AM", "1:30 AM", "1:45 AM", "2 AM", "2:15 AM", "2:30 AM", "2:45 AM", "3 AM", "3:15 AM", "3:30 AM", "3:45 AM", "4 AM", "4:15 AM", "4:30 AM", "4:45 AM", "5 AM", "5:15 AM", "5:30 AM", "5:45 AM", "6 AM", "6:15 AM", "6:30AM", "6:45 AM", "7 AM", "7:15 AM", "7:30 AM", "7:45 AM", "8 AM", "8:15 AM", "8:30 AM", "8:45 AM", "9 AM", "9:15 AM", "9:30 AM", "9:45 AM", "10 AM", "10:15 AM", "10:30 AM", "10:45 AM", "11 AM", "11:15 AM", "11:30 AM", "11:45 AM", "12 PM", "12:15 PM", "12:30 PM", "12:45 PM", "1 PM", "1:15 PM",  "1:30 PM", "1:45 PM", "2 PM", "2:15 PM", "2:30 PM", "2:45 PM", "3 PM", "3:15 PM", "3:30 PM", "3:45 PM", "4 PM", "4:15 PM", "4:30 PM", "4:45 PM", "5 PM", "5:15 PM", "5:30 PM", "5:45 PM", "6 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8 PM", "8:15 PM", "8:30 PM", "8:45 PM", "9 PM", "9:15 PM", "9:30 PM", "9:45 PM", "10 PM", "10:15 PM", "10:30 PM", "10:45 PM", "11 PM", "11:15 PM", "11:30 PM", "11:45 PM"] }
+        - label: "Upcoming Practices"
+          name: "upcomingPractices"
+          widget: list
+          minimize_collapsed: true
+          label_singular: "upcoming practice"
+          fields:
+            - { label: "Start Time", name: "startTime", widget: datetime, format: "LLLL", picker_utc: "true"}
+            - { label: "End Time", name: "endTime", widget: select, options: ["12 AM", "12:15 AM", "12:30 AM", "12:45 AM", "1 AM", "1:15 AM", "1:30 AM", "1:45 AM", "2 AM", "2:15 AM", "2:30 AM", "2:45 AM", "3 AM", "3:15 AM", "3:30 AM", "3:45 AM", "4 AM", "4:15 AM", "4:30 AM", "4:45 AM", "5 AM", "5:15 AM", "5:30 AM", "5:45 AM", "6 AM", "6:15 AM", "6:30AM", "6:45 AM", "7 AM", "7:15 AM", "7:30 AM", "7:45 AM", "8 AM", "8:15 AM", "8:30 AM", "8:45 AM", "9 AM", "9:15 AM", "9:30 AM", "9:45 AM", "10 AM", "10:15 AM", "10:30 AM", "10:45 AM", "11 AM", "11:15 AM", "11:30 AM", "11:45 AM", "12 PM", "12:15 PM", "12:30 PM", "12:45 PM", "1 PM", "1:15 PM",  "1:30 PM", "1:45 PM", "2 PM", "2:15 PM", "2:30 PM", "2:45 PM", "3 PM", "3:15 PM", "3:30 PM", "3:45 PM", "4 PM", "4:15 PM", "4:30 PM", "4:45 PM", "5 PM", "5:15 PM", "5:30 PM", "5:45 PM", "6 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8 PM", "8:15 PM", "8:30 PM", "8:45 PM", "9 PM", "9:15 PM", "9:30 PM", "9:45 PM", "10 PM", "10:15 PM", "10:30 PM", "10:45 PM", "11 PM", "11:15 PM", "11:30 PM", "11:45 PM"] }
+            - label: "Address"
+              name: "addressObject"
+              widget: object
+              fields:
+                - { label: "Location Name", name: "location", widget: string, options: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]}
+                - { label: "Street Address", name: "streetAddress", widget: string }
+                - { label: "City", name: "city", widget: string }
+                - { label: "State", name: "state", widget: select, options: [ "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY"] }
+                - { label: "Zip Code", name: "zipCode", widget: number, min: 10000, max: 99999 }
         - label: "Upcoming Games"
           name: "games"
           widget: list
           minimize_collapsed: true
+          label_singular: "upcoming game"
           fields:
-            - { label: "Start Time", name: "startTime", widget: datetime, format: "LLLL", picker_utc: "true"}
+            - { label: "Start Date & Time", name: "startTime", widget: datetime, format: "LLLL", picker_utc: "true"}
             - { label: "Home or Away?", name: "side", widget: select, options: ["Home", "Away"] }
             - { label: "Opponent", name: "opponent", widget: string }
             - label: "Address"
@@ -266,7 +285,7 @@ collections:
             valueType: float
             default: 0
   - name: "pages"
-    label: "Required Pages"
+    label: "Platform Pages"
     editor:
       preview: false
     files:

@@ -81,11 +81,18 @@ fragment AllTeamsData on Query {
           }
           schedule {
             games {
+              addressObject {
+                city
+                location
+                state
+                streetAddress
+                zipCode
+              }
               opponent
               side
               startTime
             }
-            practices {
+            recurringPractices {
               addressObject {
                 city
                 location
@@ -94,6 +101,17 @@ fragment AllTeamsData on Query {
                 zipCode
               }
               day
+              endTime
+              startTime
+            }
+            upcomingPractices {
+              addressObject {
+                city
+                location
+                state
+                streetAddress
+                zipCode
+              }
               endTime
               startTime
             }

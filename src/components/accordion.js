@@ -28,7 +28,7 @@ export const AccordionItem = ({ header, children }) => {
             elem.style.maxHeight = null
         } else {
             setOpen(true)
-            elem.style.maxHeight = elem.scrollHeight + 36 + "px"
+            elem.style.maxHeight = elem.scrollHeight + 48 + "px"
         }
     }
 

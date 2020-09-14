@@ -239,20 +239,28 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   type Schedule implements Node {
     games: [Game]
-    practices: [Practice]
+    recurringPractices: [RecurringPractice]
+    upcomingPractices: [UpcomingPractice]
   }
 
   type Game implements Node {
     startTime: String
     side: String
     opponent: String
+    addressObject: AddressObject
   }
 
-  type Practice implements Node {
+  type RecurringPractice implements Node {
     day: String
     startTime: String
     endTime: String
     addressObject: AddressObject
+  }
+
+  type UpcomingPractice implements Node {
+    addressObject: AddressObject
+    startTime: String
+    endTime: String
   }
 
   type AddressObject implements Node {
