@@ -29,7 +29,7 @@
       },
       "name": "Brady Powell",
       "positions": null,
-      "jerseyNumber": 7,
+      "jerseyNumber": 9,
       "hobbies": "",
       "faveAthlete": ""
     },
@@ -281,6 +281,36 @@
       "name": "Ty Johnson",
       "positions": null,
       "jerseyNumber": 11
+    },
+    {
+      "imgBool": false,
+      "pitchingStats": {
+        "hits": 0,
+        "inningsPitched": 0,
+        "battingAverageAgainst": 0,
+        "runs": 0,
+        "walks": 0,
+        "losses": 0,
+        "era": 0,
+        "wins": 0,
+        "strikeouts": 0,
+        "whip": 0,
+        "earnedRuns": 0
+      },
+      "hittingStats": {
+        "hits": 0,
+        "games": 0,
+        "doubles": 0,
+        "homeRuns": 0,
+        "walks": 0,
+        "atBats": 0,
+        "triples": 0,
+        "strikeouts": 0,
+        "rbi": 0,
+        "battingAverage": 0
+      },
+      "name": "Matt Harris",
+      "jerseyNumber": 7
     }
   ],
   "ageGroup": "11u",
