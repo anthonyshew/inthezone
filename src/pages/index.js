@@ -32,7 +32,7 @@ export default ({ location }) => {
   const customPageImages = customPageImgs.edges
   const blog = blogPosts.edges
 
-  const { primaryColor, secondaryColor, textColor } = colors.childContentJson
+  const { primaryColor, secondaryColor, textColor } = colors.childContentJson.colors
 
   return (
     <Layout location={location} title="Home">
@@ -46,10 +46,10 @@ export default ({ location }) => {
         />
         {homePageJson.heroText && <h2 style={{ color: textColor }}>{homePageJson.heroText}</h2>}
         <div className="social-icon-links">
-          {socialMediaLinks.childSiteOptionsJson.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
-          {socialMediaLinks.childSiteOptionsJson.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
-          {socialMediaLinks.childSiteOptionsJson.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
-          {socialMediaLinks.childSiteOptionsJson.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
+          {socialMediaLinks.childContentJson.socials.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
+          {socialMediaLinks.childContentJson.socials.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
+          {socialMediaLinks.childContentJson.socials.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
+          {socialMediaLinks.childContentJson.socials.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
         </div>
       </section>
 

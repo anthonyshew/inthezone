@@ -15,7 +15,7 @@ export const Accordion = ({ children }) => {
 export const AccordionItem = ({ header, children }) => {
     const { colors } = useStaticQuery(graphql`{...Colors}`)
 
-    const { primaryColor, secondaryColor, textColor } = colors.childContentJson
+    const { primaryColor, secondaryColor, textColor } = colors.childContentJson.colors
 
     const content = useRef(null)
     const [open, setOpen] = useState(false)

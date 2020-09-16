@@ -52,15 +52,17 @@ fragment OrganizationBasics on Query {
 
 export const allContactInfo = graphql`
 fragment ContactInfo on Query {
-  contactInfo: file(sourceInstanceName: {eq: "contact"}) {
-    childSiteOptionsJson {
-      email
-      phoneNumber
-      address {
-        city
-        state
-        streetAddress
-        zipCode
+  contactInfo: file(sourceInstanceName: {eq: "basics"}) {
+    childContentJson {
+      contactInfo {
+        email
+        phoneNumber
+        address {
+          streetAddress
+          city
+          state
+          zipCode
+        }
       }
     }
   }
@@ -69,12 +71,14 @@ fragment ContactInfo on Query {
 
 export const socialMediaLinks = graphql`
 fragment SocialMediaLinks on Query {
-  socialMediaLinks: file(sourceInstanceName: {eq: "socials"}) {
-    childSiteOptionsJson {
-      instagram
-      facebook
-      twitter
-      youtube
+  socialMediaLinks: file(sourceInstanceName: {eq: "basics"}) {
+    childContentJson {
+      socials {
+        twitter
+        instagram
+        facebook
+        youtube
+      }
     }
   }
 }

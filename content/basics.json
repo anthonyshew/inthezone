@@ -1,5 +1,26 @@
 {
   "orgName": "Colorado Centennials Baseball Association",
   "orgLogo": "blueccfix.png",
-  "hometown": "Windsor, CO"
+  "hometown": "Windsor, CO",
+  "colors": {
+    "primaryColor": "#1f2c9e",
+    "secondaryColor": "#ab1903",
+    "textColor": "#f1f500"
+  },
+  "contactInfo": {
+    "email": "beets49@hotmail.com",
+    "phoneNumber": "970-576-0884",
+    "address": {
+      "streetAddress": "2225 74th Ave",
+      "city": "Greeley",
+      "state": "CO",
+      "zipCode": 80634
+    }
+  },
+  "socials": {
+    "twitter": "",
+    "instagram": "",
+    "facebook": "",
+    "youtube": ""
+  }
 }

@@ -9,7 +9,7 @@ export default ({ location, pageContext, data }) => {
 
   const { imageSharp, markdownRemark, colors } = data
 
-  const { primaryColor, secondaryColor } = colors.childContentJson
+  const { primaryColor, secondaryColor } = colors.childContentJson.colors
 
   return (
     <Layout location={location} title={markdownRemark.frontmatter.title}>
@@ -30,11 +30,13 @@ export default ({ location, pageContext, data }) => {
 
 export const custmPageQuery = graphql`
 query CustomPageBySlug($slug: String!, $image: String!) {
-    colors: file(sourceInstanceName: {eq: "colors"}) {
+    colors: file(sourceInstanceName: {eq: "basics"}) {
         childContentJson {
-          secondaryColor
-          primaryColor
-          textColor
+          colors {
+            secondaryColor
+            primaryColor
+            textColor
+          }
         }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

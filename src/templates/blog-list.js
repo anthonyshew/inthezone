@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 export default ({ data, pageContext, location }) => {
 
     const { currentPage, numPages } = pageContext
-    const { primaryColor, secondaryColor, textColor } = data.colors.childContentJson
+    const { primaryColor, secondaryColor, textColor } = data.colors.childContentJson.colors
     const posts = data.allFile.edges
 
     const firstPage = `/blog/`
@@ -82,7 +82,7 @@ const BlogListNav = ({ location, primaryColor, secondaryColor, textColor, firstP
 
 export const pageQuery = graphql`
 query BlogPaginationQuery($skip: Int!, $limit: Int!) {
-    allFile(skip: $skip, limit: $limit, sort: {fields: childMarkdownRemark___frontmatter___date, order: DESC}, filter: {sourceInstanceName: {eq: "blog"}}) {
+    allFile(skip: $skip, limit: $limit, sort: {fields: childMarkdownRemark___frontmatter___date, order: DESC}, filter: {sourceInstanceName: {eq: "blog"}, childMarkdownRemark: {frontmatter: {title: {ne: "DEVELOPMENT"}}}}) {
         edges {
             node {
               childMarkdownRemark {

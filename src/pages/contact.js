@@ -13,14 +13,14 @@ export default ({ location }) => {
     }
     `)
 
-    const { primaryColor, secondaryColor, textColor } = colors.childContentJson
+    const { primaryColor, secondaryColor, textColor } = colors.childContentJson.colors
 
     const [success, setSuccess] = useState(false)
 
     return (
         <Layout location={location} title="Contact">
             <h1 style={{ color: secondaryColor }}>Contact Us</h1>
-            {success ? <SuccessMessage primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} /> : <ContactForm setSuccess={setSuccess} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} contactAddress={contactInfo.childSiteOptionsJson.contactAddress} />}
+            {success ? <SuccessMessage primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} /> : <ContactForm setSuccess={setSuccess} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} contactAddress={contactInfo.childContentJson.contactInfo.email} />}
         </Layout>
     )
 }

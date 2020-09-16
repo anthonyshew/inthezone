@@ -107,13 +107,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/colors.json`,
-        name: `colors`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/homePage.json`,
         name: `homePage`,
       },
@@ -123,20 +116,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/gallery`,
         name: `gallery`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/siteOptions/contact.json`,
-        name: `contact`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/siteOptions/social.json`,
-        name: `socials`,
       },
     },
     {

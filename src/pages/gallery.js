@@ -20,7 +20,7 @@ export default ({ location }) => {
 
     const galleryImages = allGalleryImages.edges
     const galleryItems = galleryItemsArray.edges
-    const { primaryColor, secondaryColor } = colors.childContentJson
+    const { primaryColor, secondaryColor } = colors.childContentJson.colors
 
     const [modalData, setModalData] = useState({})
 

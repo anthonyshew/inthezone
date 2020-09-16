@@ -8,21 +8,6 @@ media_folder: /content/assets
 public_folder: ""
 
 collections:
-  - name: "news"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
-    media_folder: /content/assets/blogImages
-    public_folder: ""
-    slug: "{{slug}}-{{year}}-{{month}}-{{day}}"
-    extension: "md"
-    editor:
-     preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "heading-six", "quote", "bulleted-list", "numbered-list"], editorComponents: ["image"] }
   - name: "orgInfo"
     label: "Organization Info"
     editor:
@@ -37,13 +22,71 @@ collections:
         - { label: "Organization Name", name: "orgName", widget: string }
         - { label: "Organization Logo", name: "orgLogo", widget: image }
         - { label: "Hometown", name: "hometown", widget: string }
-      - name: "colors"
-        label: "Colors"
-        file: "content/colors.json"
-        fields:
-        - { label: "Primary Color", name: "primaryColor", widget: color }
-        - { label: "Secondary Color", name: "secondaryColor", widget: color }
-        - { label: "Text Color", name: "textColor", widget: color }
+        - name: "colors"
+          label: "Colors"
+          widget: "object"
+          collapsed: true
+          fields:
+          - { label: "Primary Color", name: "primaryColor", widget: color }
+          - { label: "Secondary Color", name: "secondaryColor", widget: color }
+          - { label: "Text Color", name: "textColor", widget: color }
+        - name: "contactInfo"
+          label: "Contact Info & Street Address"
+          widget: "object"
+          collapsed: true
+          fields:
+          - label: "Contact Email"
+            name: "email"
+            widget: "string"
+            hint: "When someone uses a form on your site, this is the address that will receive the email!"
+          - label: "Phone Number"
+            name: "phoneNumber"
+            widget: "string"
+            hint: "Make sure to format your phone number! Examples: (949)555-555, 949-555-5555"
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+            - label: "Street Address"
+              name: "streetAddress"
+              widget: "string"
+            - label: "City"
+              name: "city"
+              widget: "string"
+            - label: "State"
+              name: "state"
+              widget: "select"
+              options: [ "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY" ]
+            - label: "Zip Code"
+              name: "zipCode"
+              widget: "number"
+              min: 10000
+              max: 99999
+        - name: "socials"
+          label: "Social Media Accounts"
+          widget: "object"
+          collapsed: true
+          fields:
+          - label: "Twitter"
+            name: "twitter"
+            widget: "string"
+            required: false
+            hint: "The full address to your Twitter page! Example: https://twitter.com/your-team"
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+            required: false
+            hint: "The full address to your Instagram page! Example: https://instagram.com/your-team"
+          - label: "Facebook"
+            name: "facebook"
+            widget: "string"
+            required: false
+            hint: "The full address to your Facebook page! Example: https://facebook.com/your-team"
+          - label: "Youtube"
+            name: "youtube"
+            widget: "string"
+            required: false
+            hint: "The full address to your Youtube page! Example: https://youtube.com/your-team"
   - name: "teams"
     label: "Teams"
     editor:
@@ -328,6 +371,21 @@ collections:
       - { label: "Cover Image", name: "coverImage", widget: "image" }
       - { label: "Description", name: "shortDescription", widget: "string", pattern: ["^.{1,35}$", "Max length is 35 characters"] }
       - { label: "Page Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "heading-six", "quote", "bulleted-list", "numbered-list"], editorComponents: ["image"] }
+  - name: "news"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    media_folder: /content/assets/blogImages
+    public_folder: ""
+    slug: "{{slug}}-{{year}}-{{month}}-{{day}}"
+    extension: "md"
+    editor:
+     preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown", buttons: ["bold", "italic", "link", "heading-two", "heading-three", "heading-four", "heading-five", "heading-six", "quote", "bulleted-list", "numbered-list"], editorComponents: ["image"] }
   - name: "gallery"
     label: "Gallery"
     folder: content/gallery
@@ -358,63 +416,3 @@ collections:
           - label: "Image"
             name: "image"
             widget: image
-  - name: "siteOptions"
-    label: "Site Options"
-    editor:
-      preview: false
-    files:
-    - name: "contactInfo"
-      label: "Contact Info & Street Address"
-      file: "content/siteOptions/contact.json"
-      fields:
-      - label: "Contact Email"
-        name: "email"
-        widget: "string"
-        hint: "When someone uses a form on your site, this is the address that will receive the email!"
-      - label: "Phone Number"
-        name: "phoneNumber"
-        widget: "string"
-        hint: "Make sure to format your phone number! Examples: (949)555-555, 949-555-5555"
-      - label: "Address"
-        name: "address"
-        widget: "object"
-        fields:
-        - label: "Street Address"
-          name: "streetAddress"
-          widget: "string"
-        - label: "City"
-          name: "city"
-          widget: "string"
-        - label: "State"
-          name: "state"
-          widget: "select"
-          options: [ "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VI", "VA", "WA", "WV", "WI", "WY" ]
-        - label: "Zip Code"
-          name: "zipCode"
-          widget: "number"
-          min: 10000
-          max: 99999
-    - name: "socials"
-      label: "Social Media Accounts"
-      file: "content/siteOptions/social.json"
-      fields:
-      - label: "Twitter"
-        name: "twitter"
-        widget: "string"
-        required: false
-        hint: "The full address to your Twitter page! Example: https://twitter.com/your-team"
-      - label: "Instagram"
-        name: "instagram"
-        widget: "string"
-        required: false
-        hint: "The full address to your Instagram page! Example: https://instagram.com/your-team"
-      - label: "Facebook"
-        name: "facebook"
-        widget: "string"
-        required: false
-        hint: "The full address to your Facebook page! Example: https://facebook.com/your-team"
-      - label: "Youtube"
-        name: "youtube"
-        widget: "string"
-        required: false
-        hint: "The full address to your Youtube page! Example: https://youtube.com/your-team"

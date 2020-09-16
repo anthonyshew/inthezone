@@ -28,9 +28,7 @@ export default ({ location, title, description, seoImage, children }) => {
   }
   `)
 
-  const primaryColor = colors.childContentJson.primaryColor
-  const secondaryColor = colors.childContentJson.secondaryColor
-  const textColor = colors.childContentJson.textColor
+  const { primaryColor, secondaryColor, textColor } = colors.childContentJson.colors
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   useSetFavicon(orgBasics.childContentJson.teamLogo)
@@ -74,8 +72,8 @@ export default ({ location, title, description, seoImage, children }) => {
             originalName={orgBasics.childContentJson.orgLogo}
             alt="Team logo."
           />
-          <div className="contact-line" style={{ color: textColor }}><Phone fill={secondaryColor} /><span>{contactInfo.childSiteOptionsJson.phoneNumber}</span></div>
-          <div className="contact-line" style={{ color: textColor }}><Map fill={secondaryColor} /><span><p>{contactInfo.childSiteOptionsJson.address.streetAddress},</p> {contactInfo.childSiteOptionsJson.address.city} {contactInfo.childSiteOptionsJson.address.state} {contactInfo.childSiteOptionsJson.address.zipCode}</span></div>
+          <div className="contact-line" style={{ color: textColor }}><Phone fill={secondaryColor} /><span>{contactInfo.childContentJson.contactInfo.phoneNumber}</span></div>
+          <div className="contact-line" style={{ color: textColor }}><Map fill={secondaryColor} /><span><p>{contactInfo.childContentJson.contactInfo.address.streetAddress},</p> {contactInfo.childContentJson.contactInfo.address.city} {contactInfo.childContentJson.contactInfo.address.state} {contactInfo.childContentJson.contactInfo.address.zipCode}</span></div>
         </div>
         <div className="pages-container">
           <h4 style={{ color: secondaryColor }}>Pages</h4>
@@ -113,10 +111,10 @@ export default ({ location, title, description, seoImage, children }) => {
       </nav>
 
       <div className="social-icon-links">
-        {socialMediaLinks.childSiteOptionsJson.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
-        {socialMediaLinks.childSiteOptionsJson.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
-        {socialMediaLinks.childSiteOptionsJson.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
-        {socialMediaLinks.childSiteOptionsJson.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childSiteOptionsJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
+        {socialMediaLinks.childContentJson.socials.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
+        {socialMediaLinks.childContentJson.socials.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
+        {socialMediaLinks.childContentJson.socials.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
+        {socialMediaLinks.childContentJson.socials.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
       </div>
       <p className="attribution" style={{ color: secondaryColor }}>This site was created by <a className="attribution-link" style={{ color: secondaryColor }} href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">In the Zone Development</a> using the <a className="attribution-link" style={{ color: secondaryColor }} href="https://teamstage.inthezone.dev" target="_blank" rel="noopener noreferrer">TeamStage platform</a>.</p>
     </>

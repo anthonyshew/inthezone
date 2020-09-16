@@ -11,9 +11,7 @@ export default ({ data, pageContext, location }) => {
 
     const { teamData, colors, teamImages } = data
     const { ageGroup, bio, coaches, players, schedule, statsBool } = teamData.childTeamsJson
-    const { primaryColor, secondaryColor } = colors.childContentJson
-
-    console.log(schedule)
+    const { primaryColor, secondaryColor } = colors.childContentJson.colors
 
     return (
         <Layout location={location} title={`Team: ${ageGroup}`}>
