@@ -1,0 +1,130 @@
+@import "../variables.scss";
+
+$docs-blue: #2A48A2;
+$docs-dark-blue: #1f367a;
+$docs-light-blue: #ebeefa;
+
+body,
+html,
+.docs-container {
+    height: 100%;
+    width: 100vw;
+}
+
+.docs-container {
+    display: flex;
+    flex-direction: row;
+
+    .left-nav {
+        width: 30vw;
+        height: 100%;
+        background-color: $docs-blue;
+        color: $white;
+
+        h1 {
+            margin-bottom: 24px;
+            font-family: $oswald;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .category-section {
+            background-color: transparent;
+            transition: .5s;
+
+
+            &.active {
+                background-color: $docs-dark-blue;
+            }
+
+            .category-title {
+                display: block;
+                width: 100%;
+                padding: 2%;
+                background-color: transparent;
+                border: none;
+                color: $white;
+                text-align: left;
+                cursor: pointer;
+                outline: none;
+                font-family: $catamaran;
+                font-size: 24px;
+                font-weight: 700;
+
+                &.active {
+                    color: $docs-light-blue;
+                    cursor: default;
+                }
+            }
+
+            .article-list {
+                overflow: hidden;
+            }
+
+            .article-link {
+                display: block;
+                width: 98%;
+                margin: 0 2%;
+                margin-right: 0;
+                padding: 0 2%;
+                color: $docs-light-blue;
+                overflow: hidden;
+                transition: .3s;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                max-height: 50px;
+                font-family: $catamaran;
+                font-size: 20px;
+
+                &.active {
+                    background-color: $white;
+                    color: $docs-blue;
+                    width: 100%;
+                    margin-left: 0;
+                }
+            }
+
+        }
+
+    }
+
+    .article {
+        width: 70vw;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+@media (hover:hover) {
+    .docs-container {
+        .left-nav {
+            .category-title {
+
+                &.active {
+                    cursor: default;
+
+                    &:hover {
+                        background-color: $docs-dark-blue;
+                    }
+                }
+
+                &:hover {
+                    background-color: $blue;
+                }
+            }
+
+            .category-section {
+                .article-link {
+                    &.active {
+                        cursor: default;
+                    }
+
+                    &:not(.active):hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

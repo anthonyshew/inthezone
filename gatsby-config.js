@@ -20,6 +20,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify-cms`,
+    // Enable all routes that begin with this path to act like a React webapp
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/docs/teamstage-multi/*`] }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -31,6 +37,20 @@ module.exports = {
       options: {
         path: `${__dirname}/content/comero/assets`,
         name: `comeroAssets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/docs/teamstage/tsMulti/categories.json`,
+        name: `tsMultiCategories`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/docs/teamstage/tsMulti/articles`,
+        name: `tsMultiArticles`,
       },
     },
     `gatsby-plugin-sharp`,

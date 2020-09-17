@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: master
+
+local_backend: true
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - label: "Doc Categories"
+    name: "doc-categories"
+    editor:
+      preview: false
+    files:
+      - label: "TS-Multi"
+        name: "tsMulti"
+        file: "content/docs/teamstage/tsMulti/categories.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            label_singular: "category"
+            fields:
+            - { label: "Title", name: "title", widget: "string" }
+  - name: "multi-articles"
+    label: "TS-Multi Articles"
+    folder: "content/docs/teamstage/tsMulti/articles"
+    create: true
+    slug: "{{category}}-{{title}}"
+    editor:
+     preview: false
+    fields:
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "doc-categories"
+        file: "tsMulti"
+        search_fields: ["categories.*.title"]
+        display_fields: ["categories.*.title"]
+        value_field: "categories.*.title"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Order"
+        name: "order"
+        widget: "number"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        buttons: ["bold", "italic", "code", "link", "heading-three", "heading-four", "heading-five", "heading-six", "quote", "bulleted-list", "numbered-list"]
