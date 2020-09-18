@@ -3,9 +3,7 @@ category: Getting Started
 title: About Your Website
 order: 1
 ---
-Hello and welcome to your TeamStage website! We're so excited to help you create the website of your team's dreams!
-
-Let's dive right in by finding out what your content editor is and how to log into it.
+Hello and welcome to your TeamStage website! We're so excited to help you create the website of your team's dreams! Let's dive right in by finding out what your content editor is and how to log into it.
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -25,6 +23,6 @@ You won't be able to create new accounts on your own. To create more users, you'
 
 ### Logging into your Content Editor
 
-To log in, you will want to visit the "*/admin*" page on your website. If your website's domain is "https://www.exampleteam.com", then you will find your Content Editor at "https://www.exampleteam.com/admin". Just like visiting any other page on the web but this one is just for you!
+To log in, you will want to visit the "*/admin*" page on your website. If your website's domain is "exampleteam.com", then you will find your Content Editor at "exampleteam.com/admin". Just like visiting any other page on the web but this one is just for you!
 
 You won't find links to it on your main page and regular visitors to your website won't know about your Content Editor. They never see a link to this page or even know it exists. Only you will!

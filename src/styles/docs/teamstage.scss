@@ -16,15 +16,25 @@ html,
     flex-direction: row;
 
     .left-nav {
-        width: 30vw;
+        position: relative;
+        width: 30%;
         height: 100%;
         background-color: $docs-blue;
         color: $white;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition: .4s;
 
         h1 {
-            margin-bottom: 24px;
             font-family: $oswald;
             font-size: 36px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 24px;
+            font-family: $oswald;
+            font-size: 18px;
             text-align: center;
         }
 
@@ -72,7 +82,7 @@ html,
                 transition: .3s;
                 padding-top: 2%;
                 padding-bottom: 2%;
-                max-height: 50px;
+                max-height: 80px;
                 font-family: $catamaran;
                 font-size: 20px;
 
@@ -83,16 +93,70 @@ html,
                     margin-left: 0;
                 }
             }
-
         }
 
+        .menu-toggle {
+            position: absolute;
+            z-index: 3;
+            transform: rotate(90deg);
+            transform-origin: 0% 0%;
+            padding: 9px;
+            width: 100vh;
+            height: 50px;
+            border: none;
+            border-radius: 12px;
+            background-color: $docs-blue;
+            color: $docs-light-blue;
+            font-family: $oswald;
+            font-size: 24px;
+        }
     }
 
     .article {
-        width: 70vw;
+        width: 70%;
         height: 100%;
+        padding: 24px;
         overflow-x: hidden;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+
+        h2 {
+            font-family: $oswald;
+            font-size: 50px;
+        }
+
+        h3 {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            font-family: $oswald;
+            font-size: 36px;
+        }
+
+        h4 {
+            font-family: $oswald;
+            font-size: 24px;
+        }
+
+        p,
+        li {
+            margin-bottom: 24px;
+            font-family: $catamaran;
+            font-size: 22px;
+        }
+
+        p:first-of-type {
+            font-size: 27.5px;
+        }
+
+        ul {
+            margin: 24px 0 24px 48px;
+            list-style: disc;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
     }
 }
 
@@ -124,6 +188,84 @@ html,
                         text-decoration: underline;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .docs-container {
+        position: relative;
+
+        .left-nav {
+            width: 98%;
+            padding-right: 56px;
+            z-index: 2;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+
+            &.closed {
+                width: 0;
+                padding-right: 50px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .menu-toggle {
+                left: 100%;
+            }
+
+        }
+
+        .article {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            width: 100%;
+            padding-left: 65px
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .docs-container {
+
+        .article {
+            width: 100%;
+
+            h2 {
+                font-size: 40px;
+            }
+
+            h3 {
+                font-family: $oswald;
+                font-size: 30px;
+            }
+
+            h4 {
+                font-family: $oswald;
+                font-size: 24px;
+            }
+
+            p,
+            li {
+                margin-bottom: 24px;
+                font-family: $catamaran;
+                font-size: 19px;
+            }
+
+            p:first-of-type {
+                font-size: 22px;
+            }
+
+            ul {
+                margin: 24px 0 24px 48px;
+                list-style: disc;
             }
         }
     }
