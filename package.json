@@ -2,7 +2,7 @@
   "name": "in-the-zone-agency",
   "private": true,
   "description": "Welcome to In the Zone Development.",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "scripts": {
     "ngrok": "cd .. && ngrok http 3000",
     "develop": "gatsby develop  -p 3000",
