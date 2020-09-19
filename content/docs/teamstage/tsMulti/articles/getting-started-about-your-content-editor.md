@@ -15,7 +15,7 @@ Your *Content Editor* is a place where you can tell your site how you want thing
 
 Let's get to the fun part!
 
-We made the Content Editor as simple to use as we could so you'll find things to be very intuitive. You can make edits to your site using forms simlar to checking out on an e-commerce page or making edits to your Facebook page.
+We made the Content Editor as simple to use as we could so you'll find things to be very intuitive. You can make edits to your site using forms similar to checking out on an e-commerce page or making edits to your Facebook page.
 
 Once you make your desired changes, you will **always** want to make sure that you publish them by clicking the "Publish" button in the top right corner and clicking "Publish Now" in the dropdown menu. Two clicks and you're changes will be saved!
 

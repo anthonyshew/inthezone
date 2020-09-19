@@ -144,7 +144,7 @@ const Default = () => (
     <article className="article">
         <header>
             <h2>
-                Welcome to the best website your baseball team deserves.
+                Welcome to the website your team deserves.
         </h2>
         </header>
         <main>

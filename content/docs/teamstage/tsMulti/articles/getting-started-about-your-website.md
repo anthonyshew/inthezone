@@ -3,7 +3,7 @@ category: Getting Started
 title: About Your Website
 order: 1
 ---
-Hello and welcome to your TeamStage website! We're so excited to help you create the website of your team's dreams! Let's dive right in by finding out what your content editor is and how to log into it.
+Hello and welcome to your TeamStage website! We're so excited to help you create the website of your team's dreams! Let's dive right in by finding out what your Content Editor is and how to log into it.
 
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
