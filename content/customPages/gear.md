@@ -13,4 +13,4 @@ Providing everything that the team needs to compete on the field, Woodpecker ens
 
 ### An action shot of us using our Woodpecker Baseball products:
 
-![The Knights using Woodpecker products.](/cms/customPages/jefferson-haddox-vlgwqfczqyw-unsplash.jpg "The Knights using Woodpecker products.")
+![The Knights using Woodpecker products.](jefferson-haddox-vlgwqfczqyw-unsplash.jpg "The Knights using Woodpecker products.")
