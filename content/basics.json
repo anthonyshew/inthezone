@@ -1,20 +1,20 @@
 {
-  "orgName": "Colorado Centennials Baseball Association",
-  "orgLogo": "blueccfix.png",
-  "hometown": "Windsor, CO",
+  "orgName": "The New York Knights",
+  "orgLogo": "letter-logo.png",
+  "hometown": "New York, New York",
   "colors": {
-    "primaryColor": "#1f2c9e",
-    "secondaryColor": "#ab1903",
-    "textColor": "#f1f500"
+    "primaryColor": "#1d2355",
+    "secondaryColor": "#f6472c",
+    "textColor": "#ffffff"
   },
   "contactInfo": {
-    "email": "beets49@hotmail.com",
-    "phoneNumber": "970-576-0884",
+    "email": "anthony@inthezone.dev",
+    "phoneNumber": "(555)555-5555",
     "address": {
-      "streetAddress": "2225 74th Ave",
-      "city": "Greeley",
-      "state": "CO",
-      "zipCode": 80634
+      "streetAddress": "1234 Main St.",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": 12345
     }
   },
   "socials": {

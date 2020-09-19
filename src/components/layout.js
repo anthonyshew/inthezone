@@ -16,7 +16,8 @@ export default ({ location, title, description, seoImage, children }) => {
     customPagesData,
     socialMediaLinks,
     teams,
-    contactInfo } = useStaticQuery(graphql`
+    contactInfo,
+    blogPosts } = useStaticQuery(graphql`
   query LayoutQuery {
     ...AllOrgLogos
     ...OrganizationBasics
@@ -25,6 +26,7 @@ export default ({ location, title, description, seoImage, children }) => {
     ...SocialMediaLinks
     ...AllTeamsData
     ...ContactInfo
+    ...AllBlogPosts
   }
   `)
 
@@ -40,7 +42,7 @@ export default ({ location, title, description, seoImage, children }) => {
       {isMenuOpen && <MobileMenu setIsMenuOpen={setIsMenuOpen} primaryColor={primaryColor} secondaryColor={secondaryColor} textColor={textColor} />}
       <nav className="navbar" style={{ backgroundColor: primaryColor }}>
         <button className="button-menu-opener" onClick={() => setIsMenuOpen(true)} style={{ backgroundColor: primaryColor, color: textColor }}>Menu</button>
-        <LinkList textColor={textColor} />
+        <LinkList textColor={textColor} blogPosts={blogPosts} />
         <div className="header-image-container">
           <svg className="svg-body" viewBox="0 0 129 129" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path className="dsvg-path" d="M0 64.5V0H129V64.5L64.5 129L0 64.5Z" style={{ fill: primaryColor }} />
@@ -90,7 +92,7 @@ export default ({ location, title, description, seoImage, children }) => {
             </Link>
           )}
           <Link to="/shop" style={{ color: textColor }}>Shop</Link>
-          <Link to="/blog" style={{ color: textColor }}>Blog</Link>
+          {blogPosts.edges.length > 0 && <Link to="/blog" style={{ color: textColor }}>Blog</Link>}
           <Link to="/gallery" style={{ color: textColor }}>Gallery</Link>
           <Link to="/contact" style={{ color: textColor }}>Contact Us</Link>
         </div>
@@ -130,12 +132,12 @@ export default ({ location, title, description, seoImage, children }) => {
   )
 }
 
-const LinkList = ({ textColor }) => (
+const LinkList = ({ textColor, blogPosts }) => (
   <div className="link-list">
     <Link to="/" style={{ color: textColor }}>Home</Link>
     <Link to="/about" style={{ color: textColor }}>About</Link>
     <Link to="/shop" style={{ color: textColor }}>Shop</Link>
-    <Link to="/blog" style={{ color: textColor }}>Blog</Link>
+    {blogPosts.edges.length > 0 && <Link to="/blog" style={{ color: textColor }}>Blog</Link>}
     <Link to="/gallery" style={{ color: textColor }}>Gallery</Link>
     <Link to="/contact" style={{ color: textColor }}>Contact</Link>
   </div>

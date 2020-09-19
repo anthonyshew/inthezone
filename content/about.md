@@ -1,1 +1,11 @@
-The Colorado Centennials Baseball Association was started in 2020 (after originally starting in 2017 as the Dirtbag Baseball Association of Northern Colorado) with a mission to focus on fundamentals and character of the player more than wins.  The Dirtbag name was derived from Long Beach State baseball.  In 1993, Long Beach State did not have a home field and had to practice on an all dirt little league field at a local community park.  Being a fledgling program, building it was all about fundamentals, getting dirty and giving a 110% every play.  Being a Dirtbag is the type of player every team needs!  He loves to play the game everyday.  Attitude and the way he commits himself to the game and his teammates is what makes him great!  We play every play 110% and fundamentally sound, no matter the conditions or opponent.  As an organization, we pride ourselves in this thought process.  Our mission is to have our players commit to improving their skills in a team focus environment.  We work hard to win games, but winning will never be more important  than teamwork, good sportsmanship, and the memories created with their teammates!  Being a Centennial is about the name on the front of the jersey versus the back.  This is why we believe we create better baseball players but even better young men.  Even with the name change to Colorado Centennials, the Dirtbag values still live on!
+The New York Knights were created with one goal in mind.
+
+## Serving the youth baseball community through stewardship, good values, and the highest instruction possible for every age level.
+
+As members of our local baseball community, we had grown a bit tired of what we saw. In our eyes, there was more that could be done to enrich the lives of the young baseball players that were paving the early roads to the rest of the career.
+
+We wanted to do more.
+
+Today, the New York Knights bring a never-say-die attitude to the field every time we take it. Attention to detail, individual effort, and mental toughness are hallmarks of Knights Baseball and an important part of everything we do - even off the field!
+
+## Go Knights!

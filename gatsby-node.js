@@ -212,15 +212,15 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   type PitchingStats implements Node {
     hits: Int
-    inningsPitched: Int
-    battingAverageAgainst: Int
+    inningsPitched: Float
+    battingAverageAgainst: Float
     runs: Int
     walks: Int
     losses: Int
-    era: Int
+    era: Float
     wins: Int
     strikeouts: Int
-    whip: Int
+    whip: Float
     earnedRuns: Int
   }
 
@@ -234,7 +234,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     triples: Int
     strikeouts: Int
     rbi: Int
-    battingAverage: Int
+    battingAverage: Float
   }
 
   type Schedule implements Node {
