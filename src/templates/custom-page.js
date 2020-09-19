@@ -22,7 +22,7 @@ export default ({ location, pageContext, data }) => {
           </div>
         </section>
 
-        <section className="markdown-body" dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+        <section className="markdown-body" dangerouslySetInnerHTML={{ __html: markdownRemark.html.replace("img src=\"", "img src=\"/cms/customPages/") }} />
       </div>
     </Layout>
   )
