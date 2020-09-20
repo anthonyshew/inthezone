@@ -57,7 +57,6 @@ export default ({ location }) => {
     const [activeCategory, setActiveCategory] = useState("")
 
     const navMenu = useRef(null)
-    const categorySection = useRef(null)
 
     useEffect(() => {
 
@@ -148,14 +147,14 @@ const Default = () => (
         </h2>
         </header>
         <main>
-            <p style={{ marginTop: "24px" }}>👈🏼 Use the menu to the left to find out how things work and what's possible. 👈🏼</p>
+            <p style={{ marginTop: "24px" }}><span role="img" aria-label="Pointing to the left">👈🏼</span> Use the menu to the left to find out how things work and what's possible. <span role="img" aria-label="Pointing to the left">👈🏼</span></p>
             <p>With a little bit of telling us who your organization is, we'll be able to give you the power to create a modern, beautiful website that your players, parents, coaches, and fans are going to love.</p>
             <h3>How It Works</h3>
             <p>We have done all the heavy lifting and employed a little bit of magic to take the load off of you. You've got enough to do; let us take care of the hard part of taking care of your team's website.</p>
             <h3>All we need from you is...</h3>
             <p>The stuff you want to be on the site! Images, text, and the information about your teams that make them great. Once we have that information, we can take care of the rest.</p>
             <h3>Have questions?</h3>
-            <p>Hopefully, you can find the answers somewhere in this User's Manual. If not, please do not hesitate to <a href="https://inthezone.dev/#contact-form" target="_blank" rel="noopener noreferrer">contact us</a>. We're here to keep your site working - and you happy. 😀</p>
+            <p>Hopefully, you can find the answers somewhere in this User's Manual. If not, please do not hesitate to <a href="https://inthezone.dev/#contact-form" target="_blank" rel="noopener noreferrer">contact us</a>. We're here to keep your site working - and you happy. <span role="img" aria-label="Smiley face">😀</span></p>
         </main>
-    </article>
+    </article >
 )

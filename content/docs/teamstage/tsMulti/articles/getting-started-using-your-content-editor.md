@@ -9,7 +9,7 @@ We have crafted your Content Editor to be as simple to use as possible. Here, we
 
 ### Always make sure you publish!
 
-You can make all sorts of edits but never have them go live on your site if you don't publish them! If you have unsaved changes, your Content Editor will tell you in the top left of your screen - and it will warn you if you try to navigate away from the page without saving first.
+You can make all sorts of edits but never have them go live on your site if you don't publish them! If you have unsaved changes, your Content Editor will tell you in the top right of your screen - and it will warn you if you try to navigate away from the page without saving first.
 
 **To save your changes, click publish in the top left corner of your screen. Then, click "Publish now" when it drops down. Your changes are now safely saved.**
 
@@ -25,7 +25,7 @@ Depending on what the collection is representing, these files might be blog post
 
 #### File Collections
 
-A *folder collection* is a collection where you can't edit the amount of files that are in the collection. We create the files and its structure on our end and you get to edit the content of it. You won't find any buttons to create new files or delete existing ones. Of course, you will still be able to edit existing files.
+A *file collection* is a collection where you can't edit the amount of files that are in the collection. We create the files and its structure on our end and you get to edit the content of it. You won't find any buttons to create new files or delete existing ones. Of course, you will still be able to edit existing files.
 
 This is useful for when we need to get a certain piece of information from you that won't be something that won't be repeating. For example, the name of your organization, your contact email, or a social media account handle. We just need it once and you're good!
 
