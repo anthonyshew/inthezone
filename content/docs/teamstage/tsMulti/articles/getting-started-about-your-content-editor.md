@@ -5,7 +5,7 @@ order: 2
 ---
 Once you've logged into your Content Editor, you'll find a simple yet powerful interface to create the site that you want. Let's find out how.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ApBnipsB6FI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### How does it work?
 

@@ -5,7 +5,7 @@ order: 2
 ---
 A team is going to have practices and games on its schedule so let's get those where your parents and players can find them.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ZOgniXNUR2Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Weekly Practice Scheduling
 

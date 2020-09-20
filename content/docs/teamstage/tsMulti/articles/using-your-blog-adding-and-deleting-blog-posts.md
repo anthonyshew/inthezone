@@ -5,7 +5,7 @@ order: 1
 ---
 Blog posts are a great way to add current content to your website so that your site visitors can keep up with the latest about your team.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/f1nmCNBBsDU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Creating a New Blog Post
 

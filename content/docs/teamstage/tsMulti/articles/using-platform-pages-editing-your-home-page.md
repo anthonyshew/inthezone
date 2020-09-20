@@ -3,9 +3,9 @@ category: Using Platform Pages
 title: Editing Your Home Page
 order: 1
 ---
-Customizing your home page to reflect your organization's character is an important part of making sure that your website is an *awesome* reflection of your *awesome* people.
+Customizing your home page to reflect your organization's character is an important part of making sure that your website is an awesome and effective part of what you do.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/KI8L80ul2w4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### The Header Image
 

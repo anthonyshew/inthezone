@@ -3,9 +3,9 @@ category: Using the Gallery
 title: Adding and Deleting a Gallery Item
 order: 1
 ---
-In the gallery, we have created a place where you can show off photos as groups of events or categories. This is a great way to show of some visuals of your organization!
+In the gallery, we have created a place where you can show off photos as groups of events or categories. This visual content can make your website much more professional and exciting.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/8w9-cxl7Iyk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Creating a New Gallery Event
 

@@ -5,7 +5,7 @@ order: 3
 ---
 We have crafted your Content Editor to be as simple to use as possible. Here, we will explain the various pieces of the puzzle - just in case something isn't as easy as we hope it is!
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/jG06RD6-Xbc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Always make sure you publish!
 

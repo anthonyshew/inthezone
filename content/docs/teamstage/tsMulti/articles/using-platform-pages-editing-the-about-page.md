@@ -5,7 +5,7 @@ order: 2
 ---
 The About Page is a great opportunity to tell us all about the organization. You can go over the history of your teams, recent successes of the organization, or really anything else that will give your page character.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/v2haApc2ytU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Need Some Inspiration?
 

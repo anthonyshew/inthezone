@@ -3,9 +3,9 @@ category: Updating Teams & Their Info
 title: Editing Coaches & Players
 order: 3
 ---
-The people that make up your team are what make them great. Let's make sure the place dedicated to them on your site is awesome.
+It's the people in your organization that make it great. Let's give them the recognition they deserve by putting them down on their team's page.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/c8jFk92mVdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Adding Your First Coach
 
@@ -13,7 +13,7 @@ To add a coach, head to the team you want to add a coach for and find the "Coach
 
 ### Adding Your First Player
 
-To add a player, head to the team you want to add the player for and find the "Players" sectiojn. Clic the "Add player" button. Provide all of the required information for your player and he'll show up on your website. A few things to note:
+To add a player, head to the team you want to add the player for and find the "Players" section. Click the "Add player" button. Provide all of the required information for your player and he'll show up on your website. A few things to note:
 
 * If you provide a picture for the player but leave the "Use Player Headshot?" toggle turned off, we will use a generic placeholder for the player.
 * If you turn the "Use Player Headshot?" toggle on but don't provide a picture, we will still use the placeholder.

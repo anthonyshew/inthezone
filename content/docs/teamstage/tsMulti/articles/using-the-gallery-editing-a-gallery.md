@@ -5,7 +5,7 @@ order: 2
 ---
 A group of images in a slider is a really nice way to create a visual experience for your fans, players, coaches, and parents. A group of images from last night's game, last weekend's tourney, or a fun event with the players can be saved for memories!
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/ScMzIvxBSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/0viZfap10Bc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### The Image List
 
