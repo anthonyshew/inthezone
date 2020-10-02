@@ -1,19 +1,19 @@
 {
-  "orgName": "The New York Knights",
-  "orgLogo": "letter-logo.png",
-  "hometown": "New York, New York",
+  "orgName": "",
+  "orgLogo": "",
+  "hometown": "",
   "colors": {
-    "primaryColor": "#1d2355",
-    "secondaryColor": "#f6472c",
-    "textColor": "#ffffff"
+    "primaryColor": "",
+    "secondaryColor": "",
+    "textColor": ""
   },
   "contactInfo": {
-    "email": "anthony@inthezone.dev",
-    "phoneNumber": "(555)555-5555",
+    "email": "",
+    "phoneNumber": "",
     "address": {
-      "streetAddress": "1234 Main St.",
-      "city": "New York",
-      "state": "NY",
+      "streetAddress": "",
+      "city": "",
+      "state": "",
       "zipCode": 12345
     }
   },
