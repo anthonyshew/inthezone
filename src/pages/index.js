@@ -46,10 +46,10 @@ export default ({ location }) => {
         />
         {homePageJson.heroText && <h2 style={{ color: textColor }}>{homePageJson.heroText}</h2>}
         <div className="social-icon-links">
-          {socialMediaLinks.childContentJson.socials.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
-          {socialMediaLinks.childContentJson.socials.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
-          {socialMediaLinks.childContentJson.socials.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
-          {socialMediaLinks.childContentJson.socials.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
+          {socialMediaLinks.childContentJson.socials.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
+          {socialMediaLinks.childContentJson.socials.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
+          {socialMediaLinks.childContentJson.socials.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
+          {socialMediaLinks.childContentJson.socials.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
         </div>
       </section>
 
@@ -60,7 +60,7 @@ export default ({ location }) => {
             <Link
               key={node.childTeamsJson.ageGroup}
               className="index-link-button"
-              to={`/teams/${node.childTeamsJson.ageGroup}`}
+              to={`/teams/${node.childTeamsJson.ageGroup.toLowerCase().replace(" ", "-")}`}
               style={{ backgroundColor: primaryColor, color: textColor }}>
               <h3 className="link-text">{node.childTeamsJson.ageGroup}</h3>
             </Link>

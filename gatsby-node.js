@@ -120,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   teams.forEach((team) => {
     createPage({
-      path: `teams/${team.node.name}`,
+      path: `teams/${team.node.name.toLowerCase().replace(" ", "-")}`,
       component: teamPage,
       context: {
         name: team.node.name

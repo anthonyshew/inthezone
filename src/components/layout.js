@@ -113,10 +113,10 @@ export default ({ location, title, description, seoImage, children }) => {
       </nav>
 
       <div className="social-icon-links">
-        {socialMediaLinks.childContentJson.socials.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
-        {socialMediaLinks.childContentJson.socials.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
-        {socialMediaLinks.childContentJson.socials.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
-        {socialMediaLinks.childContentJson.socials.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
+        {socialMediaLinks.childContentJson.socials.instagram.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.instagram}><img src="/media/instagram-logo.png" alt="Head to our Instagram page." /></a>}
+        {socialMediaLinks.childContentJson.socials.twitter.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.twitter}><img src="/media/twitter-logo.png" alt="Head to our Twitter page." /></a>}
+        {socialMediaLinks.childContentJson.socials.facebook.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.facebook}><img src="/media/facebook-logo.png" alt="Head to our Facebook page." /></a>}
+        {socialMediaLinks.childContentJson.socials.youtube.length > 0 && <a className="social-icon" target="_blank" rel="noopener noreferrer" href={socialMediaLinks.childContentJson.socials.youtube}><img src="/media/youtube-logo.png" alt="Head to our Youtube page." /></a>}
       </div>
       <p className="attribution" style={{ color: secondaryColor }}>This site was created by <a className="attribution-link" style={{ color: secondaryColor }} href="https://inthezone.dev" target="_blank" rel="noopener noreferrer">In the Zone Development</a> using the <a className="attribution-link" style={{ color: secondaryColor }} href="https://teamstage.inthezone.dev" target="_blank" rel="noopener noreferrer">TeamStage platform</a>.</p>
     </>
